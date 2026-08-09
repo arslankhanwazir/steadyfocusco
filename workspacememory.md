@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-09T23:25:11.453Z
+Generated: 2026-08-09T23:30:53.453Z
 Workspace: website
 Workspace root: f:\etsy\website
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-09T23:25:07.743Z
+- Last activity: 2026-08-09T23:30:50.975Z
 ## Workspace Focus
 - Active file in focus: src/layouts/Base.astro
-- Hottest files right now: src/layouts/Base.astro (6), astro.config.mjs (3), src/data/products.json (2), .env.example (1)
+- Hottest files right now: src/layouts/Base.astro (7), astro.config.mjs (3), src/data/products.json (2), .env.example (1)
 - Suggested starting points: src/layouts/Base.astro, astro.config.mjs, src/data/products.json, .env.example, .gitignore, package.json
 ## Current Workspace
 - Active file: src/layouts/Base.astro
-- Tracked files in snapshot: 54
-- Top-level areas: src (23), [root] (14), public (12), .astro (4), scripts (1)
-- Primary file types: .astro (16), .png (9), .json (6), .md (4), .ts (4), .tsx (3), [no extension] (2), .css (1)
+- Tracked files in snapshot: 55
+- Top-level areas: src (24), [root] (14), public (12), .astro (4), scripts (1)
+- Primary file types: .astro (17), .png (9), .json (6), .md (4), .ts (4), .tsx (3), [no extension] (2), .css (1)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: steadyfocusco v0.0.1
@@ -34,14 +34,17 @@ Structured manifest: workspace.json
 - Runtime dependencies: @astrojs/react, @astrojs/sitemap, @types/react, @types/react-dom, astro, jspdf, react, react-dom
 - Dev dependencies: none declared
 ## Current Stack
-- Logged change events: 35
-- Change mix: save (35)
-- Remembered file snapshots: 26
-- Working tree summary: 1 modified
+- Logged change events: 37
+- Change mix: save (37)
+- Remembered file snapshots: 27
+- Working tree summary: 4 modifieds, 1 untracked
 ## Tracked Snapshots
-- src/layouts/Base.astro | 166 lines | 5483 chars | hash 90884aa250a0
-  Last snapshot: 2026-08-09T23:25:07.743Z
+- src/layouts/Base.astro | 168 lines | 5544 chars | hash d3ebdd08b4d4
+  Last snapshot: 2026-08-09T23:30:50.975Z
   Preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- src/pages/about.astro | 80 lines | 2379 chars | hash fff9ab106247
+  Last snapshot: 2026-08-09T23:30:34.873Z
+  Preview: "--- / import Base from "../layouts/Base.astro"; / --- / <Base / title="About SteadyFocusCo" / description="Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digit..."
 - astro.config.mjs | 18 lines | 560 chars | hash 66865e2d14b1
   Last snapshot: 2026-08-09T23:12:44.953Z
   Preview: "// @ts-check / import { defineConfig } from "astro/config"; / import react from "@astrojs/react"; / import sitemap from "@astrojs/sitemap"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
@@ -60,11 +63,21 @@ Structured manifest: workspace.json
 - src/pages/printables/index.astro | 107 lines | 2557 chars | hash 11ec215e23d4
   Last snapshot: 2026-08-09T21:11:23.537Z
   Preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables } from "../../data/site"; / --- / <Base / title="Free printables" / description="Free, printable planning sheets for overwhelmed minds — brain d..."
-- src/pages/shop.astro | 249 lines | 6130 chars | hash a4c1d17abe07
-  Last snapshot: 2026-08-09T21:10:42.245Z
-  Preview: "--- / import Base from "../layouts/Base.astro"; / import { etsyLink, ETSY_SHOP_URL } from "../data/site"; / import productData from "../data/products.json"; / interface Product { / listing_id: number | null; / title:..."
 
 ## Recent Changes
+### 2026-08-09T23:30:50.975Z | saved | src/layouts/Base.astro
+- Summary: Line 58: replaced 20 lines with 22 lines.
+- Before: 166 lines | 5,483 chars | hash 90884aa250a0 | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- After: 168 lines | 5,544 chars | hash d3ebdd08b4d4 | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- Previous fragment: "tools">Tools</a> / <a href="/adhd">ADHD</a> / <a href="/students">Students</a> / <a href="/productivity">Productivity</a> / <a href="/printables">Free printables</a> / <a href="..."
+- Current fragment: "about">About</a> / <a href="/tools">Tools</a> / <a href="/adhd">ADHD</a> / <a href="/students">Students</a> / <a href="/productivity">Productivity</a> / <a href="/printables">Fr..."
+
+### 2026-08-09T23:30:34.873Z | saved | src/pages/about.astro
+- Summary: Line 1: inserted 80 lines.
+- Before: 0 lines | 0 chars | hash empty
+- After: 80 lines | 2,379 chars | hash fff9ab106247 | preview: "--- / import Base from "../layouts/Base.astro"; / --- / <Base / title="About SteadyFocusCo" / description="Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digit..."
+- Current fragment: "--- / import Base from "../layouts/Base.astro"; / --- / <Base / title="About SteadyFocusCo" / description="Planning and organization tools for overwhelmed minds. SteadyFocusCo c..."
+
 ### 2026-08-09T23:25:07.743Z | saved | src/layouts/Base.astro
 - Summary: Line 62: replaced 19 lines with 21 lines.
 - Before: 164 lines | 5,424 chars | hash e3a4137688aa | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
@@ -145,21 +158,9 @@ Structured manifest: workspace.json
 - After: 249 lines | 6,130 chars | hash a4c1d17abe07 | preview: "--- / import Base from "../layouts/Base.astro"; / import { etsyLink, ETSY_SHOP_URL } from "../data/site"; / import productData from "../data/products.json"; / interface Product { / listing_id: number | null; / title:..."
 - Current fragment: "--- / import Base from "../layouts/Base.astro"; / import { etsyLink, ETSY_SHOP_URL } from "../data/site"; / import productData from "../data/products.json"; / interface Product..."
 
-### 2026-08-09T21:09:33.848Z | saved | .env.example
-- Summary: Line 1: inserted 25 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 25 lines | 947 chars | hash cec0171d7b52 | preview: "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro..."
-- Current fragment: "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own..."
-
-### 2026-08-09T21:09:09.283Z | saved | .gitignore
-- Summary: Line 1: inserted 26 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 26 lines | 260 chars | hash fb459322e8f5 | preview: "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log / .DS_Store / Thumbs.db / # edit..."
-- Current fragment: "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log*..."
-
 
 ## Hot Files
-- src/layouts/Base.astro (6 tracked changes)
+- src/layouts/Base.astro (7 tracked changes)
 - astro.config.mjs (3 tracked changes)
 - src/data/products.json (2 tracked changes)
 - .env.example (1 tracked changes)
@@ -170,9 +171,13 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-08-10 004860b fix sitemap site URL to match live domain
-- Working tree summary: 1 modified
+- HEAD: 2026-08-10 c9aee4a add guides link to nav and footer
+- Working tree summary: 4 modifieds, 1 untracked
+- M graphify-out/WORKSPACE_MEMORY.md
 - M src/layouts/Base.astro
+- M workspace.json
+- M workspacememory.md
+- ?? src/pages/about.astro
 
 ## GitHub Snapshot
 GitHub Repository: arslankhanwazir/steadyfocusco
@@ -180,8 +185,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 004860b by Arslan Khan on 2026-08-09
-  fix sitemap site URL to match live domain
+- c9aee4a by Arslan Khan on 2026-08-09
+  add guides link to nav and footer
 
 URL: https://github.com/arslankhanwazir/steadyfocusco
 

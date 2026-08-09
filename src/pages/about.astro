@@ -1,0 +1,80 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="About SteadyFocusCo"
+  description="Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digital tools for ADHD, students, and anyone who finds traditional planning systems don't work for them."
+>
+  <section class="about-page">
+    <div class="about-content">
+      <h1>About SteadyFocusCo</h1>
+
+      <p>
+        SteadyFocusCo makes planning tools for people whose brains don't do linear.
+        If you've ever stared at a pristine planner only to abandon it two weeks later,
+        or if traditional to-do lists leave you feeling worse instead of organized —
+        you're in the right place.
+      </p>
+
+      <p>
+        This site offers free digital tools and printable resources designed for ADHD
+        brains, busy students, and anyone who feels overwhelmed by conventional
+        planning systems. Everything here is built around the idea that organization
+        should work <em>with</em> how your brain actually functions, not against it.
+      </p>
+
+      <p>
+        The free tools and printables on this site are companion resources to the
+        SteadyFocusCo Etsy shop, where you'll find matching printable planners and
+        organizational systems available for instant download. Whether you're here
+        for the free tools or shopping for a complete planning system, the goal is
+        the same: to help you build routines and systems that actually stick.
+      </p>
+
+      <p>
+        No perfection required. No complicated systems to maintain. Just practical
+        tools that meet you where you are.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about-page {
+    max-width: 760px;
+    margin: 3rem auto 4rem;
+    padding: 0 1.5rem;
+  }
+
+  .about-content h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0 0 1.5rem;
+  }
+
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-content em {
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  @media (max-width: 520px) {
+    .about-page {
+      margin: 2rem auto 3rem;
+    }
+
+    .about-content p {
+      font-size: 1rem;
+    }
+  }
+</style>
