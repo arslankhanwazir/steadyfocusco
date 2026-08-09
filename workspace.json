@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T23:30:53.453Z",
-  "generatedAtEpochMs": 1786318253453,
+  "generatedAt": "2026-08-09T23:52:49.579Z",
+  "generatedAtEpochMs": 1786319569579,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "website",
     "root": "f:\\etsy\\website",
-    "activeFile": "src/layouts/Base.astro",
+    "activeFile": "src/pages/printables/[slug].astro",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,18 +22,18 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "src/pages/printables/[slug].astro",
       "src/layouts/Base.astro",
+      "src/pages/shop.astro",
       "astro.config.mjs",
-      "src/data/products.json",
-      ".env.example",
-      ".gitignore",
-      "package.json",
-      "scripts/sync-etsy-products.js",
       "src/components/BrainDump.tsx",
+      "src/components/MorningRoutine.tsx",
+      "src/components/WeeklyReset.tsx",
+      "src/pages/guides/[slug].astro",
+      ".gitignore",
       "AGENTS.md",
       "README.md",
-      "package-lock.json",
-      "tsconfig.json"
+      "package-lock.json"
     ],
     "stats": {
       "totalFiles": 55,
@@ -475,11 +475,11 @@
     "devDependencies": {}
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-09T23:30:50.975Z",
-    "trackedChangeCount": 37,
-    "trackedFileSnapshotCount": 27,
+    "lastActivityAt": "2026-08-09T23:52:45.393Z",
+    "trackedChangeCount": 40,
+    "trackedFileSnapshotCount": 28,
     "changeTypeCounts": {
-      "save": 37,
+      "save": 40,
       "create": 0,
       "delete": 0,
       "rename": 0
@@ -487,71 +487,455 @@
   },
   "trackedSnapshots": [
     {
-      "filePath": "src/layouts/Base.astro",
-      "updatedAt": 1786318250975,
-      "lineCount": 168,
-      "charCount": 5544,
-      "hash": "d3ebdd08b4d4",
-      "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
-    },
-    {
-      "filePath": "src/pages/about.astro",
-      "updatedAt": 1786318234873,
-      "lineCount": 80,
-      "charCount": 2379,
-      "hash": "fff9ab106247",
-      "preview": "--- / import Base from \"../layouts/Base.astro\"; / --- / <Base / title=\"About SteadyFocusCo\" / description=\"Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digit..."
-    },
-    {
-      "filePath": "astro.config.mjs",
-      "updatedAt": 1786317164953,
-      "lineCount": 18,
-      "charCount": 560,
-      "hash": "66865e2d14b1",
-      "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
-    },
-    {
-      "filePath": "src/data/products.json",
-      "updatedAt": 1786313891614,
-      "lineCount": 80,
-      "charCount": 3070,
-      "hash": "795c1c2e0e15",
-      "preview": "{ / \"source\": \"seed\", / \"shop\": \"steadyfocusco\", / \"syncedAt\": null, / \"note\": \"Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
-    },
-    {
-      "filePath": "src/pages/guides/[slug].astro",
-      "updatedAt": 1786310598971,
-      "lineCount": 133,
-      "charCount": 3367,
-      "hash": "db7f2ae66e4a",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
-    },
-    {
-      "filePath": "src/pages/guides/index.astro",
-      "updatedAt": 1786310548012,
-      "lineCount": 111,
-      "charCount": 2723,
-      "hash": "6a192779d530",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides } from \"../../data/site\"; / --- / <Base / title=\"Guides\" / description=\"Plain-language guides for ADHD planning, student study habits, and productiv..."
-    },
-    {
       "filePath": "src/pages/printables/[slug].astro",
-      "updatedAt": 1786309941487,
+      "updatedAt": 1786319565393,
       "lineCount": 365,
-      "charCount": 8904,
-      "hash": "1ccca702e68e",
+      "charCount": 8938,
+      "hash": "143cda39f4a6",
       "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (..."
     },
     {
-      "filePath": "src/pages/printables/index.astro",
-      "updatedAt": 1786309883537,
-      "lineCount": 107,
-      "charCount": 2557,
-      "hash": "11ec215e23d4",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables } from \"../../data/site\"; / --- / <Base / title=\"Free printables\" / description=\"Free, printable planning sheets for overwhelmed minds — brain d..."
+      "filePath": "src/pages/guides/[slug].astro",
+      "updatedAt": 1786319515003,
+      "lineCount": 133,
+      "charCount": 3401,
+      "hash": "8c17dea9f74b",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
+    },
+    {
+      "filePath": "src/components/MorningRoutine.tsx",
+      "updatedAt": 1786319466567,
+      "lineCount": 276,
+      "charCount": 7852,
+      "hash": "fa7188534064",
+      "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=mor..."
+    },
+    {
+      "filePath": "src/components/WeeklyReset.tsx",
+      "updatedAt": 1786319423098,
+      "lineCount": 247,
+      "charCount": 7018,
+      "hash": "6a287040489f",
+      "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=wee..."
+    },
+    {
+      "filePath": "src/components/BrainDump.tsx",
+      "updatedAt": 1786319388695,
+      "lineCount": 254,
+      "charCount": 6615,
+      "hash": "2b79eeadb893",
+      "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM per spec: utm_source=site&utm_medium=tool&utm_cam..."
+    },
+    {
+      "filePath": "src/pages/shop.astro",
+      "updatedAt": 1786319368717,
+      "lineCount": 251,
+      "charCount": 6183,
+      "hash": "f6d894cd78bb",
+      "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:..."
+    },
+    {
+      "filePath": "src/layouts/Base.astro",
+      "updatedAt": 1786319331484,
+      "lineCount": 171,
+      "charCount": 5686,
+      "hash": "a776dfd396d1",
+      "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
+    },
+    {
+      "filePath": "src/pages/index.astro",
+      "updatedAt": 1786319303695,
+      "lineCount": 114,
+      "charCount": 5110,
+      "hash": "7676942640c4",
+      "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 151: inserted 1 line.",
+      "recordedAt": "2026-08-09T23:52:45.393Z",
+      "recordedAtEpochMs": 1786319565393,
+      "before": {
+        "kind": "text",
+        "lineCount": 365,
+        "charCount": 8904,
+        "hash": "1ccca702e68e",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (...",
+        "updatedAt": 1786319565393
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 365,
+        "charCount": 8938,
+        "hash": "143cda39f4a6",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (...",
+        "updatedAt": 1786319565393
+      },
+      "diff": {
+        "lineStart": 151,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 151: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "data-analytics-event=\"etsy_click\""
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/guides/[slug].astro",
+      "toPath": "",
+      "summary": "Line 52: inserted 1 line.",
+      "recordedAt": "2026-08-09T23:51:55.003Z",
+      "recordedAtEpochMs": 1786319515003,
+      "before": {
+        "kind": "text",
+        "lineCount": 133,
+        "charCount": 3367,
+        "hash": "db7f2ae66e4a",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s...",
+        "updatedAt": 1786319515003
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 133,
+        "charCount": 3401,
+        "hash": "8c17dea9f74b",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s...",
+        "updatedAt": 1786319515003
+      },
+      "diff": {
+        "lineStart": 52,
+        "removedLines": 0,
+        "addedLines": 1,
+        "summary": "Line 52: inserted 1 line.",
+        "beforeFragment": "",
+        "afterFragment": "data-analytics-event=\"etsy_click\""
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/components/MorningRoutine.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 264 lines with 264 lines.",
+      "recordedAt": "2026-08-09T23:51:06.567Z",
+      "recordedAtEpochMs": 1786319466567,
+      "before": {
+        "kind": "text",
+        "lineCount": 276,
+        "charCount": 7816,
+        "hash": "1b23fc7eb687",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / \"https:/...",
+        "updatedAt": 1786319466567
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 276,
+        "charCount": 7852,
+        "hash": "fa7188534064",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=mor...",
+        "updatedAt": 1786319466567
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 264,
+        "addedLines": 264,
+        "summary": "Line 4: replaced 264 lines with 264 lines.",
+        "beforeFragment": "// Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / \"https://steadyfocusco.etsy.com?utm_source=site&utm_medium=tool&utm_campaig...",
+        "afterFragment": "import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = etsyLink({ medium: \"tool\", campaign..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/components/WeeklyReset.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 235 lines with 235 lines.",
+      "recordedAt": "2026-08-09T23:50:23.098Z",
+      "recordedAtEpochMs": 1786319423098,
+      "before": {
+        "kind": "text",
+        "lineCount": 247,
+        "charCount": 6982,
+        "hash": "fff64dcbf283",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=weekly-reset / const ETSY_CTA = / \"https://st...",
+        "updatedAt": 1786319423097
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 247,
+        "charCount": 7018,
+        "hash": "6a287040489f",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=wee...",
+        "updatedAt": 1786319423098
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 235,
+        "addedLines": 235,
+        "summary": "Line 4: replaced 235 lines with 235 lines.",
+        "beforeFragment": "// Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=weekly-reset / const ETSY_CTA = / \"https://steadyfocusco.etsy.com?utm_source=site&utm_medium=tool&utm_campaign=w...",
+        "afterFragment": "import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=weekly-reset / const ETSY_CTA = etsyLink({ medium: \"tool\", campaign: \"..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/components/BrainDump.tsx",
+      "toPath": "",
+      "summary": "Line 4: replaced 242 lines with 242 lines.",
+      "recordedAt": "2026-08-09T23:49:48.695Z",
+      "recordedAtEpochMs": 1786319388695,
+      "before": {
+        "kind": "text",
+        "lineCount": 254,
+        "charCount": 6579,
+        "hash": "fa5c3a7207a0",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM per spec: ?utm_source=site&utm_medium=tool&utm_campaign=brain-dump / const ETSY_CTA = / \"htt...",
+        "updatedAt": 1786319388695
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 254,
+        "charCount": 6615,
+        "hash": "2b79eeadb893",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM per spec: utm_source=site&utm_medium=tool&utm_cam...",
+        "updatedAt": 1786319388695
+      },
+      "diff": {
+        "lineStart": 4,
+        "removedLines": 242,
+        "addedLines": 242,
+        "summary": "Line 4: replaced 242 lines with 242 lines.",
+        "beforeFragment": "// Etsy CTA — UTM per spec: ?utm_source=site&utm_medium=tool&utm_campaign=brain-dump / const ETSY_CTA = / \"https://steadyfocusco.etsy.com?utm_source=site&utm_medium=tool&utm_cam...",
+        "afterFragment": "import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM per spec: utm_source=site&utm_medium=tool&utm_campaign=brain-dump / const ETSY_CTA = etsyLink({ medium: \"tool\", camp..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/shop.astro",
+      "toPath": "",
+      "summary": "Line 36: replaced 59 lines with 49 lines.",
+      "recordedAt": "2026-08-09T23:49:28.717Z",
+      "recordedAtEpochMs": 1786319368717,
+      "before": {
+        "kind": "text",
+        "lineCount": 261,
+        "charCount": 6536,
+        "hash": "f6d9d3f658e8",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:...",
+        "updatedAt": 1786319368717
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 251,
+        "charCount": 6183,
+        "hash": "f6d894cd78bb",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:...",
+        "updatedAt": 1786319368717
+      },
+      "diff": {
+        "lineStart": 36,
+        "removedLines": 59,
+        "addedLines": 49,
+        "summary": "Line 36: replaced 59 lines with 49 lines.",
+        "beforeFragment": "function trackClicks(e: React.MouseEvent<HTMLAnchorElement>) { / const el = e.currentTarget; / if (typeof (window as any).plausible === \"function\") { / (window as any).plausible...",
+        "afterFragment": "--- / <Base / title=\"Shop\" / description=\"Browse SteadyFocusCo's ADHD and student planning printables. Every purchase happens securely on Etsy — this page just shows what's in t..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/shop.astro",
+      "toPath": "",
+      "summary": "Line 35: replaced 48 lines with 60 lines.",
+      "recordedAt": "2026-08-09T23:49:08.062Z",
+      "recordedAtEpochMs": 1786319348062,
+      "before": {
+        "kind": "text",
+        "lineCount": 249,
+        "charCount": 6130,
+        "hash": "a4c1d17abe07",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:...",
+        "updatedAt": 1786319348062
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 261,
+        "charCount": 6536,
+        "hash": "f6d9d3f658e8",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:...",
+        "updatedAt": 1786319348062
+      },
+      "diff": {
+        "lineStart": 35,
+        "removedLines": 48,
+        "addedLines": 60,
+        "summary": "Line 35: replaced 48 lines with 60 lines.",
+        "beforeFragment": "--- / <Base / title=\"Shop\" / description=\"Browse SteadyFocusCo's ADHD and student planning printables. Every purchase happens securely on Etsy — this page just shows what's in t...",
+        "afterFragment": "function trackClicks(e: React.MouseEvent<HTMLAnchorElement>) { / const el = e.currentTarget; / if (typeof (window as any).plausible === \"function\") { / (window as any).plausible..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 92: replaced 1 line with 1 line.",
+      "recordedAt": "2026-08-09T23:48:51.484Z",
+      "recordedAtEpochMs": 1786319331484,
+      "before": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5600,
+        "hash": "2d5bc16a73fe",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786319331484
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5686,
+        "hash": "a776dfd396d1",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786319331484
+      },
+      "diff": {
+        "lineStart": 92,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 92: replaced 1 line with 1 line.",
+        "beforeFragment": "\" target=\"_blank\" rel=\"sponsored noopener",
+        "afterFragment": "?utm_source=site&utm_medium=footer&utm_campaign=site\" target=\"_blank\" rel=\"sponsored noopener\" data-analytics-event=\"etsy_click"
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/index.astro",
+      "toPath": "",
+      "summary": "Line 3: replaced 55 lines with 56 lines.",
+      "recordedAt": "2026-08-09T23:48:23.695Z",
+      "recordedAtEpochMs": 1786319303695,
+      "before": {
+        "kind": "text",
+        "lineCount": 113,
+        "charCount": 5011,
+        "hash": "0dbb2eb13c7e",
+        "preview": "--- / import Base from '../layouts/Base.astro'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-reset\" }, / { label: \"Get schoolwork done\",...",
+        "updatedAt": 1786319303694
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 114,
+        "charCount": 5110,
+        "hash": "7676942640c4",
+        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
+        "updatedAt": 1786319303695
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 55,
+        "addedLines": 56,
+        "summary": "Line 3: replaced 55 lines with 56 lines.",
+        "beforeFragment": "const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-reset\" }, / { label: \"Get schoolwork done\", href: \"/st...",
+        "afterFragment": "import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-reset\" }, /..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 58: replaced 8 lines with 8 lines.",
+      "recordedAt": "2026-08-09T23:38:02.086Z",
+      "recordedAtEpochMs": 1786318682086,
+      "before": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5600,
+        "hash": "b910ee82481d",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786318682086
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5600,
+        "hash": "2d5bc16a73fe",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786318682086
+      },
+      "diff": {
+        "lineStart": 58,
+        "removedLines": 8,
+        "addedLines": 8,
+        "summary": "Line 58: replaced 8 lines with 8 lines.",
+        "beforeFragment": "about\">About</a> / <a href=\"/tools\">Tools</a> / <a href=\"/adhd\">ADHD</a> / <a href=\"/students\">Students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/printables\">Fr...",
+        "afterFragment": "tools\">Tools</a> / <a href=\"/adhd\">ADHD</a> / <a href=\"/students\">Students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/printables\">Free printables</a> / <a href=\"..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 84: replaced 13 lines with 13 lines.",
+      "recordedAt": "2026-08-09T23:33:15.144Z",
+      "recordedAtEpochMs": 1786318395144,
+      "before": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5596,
+        "hash": "0152c3c7bf06",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786318395144
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5600,
+        "hash": "b910ee82481d",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786318395144
+      },
+      "diff": {
+        "lineStart": 84,
+        "removedLines": 13,
+        "addedLines": 13,
+        "summary": "Line 84: replaced 13 lines with 13 lines.",
+        "beforeFragment": "<div> / <h3>About</h3> / <a href=\"/about\">About SteadyFocusCo</a> / </div> / <div> / <h3>Free tools</h3> / <a href=\"/tools/brain-dump\">Brain dump tool</a> / <a href=\"/tools/week...",
+        "afterFragment": "<div> / <h3>Free tools</h3> / <a href=\"/tools/brain-dump\">Brain dump tool</a> / <a href=\"/tools/weekly-reset\">Weekly reset</a> / <a href=\"/printables\">All printables</a> / </div..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 79: replaced 5 lines with 8 lines.",
+      "recordedAt": "2026-08-09T23:32:57.203Z",
+      "recordedAtEpochMs": 1786318377203,
+      "before": {
+        "kind": "text",
+        "lineCount": 168,
+        "charCount": 5544,
+        "hash": "d3ebdd08b4d4",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786318377203
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5596,
+        "hash": "0152c3c7bf06",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786318377203
+      },
+      "diff": {
+        "lineStart": 79,
+        "removedLines": 5,
+        "addedLines": 8,
+        "summary": "Line 79: replaced 5 lines with 8 lines.",
+        "beforeFragment": "bout\">About</a> / <a href=\"/adhd\">ADHD planning</a> / <a href=\"/students\">For students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/guides\">Guides",
+        "afterFragment": "dhd\">ADHD planning</a> / <a href=\"/students\">For students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/guides\">Guides</a> / </div> / <div> / <h3>About</h3> / <a hr..."
+      }
+    },
     {
       "type": "save",
       "path": "src/layouts/Base.astro",
@@ -647,430 +1031,66 @@
         "beforeFragment": "shop\">Shop</a> / <a href=\"/printables\">Free printables</a> / </nav> / </header> / <main> / <slot /> / </main> / <footer class=\"site-footer\"> / <div class=\"footer-grid\"> / <div>...",
         "afterFragment": "printables\">Free printables</a> / <a href=\"/guides\">Guides</a> / <a href=\"/shop\">Shop</a> / </nav> / </header> / <main> / <slot /> / </main> / <footer class=\"site-footer\"> / <di..."
       }
-    },
-    {
-      "type": "save",
-      "path": "astro.config.mjs",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-08-09T23:12:44.953Z",
-      "recordedAtEpochMs": 1786317164953,
-      "before": {
-        "kind": "text",
-        "lineCount": 18,
-        "charCount": 560,
-        "hash": "66865e2d14b1",
-        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
-        "updatedAt": 1786317164953
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 18,
-        "charCount": 560,
-        "hash": "66865e2d14b1",
-        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
-        "updatedAt": 1786317164953
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "astro.config.mjs",
-      "toPath": "",
-      "summary": "Line 10: replaced 1 line with 1 line.",
-      "recordedAt": "2026-08-09T23:11:30.558Z",
-      "recordedAtEpochMs": 1786317090558,
-      "before": {
-        "kind": "text",
-        "lineCount": 17,
-        "charCount": 542,
-        "hash": "42d22fe6dc71",
-        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
-        "updatedAt": 1786317090558
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 17,
-        "charCount": 558,
-        "hash": "2255055001ac",
-        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
-        "updatedAt": 1786317090558
-      },
-      "diff": {
-        "lineStart": 10,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 10: replaced 1 line with 1 line.",
-        "beforeFragment": "com",
-        "afterFragment": "relaxin.workers.dev"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-08-09T23:07:51.429Z",
-      "recordedAtEpochMs": 1786316871429,
-      "before": {
-        "kind": "text",
-        "lineCount": 164,
-        "charCount": 5424,
-        "hash": "e3a4137688aa",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786316871429
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 164,
-        "charCount": 5424,
-        "hash": "e3a4137688aa",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786316871429
-      },
-      "diff": null
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Line 23: inserted 2 lines.",
-      "recordedAt": "2026-08-09T23:07:48.746Z",
-      "recordedAtEpochMs": 1786316868746,
-      "before": {
-        "kind": "text",
-        "lineCount": 163,
-        "charCount": 5327,
-        "hash": "3eefbe2eebf1",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786316868746
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 164,
-        "charCount": 5424,
-        "hash": "e3a4137688aa",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786316868746
-      },
-      "diff": {
-        "lineStart": 23,
-        "removedLines": 0,
-        "addedLines": 2,
-        "summary": "Line 23: inserted 2 lines.",
-        "beforeFragment": "",
-        "afterFragment": "name=\"google-site-verification\" content=\"QJ02ejQK4bJekfic7ioaURgpabVe2ZKv5xawxMWiic8\" /> / <meta"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Line 61: inserted 2 lines.",
-      "recordedAt": "2026-08-09T22:27:04.885Z",
-      "recordedAtEpochMs": 1786314424885,
-      "before": {
-        "kind": "text",
-        "lineCount": 162,
-        "charCount": 5299,
-        "hash": "55fe1049d438",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786314424885
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 163,
-        "charCount": 5327,
-        "hash": "3eefbe2eebf1",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786314424885
-      },
-      "diff": {
-        "lineStart": 61,
-        "removedLines": 0,
-        "addedLines": 2,
-        "summary": "Line 61: inserted 2 lines.",
-        "beforeFragment": "",
-        "afterFragment": "shop\">Shop</a> / <a href=\"/"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/data/products.json",
-      "toPath": "",
-      "summary": "Line 12: replaced 64 lines with 64 lines.",
-      "recordedAt": "2026-08-09T22:18:11.614Z",
-      "recordedAtEpochMs": 1786313891614,
-      "before": {
-        "kind": "text",
-        "lineCount": 80,
-        "charCount": 2852,
-        "hash": "210f5913e839",
-        "preview": "{ / \"source\": \"seed\", / \"shop\": \"steadyfocusco\", / \"syncedAt\": null, / \"note\": \"Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null...",
-        "updatedAt": 1786313891614
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 80,
-        "charCount": 3070,
-        "hash": "795c1c2e0e15",
-        "preview": "{ / \"source\": \"seed\", / \"shop\": \"steadyfocusco\", / \"syncedAt\": null, / \"note\": \"Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null...",
-        "updatedAt": 1786313891614
-      },
-      "diff": {
-        "lineStart": 12,
-        "removedLines": 64,
-        "addedLines": 64,
-        "summary": "Line 12: replaced 64 lines with 64 lines.",
-        "beforeFragment": "null, / \"url\": \"https://steadyfocusco.etsy.com\", / \"cluster\": \"students\" / }, / { / \"listing_id\": null, / \"title\": \"ADHD Brain Dump Printable (Homework Reset System)\", / \"price\"...",
-        "afterFragment": "\"/products/bundle.png\", / \"url\": \"https://steadyfocusco.etsy.com\", / \"cluster\": \"students\" / }, / { / \"listing_id\": null, / \"title\": \"ADHD Brain Dump Printable (Homework Reset S..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Line 51: replaced 78 lines with 83 lines.",
-      "recordedAt": "2026-08-09T22:17:48.237Z",
-      "recordedAtEpochMs": 1786313868237,
-      "before": {
-        "kind": "text",
-        "lineCount": 157,
-        "charCount": 5082,
-        "hash": "8500ecb91573",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786313868237
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 162,
-        "charCount": 5299,
-        "hash": "55fe1049d438",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786313868237
-      },
-      "diff": {
-        "lineStart": 51,
-        "removedLines": 78,
-        "addedLines": 83,
-        "summary": "Line 51: replaced 78 lines with 83 lines.",
-        "beforeFragment": "<header class=\"site-header\"> / <a href=\"/\" class=\"brand\">SteadyFocus<span>Co</span></a> / <nav> / <a href=\"/tools\">Tools</a> / <a href=\"/adhd\">ADHD</a> / <a href=\"/students\">Stu...",
-        "afterFragment": "<header class=\"site-header\"> / <a href=\"/\" class=\"brand\"> / <img src=\"/logo.png\" alt=\"SteadyFocusCo\" class=\"brand-logo\" /> / <span class=\"brand-text\">SteadyFocus<span>Co</span><..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/guides/[slug].astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 133 lines.",
-      "recordedAt": "2026-08-09T21:23:18.971Z",
-      "recordedAtEpochMs": 1786310598971,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786310598971
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 133,
-        "charCount": 3367,
-        "hash": "db7f2ae66e4a",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s...",
-        "updatedAt": 1786310598971
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 133,
-        "summary": "Line 1: inserted 133 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ param..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/guides/index.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 111 lines.",
-      "recordedAt": "2026-08-09T21:22:28.012Z",
-      "recordedAtEpochMs": 1786310548012,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786310548012
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 111,
-        "charCount": 2723,
-        "hash": "6a192779d530",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides } from \"../../data/site\"; / --- / <Base / title=\"Guides\" / description=\"Plain-language guides for ADHD planning, student study habits, and productiv...",
-        "updatedAt": 1786310548012
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 111,
-        "summary": "Line 1: inserted 111 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides } from \"../../data/site\"; / --- / <Base / title=\"Guides\" / description=\"Plain-language guides for ADHD plann..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/printables/[slug].astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 365 lines.",
-      "recordedAt": "2026-08-09T21:12:21.487Z",
-      "recordedAtEpochMs": 1786309941487,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309941486
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 365,
-        "charCount": 8904,
-        "hash": "1ccca702e68e",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (...",
-        "updatedAt": 1786309941487
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 365,
-        "summary": "Line 1: inserted 365 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPa..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/printables/index.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 107 lines.",
-      "recordedAt": "2026-08-09T21:11:23.537Z",
-      "recordedAtEpochMs": 1786309883537,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309883537
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 107,
-        "charCount": 2557,
-        "hash": "11ec215e23d4",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables } from \"../../data/site\"; / --- / <Base / title=\"Free printables\" / description=\"Free, printable planning sheets for overwhelmed minds — brain d...",
-        "updatedAt": 1786309883537
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 107,
-        "summary": "Line 1: inserted 107 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables } from \"../../data/site\"; / --- / <Base / title=\"Free printables\" / description=\"Free, printable plannin..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/shop.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 249 lines.",
-      "recordedAt": "2026-08-09T21:10:42.245Z",
-      "recordedAtEpochMs": 1786309842245,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309842245
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 249,
-        "charCount": 6130,
-        "hash": "a4c1d17abe07",
-        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:...",
-        "updatedAt": 1786309842245
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 249,
-        "summary": "Line 1: inserted 249 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "src/layouts/Base.astro",
-      "count": 7
+      "count": 10
     },
     {
-      "filePath": "astro.config.mjs",
+      "filePath": "src/pages/shop.astro",
       "count": 3
     },
     {
-      "filePath": "src/data/products.json",
+      "filePath": "astro.config.mjs",
       "count": 2
     },
     {
-      "filePath": ".env.example",
-      "count": 1
-    },
-    {
-      "filePath": ".gitignore",
-      "count": 1
-    },
-    {
-      "filePath": "package.json",
-      "count": 1
-    },
-    {
-      "filePath": "scripts/sync-etsy-products.js",
-      "count": 1
-    },
-    {
       "filePath": "src/components/BrainDump.tsx",
-      "count": 1
+      "count": 2
+    },
+    {
+      "filePath": "src/components/MorningRoutine.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "src/components/WeeklyReset.tsx",
+      "count": 2
+    },
+    {
+      "filePath": "src/pages/guides/[slug].astro",
+      "count": 2
+    },
+    {
+      "filePath": "src/pages/printables/[slug].astro",
+      "count": 2
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-10 c9aee4a add guides link to nav and footer",
-    "statusSummary": "4 modifieds, 1 untracked",
-    "changedFileCount": 5,
+    "headSummary": "2026-08-10 40b2edd reorder nav: put About last after Guides",
+    "statusSummary": "11 modifieds",
+    "changedFileCount": 11,
     "statusLines": [
       "M graphify-out/WORKSPACE_MEMORY.md",
+      "M src/components/BrainDump.tsx",
+      "M src/components/MorningRoutine.tsx",
+      "M src/components/WeeklyReset.tsx",
       "M src/layouts/Base.astro",
+      "M src/pages/guides/[slug].astro",
+      "M src/pages/index.astro",
+      "M src/pages/printables/[slug].astro",
+      "M src/pages/shop.astro",
       "M workspace.json",
-      "M workspacememory.md",
-      "?? src/pages/about.astro"
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- c9aee4a by Arslan Khan on 2026-08-09\n  add guides link to nav and footer\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
+    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 40b2edd by Arslan Khan on 2026-08-09\n  reorder nav: put About last after Guides\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
   },
   "graphify": {
     "reportAvailable": false,

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./tools.css";
 import { createWriter, today } from "./pdf";
+import { etsyLink } from "../data/site";
 
-// Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=weekly-reset
-const ETSY_CTA =
-  "https://steadyfocusco.etsy.com?utm_source=site&utm_medium=tool&utm_campaign=weekly-reset";
+// Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=weekly-reset
+const ETSY_CTA = etsyLink({ medium: "tool", campaign: "weekly-reset" });
 
 const DAYS = [
   "Monday",
@@ -235,7 +235,12 @@ export default function WeeklyReset() {
               The ADHD Weekly Planner gives you this same layout as a reusable
               printable — priorities up top, a calm day-by-day grid underneath.
             </p>
-            <a href={ETSY_CTA} target="_blank" rel="sponsored noopener">
+            <a
+              href={ETSY_CTA}
+              target="_blank"
+              rel="sponsored noopener"
+              data-analytics-event="etsy_click"
+            >
               Get the weekly planner on Etsy ↗
             </a>
           </div>

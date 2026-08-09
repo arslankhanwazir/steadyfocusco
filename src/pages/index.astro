@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { etsyLink } from '../data/site';
 
 const intents = [
 	{ label: "Clear my head", href: "/tools/brain-dump" },
@@ -54,7 +55,7 @@ const tools = [
 	<section class="shop-teaser">
 		<h2>Want a printable version?</h2>
 		<p>Every free tool has a matching printable in the SteadyFocusCo shop — designed to reuse, not just print once.</p>
-		<a class="shop-link" href="https://steadyfocusco.etsy.com" target="_blank" rel="sponsored noopener">Visit the shop ↗</a>
+		<a class="shop-link" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Visit the shop ↗</a>
 	</section>
 </Base>
 

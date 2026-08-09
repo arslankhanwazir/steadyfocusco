@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./tools.css";
 import { createWriter, today } from "./pdf";
+import { etsyLink } from "../data/site";
 
-// Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine
-const ETSY_CTA =
-  "https://steadyfocusco.etsy.com?utm_source=site&utm_medium=tool&utm_campaign=morning-routine";
+// Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=morning-routine
+const ETSY_CTA = etsyLink({ medium: "tool", campaign: "morning-routine" });
 
 interface StepRule {
   order: number;
@@ -264,7 +264,12 @@ export default function MorningRoutine() {
               version — stick it on the mirror or fridge so the sequence isn't
               something you have to remember.
             </p>
-            <a href={ETSY_CTA} target="_blank" rel="sponsored noopener">
+            <a
+              href={ETSY_CTA}
+              target="_blank"
+              rel="sponsored noopener"
+              data-analytics-event="etsy_click"
+            >
               Get the morning checklist on Etsy ↗
             </a>
           </div>

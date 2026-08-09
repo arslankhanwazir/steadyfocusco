@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./tools.css";
 import { createWriter, today } from "./pdf";
+import { etsyLink } from "../data/site";
 
-// Etsy CTA — UTM per spec: ?utm_source=site&utm_medium=tool&utm_campaign=brain-dump
-const ETSY_CTA =
-  "https://steadyfocusco.etsy.com?utm_source=site&utm_medium=tool&utm_campaign=brain-dump";
+// Etsy CTA — UTM per spec: utm_source=site&utm_medium=tool&utm_campaign=brain-dump
+const ETSY_CTA = etsyLink({ medium: "tool", campaign: "brain-dump" });
 
 type Bucket = "now" | "deadline" | "quick" | "later" | "unsure";
 
@@ -242,7 +242,12 @@ export default function BrainDump() {
               The ADHD Brain Dump printable turns this exact flow into a
               one-page sheet you can fill in by hand any time your head's full.
             </p>
-            <a href={ETSY_CTA} target="_blank" rel="sponsored noopener">
+            <a
+              href={ETSY_CTA}
+              target="_blank"
+              rel="sponsored noopener"
+              data-analytics-event="etsy_click"
+            >
               Get the printable on Etsy ↗
             </a>
           </div>

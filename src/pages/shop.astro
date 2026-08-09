@@ -32,6 +32,7 @@ function buyHref(p: Product): string {
     url: p.url || ETSY_SHOP_URL,
   });
 }
+
 ---
 
 <Base
@@ -80,6 +81,7 @@ function buyHref(p: Product): string {
                 href={buyHref(p)}
                 target="_blank"
                 rel="sponsored noopener"
+                data-analytics-event="etsy_click"
               >
                 Buy on Etsy ↗
               </a>
