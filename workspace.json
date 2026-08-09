@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T21:23:21.721Z",
-  "generatedAtEpochMs": 1786310601721,
+  "generatedAt": "2026-08-09T22:18:13.975Z",
+  "generatedAtEpochMs": 1786313893975,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "website",
     "root": "f:\\etsy\\website",
-    "activeFile": "src/pages/guides/[slug].astro",
+    "activeFile": "src/data/products.json",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "src/pages/guides/[slug].astro",
+      "src/data/products.json",
+      "src/layouts/Base.astro",
       ".env.example",
       ".gitignore",
       "astro.config.mjs",
       "package.json",
       "scripts/sync-etsy-products.js",
       "src/components/BrainDump.tsx",
-      "src/components/ClusterHub.astro",
-      "src/components/MorningRoutine.tsx",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "tsconfig.json"
     ],
     "stats": {
-      "totalFiles": 41,
+      "totalFiles": 52,
       "topLevelAreas": [
         {
           "name": "src",
@@ -44,15 +44,15 @@
         },
         {
           "name": "[root]",
+          "count": 13
+        },
+        {
+          "name": "public",
           "count": 11
         },
         {
           "name": ".astro",
           "count": 4
-        },
-        {
-          "name": "public",
-          "count": 2
         },
         {
           "name": "scripts",
@@ -63,6 +63,10 @@
         {
           "name": ".astro",
           "count": 16
+        },
+        {
+          "name": ".png",
+          "count": 8
         },
         {
           "name": ".json",
@@ -86,10 +90,6 @@
         },
         {
           "name": ".example",
-          "count": 1
-        },
-        {
-          "name": ".ico",
           "count": 1
         }
       ],
@@ -157,6 +157,12 @@
           "isKeyFile": false
         },
         {
+          "path": "New Text Document.txt",
+          "topLevelArea": "[root]",
+          "extension": ".txt",
+          "isKeyFile": false
+        },
+        {
           "path": "package-lock.json",
           "topLevelArea": "[root]",
           "extension": ".json",
@@ -178,6 +184,60 @@
           "path": "public/favicon.svg",
           "topLevelArea": "public",
           "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/logo.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/brain-dump-adults.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/brain-dump.jpg",
+          "topLevelArea": "public",
+          "extension": ".jpg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/bundle.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/executive-function.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/homework-tracker.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/morning-routine.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/study-planner.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/weekly-planner-adults.png",
+          "topLevelArea": "public",
+          "extension": ".png",
           "isKeyFile": false
         },
         {
@@ -347,6 +407,12 @@
           "topLevelArea": "[root]",
           "extension": ".md",
           "isKeyFile": false
+        },
+        {
+          "path": "wrangler.jsonc",
+          "topLevelArea": "[root]",
+          "extension": ".jsonc",
+          "isKeyFile": false
         }
       ]
     }
@@ -391,17 +457,33 @@
     "devDependencies": {}
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-09T21:23:18.971Z",
-    "trackedChangeCount": 27,
+    "lastActivityAt": "2026-08-09T22:18:11.614Z",
+    "trackedChangeCount": 29,
     "trackedFileSnapshotCount": 26,
     "changeTypeCounts": {
-      "save": 27,
+      "save": 29,
       "create": 0,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "src/data/products.json",
+      "updatedAt": 1786313891614,
+      "lineCount": 80,
+      "charCount": 3070,
+      "hash": "795c1c2e0e15",
+      "preview": "{ / \"source\": \"seed\", / \"shop\": \"steadyfocusco\", / \"syncedAt\": null, / \"note\": \"Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
+    },
+    {
+      "filePath": "src/layouts/Base.astro",
+      "updatedAt": 1786313868237,
+      "lineCount": 162,
+      "charCount": 5299,
+      "hash": "55fe1049d438",
+      "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
+    },
     {
       "filePath": "src/pages/guides/[slug].astro",
       "updatedAt": 1786310598971,
@@ -449,25 +531,73 @@
       "charCount": 947,
       "hash": "cec0171d7b52",
       "preview": "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro..."
-    },
-    {
-      "filePath": ".gitignore",
-      "updatedAt": 1786309749283,
-      "lineCount": 26,
-      "charCount": 260,
-      "hash": "fb459322e8f5",
-      "preview": "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log / .DS_Store / Thumbs.db / # edit..."
-    },
-    {
-      "filePath": "package.json",
-      "updatedAt": 1786309726715,
-      "lineCount": 26,
-      "charCount": 604,
-      "hash": "d903233fa0a5",
-      "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "src/data/products.json",
+      "toPath": "",
+      "summary": "Line 12: replaced 64 lines with 64 lines.",
+      "recordedAt": "2026-08-09T22:18:11.614Z",
+      "recordedAtEpochMs": 1786313891614,
+      "before": {
+        "kind": "text",
+        "lineCount": 80,
+        "charCount": 2852,
+        "hash": "210f5913e839",
+        "preview": "{ / \"source\": \"seed\", / \"shop\": \"steadyfocusco\", / \"syncedAt\": null, / \"note\": \"Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null...",
+        "updatedAt": 1786313891614
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 80,
+        "charCount": 3070,
+        "hash": "795c1c2e0e15",
+        "preview": "{ / \"source\": \"seed\", / \"shop\": \"steadyfocusco\", / \"syncedAt\": null, / \"note\": \"Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null...",
+        "updatedAt": 1786313891614
+      },
+      "diff": {
+        "lineStart": 12,
+        "removedLines": 64,
+        "addedLines": 64,
+        "summary": "Line 12: replaced 64 lines with 64 lines.",
+        "beforeFragment": "null, / \"url\": \"https://steadyfocusco.etsy.com\", / \"cluster\": \"students\" / }, / { / \"listing_id\": null, / \"title\": \"ADHD Brain Dump Printable (Homework Reset System)\", / \"price\"...",
+        "afterFragment": "\"/products/bundle.png\", / \"url\": \"https://steadyfocusco.etsy.com\", / \"cluster\": \"students\" / }, / { / \"listing_id\": null, / \"title\": \"ADHD Brain Dump Printable (Homework Reset S..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 51: replaced 78 lines with 83 lines.",
+      "recordedAt": "2026-08-09T22:17:48.237Z",
+      "recordedAtEpochMs": 1786313868237,
+      "before": {
+        "kind": "text",
+        "lineCount": 157,
+        "charCount": 5082,
+        "hash": "8500ecb91573",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786313868237
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 162,
+        "charCount": 5299,
+        "hash": "55fe1049d438",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786313868237
+      },
+      "diff": {
+        "lineStart": 51,
+        "removedLines": 78,
+        "addedLines": 83,
+        "summary": "Line 51: replaced 78 lines with 83 lines.",
+        "beforeFragment": "<header class=\"site-header\"> / <a href=\"/\" class=\"brand\">SteadyFocus<span>Co</span></a> / <nav> / <a href=\"/tools\">Tools</a> / <a href=\"/adhd\">ADHD</a> / <a href=\"/students\">Stu...",
+        "afterFragment": "<header class=\"site-header\"> / <a href=\"/\" class=\"brand\"> / <img src=\"/logo.png\" alt=\"SteadyFocusCo\" class=\"brand-logo\" /> / <span class=\"brand-text\">SteadyFocus<span>Co</span><..."
+      }
+    },
     {
       "type": "save",
       "path": "src/pages/guides/[slug].astro",
@@ -876,66 +1006,17 @@
         "beforeFragment": "",
         "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- /..."
       }
-    },
-    {
-      "type": "save",
-      "path": "src/components/ToolShell.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 125 lines.",
-      "recordedAt": "2026-08-09T21:05:03.419Z",
-      "recordedAtEpochMs": 1786309503419,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309503419
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 125,
-        "charCount": 2784,
-        "hash": "f2e1b2818b72",
-        "preview": "--- / import { / toolBySlug, / guides, / printables, / type Tool, / } from \"../data/site\"; / interface Props { / slug: string; / } / const { slug } = Astro.props; / const tool = toolBySlug(slug) as Tool; / // Find sup...",
-        "updatedAt": 1786309503419
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 125,
-        "summary": "Line 1: inserted 125 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import { / toolBySlug, / guides, / printables, / type Tool, / } from \"../data/site\"; / interface Props { / slug: string; / } / const { slug } = Astro.props; / const tool =..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/components/MorningRoutine.tsx",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-08-09T21:04:26.961Z",
-      "recordedAtEpochMs": 1786309466961,
-      "before": {
-        "kind": "text",
-        "lineCount": 276,
-        "charCount": 7816,
-        "hash": "1b23fc7eb687",
-        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / \"https:/...",
-        "updatedAt": 1786309466961
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 276,
-        "charCount": 7816,
-        "hash": "1b23fc7eb687",
-        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / \"https:/...",
-        "updatedAt": 1786309466961
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
+    {
+      "filePath": "src/data/products.json",
+      "count": 2
+    },
+    {
+      "filePath": "src/layouts/Base.astro",
+      "count": 2
+    },
     {
       "filePath": ".env.example",
       "count": 1
@@ -959,28 +1040,29 @@
     {
       "filePath": "src/components/BrainDump.tsx",
       "count": 1
-    },
-    {
-      "filePath": "src/components/ClusterHub.astro",
-      "count": 1
-    },
-    {
-      "filePath": "src/components/MorningRoutine.tsx",
-      "count": 1
     }
   ],
   "git": {
-    "available": false,
-    "branch": "",
-    "headSummary": "",
-    "statusSummary": "",
-    "changedFileCount": 0,
-    "statusLines": [],
-    "error": "fatal: not a git repository (or any of the parent directories): .git"
+    "available": true,
+    "branch": "main",
+    "headSummary": "2026-08-10 e5e274c fix wrangler assets config",
+    "statusSummary": "5 modifieds, 3 untrackeds",
+    "changedFileCount": 8,
+    "statusLines": [
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M src/data/products.json",
+      "M src/layouts/Base.astro",
+      "M workspace.json",
+      "M workspacememory.md",
+      "?? \"New Text Document.txt\"",
+      "?? public/logo.png",
+      "?? public/products/"
+    ],
+    "error": ""
   },
   "github": {
-    "available": false,
-    "summary": "Could not determine the GitHub repository from origin remote: fatal: not a git repository (or any of the parent directories): .git"
+    "available": true,
+    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- e5e274c by Arslan Khan on 2026-08-09\n  fix wrangler assets config\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
   },
   "graphify": {
     "reportAvailable": false,

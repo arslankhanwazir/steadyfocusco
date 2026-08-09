@@ -9,7 +9,7 @@
             "title": "ADHD Student Planner Bundle",
             "price": "9.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/bundle.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "students"
         },
@@ -18,7 +18,7 @@
             "title": "ADHD Brain Dump Printable (Homework Reset System)",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/homework-tracker.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "adhd"
         },
@@ -27,7 +27,7 @@
             "title": "ADHD Homework Tracker Printable",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/homework-tracker.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "students"
         },
@@ -36,7 +36,7 @@
             "title": "ADHD Study Planner PDF",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/study-planner.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "students"
         },
@@ -45,7 +45,7 @@
             "title": "Executive Function Planner PDF",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/executive-function.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "productivity"
         },
@@ -54,7 +54,7 @@
             "title": "ADHD Weekly Planner for Adults",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/weekly-planner-adults.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "productivity"
         },
@@ -63,7 +63,7 @@
             "title": "ADHD Brain Dump Printable for Adults",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/brain-dump-adults.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "adhd"
         },
@@ -72,7 +72,7 @@
             "title": "ADHD Morning Routine Checklist for Adults",
             "price": "3.99",
             "currency_code": "USD",
-            "image": null,
+            "image": "/products/morning-routine.png",
             "url": "https://steadyfocusco.etsy.com",
             "cluster": "adhd"
         }

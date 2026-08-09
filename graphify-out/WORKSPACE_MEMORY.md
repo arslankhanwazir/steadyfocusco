@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-09T21:23:21.721Z
+Generated: 2026-08-09T22:18:13.975Z
 Workspace: website
 Workspace root: f:\etsy\website
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-09T21:23:18.971Z
+- Last activity: 2026-08-09T22:18:11.614Z
 ## Workspace Focus
-- Active file in focus: src/pages/guides/[slug].astro
-- Hottest files right now: .env.example (1), .gitignore (1), astro.config.mjs (1), package.json (1)
-- Suggested starting points: src/pages/guides/[slug].astro, .env.example, .gitignore, astro.config.mjs, package.json, scripts/sync-etsy-products.js
+- Active file in focus: src/data/products.json
+- Hottest files right now: src/data/products.json (2), src/layouts/Base.astro (2), .env.example (1), .gitignore (1)
+- Suggested starting points: src/data/products.json, src/layouts/Base.astro, .env.example, .gitignore, astro.config.mjs, package.json
 ## Current Workspace
-- Active file: src/pages/guides/[slug].astro
-- Tracked files in snapshot: 41
-- Top-level areas: src (23), [root] (11), .astro (4), public (2), scripts (1)
-- Primary file types: .astro (16), .json (6), .md (4), .ts (4), .tsx (3), .css (1), .example (1), .ico (1)
+- Active file: src/data/products.json
+- Tracked files in snapshot: 52
+- Top-level areas: src (23), [root] (13), public (11), .astro (4), scripts (1)
+- Primary file types: .astro (16), .png (8), .json (6), .md (4), .ts (4), .tsx (3), .css (1), .example (1)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: steadyfocusco v0.0.1
@@ -34,11 +34,17 @@ Structured manifest: workspace.json
 - Runtime dependencies: @astrojs/react, @astrojs/sitemap, @types/react, @types/react-dom, astro, jspdf, react, react-dom
 - Dev dependencies: none declared
 ## Current Stack
-- Logged change events: 27
-- Change mix: save (27)
+- Logged change events: 29
+- Change mix: save (29)
 - Remembered file snapshots: 26
-- Working tree summary: fatal: not a git repository (or any of the parent directories): .git
+- Working tree summary: 5 modifieds, 3 untrackeds
 ## Tracked Snapshots
+- src/data/products.json | 80 lines | 3070 chars | hash 795c1c2e0e15
+  Last snapshot: 2026-08-09T22:18:11.614Z
+  Preview: "{ / "source": "seed", / "shop": "steadyfocusco", / "syncedAt": null, / "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
+- src/layouts/Base.astro | 162 lines | 5299 chars | hash 55fe1049d438
+  Last snapshot: 2026-08-09T22:17:48.237Z
+  Preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
 - src/pages/guides/[slug].astro | 133 lines | 3367 chars | hash db7f2ae66e4a
   Last snapshot: 2026-08-09T21:23:18.971Z
   Preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
@@ -57,14 +63,22 @@ Structured manifest: workspace.json
 - .env.example | 25 lines | 947 chars | hash cec0171d7b52
   Last snapshot: 2026-08-09T21:09:33.848Z
   Preview: "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro..."
-- .gitignore | 26 lines | 260 chars | hash fb459322e8f5
-  Last snapshot: 2026-08-09T21:09:09.283Z
-  Preview: "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log / .DS_Store / Thumbs.db / # edit..."
-- package.json | 26 lines | 604 chars | hash d903233fa0a5
-  Last snapshot: 2026-08-09T21:08:46.715Z
-  Preview: "{ / "name": "steadyfocusco", / "type": "module", / "version": "0.0.1", / "engines": { / "node": ">=22.12.0" / }, / "scripts": { / "dev": "astro dev", / "sync:etsy": "node scripts/sync-etsy-products.js", / "prebuild":..."
 
 ## Recent Changes
+### 2026-08-09T22:18:11.614Z | saved | src/data/products.json
+- Summary: Line 12: replaced 64 lines with 64 lines.
+- Before: 80 lines | 2,852 chars | hash 210f5913e839 | preview: "{ / "source": "seed", / "shop": "steadyfocusco", / "syncedAt": null, / "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
+- After: 80 lines | 3,070 chars | hash 795c1c2e0e15 | preview: "{ / "source": "seed", / "shop": "steadyfocusco", / "syncedAt": null, / "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
+- Previous fragment: "null, / "url": "https://steadyfocusco.etsy.com", / "cluster": "students" / }, / { / "listing_id": null, / "title": "ADHD Brain Dump Printable (Homework Reset System)", / "price"..."
+- Current fragment: ""/products/bundle.png", / "url": "https://steadyfocusco.etsy.com", / "cluster": "students" / }, / { / "listing_id": null, / "title": "ADHD Brain Dump Printable (Homework Reset S..."
+
+### 2026-08-09T22:17:48.237Z | saved | src/layouts/Base.astro
+- Summary: Line 51: replaced 78 lines with 83 lines.
+- Before: 157 lines | 5,082 chars | hash 8500ecb91573 | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- After: 162 lines | 5,299 chars | hash 55fe1049d438 | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- Previous fragment: "<header class="site-header"> / <a href="/" class="brand">SteadyFocus<span>Co</span></a> / <nav> / <a href="/tools">Tools</a> / <a href="/adhd">ADHD</a> / <a href="/students">Stu..."
+- Current fragment: "<header class="site-header"> / <a href="/" class="brand"> / <img src="/logo.png" alt="SteadyFocusCo" class="brand-logo" /> / <span class="brand-text">SteadyFocus<span>Co</span><..."
+
 ### 2026-08-09T21:23:18.971Z | saved | src/pages/guides/[slug].astro
 - Summary: Line 1: inserted 133 lines.
 - Before: 0 lines | 0 chars | hash empty
@@ -143,33 +157,40 @@ Structured manifest: workspace.json
 - After: 15 lines | 469 chars | hash 103bc4443951 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / --- / <Base / title="Brain Dump tool" / descri..."
 - Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / --- /..."
 
-### 2026-08-09T21:05:03.419Z | saved | src/components/ToolShell.astro
-- Summary: Line 1: inserted 125 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 125 lines | 2,784 chars | hash f2e1b2818b72 | preview: "--- / import { / toolBySlug, / guides, / printables, / type Tool, / } from "../data/site"; / interface Props { / slug: string; / } / const { slug } = Astro.props; / const tool = toolBySlug(slug) as Tool; / // Find sup..."
-- Current fragment: "--- / import { / toolBySlug, / guides, / printables, / type Tool, / } from "../data/site"; / interface Props { / slug: string; / } / const { slug } = Astro.props; / const tool =..."
-
-### 2026-08-09T21:04:26.961Z | saved | src/components/MorningRoutine.tsx
-- Summary: Saved without a textual diff.
-- Before: 276 lines | 7,816 chars | hash 1b23fc7eb687 | preview: "import { useState } from "react"; / import "./tools.css"; / import { createWriter, today } from "./pdf"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / "https:/..."
-- After: 276 lines | 7,816 chars | hash 1b23fc7eb687 | preview: "import { useState } from "react"; / import "./tools.css"; / import { createWriter, today } from "./pdf"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / "https:/..."
-
 
 ## Hot Files
+- src/data/products.json (2 tracked changes)
+- src/layouts/Base.astro (2 tracked changes)
 - .env.example (1 tracked changes)
 - .gitignore (1 tracked changes)
 - astro.config.mjs (1 tracked changes)
 - package.json (1 tracked changes)
 - scripts/sync-etsy-products.js (1 tracked changes)
 - src/components/BrainDump.tsx (1 tracked changes)
-- src/components/ClusterHub.astro (1 tracked changes)
-- src/components/MorningRoutine.tsx (1 tracked changes)
 
 ## Git Snapshot
-- fatal: not a git repository (or any of the parent directories): .git
+- Branch: main
+- HEAD: 2026-08-10 e5e274c fix wrangler assets config
+- Working tree summary: 5 modifieds, 3 untrackeds
+- M graphify-out/WORKSPACE_MEMORY.md
+- M src/data/products.json
+- M src/layouts/Base.astro
+- M workspace.json
+- M workspacememory.md
+- ?? "New Text Document.txt"
+- ?? public/logo.png
+- ?? public/products/
 
 ## GitHub Snapshot
-GitHub context unavailable: Could not determine the GitHub repository from origin remote: fatal: not a git repository (or any of the parent directories): .git
+GitHub Repository: arslankhanwazir/steadyfocusco
+Visibility: public | Default branch: main
+Stars: 0 | Forks: 0 | Open issues: 0
+
+Latest commit on main:
+- e5e274c by Arslan Khan on 2026-08-09
+  fix wrangler assets config
+
+URL: https://github.com/arslankhanwazir/steadyfocusco
 
 ## Graphify Snapshot
 Graphify report not found. Generate Graphify output if you want architecture-aware memory excerpts here.

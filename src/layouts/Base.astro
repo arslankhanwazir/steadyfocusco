@@ -48,16 +48,19 @@ const ogImage = new URL(image, Astro.site);
 	</head>
 
 	<body>
-		<header class="site-header">
-			<a href="/" class="brand">SteadyFocus<span>Co</span></a>
-			<nav>
-				<a href="/tools">Tools</a>
-				<a href="/adhd">ADHD</a>
-				<a href="/students">Students</a>
-				<a href="/productivity">Productivity</a>
-				<a href="/printables">Free printables</a>
-			</nav>
-		</header>
+	<header class="site-header">
+		<a href="/" class="brand">
+			<img src="/logo.png" alt="SteadyFocusCo" class="brand-logo" />
+			<span class="brand-text">SteadyFocus<span>Co</span></span>
+		</a>
+		<nav>
+			<a href="/tools">Tools</a>
+			<a href="/adhd">ADHD</a>
+			<a href="/students">Students</a>
+			<a href="/productivity">Productivity</a>
+			<a href="/printables">Free printables</a>
+		</nav>
+	</header>
 		<main>
 			<slot />
 		</main>
@@ -90,12 +93,13 @@ const ogImage = new URL(image, Astro.site);
 
 <style is:global>
 	:root {
-		--bg: #F7F5F0;
+		--bg: #FAF7F2;
 		--ink: #2B2E28;
 		--ink-soft: #5C6259;
-		--primary: #4A6552;
-		--primary-dark: #37493D;
-		--accent: #5B7FA6;
+		--primary: #3F5245;
+		--primary-dark: #2A3830;
+		--accent: #5B3A8E;
+		--accent-light: #7B5EA8;
 		--card: #FFFFFF;
 		--border: #E3DFD3;
 		--display: 'Fraunces', Georgia, serif;
@@ -125,7 +129,8 @@ const ogImage = new URL(image, Astro.site);
 		margin: 0 auto;
 		padding: 1.5rem 1.5rem 1rem;
 	}
-	.brand { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+	.brand { display: flex; align-items: center; gap: 0.5rem; font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+	.brand-logo { height: 2.5rem; width: auto; }
 	.brand span { color: var(--primary); }
 	.site-header nav { display: flex; gap: 1.5rem; }
 	.site-header nav a { color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
