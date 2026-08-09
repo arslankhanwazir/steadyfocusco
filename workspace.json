@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T23:07:54.575Z",
-  "generatedAtEpochMs": 1786316874575,
+  "generatedAt": "2026-08-09T23:11:33.005Z",
+  "generatedAtEpochMs": 1786317093005,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "website",
     "root": "f:\\etsy\\website",
-    "activeFile": "src/layouts/Base.astro",
+    "activeFile": "astro.config.mjs",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,11 +22,11 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
+      "astro.config.mjs",
       "src/layouts/Base.astro",
       "src/data/products.json",
       ".env.example",
       ".gitignore",
-      "astro.config.mjs",
       "package.json",
       "scripts/sync-etsy-products.js",
       "src/components/BrainDump.tsx",
@@ -469,17 +469,25 @@
     "devDependencies": {}
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-09T23:07:51.429Z",
-    "trackedChangeCount": 32,
+    "lastActivityAt": "2026-08-09T23:11:30.558Z",
+    "trackedChangeCount": 33,
     "trackedFileSnapshotCount": 26,
     "changeTypeCounts": {
-      "save": 32,
+      "save": 33,
       "create": 0,
       "delete": 0,
       "rename": 0
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": "astro.config.mjs",
+      "updatedAt": 1786317090558,
+      "lineCount": 17,
+      "charCount": 558,
+      "hash": "2255055001ac",
+      "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
+    },
     {
       "filePath": "src/layouts/Base.astro",
       "updatedAt": 1786316871429,
@@ -535,17 +543,41 @@
       "charCount": 6130,
       "hash": "a4c1d17abe07",
       "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:..."
-    },
-    {
-      "filePath": ".env.example",
-      "updatedAt": 1786309773848,
-      "lineCount": 25,
-      "charCount": 947,
-      "hash": "cec0171d7b52",
-      "preview": "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "astro.config.mjs",
+      "toPath": "",
+      "summary": "Line 10: replaced 1 line with 1 line.",
+      "recordedAt": "2026-08-09T23:11:30.558Z",
+      "recordedAtEpochMs": 1786317090558,
+      "before": {
+        "kind": "text",
+        "lineCount": 17,
+        "charCount": 542,
+        "hash": "42d22fe6dc71",
+        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
+        "updatedAt": 1786317090558
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 17,
+        "charCount": 558,
+        "hash": "2255055001ac",
+        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
+        "updatedAt": 1786317090558
+      },
+      "diff": {
+        "lineStart": 10,
+        "removedLines": 1,
+        "addedLines": 1,
+        "summary": "Line 10: replaced 1 line with 1 line.",
+        "beforeFragment": "com",
+        "afterFragment": "relaxin.workers.dev"
+      }
+    },
     {
       "type": "save",
       "path": "src/layouts/Base.astro",
@@ -986,37 +1018,16 @@
         "beforeFragment": "",
         "afterFragment": "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches..."
       }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/tools/index.astro",
-      "toPath": "",
-      "summary": "Saved without a textual diff.",
-      "recordedAt": "2026-08-09T21:06:48.173Z",
-      "recordedAtEpochMs": 1786309608173,
-      "before": {
-        "kind": "text",
-        "lineCount": 129,
-        "charCount": 3003,
-        "hash": "ff2ac0542d08",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { tools } from \"../../data/site\"; / const live = tools.filter((t) => t.status === \"live\"); / const planned = tools.filter((t) => t.status === \"planned\"); / -...",
-        "updatedAt": 1786309608173
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 129,
-        "charCount": 3003,
-        "hash": "ff2ac0542d08",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { tools } from \"../../data/site\"; / const live = tools.filter((t) => t.status === \"live\"); / const planned = tools.filter((t) => t.status === \"planned\"); / -...",
-        "updatedAt": 1786309608173
-      },
-      "diff": null
     }
   ],
   "hotFiles": [
     {
       "filePath": "src/layouts/Base.astro",
       "count": 5
+    },
+    {
+      "filePath": "astro.config.mjs",
+      "count": 2
     },
     {
       "filePath": "src/data/products.json",
@@ -1028,10 +1039,6 @@
     },
     {
       "filePath": ".gitignore",
-      "count": 1
-    },
-    {
-      "filePath": "astro.config.mjs",
       "count": 1
     },
     {
@@ -1050,14 +1057,11 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-10 edfb3c5 run live etsy product sync",
-    "statusSummary": "4 modifieds",
-    "changedFileCount": 4,
+    "headSummary": "2026-08-10 6caf50b add google search console verification tag",
+    "statusSummary": "1 modified",
+    "changedFileCount": 1,
     "statusLines": [
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M src/layouts/Base.astro",
-      "M workspace.json",
-      "M workspacememory.md"
+      "M astro.config.mjs"
     ],
     "error": ""
   },
