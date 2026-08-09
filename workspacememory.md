@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-09T22:18:13.975Z
+Generated: 2026-08-09T22:27:09.399Z
 Workspace: website
 Workspace root: f:\etsy\website
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-09T22:18:11.614Z
+- Last activity: 2026-08-09T22:27:04.885Z
 ## Workspace Focus
-- Active file in focus: src/data/products.json
-- Hottest files right now: src/data/products.json (2), src/layouts/Base.astro (2), .env.example (1), .gitignore (1)
-- Suggested starting points: src/data/products.json, src/layouts/Base.astro, .env.example, .gitignore, astro.config.mjs, package.json
+- Active file in focus: src/layouts/Base.astro
+- Hottest files right now: src/layouts/Base.astro (3), src/data/products.json (2), .env.example (1), .gitignore (1)
+- Suggested starting points: src/layouts/Base.astro, src/data/products.json, .env.example, .gitignore, astro.config.mjs, package.json
 ## Current Workspace
-- Active file: src/data/products.json
+- Active file: src/layouts/Base.astro
 - Tracked files in snapshot: 52
 - Top-level areas: src (23), [root] (13), public (11), .astro (4), scripts (1)
 - Primary file types: .astro (16), .png (8), .json (6), .md (4), .ts (4), .tsx (3), .css (1), .example (1)
@@ -34,17 +34,17 @@ Structured manifest: workspace.json
 - Runtime dependencies: @astrojs/react, @astrojs/sitemap, @types/react, @types/react-dom, astro, jspdf, react, react-dom
 - Dev dependencies: none declared
 ## Current Stack
-- Logged change events: 29
-- Change mix: save (29)
+- Logged change events: 30
+- Change mix: save (30)
 - Remembered file snapshots: 26
-- Working tree summary: 5 modifieds, 3 untrackeds
+- Working tree summary: 1 modified
 ## Tracked Snapshots
+- src/layouts/Base.astro | 163 lines | 5327 chars | hash 3eefbe2eebf1
+  Last snapshot: 2026-08-09T22:27:04.885Z
+  Preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
 - src/data/products.json | 80 lines | 3070 chars | hash 795c1c2e0e15
   Last snapshot: 2026-08-09T22:18:11.614Z
   Preview: "{ / "source": "seed", / "shop": "steadyfocusco", / "syncedAt": null, / "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
-- src/layouts/Base.astro | 162 lines | 5299 chars | hash 55fe1049d438
-  Last snapshot: 2026-08-09T22:17:48.237Z
-  Preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
 - src/pages/guides/[slug].astro | 133 lines | 3367 chars | hash db7f2ae66e4a
   Last snapshot: 2026-08-09T21:23:18.971Z
   Preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
@@ -65,6 +65,12 @@ Structured manifest: workspace.json
   Preview: "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro..."
 
 ## Recent Changes
+### 2026-08-09T22:27:04.885Z | saved | src/layouts/Base.astro
+- Summary: Line 61: inserted 2 lines.
+- Before: 162 lines | 5,299 chars | hash 55fe1049d438 | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- After: 163 lines | 5,327 chars | hash 3eefbe2eebf1 | preview: "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = "Planning and organization for overwhelmed minds.", / image = "/og-default..."
+- Current fragment: "shop">Shop</a> / <a href="/"
+
 ### 2026-08-09T22:18:11.614Z | saved | src/data/products.json
 - Summary: Line 12: replaced 64 lines with 64 lines.
 - Before: 80 lines | 2,852 chars | hash 210f5913e839 | preview: "{ / "source": "seed", / "shop": "steadyfocusco", / "syncedAt": null, / "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null..."
@@ -151,16 +157,10 @@ Structured manifest: workspace.json
 - After: 15 lines | 474 chars | hash e589a5cabbf2 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / --- / <Base / title="Weekly Reset tool" /..."
 - Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / --..."
 
-### 2026-08-09T21:05:27.983Z | saved | src/pages/tools/brain-dump.astro
-- Summary: Line 1: inserted 15 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 15 lines | 469 chars | hash 103bc4443951 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / --- / <Base / title="Brain Dump tool" / descri..."
-- Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / --- /..."
-
 
 ## Hot Files
+- src/layouts/Base.astro (3 tracked changes)
 - src/data/products.json (2 tracked changes)
-- src/layouts/Base.astro (2 tracked changes)
 - .env.example (1 tracked changes)
 - .gitignore (1 tracked changes)
 - astro.config.mjs (1 tracked changes)
@@ -170,16 +170,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-08-10 e5e274c fix wrangler assets config
-- Working tree summary: 5 modifieds, 3 untrackeds
-- M graphify-out/WORKSPACE_MEMORY.md
-- M src/data/products.json
+- HEAD: 2026-08-10 a2efafa brand colors, logo, real product images
+- Working tree summary: 1 modified
 - M src/layouts/Base.astro
-- M workspace.json
-- M workspacememory.md
-- ?? "New Text Document.txt"
-- ?? public/logo.png
-- ?? public/products/
 
 ## GitHub Snapshot
 GitHub Repository: arslankhanwazir/steadyfocusco
@@ -187,8 +180,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- e5e274c by Arslan Khan on 2026-08-09
-  fix wrangler assets config
+- a2efafa by Arslan Khan on 2026-08-09
+  brand colors, logo, real product images
 
 URL: https://github.com/arslankhanwazir/steadyfocusco
 
