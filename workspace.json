@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T22:27:09.399Z",
-  "generatedAtEpochMs": 1786314429399,
+  "generatedAt": "2026-08-09T23:07:54.575Z",
+  "generatedAtEpochMs": 1786316874575,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -36,7 +36,7 @@
       "tsconfig.json"
     ],
     "stats": {
-      "totalFiles": 52,
+      "totalFiles": 54,
       "topLevelAreas": [
         {
           "name": "src",
@@ -44,11 +44,11 @@
         },
         {
           "name": "[root]",
-          "count": 13
+          "count": 14
         },
         {
           "name": "public",
-          "count": 11
+          "count": 12
         },
         {
           "name": ".astro",
@@ -66,7 +66,7 @@
         },
         {
           "name": ".png",
-          "count": 8
+          "count": 9
         },
         {
           "name": ".json",
@@ -85,11 +85,11 @@
           "count": 3
         },
         {
-          "name": ".css",
-          "count": 1
+          "name": "[no extension]",
+          "count": 2
         },
         {
-          "name": ".example",
+          "name": ".css",
           "count": 1
         }
       ],
@@ -124,6 +124,12 @@
           "path": ".astro/types.d.ts",
           "topLevelArea": ".astro",
           "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": ".env",
+          "topLevelArea": "[root]",
+          "extension": "[no extension]",
           "isKeyFile": false
         },
         {
@@ -202,6 +208,12 @@
           "path": "public/products/brain-dump.jpg",
           "topLevelArea": "public",
           "extension": ".jpg",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/brain-dump.png",
+          "topLevelArea": "public",
+          "extension": ".png",
           "isKeyFile": false
         },
         {
@@ -457,11 +469,11 @@
     "devDependencies": {}
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-09T22:27:04.885Z",
-    "trackedChangeCount": 30,
+    "lastActivityAt": "2026-08-09T23:07:51.429Z",
+    "trackedChangeCount": 32,
     "trackedFileSnapshotCount": 26,
     "changeTypeCounts": {
-      "save": 30,
+      "save": 32,
       "create": 0,
       "delete": 0,
       "rename": 0
@@ -470,10 +482,10 @@
   "trackedSnapshots": [
     {
       "filePath": "src/layouts/Base.astro",
-      "updatedAt": 1786314424885,
-      "lineCount": 163,
-      "charCount": 5327,
-      "hash": "3eefbe2eebf1",
+      "updatedAt": 1786316871429,
+      "lineCount": 164,
+      "charCount": 5424,
+      "hash": "e3a4137688aa",
       "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
     },
     {
@@ -534,6 +546,63 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-08-09T23:07:51.429Z",
+      "recordedAtEpochMs": 1786316871429,
+      "before": {
+        "kind": "text",
+        "lineCount": 164,
+        "charCount": 5424,
+        "hash": "e3a4137688aa",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786316871429
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 164,
+        "charCount": 5424,
+        "hash": "e3a4137688aa",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786316871429
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 23: inserted 2 lines.",
+      "recordedAt": "2026-08-09T23:07:48.746Z",
+      "recordedAtEpochMs": 1786316868746,
+      "before": {
+        "kind": "text",
+        "lineCount": 163,
+        "charCount": 5327,
+        "hash": "3eefbe2eebf1",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786316868746
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 164,
+        "charCount": 5424,
+        "hash": "e3a4137688aa",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786316868746
+      },
+      "diff": {
+        "lineStart": 23,
+        "removedLines": 0,
+        "addedLines": 2,
+        "summary": "Line 23: inserted 2 lines.",
+        "beforeFragment": "",
+        "afterFragment": "name=\"google-site-verification\" content=\"QJ02ejQK4bJekfic7ioaURgpabVe2ZKv5xawxMWiic8\" /> / <meta"
+      }
+    },
     {
       "type": "save",
       "path": "src/layouts/Base.astro",
@@ -942,76 +1011,12 @@
         "updatedAt": 1786309608173
       },
       "diff": null
-    },
-    {
-      "type": "save",
-      "path": "src/pages/tools/morning-routine.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 15 lines.",
-      "recordedAt": "2026-08-09T21:06:14.532Z",
-      "recordedAtEpochMs": 1786309574532,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309574532
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 15,
-        "charCount": 493,
-        "hash": "05c2fac16b31",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / --- / <Base / title=\"Morning Routine...",
-        "updatedAt": 1786309574532
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 15,
-        "summary": "Line 1: inserted 15 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/tools/weekly-reset.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 15 lines.",
-      "recordedAt": "2026-08-09T21:05:51.146Z",
-      "recordedAtEpochMs": 1786309551146,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309551146
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 15,
-        "charCount": 474,
-        "hash": "e589a5cabbf2",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --- / <Base / title=\"Weekly Reset tool\" /...",
-        "updatedAt": 1786309551146
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 15,
-        "summary": "Line 1: inserted 15 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "src/layouts/Base.astro",
-      "count": 3
+      "count": 5
     },
     {
       "filePath": "src/data/products.json",
@@ -1045,17 +1050,20 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-10 a2efafa brand colors, logo, real product images",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
+    "headSummary": "2026-08-10 edfb3c5 run live etsy product sync",
+    "statusSummary": "4 modifieds",
+    "changedFileCount": 4,
     "statusLines": [
-      "M src/layouts/Base.astro"
+      "M graphify-out/WORKSPACE_MEMORY.md",
+      "M src/layouts/Base.astro",
+      "M workspace.json",
+      "M workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- a2efafa by Arslan Khan on 2026-08-09\n  brand colors, logo, real product images\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
+    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- edfb3c5 by Arslan Khan on 2026-08-09\n  run live etsy product sync\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
   },
   "graphify": {
     "reportAvailable": false,
