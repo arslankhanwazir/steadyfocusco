@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T23:11:33.005Z",
-  "generatedAtEpochMs": 1786317093005,
+  "generatedAt": "2026-08-09T23:12:47.138Z",
+  "generatedAtEpochMs": 1786317167138,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -469,11 +469,11 @@
     "devDependencies": {}
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-09T23:11:30.558Z",
-    "trackedChangeCount": 33,
+    "lastActivityAt": "2026-08-09T23:12:44.953Z",
+    "trackedChangeCount": 34,
     "trackedFileSnapshotCount": 26,
     "changeTypeCounts": {
-      "save": 33,
+      "save": 34,
       "create": 0,
       "delete": 0,
       "rename": 0
@@ -482,10 +482,10 @@
   "trackedSnapshots": [
     {
       "filePath": "astro.config.mjs",
-      "updatedAt": 1786317090558,
-      "lineCount": 17,
-      "charCount": 558,
-      "hash": "2255055001ac",
+      "updatedAt": 1786317164953,
+      "lineCount": 18,
+      "charCount": 560,
+      "hash": "66865e2d14b1",
       "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
     },
     {
@@ -546,6 +546,31 @@
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": "astro.config.mjs",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-08-09T23:12:44.953Z",
+      "recordedAtEpochMs": 1786317164953,
+      "before": {
+        "kind": "text",
+        "lineCount": 18,
+        "charCount": 560,
+        "hash": "66865e2d14b1",
+        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
+        "updatedAt": 1786317164953
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 18,
+        "charCount": 560,
+        "hash": "66865e2d14b1",
+        "preview": "// @ts-check / import { defineConfig } from \"astro/config\"; / import react from \"@astrojs/react\"; / import sitemap from \"@astrojs/sitemap\"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags....",
+        "updatedAt": 1786317164953
+      },
+      "diff": null
+    },
     {
       "type": "save",
       "path": "astro.config.mjs",
@@ -986,38 +1011,6 @@
         "beforeFragment": "build\": \"astro build\", / \"preview\": \"astro preview\", / \"astro\": \"astro\" / }, / \"dependencies\": { / \"@astrojs/react\": \"^6.0.2\", / \"@astrojs/sitemap\": \"^3.7.3\", / \"@types/react\":...",
         "afterFragment": "sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\": \"node scripts/sync-etsy-products.js\", / \"build\": \"astro build\", / \"preview\": \"astro preview\", / \"astro\": \"astro\"..."
       }
-    },
-    {
-      "type": "save",
-      "path": "scripts/sync-etsy-products.js",
-      "toPath": "",
-      "summary": "Line 1: inserted 199 lines.",
-      "recordedAt": "2026-08-09T21:08:07.844Z",
-      "recordedAtEpochMs": 1786309687844,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786309687844
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 199,
-        "charCount": 6870,
-        "hash": "b82a041567d8",
-        "preview": "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches checkout/payment. Every product link on...",
-        "updatedAt": 1786309687844
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 199,
-        "summary": "Line 1: inserted 199 lines.",
-        "beforeFragment": "",
-        "afterFragment": "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches..."
-      }
     }
   ],
   "hotFiles": [
@@ -1027,7 +1020,7 @@
     },
     {
       "filePath": "astro.config.mjs",
-      "count": 2
+      "count": 3
     },
     {
       "filePath": "src/data/products.json",
@@ -1057,12 +1050,10 @@
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-10 6caf50b add google search console verification tag",
-    "statusSummary": "1 modified",
-    "changedFileCount": 1,
-    "statusLines": [
-      "M astro.config.mjs"
-    ],
+    "headSummary": "2026-08-10 fc3a504 fix sitemap site URL to match live domain",
+    "statusSummary": "",
+    "changedFileCount": 0,
+    "statusLines": [],
     "error": ""
   },
   "github": {

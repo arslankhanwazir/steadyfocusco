@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-09T23:11:33.005Z
+Generated: 2026-08-09T23:12:47.138Z
 Workspace: website
 Workspace root: f:\etsy\website
 Refresh reason: tracked-change
@@ -16,10 +16,10 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-09T23:11:30.558Z
+- Last activity: 2026-08-09T23:12:44.953Z
 ## Workspace Focus
 - Active file in focus: astro.config.mjs
-- Hottest files right now: src/layouts/Base.astro (5), astro.config.mjs (2), src/data/products.json (2), .env.example (1)
+- Hottest files right now: src/layouts/Base.astro (5), astro.config.mjs (3), src/data/products.json (2), .env.example (1)
 - Suggested starting points: astro.config.mjs, src/layouts/Base.astro, src/data/products.json, .env.example, .gitignore, package.json
 ## Current Workspace
 - Active file: astro.config.mjs
@@ -34,13 +34,13 @@ Structured manifest: workspace.json
 - Runtime dependencies: @astrojs/react, @astrojs/sitemap, @types/react, @types/react-dom, astro, jspdf, react, react-dom
 - Dev dependencies: none declared
 ## Current Stack
-- Logged change events: 33
-- Change mix: save (33)
+- Logged change events: 34
+- Change mix: save (34)
 - Remembered file snapshots: 26
-- Working tree summary: 1 modified
+- Working tree summary: clean
 ## Tracked Snapshots
-- astro.config.mjs | 17 lines | 558 chars | hash 2255055001ac
-  Last snapshot: 2026-08-09T23:11:30.558Z
+- astro.config.mjs | 18 lines | 560 chars | hash 66865e2d14b1
+  Last snapshot: 2026-08-09T23:12:44.953Z
   Preview: "// @ts-check / import { defineConfig } from "astro/config"; / import react from "@astrojs/react"; / import sitemap from "@astrojs/sitemap"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
 - src/layouts/Base.astro | 164 lines | 5424 chars | hash e3a4137688aa
   Last snapshot: 2026-08-09T23:07:51.429Z
@@ -65,6 +65,11 @@ Structured manifest: workspace.json
   Preview: "--- / import Base from "../layouts/Base.astro"; / import { etsyLink, ETSY_SHOP_URL } from "../data/site"; / import productData from "../data/products.json"; / interface Product { / listing_id: number | null; / title:..."
 
 ## Recent Changes
+### 2026-08-09T23:12:44.953Z | saved | astro.config.mjs
+- Summary: Saved without a textual diff.
+- Before: 18 lines | 560 chars | hash 66865e2d14b1 | preview: "// @ts-check / import { defineConfig } from "astro/config"; / import react from "@astrojs/react"; / import sitemap from "@astrojs/sitemap"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
+- After: 18 lines | 560 chars | hash 66865e2d14b1 | preview: "// @ts-check / import { defineConfig } from "astro/config"; / import react from "@astrojs/react"; / import sitemap from "@astrojs/sitemap"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
+
 ### 2026-08-09T23:11:30.558Z | saved | astro.config.mjs
 - Summary: Line 10: replaced 1 line with 1 line.
 - Before: 17 lines | 542 chars | hash 42d22fe6dc71 | preview: "// @ts-check / import { defineConfig } from "astro/config"; / import react from "@astrojs/react"; / import sitemap from "@astrojs/sitemap"; / // Canonical production URL. Used by @astrojs/sitemap and Open Graph tags...."
@@ -152,16 +157,10 @@ Structured manifest: workspace.json
 - Previous fragment: "build": "astro build", / "preview": "astro preview", / "astro": "astro" / }, / "dependencies": { / "@astrojs/react": "^6.0.2", / "@astrojs/sitemap": "^3.7.3", / "@types/react":..."
 - Current fragment: "sync:etsy": "node scripts/sync-etsy-products.js", / "prebuild": "node scripts/sync-etsy-products.js", / "build": "astro build", / "preview": "astro preview", / "astro": "astro"..."
 
-### 2026-08-09T21:08:07.844Z | saved | scripts/sync-etsy-products.js
-- Summary: Line 1: inserted 199 lines.
-- Before: 0 lines | 0 chars | hash empty
-- After: 199 lines | 6,870 chars | hash b82a041567d8 | preview: "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches checkout/payment. Every product link on..."
-- Current fragment: "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches..."
-
 
 ## Hot Files
 - src/layouts/Base.astro (5 tracked changes)
-- astro.config.mjs (2 tracked changes)
+- astro.config.mjs (3 tracked changes)
 - src/data/products.json (2 tracked changes)
 - .env.example (1 tracked changes)
 - .gitignore (1 tracked changes)
@@ -171,9 +170,9 @@ Structured manifest: workspace.json
 
 ## Git Snapshot
 - Branch: main
-- HEAD: 2026-08-10 6caf50b add google search console verification tag
-- Working tree summary: 1 modified
-- M astro.config.mjs
+- HEAD: 2026-08-10 fc3a504 fix sitemap site URL to match live domain
+- Working tree summary: clean
+- Working tree: clean
 
 ## GitHub Snapshot
 GitHub Repository: arslankhanwazir/steadyfocusco
