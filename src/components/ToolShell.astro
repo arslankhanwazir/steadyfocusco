@@ -1,0 +1,124 @@
+---
+import {
+  toolBySlug,
+  guides,
+  printables,
+  type Tool,
+} from "../data/site";
+
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+const tool = toolBySlug(slug) as Tool;
+
+// Find supporting content that points back to this tool.
+const relatedGuides = guides.filter((g) => g.relatedTool === slug);
+const relatedPrintables = printables.filter((p) => p.relatedTool === slug);
+---
+
+<section class="tool-head">
+  <p class="eyebrow">Free tool</p>
+  <h1>{tool.name}</h1>
+  <p class="lede">{tool.tagline}</p>
+</section>
+
+<slot />
+
+<section class="tool-related">
+  <div class="rel-grid">
+    <div>
+      <h2>How this helps</h2>
+      <p>
+        Everything runs in your browser — nothing you type is sent anywhere or
+        saved. Sort it, download the PDF, and if a reusable printed version
+        would help, the matching planner is a click away on Etsy.
+      </p>
+    </div>
+    {
+      (relatedGuides.length > 0 || relatedPrintables.length > 0) && (
+        <div>
+          <h2>Keep going</h2>
+          <ul class="rel-links">
+            {relatedGuides.map((g) => (
+              <li>
+                <a href={`/guides/${g.slug}`}>Guide: {g.title}</a>
+              </li>
+            ))}
+            {relatedPrintables.map((p) => (
+              <li>
+                <a href={`/printables/${p.slug}`}>Printable: {p.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .tool-head {
+    max-width: 900px;
+    margin: 2.5rem auto 1.5rem;
+    padding: 0 1.5rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.4rem;
+  }
+  .tool-head h1 {
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+    margin-bottom: 0.6rem;
+  }
+  .tool-head .lede {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 620px;
+  }
+
+  .tool-related {
+    max-width: 900px;
+    margin: 1rem auto 4rem;
+    padding: 2rem 1.5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .rel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .rel-grid h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+  }
+  .rel-grid p {
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .rel-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .rel-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .rel-links a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 700px) {
+    .rel-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

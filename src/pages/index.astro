@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+
+const intents = [
+	{ label: "Clear my head", href: "/tools/brain-dump" },
+	{ label: "Plan my week", href: "/tools/weekly-reset" },
+	{ label: "Get schoolwork done", href: "/students" },
+	{ label: "Build a routine", href: "/tools/morning-routine" },
+	{ label: "Focus on one thing", href: "/productivity" },
+];
+
+const tools = [
+	{ name: "Brain Dump", desc: "Get everything out of your head and sorted into Do Now, Deadlines, and Later.", href: "/tools/brain-dump" },
+	{ name: "Weekly Reset", desc: "Turn a scattered week into one clear plan.", href: "/tools/weekly-reset" },
+	{ name: "Morning Routine Builder", desc: "Build a routine you'll actually keep.", href: "/tools/morning-routine" },
+];
+---
+<Base title="Planning for overwhelmed minds">
+	<section class="hero">
+		<h1>Make planning easier<br />when your brain feels overwhelmed.</h1>
+		<p class="lede">Free tools and printable systems built for brains that don't do linear planning.</p>
+		<div class="intents">
+			{intents.map(i => (
+				<a class="intent-card" href={i.href}>
+					<span class="check">✓</span>
+					<span>{i.label}</span>
+				</a>
+			))}
+		</div>
+	</section>
+
+	<section class="tools-strip">
+		<h2>Start with a free tool</h2>
+		<div class="tools-grid">
+			{tools.map(t => (
+				<a class="tool-card" href={t.href}>
+					<h3>{t.name}</h3>
+					<p>{t.desc}</p>
+					<span class="try">Try it free →</span>
+				</a>
+			))}
+		</div>
+	</section>
+
+	<section class="pillars">
+		<h2>Where to start</h2>
+		<div class="pillar-grid">
+			<a href="/adhd" class="pillar"><h3>ADHD</h3><p>Planning, routines, and systems built around how an ADHD brain actually works.</p></a>
+			<a href="/students" class="pillar"><h3>Students</h3><p>Homework, study planning, and getting assignments done without the spiral.</p></a>
+			<a href="/productivity" class="pillar"><h3>Productivity</h3><p>Weekly planning, prioritizing, and routines that don't require willpower you don't have.</p></a>
+		</div>
+	</section>
+
+	<section class="shop-teaser">
+		<h2>Want a printable version?</h2>
+		<p>Every free tool has a matching printable in the SteadyFocusCo shop — designed to reuse, not just print once.</p>
+		<a class="shop-link" href="https://steadyfocusco.etsy.com" target="_blank" rel="sponsored noopener">Visit the shop ↗</a>
+	</section>
+</Base>
+
+<style>
+	.hero { max-width: 900px; margin: 3rem auto 4rem; padding: 0 1.5rem; text-align: center; }
+	.hero h1 { font-size: clamp(2rem, 5vw, 3rem); max-width: 700px; margin: 0 auto 1rem; }
+	.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 520px; margin: 0 auto 2.5rem; }
+
+	.intents { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+	.intent-card {
+		display: flex; align-items: center; gap: 0.5rem;
+		background: var(--card); border: 1px solid var(--border); border-radius: 100px;
+		padding: 0.7rem 1.3rem; text-decoration: none; color: var(--ink);
+		font-weight: 600; font-size: 0.95rem;
+		transition: border-color 0.15s, transform 0.15s;
+	}
+	.intent-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+	.check { color: var(--primary); font-family: var(--display); }
+
+	.tools-strip { max-width: 1100px; margin: 0 auto 4rem; padding: 0 1.5rem; }
+	.tools-strip h2, .pillars h2, .shop-teaser h2 { text-align: center; margin-bottom: 2rem; font-size: 1.6rem; }
+	.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+	.tool-card {
+		background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+		padding: 1.75rem; text-decoration: none; color: var(--ink); display: block;
+		transition: box-shadow 0.15s, transform 0.15s;
+	}
+	.tool-card:hover { box-shadow: 0 8px 24px rgba(43,46,40,0.08); transform: translateY(-3px); }
+	.tool-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+	.tool-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 1rem; }
+	.try { color: var(--primary); font-weight: 700; font-size: 0.9rem; }
+
+	.pillars { max-width: 1100px; margin: 0 auto 4rem; padding: 0 1.5rem; }
+	.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+	.pillar {
+		background: var(--primary); color: #fff; border-radius: 14px; padding: 2rem;
+		text-decoration: none; display: block; transition: transform 0.15s;
+	}
+	.pillar:hover { transform: translateY(-3px); }
+	.pillar h3 { color: #fff; margin-bottom: 0.5rem; }
+	.pillar p { color: rgba(255,255,255,0.85); font-size: 0.92rem; margin: 0; }
+	.pillar:nth-child(2) { background: var(--primary-dark); }
+	.pillar:nth-child(3) { background: var(--accent); }
+
+	.shop-teaser { max-width: 600px; margin: 0 auto 5rem; padding: 0 1.5rem; text-align: center; }
+	.shop-teaser p { color: var(--ink-soft); margin-bottom: 1.5rem; }
+	.shop-link {
+		display: inline-block; background: var(--ink); color: #fff; text-decoration: none;
+		padding: 0.8rem 1.75rem; border-radius: 100px; font-weight: 700;
+	}
+
+	@media (max-width: 800px) {
+		.tools-grid, .pillar-grid { grid-template-columns: 1fr; }
+	}
+</style>

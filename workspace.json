@@ -1,0 +1,998 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-09T21:23:21.721Z",
+  "generatedAtEpochMs": 1786310601721,
+  "generator": {
+    "name": "Code Janitor",
+    "feature": "workspace-memory"
+  },
+  "handoffGuidance": [
+    "Read graphify-out/GRAPH_REPORT.md first for architecture and dependency questions.",
+    "Use workspace.json for machine-readable repo context before scanning broad parts of the repository.",
+    "Use graphify-out/WORKSPACE_MEMORY.md and workspacememory.md for human-readable handoff notes, recent changes, and Git-aware status."
+  ],
+  "workspace": {
+    "name": "website",
+    "root": "f:\\etsy\\website",
+    "activeFile": "src/pages/guides/[slug].astro",
+    "refreshReason": "tracked-change",
+    "outputFiles": {
+      "markdown": "graphify-out/WORKSPACE_MEMORY.md",
+      "markdownMirror": "workspacememory.md",
+      "structuredManifest": "workspace.json"
+    },
+    "suggestedStartingPoints": [
+      "src/pages/guides/[slug].astro",
+      ".env.example",
+      ".gitignore",
+      "astro.config.mjs",
+      "package.json",
+      "scripts/sync-etsy-products.js",
+      "src/components/BrainDump.tsx",
+      "src/components/ClusterHub.astro",
+      "src/components/MorningRoutine.tsx",
+      "AGENTS.md",
+      "README.md",
+      "package-lock.json"
+    ],
+    "stats": {
+      "totalFiles": 41,
+      "topLevelAreas": [
+        {
+          "name": "src",
+          "count": 23
+        },
+        {
+          "name": "[root]",
+          "count": 11
+        },
+        {
+          "name": ".astro",
+          "count": 4
+        },
+        {
+          "name": "public",
+          "count": 2
+        },
+        {
+          "name": "scripts",
+          "count": 1
+        }
+      ],
+      "primaryFileTypes": [
+        {
+          "name": ".astro",
+          "count": 16
+        },
+        {
+          "name": ".json",
+          "count": 6
+        },
+        {
+          "name": ".md",
+          "count": 4
+        },
+        {
+          "name": ".ts",
+          "count": 4
+        },
+        {
+          "name": ".tsx",
+          "count": 3
+        },
+        {
+          "name": ".css",
+          "count": 1
+        },
+        {
+          "name": ".example",
+          "count": 1
+        },
+        {
+          "name": ".ico",
+          "count": 1
+        }
+      ],
+      "keyFiles": [
+        ".gitignore",
+        "AGENTS.md",
+        "README.md",
+        "package-lock.json",
+        "package.json",
+        "tsconfig.json"
+      ],
+      "fileInventory": [
+        {
+          "path": ".astro/content.d.ts",
+          "topLevelArea": ".astro",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": ".astro/dev.log",
+          "topLevelArea": ".astro",
+          "extension": ".log",
+          "isKeyFile": false
+        },
+        {
+          "path": ".astro/settings.json",
+          "topLevelArea": ".astro",
+          "extension": ".json",
+          "isKeyFile": false
+        },
+        {
+          "path": ".astro/types.d.ts",
+          "topLevelArea": ".astro",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": ".env.example",
+          "topLevelArea": "[root]",
+          "extension": ".example",
+          "isKeyFile": false
+        },
+        {
+          "path": ".gitignore",
+          "topLevelArea": "[root]",
+          "extension": "[no extension]",
+          "isKeyFile": true
+        },
+        {
+          "path": "AGENTS.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": true
+        },
+        {
+          "path": "astro.config.mjs",
+          "topLevelArea": "[root]",
+          "extension": ".mjs",
+          "isKeyFile": false
+        },
+        {
+          "path": "CLAUDE.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": false
+        },
+        {
+          "path": "package-lock.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": true
+        },
+        {
+          "path": "package.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": true
+        },
+        {
+          "path": "public/favicon.ico",
+          "topLevelArea": "public",
+          "extension": ".ico",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/favicon.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
+          "path": "README.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": true
+        },
+        {
+          "path": "scripts/sync-etsy-products.js",
+          "topLevelArea": "scripts",
+          "extension": ".js",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/BrainDump.tsx",
+          "topLevelArea": "src",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/ClusterHub.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/MorningRoutine.tsx",
+          "topLevelArea": "src",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/pdf.ts",
+          "topLevelArea": "src",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/tools.css",
+          "topLevelArea": "src",
+          "extension": ".css",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/ToolShell.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/components/WeeklyReset.tsx",
+          "topLevelArea": "src",
+          "extension": ".tsx",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/data/products.json",
+          "topLevelArea": "src",
+          "extension": ".json",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/data/site.ts",
+          "topLevelArea": "src",
+          "extension": ".ts",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/layouts/Base.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/adhd.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/guides/[slug].astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/guides/index.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/index.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/printables/[slug].astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/printables/index.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/productivity.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/shop.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/students.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/tools/brain-dump.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/tools/index.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/tools/morning-routine.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/pages/tools/weekly-reset.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
+          "path": "tsconfig.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": true
+        },
+        {
+          "path": "workspace.json",
+          "topLevelArea": "[root]",
+          "extension": ".json",
+          "isKeyFile": false
+        },
+        {
+          "path": "workspacememory.md",
+          "topLevelArea": "[root]",
+          "extension": ".md",
+          "isKeyFile": false
+        }
+      ]
+    }
+  },
+  "package": {
+    "available": true,
+    "name": "steadyfocusco",
+    "displayName": "",
+    "version": "0.0.1",
+    "description": "",
+    "license": "",
+    "homepage": "",
+    "packageManager": "",
+    "main": "",
+    "repository": {
+      "type": "",
+      "url": ""
+    },
+    "bugsUrl": "",
+    "engines": {
+      "node": ">=22.12.0"
+    },
+    "keywords": [],
+    "scripts": {
+      "dev": "astro dev",
+      "sync:etsy": "node scripts/sync-etsy-products.js",
+      "prebuild": "node scripts/sync-etsy-products.js",
+      "build": "astro build",
+      "preview": "astro preview",
+      "astro": "astro"
+    },
+    "dependencies": {
+      "@astrojs/react": "^6.0.2",
+      "@astrojs/sitemap": "^3.7.3",
+      "@types/react": "^19.2.18",
+      "@types/react-dom": "^19.2.4",
+      "astro": "^7.2.0",
+      "jspdf": "^4.2.1",
+      "react": "^19.2.8",
+      "react-dom": "^19.2.8"
+    },
+    "devDependencies": {}
+  },
+  "currentStack": {
+    "lastActivityAt": "2026-08-09T21:23:18.971Z",
+    "trackedChangeCount": 27,
+    "trackedFileSnapshotCount": 26,
+    "changeTypeCounts": {
+      "save": 27,
+      "create": 0,
+      "delete": 0,
+      "rename": 0
+    }
+  },
+  "trackedSnapshots": [
+    {
+      "filePath": "src/pages/guides/[slug].astro",
+      "updatedAt": 1786310598971,
+      "lineCount": 133,
+      "charCount": 3367,
+      "hash": "db7f2ae66e4a",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
+    },
+    {
+      "filePath": "src/pages/guides/index.astro",
+      "updatedAt": 1786310548012,
+      "lineCount": 111,
+      "charCount": 2723,
+      "hash": "6a192779d530",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides } from \"../../data/site\"; / --- / <Base / title=\"Guides\" / description=\"Plain-language guides for ADHD planning, student study habits, and productiv..."
+    },
+    {
+      "filePath": "src/pages/printables/[slug].astro",
+      "updatedAt": 1786309941487,
+      "lineCount": 365,
+      "charCount": 8904,
+      "hash": "1ccca702e68e",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (..."
+    },
+    {
+      "filePath": "src/pages/printables/index.astro",
+      "updatedAt": 1786309883537,
+      "lineCount": 107,
+      "charCount": 2557,
+      "hash": "11ec215e23d4",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables } from \"../../data/site\"; / --- / <Base / title=\"Free printables\" / description=\"Free, printable planning sheets for overwhelmed minds — brain d..."
+    },
+    {
+      "filePath": "src/pages/shop.astro",
+      "updatedAt": 1786309842245,
+      "lineCount": 249,
+      "charCount": 6130,
+      "hash": "a4c1d17abe07",
+      "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:..."
+    },
+    {
+      "filePath": ".env.example",
+      "updatedAt": 1786309773848,
+      "lineCount": 25,
+      "charCount": 947,
+      "hash": "cec0171d7b52",
+      "preview": "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro..."
+    },
+    {
+      "filePath": ".gitignore",
+      "updatedAt": 1786309749283,
+      "lineCount": 26,
+      "charCount": 260,
+      "hash": "fb459322e8f5",
+      "preview": "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log / .DS_Store / Thumbs.db / # edit..."
+    },
+    {
+      "filePath": "package.json",
+      "updatedAt": 1786309726715,
+      "lineCount": 26,
+      "charCount": 604,
+      "hash": "d903233fa0a5",
+      "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":..."
+    }
+  ],
+  "recentChanges": [
+    {
+      "type": "save",
+      "path": "src/pages/guides/[slug].astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 133 lines.",
+      "recordedAt": "2026-08-09T21:23:18.971Z",
+      "recordedAtEpochMs": 1786310598971,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786310598971
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 133,
+        "charCount": 3367,
+        "hash": "db7f2ae66e4a",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s...",
+        "updatedAt": 1786310598971
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 133,
+        "summary": "Line 1: inserted 133 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ param..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/guides/index.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 111 lines.",
+      "recordedAt": "2026-08-09T21:22:28.012Z",
+      "recordedAtEpochMs": 1786310548012,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786310548012
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 111,
+        "charCount": 2723,
+        "hash": "6a192779d530",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides } from \"../../data/site\"; / --- / <Base / title=\"Guides\" / description=\"Plain-language guides for ADHD planning, student study habits, and productiv...",
+        "updatedAt": 1786310548012
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 111,
+        "summary": "Line 1: inserted 111 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides } from \"../../data/site\"; / --- / <Base / title=\"Guides\" / description=\"Plain-language guides for ADHD plann..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 365 lines.",
+      "recordedAt": "2026-08-09T21:12:21.487Z",
+      "recordedAtEpochMs": 1786309941487,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309941486
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 365,
+        "charCount": 8904,
+        "hash": "1ccca702e68e",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (...",
+        "updatedAt": 1786309941487
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 365,
+        "summary": "Line 1: inserted 365 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPa..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/index.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 107 lines.",
+      "recordedAt": "2026-08-09T21:11:23.537Z",
+      "recordedAtEpochMs": 1786309883537,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309883537
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 107,
+        "charCount": 2557,
+        "hash": "11ec215e23d4",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables } from \"../../data/site\"; / --- / <Base / title=\"Free printables\" / description=\"Free, printable planning sheets for overwhelmed minds — brain d...",
+        "updatedAt": 1786309883537
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 107,
+        "summary": "Line 1: inserted 107 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables } from \"../../data/site\"; / --- / <Base / title=\"Free printables\" / description=\"Free, printable plannin..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/shop.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 249 lines.",
+      "recordedAt": "2026-08-09T21:10:42.245Z",
+      "recordedAtEpochMs": 1786309842245,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309842245
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 249,
+        "charCount": 6130,
+        "hash": "a4c1d17abe07",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:...",
+        "updatedAt": 1786309842245
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 249,
+        "summary": "Line 1: inserted 249 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product..."
+      }
+    },
+    {
+      "type": "save",
+      "path": ".env.example",
+      "toPath": "",
+      "summary": "Line 1: inserted 25 lines.",
+      "recordedAt": "2026-08-09T21:09:33.848Z",
+      "recordedAtEpochMs": 1786309773848,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309773848
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 25,
+        "charCount": 947,
+        "hash": "cec0171d7b52",
+        "preview": "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own shop's ACTIVE listings. / # It never pro...",
+        "updatedAt": 1786309773848
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 25,
+        "summary": "Line 1: inserted 25 lines.",
+        "beforeFragment": "",
+        "afterFragment": "# SteadyFocusCo — environment variables / # Copy this file to `.env` and fill in real values. `.env` is gitignored. / # / # The Etsy sync is READ-ONLY and only displays our own..."
+      }
+    },
+    {
+      "type": "save",
+      "path": ".gitignore",
+      "toPath": "",
+      "summary": "Line 1: inserted 26 lines.",
+      "recordedAt": "2026-08-09T21:09:09.283Z",
+      "recordedAtEpochMs": 1786309749283,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309749283
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 260,
+        "hash": "fb459322e8f5",
+        "preview": "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log / .DS_Store / Thumbs.db / # edit...",
+        "updatedAt": 1786309749283
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 26,
+        "summary": "Line 1: inserted 26 lines.",
+        "beforeFragment": "",
+        "afterFragment": "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log*..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "package.json",
+      "toPath": "",
+      "summary": "Line 10: replaced 16 lines with 17 lines.",
+      "recordedAt": "2026-08-09T21:08:46.715Z",
+      "recordedAtEpochMs": 1786309726715,
+      "before": {
+        "kind": "text",
+        "lineCount": 25,
+        "charCount": 496,
+        "hash": "2ee21c52898d",
+        "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"build\": \"astro build\", / \"preview\": \"astro preview\", / \"astro\":...",
+        "updatedAt": 1786309726715
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 604,
+        "hash": "d903233fa0a5",
+        "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":...",
+        "updatedAt": 1786309726715
+      },
+      "diff": {
+        "lineStart": 10,
+        "removedLines": 16,
+        "addedLines": 17,
+        "summary": "Line 10: replaced 16 lines with 17 lines.",
+        "beforeFragment": "build\": \"astro build\", / \"preview\": \"astro preview\", / \"astro\": \"astro\" / }, / \"dependencies\": { / \"@astrojs/react\": \"^6.0.2\", / \"@astrojs/sitemap\": \"^3.7.3\", / \"@types/react\":...",
+        "afterFragment": "sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\": \"node scripts/sync-etsy-products.js\", / \"build\": \"astro build\", / \"preview\": \"astro preview\", / \"astro\": \"astro\"..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "scripts/sync-etsy-products.js",
+      "toPath": "",
+      "summary": "Line 1: inserted 199 lines.",
+      "recordedAt": "2026-08-09T21:08:07.844Z",
+      "recordedAtEpochMs": 1786309687844,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309687844
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 199,
+        "charCount": 6870,
+        "hash": "b82a041567d8",
+        "preview": "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches checkout/payment. Every product link on...",
+        "updatedAt": 1786309687844
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 199,
+        "summary": "Line 1: inserted 199 lines.",
+        "beforeFragment": "",
+        "afterFragment": "#!/usr/bin/env node / // Read-only Etsy shop sync (Etsy Open API v3). / // / // POLICY: This script only READS and DISPLAYS our own shop's ACTIVE listings. / // It never touches..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/index.astro",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-08-09T21:06:48.173Z",
+      "recordedAtEpochMs": 1786309608173,
+      "before": {
+        "kind": "text",
+        "lineCount": 129,
+        "charCount": 3003,
+        "hash": "ff2ac0542d08",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { tools } from \"../../data/site\"; / const live = tools.filter((t) => t.status === \"live\"); / const planned = tools.filter((t) => t.status === \"planned\"); / -...",
+        "updatedAt": 1786309608173
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 129,
+        "charCount": 3003,
+        "hash": "ff2ac0542d08",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { tools } from \"../../data/site\"; / const live = tools.filter((t) => t.status === \"live\"); / const planned = tools.filter((t) => t.status === \"planned\"); / -...",
+        "updatedAt": 1786309608173
+      },
+      "diff": null
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/morning-routine.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 15 lines.",
+      "recordedAt": "2026-08-09T21:06:14.532Z",
+      "recordedAtEpochMs": 1786309574532,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309574532
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 15,
+        "charCount": 493,
+        "hash": "05c2fac16b31",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / --- / <Base / title=\"Morning Routine...",
+        "updatedAt": 1786309574532
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 15,
+        "summary": "Line 1: inserted 15 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/weekly-reset.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 15 lines.",
+      "recordedAt": "2026-08-09T21:05:51.146Z",
+      "recordedAtEpochMs": 1786309551146,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309551146
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 15,
+        "charCount": 474,
+        "hash": "e589a5cabbf2",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --- / <Base / title=\"Weekly Reset tool\" /...",
+        "updatedAt": 1786309551146
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 15,
+        "summary": "Line 1: inserted 15 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/brain-dump.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 15 lines.",
+      "recordedAt": "2026-08-09T21:05:27.983Z",
+      "recordedAtEpochMs": 1786309527983,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309527983
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 15,
+        "charCount": 469,
+        "hash": "103bc4443951",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- / <Base / title=\"Brain Dump tool\" / descri...",
+        "updatedAt": 1786309527983
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 15,
+        "summary": "Line 1: inserted 15 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- /..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/components/ToolShell.astro",
+      "toPath": "",
+      "summary": "Line 1: inserted 125 lines.",
+      "recordedAt": "2026-08-09T21:05:03.419Z",
+      "recordedAtEpochMs": 1786309503419,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786309503419
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 125,
+        "charCount": 2784,
+        "hash": "f2e1b2818b72",
+        "preview": "--- / import { / toolBySlug, / guides, / printables, / type Tool, / } from \"../data/site\"; / interface Props { / slug: string; / } / const { slug } = Astro.props; / const tool = toolBySlug(slug) as Tool; / // Find sup...",
+        "updatedAt": 1786309503419
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 125,
+        "summary": "Line 1: inserted 125 lines.",
+        "beforeFragment": "",
+        "afterFragment": "--- / import { / toolBySlug, / guides, / printables, / type Tool, / } from \"../data/site\"; / interface Props { / slug: string; / } / const { slug } = Astro.props; / const tool =..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/components/MorningRoutine.tsx",
+      "toPath": "",
+      "summary": "Saved without a textual diff.",
+      "recordedAt": "2026-08-09T21:04:26.961Z",
+      "recordedAtEpochMs": 1786309466961,
+      "before": {
+        "kind": "text",
+        "lineCount": 276,
+        "charCount": 7816,
+        "hash": "1b23fc7eb687",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / \"https:/...",
+        "updatedAt": 1786309466961
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 276,
+        "charCount": 7816,
+        "hash": "1b23fc7eb687",
+        "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / // Etsy CTA — UTM: ?utm_source=site&utm_medium=tool&utm_campaign=morning-routine / const ETSY_CTA = / \"https:/...",
+        "updatedAt": 1786309466961
+      },
+      "diff": null
+    }
+  ],
+  "hotFiles": [
+    {
+      "filePath": ".env.example",
+      "count": 1
+    },
+    {
+      "filePath": ".gitignore",
+      "count": 1
+    },
+    {
+      "filePath": "astro.config.mjs",
+      "count": 1
+    },
+    {
+      "filePath": "package.json",
+      "count": 1
+    },
+    {
+      "filePath": "scripts/sync-etsy-products.js",
+      "count": 1
+    },
+    {
+      "filePath": "src/components/BrainDump.tsx",
+      "count": 1
+    },
+    {
+      "filePath": "src/components/ClusterHub.astro",
+      "count": 1
+    },
+    {
+      "filePath": "src/components/MorningRoutine.tsx",
+      "count": 1
+    }
+  ],
+  "git": {
+    "available": false,
+    "branch": "",
+    "headSummary": "",
+    "statusSummary": "",
+    "changedFileCount": 0,
+    "statusLines": [],
+    "error": "fatal: not a git repository (or any of the parent directories): .git"
+  },
+  "github": {
+    "available": false,
+    "summary": "Could not determine the GitHub repository from origin remote: fatal: not a git repository (or any of the parent directories): .git"
+  },
+  "graphify": {
+    "reportAvailable": false,
+    "graphAvailable": false,
+    "reportPath": "",
+    "graphPath": "",
+    "highlights": ""
+  },
+  "projectPlanner": null,
+  "agentNotes": [
+    "For recent repo changes, check recentChanges, trackedSnapshots, hotFiles, and git.",
+    "For architecture questions, combine graphify highlights with the Graphify report.",
+    "For machine-readable repo context, prefer this workspace.json manifest before broad repo scans."
+  ]
+}

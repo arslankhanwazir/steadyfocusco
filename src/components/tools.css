@@ -1,0 +1,287 @@
+/* Shared styles for the React tool islands (Brain Dump, Weekly Reset,
+   Morning Routine). Namespaced under .sf-tool to avoid global collisions.
+   Colour tokens come from the global :root defined in Base.astro. */
+
+.sf-tool {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  font-family: var(--body);
+  color: var(--ink);
+}
+
+.sf-tool * {
+  box-sizing: border-box;
+}
+
+.sf-field {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.sf-hint {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.sf-textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.sf-textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.sf-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.sf-input {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  font-family: var(--body);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.sf-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--ink);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s,
+    background 0.12s;
+}
+.sf-btn:hover {
+  transform: translateY(-1px);
+}
+.sf-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.sf-btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.sf-btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.sf-btn-dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.sf-results {
+  margin-top: 2rem;
+}
+
+.sf-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.sf-col {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+.sf-col h3 {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  margin: 0 0 0.15rem;
+}
+.sf-col .sf-count {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.sf-col ul {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.sf-col li {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.92rem;
+}
+.sf-col .sf-empty {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  background: transparent;
+  padding: 0.5rem 0;
+}
+
+/* Category accent colours (top border) */
+.sf-col.now {
+  border-top-color: var(--primary-dark);
+}
+.sf-col.deadline {
+  border-top-color: var(--accent);
+}
+.sf-col.quick {
+  border-top-color: var(--primary);
+}
+.sf-col.later {
+  border-top-color: var(--ink-soft);
+}
+.sf-col.unsure {
+  border-top-color: var(--border);
+}
+
+/* Weekly grid */
+.sf-week {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+}
+.sf-day {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+.sf-day h4 {
+  font-family: var(--display);
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+.sf-day ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+.sf-day li {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.55rem;
+  background: var(--bg);
+  border-radius: 7px;
+}
+
+.sf-priorities {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.sf-priorities h3 {
+  color: #fff;
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+.sf-priorities ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.sf-priorities li {
+  margin-bottom: 0.25rem;
+}
+.sf-priorities .sf-empty {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Ordered routine steps */
+.sf-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.sf-step {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+.sf-step .sf-time {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 72px;
+}
+.sf-step .sf-label {
+  flex: 1;
+}
+.sf-step .sf-dur {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.sf-cta {
+  margin-top: 2.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+}
+.sf-cta h3 {
+  font-family: var(--display);
+  margin: 0 0 0.5rem;
+}
+.sf-cta p {
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+.sf-cta a {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.75rem;
+  border-radius: 100px;
+  font-weight: 700;
+}
+
+.sf-note {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}

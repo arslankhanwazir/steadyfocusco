@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro";
+import ClusterHub from "../components/ClusterHub.astro";
+import { clusterMeta } from "../data/site";
+const meta = clusterMeta.students;
+---
+
+<Base title={`${meta.title} planning`} description={meta.blurb}>
+  <ClusterHub cluster="students" />
+</Base>

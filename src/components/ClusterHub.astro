@@ -1,0 +1,230 @@
+---
+import {
+  clusterMeta,
+  toolsForCluster,
+  guidesForCluster,
+  printablesForCluster,
+  etsyLink,
+  type Cluster,
+} from "../data/site";
+
+interface Props {
+  cluster: Cluster;
+}
+const { cluster } = Astro.props;
+const meta = clusterMeta[cluster];
+const clusterTools = toolsForCluster(cluster);
+const clusterGuides = guidesForCluster(cluster);
+const clusterPrintables = printablesForCluster(cluster);
+const shopHref = etsyLink({ medium: "pillar", campaign: cluster });
+---
+
+<section class="hub-hero">
+  <p class="eyebrow">SteadyFocusCo · {meta.title}</p>
+  <h1>{meta.title} planning</h1>
+  <p class="lede">{meta.blurb}</p>
+  <p class="intro">{meta.intro}</p>
+</section>
+
+<section class="hub-block">
+  <h2>Free tools</h2>
+  <div class="card-grid">
+    {
+      clusterTools.map((t) => (
+        <a
+          class:list={["hub-card", { disabled: t.status === "planned" }]}
+          href={t.status === "live" ? `/tools/${t.slug}` : undefined}
+          aria-disabled={t.status === "planned"}
+        >
+          <h3>{t.name}</h3>
+          <p>{t.tagline}</p>
+          <span class="cta">
+            {t.status === "live" ? "Open the tool →" : "Coming soon"}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<section class="hub-block">
+  <h2>Guides</h2>
+  <ul class="link-list">
+    {
+      clusterGuides.map((g) => (
+        <li>
+          <a href={`/guides/${g.slug}`}>
+            <strong>{g.title}</strong>
+            <span>{g.description}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<section class="hub-block">
+  <h2>Free printables</h2>
+  <div class="card-grid">
+    {
+      clusterPrintables.map((p) => (
+        <a class="hub-card" href={`/printables/${p.slug}`}>
+          <h3>{p.title}</h3>
+          <p>{p.description}</p>
+          <span class="cta">Get the printable →</span>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<section class="hub-shop">
+  <h2>Want a done-for-you version?</h2>
+  <p>
+    The free tools and printables here have matching, reusable planners in the
+    SteadyFocusCo Etsy shop. Every link goes straight to Etsy for checkout.
+  </p>
+  <a class="shop-link" href={shopHref} target="_blank" rel="sponsored noopener">
+    Browse {meta.title} products on Etsy ↗
+  </a>
+</section>
+
+<style>
+  .hub-hero {
+    max-width: 760px;
+    margin: 3rem auto 3.5rem;
+    padding: 0 1.5rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.5rem;
+  }
+  .hub-hero h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin: 0 0 1rem;
+  }
+  .intro {
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .hub-block {
+    max-width: 1100px;
+    margin: 0 auto 3.5rem;
+    padding: 0 1.5rem;
+  }
+  .hub-block h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .hub-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition:
+      box-shadow 0.15s,
+      transform 0.15s;
+  }
+  .hub-card:hover {
+    box-shadow: 0 8px 24px rgba(43, 46, 40, 0.08);
+    transform: translateY(-3px);
+  }
+  .hub-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .hub-card p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0 0 1rem;
+  }
+  .hub-card .cta {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .hub-card.disabled {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .link-list a {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  .link-list a:hover {
+    border-color: var(--primary);
+  }
+  .link-list strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+  }
+  .link-list span {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .hub-shop {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+  .hub-shop p {
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+  .shop-link {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.75rem;
+    border-radius: 100px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 800px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

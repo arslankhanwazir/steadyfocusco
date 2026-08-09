@@ -1,0 +1,128 @@
+---
+import Base from "../../layouts/Base.astro";
+import { tools } from "../../data/site";
+
+const live = tools.filter((t) => t.status === "live");
+const planned = tools.filter((t) => t.status === "planned");
+---
+
+<Base
+  title="Free planning tools"
+  description="Free, private, browser-based planning tools for overwhelmed minds — brain dump, weekly reset, and a morning routine builder. No sign-up, nothing saved."
+>
+  <section class="tools-index">
+    <p class="eyebrow">Free tools</p>
+    <h1>Tools that do the sorting for you</h1>
+    <p class="lede">
+      Each tool runs entirely in your browser — no account, nothing stored,
+      nothing sent anywhere. Type, sort, download a PDF, done.
+    </p>
+
+    <div class="grid">
+      {
+        live.map((t) => (
+          <a class="card" href={`/tools/${t.slug}`}>
+            <h2>{t.name}</h2>
+            <p>{t.tagline}</p>
+            <span class="try">Open the tool →</span>
+          </a>
+        ))
+      }
+    </div>
+
+    {
+      planned.length > 0 && (
+        <>
+          <h2 class="soon-title">Coming soon</h2>
+          <div class="grid">
+            {planned.map((t) => (
+              <div class="card disabled">
+                <h2>{t.name}</h2>
+                <p>{t.tagline}</p>
+                <span class="try">In the works</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )
+    }
+  </section>
+</Base>
+
+<style>
+  .tools-index {
+    max-width: 1100px;
+    margin: 3rem auto 4rem;
+    padding: 0 1.5rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.4rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.6rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 0 2.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition:
+      box-shadow 0.15s,
+      transform 0.15s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(43, 46, 40, 0.08);
+    transform: translateY(-3px);
+  }
+  .card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0 0 1rem;
+  }
+  .try {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .card.disabled {
+    opacity: 0.6;
+  }
+  .card.disabled:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .soon-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

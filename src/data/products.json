@@ -1,0 +1,80 @@
+{
+    "source": "seed",
+    "shop": "steadyfocusco",
+    "syncedAt": null,
+    "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null and url points to the real shop landing page because listing IDs/photos are only known after a real API sync. Run `npm run sync:etsy` with ETSY_API_KEY + ETSY_SHOP_ID set to replace this with live data.",
+    "products": [
+        {
+            "listing_id": null,
+            "title": "ADHD Student Planner Bundle",
+            "price": "9.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "students"
+        },
+        {
+            "listing_id": null,
+            "title": "ADHD Brain Dump Printable (Homework Reset System)",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "adhd"
+        },
+        {
+            "listing_id": null,
+            "title": "ADHD Homework Tracker Printable",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "students"
+        },
+        {
+            "listing_id": null,
+            "title": "ADHD Study Planner PDF",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "students"
+        },
+        {
+            "listing_id": null,
+            "title": "Executive Function Planner PDF",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "productivity"
+        },
+        {
+            "listing_id": null,
+            "title": "ADHD Weekly Planner for Adults",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "productivity"
+        },
+        {
+            "listing_id": null,
+            "title": "ADHD Brain Dump Printable for Adults",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "adhd"
+        },
+        {
+            "listing_id": null,
+            "title": "ADHD Morning Routine Checklist for Adults",
+            "price": "3.99",
+            "currency_code": "USD",
+            "image": null,
+            "url": "https://steadyfocusco.etsy.com",
+            "cluster": "adhd"
+        }
+    ]
+}

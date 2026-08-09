@@ -1,0 +1,156 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	noindex?: boolean;
+}
+const {
+	title,
+	description = "Planning and organization for overwhelmed minds.",
+	image = "/og-default.svg",
+	noindex = false,
+} = Astro.props;
+
+const siteName = "SteadyFocusCo";
+const fullTitle = `${title} · ${siteName}`;
+// Canonical + absolute OG URLs. Astro.site is set in astro.config.mjs.
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/favicon.svg" />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+		<title>{fullTitle}</title>
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="site-header">
+			<a href="/" class="brand">SteadyFocus<span>Co</span></a>
+			<nav>
+				<a href="/tools">Tools</a>
+				<a href="/adhd">ADHD</a>
+				<a href="/students">Students</a>
+				<a href="/productivity">Productivity</a>
+				<a href="/printables">Free printables</a>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<div class="footer-grid">
+				<div>
+					<span class="brand">SteadyFocus<span>Co</span></span>
+					<p>Planning tools for brains that don't do linear.</p>
+				</div>
+				<div>
+					<h3>Explore</h3>
+					<a href="/adhd">ADHD planning</a>
+					<a href="/students">For students</a>
+					<a href="/productivity">Productivity</a>
+				</div>
+				<div>
+					<h3>Free tools</h3>
+					<a href="/tools/brain-dump">Brain dump tool</a>
+					<a href="/tools/weekly-reset">Weekly reset</a>
+					<a href="/printables">All printables</a>
+				</div>
+				<div>
+					<h3>Shop</h3>
+					<a href="https://steadyfocusco.etsy.com" target="_blank" rel="sponsored noopener">Etsy store ↗</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--bg: #F7F5F0;
+		--ink: #2B2E28;
+		--ink-soft: #5C6259;
+		--primary: #4A6552;
+		--primary-dark: #37493D;
+		--accent: #5B7FA6;
+		--card: #FFFFFF;
+		--border: #E3DFD3;
+		--display: 'Fraunces', Georgia, serif;
+		--body: 'Nunito Sans', system-ui, sans-serif;
+	}
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; }
+	body {
+		margin: 0;
+		background: var(--bg);
+		color: var(--ink);
+		font-family: var(--body);
+		line-height: 1.6;
+	}
+	h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.15; margin: 0 0 0.5em; }
+	a { color: var(--accent); }
+	a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+	@media (prefers-reduced-motion: reduce) {
+		* { animation: none !important; transition: none !important; }
+	}
+
+	.site-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 1.5rem 1.5rem 1rem;
+	}
+	.brand { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+	.brand span { color: var(--primary); }
+	.site-header nav { display: flex; gap: 1.5rem; }
+	.site-header nav a { color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+	.site-header nav a:hover { color: var(--primary); }
+
+	.site-footer {
+		border-top: 1px solid var(--border);
+		margin-top: 5rem;
+		padding: 3rem 1.5rem;
+	}
+	.footer-grid {
+		max-width: 1100px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1.5fr 1fr 1fr 1fr;
+		gap: 2rem;
+	}
+	.footer-grid p { color: var(--ink-soft); font-size: 0.9rem; }
+	.footer-grid h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); font-family: var(--body); font-weight: 700; margin-bottom: 0.75rem; }
+	.footer-grid a { display: block; color: var(--ink); text-decoration: none; margin-bottom: 0.5rem; font-size: 0.95rem; }
+	.footer-grid a:hover { color: var(--primary); }
+
+	@media (max-width: 700px) {
+		.site-header { flex-direction: column; gap: 1rem; }
+		.site-header nav { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+		.footer-grid { grid-template-columns: 1fr 1fr; }
+	}
+</style>

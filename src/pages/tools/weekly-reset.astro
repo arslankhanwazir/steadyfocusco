@@ -1,0 +1,14 @@
+---
+import Base from "../../layouts/Base.astro";
+import ToolShell from "../../components/ToolShell.astro";
+import WeeklyReset from "../../components/WeeklyReset.tsx";
+---
+
+<Base
+  title="Weekly Reset tool"
+  description="Free weekly reset tool: turn a scattered brain-dump of tasks into a calm week — top 3 priorities plus a day-by-day plan you can download as a PDF."
+>
+  <ToolShell slug="weekly-reset">
+    <WeeklyReset client:load />
+  </ToolShell>
+</Base>

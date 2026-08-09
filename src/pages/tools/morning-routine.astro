@@ -1,0 +1,14 @@
+---
+import Base from "../../layouts/Base.astro";
+import ToolShell from "../../components/ToolShell.astro";
+import MorningRoutine from "../../components/MorningRoutine.tsx";
+---
+
+<Base
+  title="Morning Routine Builder"
+  description="Free morning routine builder: list what you want in your morning and get an ordered, time-boxed routine with start times you can download as a PDF."
+>
+  <ToolShell slug="morning-routine">
+    <MorningRoutine client:load />
+  </ToolShell>
+</Base>

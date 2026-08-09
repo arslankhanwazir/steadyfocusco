@@ -1,0 +1,111 @@
+---
+import Base from "../../layouts/Base.astro";
+import { guides } from "../../data/site";
+---
+
+<Base
+  title="Guides"
+  description="Plain-language guides for ADHD planning, student study habits, and productivity systems that work with your brain — not against it."
+>
+  <section class="guides">
+    <p class="eyebrow">Guides</p>
+    <h1>How-to guides for overwhelmed minds</h1>
+    <p class="lede">
+      Short, practical articles on planning, routines, and getting things done
+      when standard advice doesn't fit how your brain works.
+    </p>
+
+    <div class="grid">
+      {
+        guides.map((g) => (
+          <a class="card" href={`/guides/${g.slug}`}>
+            <h2>{g.title}</h2>
+            <p>{g.description}</p>
+            <span class="read">Read guide →</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>
+
+<style>
+  .guides {
+    max-width: 1100px;
+    margin: 3rem auto 4rem;
+    padding: 0 1.5rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.4rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.6rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 0 2.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition:
+      box-shadow 0.15s,
+      transform 0.15s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(43, 46, 40, 0.08);
+    transform: translateY(-3px);
+  }
+  .card h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0 0 1rem;
+  }
+  .read {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 700px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+</parameter>
+<task_progress>
+- [x] Foundation: shared data, seed products.json, Base OG
+- [x] Build pillar pages (/adhd, /students, /productivity)
+- [x] Build 3 tools + host pages + /tools index
+- [x] Etsy API sync script + prebuild wiring + .gitignore/.env.example
+- [x] /shop page
+- [x] Printables index + printable detail pages
+- [ ] Guides index + guide pages
+- [x] SEO: robots.txt, sitemap integration, OG tags in Base
+- [x] About page
+- [ ] Verify build
+- [ ] Deploy prep (Cloudflare Pages)
+</parameter>
+</write_to_file>
