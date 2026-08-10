@@ -3,181 +3,681 @@ import Base from '../layouts/Base.astro';
 import { etsyLink } from '../data/site';
 
 const intents = [
-	{ label: "Clear my head", href: "/tools/brain-dump", icon: "brain" },
-	{ label: "Plan my week", href: "/tools/weekly-reset", icon: "calendar" },
-	{ label: "Get schoolwork done", href: "/students", icon: "school" },
-	{ label: "Build a routine", href: "/tools/morning-routine", icon: "routine" },
-	{ label: "Focus on one thing", href: "/productivity", icon: "focus" },
+	{ label: "Clear my head", href: "/tools/brain-dump" },
+	{ label: "Plan my week", href: "/tools/weekly-reset" },
+	{ label: "Get schoolwork done", href: "/students" },
+	{ label: "Build a routine", href: "/tools/morning-routine" },
+	{ label: "Focus on one thing", href: "/productivity" },
 ];
 
 const tools = [
-	{ name: "Brain Dump", desc: "Get everything out of your head and sorted into Do Now, Deadlines, and Later.", href: "/tools/brain-dump", tag: "ADHD" },
-	{ name: "Weekly Reset", desc: "Turn a scattered week into one clear plan.", href: "/tools/weekly-reset", tag: "Productivity" },
-	{ name: "Morning Routine Builder", desc: "Build a routine you'll actually keep.", href: "/tools/morning-routine", tag: "ADHD" },
+	{ name: "Brain Dump", desc: "Clear the noise.", href: "/tools/brain-dump", tag: "ADHD" },
+	{ name: "Weekly Reset", desc: "Turn a scattered week into a clear plan.", href: "/tools/weekly-reset", tag: "Productivity" },
+	{ name: "Morning Routine", desc: "Build a routine you'll actually use.", href: "/tools/morning-routine", tag: "ADHD" },
+];
+
+const pillars = [
+	{ num: "01", title: "ADHD", desc: "Planning, routines, and systems built around how an ADHD brain actually works.", href: "/adhd" },
+	{ num: "02", title: "Students", desc: "Homework, study planning, and getting assignments done without the spiral.", href: "/students" },
+	{ num: "03", title: "Productivity", desc: "Weekly planning, prioritizing, and routines that don't require willpower.", href: "/productivity" },
 ];
 ---
 <Base title="Planning for overwhelmed minds">
+	<!-- HERO -->
 	<section class="hero">
-		<div class="hero-content">
-			<p class="hero-eyebrow">PLANNING FOR OVERWHELMED MINDS</p>
+		<div class="hero-copy">
+			<p class="eyebrow">Planning for overwhelmed minds</p>
 			<h1>Make planning easier when your brain feels overwhelmed.</h1>
-			<p class="hero-lede">Free tools, practical resources, and printable systems that help turn scattered thoughts into clear next steps.</p>
+			<p class="hero-lede">Free tools and practical systems that turn scattered thoughts into clear next steps.</p>
 			<div class="hero-actions">
-				<a href="/tools/brain-dump" class="btn-primary">Try a free tool</a>
-				<a href="#tools" class="btn-secondary">Explore resources</a>
+				<a href="/tools/brain-dump" class="btn btn-primary">Try a free tool</a>
+				<a href="#tools" class="btn btn-secondary">Explore resources</a>
 			</div>
 		</div>
-		
-		<div class="hero-visual">
-			<div class="scattered-thoughts" id="thoughtsContainer">
-				<div class="thought" data-delay="0">Study for exam</div>
-				<div class="thought" data-delay="1">Buy groceries</div>
-				<div class="thought" data-delay="2">Reply to email</div>
-				<div class="thought" data-delay="3">Doctor appointment</div>
-				<div class="thought" data-delay="4">Finish assignment</div>
-			</div>
-			<div class="organized-categories">
-				<div class="category">
-					<span class="category-label">DO NOW</span>
-					<div class="category-items"></div>
+
+		<div class="hero-demo" id="brainDemo" aria-label="Brain dump demonstration">
+			<div class="demo-card">
+				<p class="demo-title">What's on your mind?</p>
+				<div class="demo-chips" id="demoChips">
+					<span class="chip" data-cat="later">Buy groceries</span>
+					<span class="chip" data-cat="now">Reply to email</span>
+					<span class="chip" data-cat="deadline">Study for exam</span>
+					<span class="chip" data-cat="now">Doctor appointment</span>
+					<span class="chip" data-cat="deadline">Finish assignment</span>
 				</div>
-				<div class="category">
-					<span class="category-label">DEADLINE</span>
-					<div class="category-items"></div>
-				</div>
-				<div class="category">
-					<span class="category-label">LATER</span>
-					<div class="category-items"></div>
+				<div class="demo-sort">
+					<div class="sort-col" data-col="now">
+						<span class="sort-label">Do now</span>
+						<div class="sort-items"></div>
+					</div>
+					<div class="sort-col" data-col="deadline">
+						<span class="sort-label">Deadline</span>
+						<div class="sort-items"></div>
+					</div>
+					<div class="sort-col" data-col="later">
+						<span class="sort-label">Later</span>
+						<div class="sort-items"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="problem-section" id="tools">
-		<div class="section-header">
-			<h2>What do you need help with?</h2>
-			<p class="section-subtitle">Choose the tool that matches your situation</p>
-		</div>
-		<div class="intents-grid">
-			{intents.map(i => (
-				<a class="intent-card" href={i.href}>
-					<span class="intent-label">{i.label}</span>
-					<span class="intent-arrow">→</span>
-				</a>
-			))}
-		</div>
-	</section>
-
-	<section class="tools-section">
-		<div class="section-header">
-			<h2>Tools for when your brain feels full</h2>
-			<p class="section-subtitle">Simple, focused tools that work with how your brain actually operates</p>
-		</div>
-		<div class="tools-grid">
-			{tools.map(t => (
-				<a class="tool-card" href={t.href}>
-					<span class="tool-tag">{t.tag}</span>
-					<h3>{t.name}</h3>
-					<p>{t.desc}</p>
-					<span class="tool-link">Try it free <span class="arrow">→</span></span>
-				</a>
-			))}
-		</div>
-	</section>
-
-	<section class="pillars-section">
-		<div class="section-header">
-			<h2>Start with a problem</h2>
-			<p class="section-subtitle">Practical guides for real planning challenges</p>
-		</div>
-		<div class="pillar-grid">
-			<a href="/adhd" class="pillar-card">
-				<span class="pillar-number">01</span>
-				<h3>ADHD</h3>
-				<p>Planning, routines, and systems built around how an ADHD brain actually works.</p>
-				<span class="pillar-link">Explore ADHD resources</span>
-			</a>
-			<a href="/students" class="pillar-card">
-				<span class="pillar-number">02</span>
-				<h3>Students</h3>
-				<p>Homework, study planning, and getting assignments done without the spiral.</p>
-				<span class="pillar-link">Explore student resources</span>
-			</a>
-			<a href="/productivity" class="pillar-card">
-				<span class="pillar-number">03</span>
-				<h3>Productivity</h3>
-				<p>Weekly planning, prioritizing, and routines that don't require willpower you don't have.</p>
-				<span class="pillar-link">Explore productivity resources</span>
-			</a>
-		</div>
-	</section>
-
-	<section class="shop-section">
-		<div class="shop-content">
-			<div class="shop-text">
-				<h2>Prefer paper?</h2>
-				<p>Take the system offline with printable planners built around the same ideas as the free tools. Instant download, designed to reuse.</p>
-				<a class="btn-secondary" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Browse the shop →</a>
+	<!-- PROBLEM SECTION -->
+	<section class="problem">
+		<div class="container">
+			<div class="problem-head">
+				<p class="eyebrow">The problem</p>
+				<h2>Your brain isn't a checklist.</h2>
+				<p class="section-lede">Scattered thoughts pile up until everything feels urgent. The fix isn't more willpower — it's getting it out of your head and into a system.</p>
 			</div>
-			<div class="shop-visual">
-				<div class="product-preview">
-					<span class="product-badge">Printable</span>
-					<div class="product-mockup"></div>
+			<div class="problem-visual">
+				<div class="pv-scattered">
+					<span>Buy groceries</span><span>Reply to email</span><span>Study for exam</span><span>Doctor appointment</span><span>Finish assignment</span>
+				</div>
+				<div class="pv-arrow">→</div>
+				<div class="pv-sorted">
+					<div><strong>Do now</strong><span>Reply to email</span><span>Doctor appointment</span></div>
+					<div><strong>Deadline</strong><span>Study for exam</span><span>Finish assignment</span></div>
+					<div><strong>Later</strong><span>Buy groceries</span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- TOOLS -->
+	<section class="tools" id="tools">
+		<div class="container">
+			<div class="section-head">
+				<p class="eyebrow">Free tools</p>
+				<h2>Tools for when your brain feels full</h2>
+			</div>
+			<div class="tools-grid">
+				{tools.map((t) => (
+					<a class="tool-card" href={t.href}>
+						<span class="tool-tag">{t.tag}</span>
+						<h3>{t.name}</h3>
+						<p>{t.desc}</p>
+						<span class="tool-link">Try it free <span class="arrow">→</span></span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- PILLARS -->
+	<section class="pillars">
+		<div class="container">
+			<div class="section-head">
+				<p class="eyebrow">Choose your path</p>
+				<h2>Start with a problem</h2>
+			</div>
+			<div class="pillars-grid">
+				{pillars.map((p) => (
+					<a class="pillar-card" href={p.href}>
+						<span class="pillar-num">{p.num}</span>
+						<h3>{p.title}</h3>
+						<p>{p.desc}</p>
+						<span class="pillar-link">Explore <span class="arrow">→</span></span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- ETSY -->
+	<section class="etsy">
+		<div class="container">
+			<div class="etsy-inner">
+				<div class="etsy-copy">
+					<p class="eyebrow">Printables</p>
+					<h2>Take the system off-screen.</h2>
+					<p class="section-lede">Prefer paper? The same planning systems are available as printable planners — instant download, designed to reuse.</p>
+					<a class="btn btn-primary" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Browse printable planners →</a>
+				</div>
+				<div class="etsy-visual">
+					<div class="paper-stack">
+						<div class="paper paper-1"></div>
+						<div class="paper paper-2"></div>
+						<div class="paper paper-3"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 </Base>
 
+<script is:inline>
+	// Brain dump demo animation
+	document.addEventListener('DOMContentLoaded', () => {
+		const demo = document.getElementById('brainDemo');
+		if (!demo) return;
+
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const chips = Array.from(demo.querySelectorAll('.chip'));
+		const cols = Array.from(demo.querySelectorAll('.sort-col'));
+
+		if (prefersReduced) {
+			// Show final sorted state immediately
+			chips.forEach((chip) => {
+				const col = cols.find((c) => c.dataset.col === chip.dataset.cat);
+				if (col) col.querySelector('.sort-items').appendChild(chip);
+			});
+			demo.classList.add('sorted');
+			return;
+		}
+
+		// Animate: scatter → sort
+		setTimeout(() => {
+			chips.forEach((chip, i) => {
+				setTimeout(() => {
+					const col = cols.find((c) => c.dataset.col === chip.dataset.cat);
+					if (col) col.querySelector('.sort-items').appendChild(chip);
+					chip.classList.add('placed');
+				}, i * 250);
+			});
+			demo.classList.add('sorting');
+		}, 1200);
+
+		setTimeout(() => demo.classList.add('sorted'), 1200 + chips.length * 250 + 400);
+	});
+
+	// Scroll reveal
+	const revealObserver = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('revealed');
+				revealObserver.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.12 });
+
+	document.querySelectorAll('.problem, .tools, .pillars, .etsy').forEach((el) => {
+		revealObserver.observe(el);
+	});
+</script>
+
 <style>
-	.hero { max-width: 900px; margin: 3rem auto 4rem; padding: 0 1.5rem; text-align: center; }
-	.hero h1 { font-size: clamp(2rem, 5vw, 3rem); max-width: 700px; margin: 0 auto 1rem; }
-	.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 520px; margin: 0 auto 2.5rem; }
-
-	.intents { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-	.intent-card {
-		display: flex; align-items: center; gap: 0.5rem;
-		background: var(--card); border: 1px solid var(--border); border-radius: 100px;
-		padding: 0.7rem 1.3rem; text-decoration: none; color: var(--ink);
-		font-weight: 600; font-size: 0.95rem;
-		transition: border-color 0.15s, transform 0.15s;
+	/* Layout container */
+	.container {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 32px;
 	}
-	.intent-card:hover { border-color: var(--primary); transform: translateY(-2px); }
-	.check { color: var(--primary); font-family: var(--display); }
 
-	.tools-strip { max-width: 1100px; margin: 0 auto 4rem; padding: 0 1.5rem; }
-	.tools-strip h2, .pillars h2, .shop-teaser h2 { text-align: center; margin-bottom: 2rem; font-size: 1.6rem; }
-	.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+	/* Eyebrow */
+	.eyebrow {
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: var(--primary);
+		margin: 0 0 1rem;
+	}
+
+	/* Buttons */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.875rem 1.75rem;
+		border-radius: 10px;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: all var(--duration-fast) ease;
+		cursor: pointer;
+		text-decoration: none;
+	}
+	.btn-primary {
+		background: var(--primary);
+		color: #fff;
+		border: 1px solid var(--primary);
+	}
+	.btn-primary:hover {
+		background: var(--primary-dark);
+		border-color: var(--primary-dark);
+		transform: translateY(-2px);
+	}
+	.btn-secondary {
+		background: transparent;
+		color: var(--ink);
+		border: 1.5px solid var(--border);
+	}
+	.btn-secondary:hover {
+		border-color: var(--primary);
+		color: var(--primary);
+		transform: translateY(-2px);
+	}
+
+	/* ===== HERO ===== */
+	.hero {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 4rem 32px 5rem;
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: 4rem;
+		align-items: center;
+		min-height: 80vh;
+	}
+	.hero-copy h1 {
+		font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+		line-height: 1.05;
+		letter-spacing: -0.03em;
+		margin-bottom: 1.5rem;
+	}
+	.hero-lede {
+		font-size: 1.25rem;
+		line-height: 1.6;
+		color: var(--ink-soft);
+		max-width: 460px;
+		margin-bottom: 2.5rem;
+	}
+	.hero-actions {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	/* Hero demo card */
+	.hero-demo {
+		position: relative;
+	}
+	.demo-card {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 20px;
+		padding: 2rem;
+		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.08);
+	}
+	.demo-title {
+		font-family: var(--display);
+		font-weight: 600;
+		font-size: 1.1rem;
+		color: var(--ink);
+		margin-bottom: 1.5rem;
+	}
+	.demo-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-bottom: 1.5rem;
+		min-height: 44px;
+	}
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.5rem 1rem;
+		background: var(--primary-light);
+		color: var(--primary-dark);
+		border-radius: 100px;
+		font-size: 0.875rem;
+		font-weight: 500;
+		transition: all 0.5s var(--ease-out);
+	}
+	.demo-sort {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+	}
+	.sort-col {
+		background: var(--bg-warm);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1rem;
+		min-height: 120px;
+		opacity: 0.4;
+		transition: opacity 0.5s ease;
+	}
+	.sort-label {
+		display: block;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--ink-muted);
+		margin-bottom: 0.75rem;
+	}
+	.sort-items {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.sort-items .chip {
+		background: var(--card);
+		border: 1px solid var(--border);
+		font-size: 0.8rem;
+	}
+	.demo-card.sorting .sort-col {
+		opacity: 1;
+	}
+	.demo-card.sorted .demo-chips {
+		display: none;
+	}
+
+	/* ===== PROBLEM ===== */
+	.problem {
+		padding: 5rem 0;
+		background: var(--bg-warm);
+	}
+	.problem-head {
+		max-width: 640px;
+		margin-bottom: 3rem;
+	}
+	.problem-head h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin-bottom: 1rem;
+	}
+	.section-lede {
+		font-size: 1.15rem;
+		color: var(--ink-soft);
+		line-height: 1.6;
+	}
+	.problem-visual {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		gap: 2rem;
+		align-items: center;
+	}
+	.pv-scattered {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		align-content: center;
+	}
+	.pv-scattered span {
+		padding: 0.5rem 1rem;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 100px;
+		font-size: 0.875rem;
+		transform: rotate(-2deg);
+	}
+	.pv-arrow {
+		font-size: 2rem;
+		color: var(--primary);
+	}
+	.pv-sorted {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+	}
+	.pv-sorted > div {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1rem;
+	}
+	.pv-sorted strong {
+		display: block;
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--primary);
+		margin-bottom: 0.5rem;
+	}
+	.pv-sorted span {
+		display: block;
+		font-size: 0.8rem;
+		color: var(--ink-soft);
+		margin-bottom: 0.25rem;
+	}
+
+	/* ===== TOOLS ===== */
+	.tools {
+		padding: 5rem 0;
+	}
+	.section-head {
+		max-width: 640px;
+		margin-bottom: 3rem;
+	}
+	.section-head h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+	}
+	.tools-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
 	.tool-card {
-		background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-		padding: 1.75rem; text-decoration: none; color: var(--ink); display: block;
-		transition: box-shadow 0.15s, transform 0.15s;
+		position: relative;
+		padding: 2.5rem;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		text-decoration: none;
+		color: var(--ink);
+		display: block;
+		transition: all var(--duration-normal) var(--ease-out);
+		overflow: hidden;
 	}
-	.tool-card:hover { box-shadow: 0 8px 24px rgba(43,46,40,0.08); transform: translateY(-3px); }
-	.tool-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
-	.tool-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 1rem; }
-	.try { color: var(--primary); font-weight: 700; font-size: 0.9rem; }
-
-	.pillars { max-width: 1100px; margin: 0 auto 4rem; padding: 0 1.5rem; }
-	.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-	.pillar {
-		background: var(--primary); color: #fff; border-radius: 14px; padding: 2rem;
-		text-decoration: none; display: block; transition: transform 0.15s;
+	.tool-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: var(--primary);
+		transform: scaleX(0);
+		transition: transform var(--duration-normal) var(--ease-out);
 	}
-	.pillar:hover { transform: translateY(-3px); }
-	.pillar h3 { color: #fff; margin-bottom: 0.5rem; }
-	.pillar p { color: rgba(255,255,255,0.85); font-size: 0.92rem; margin: 0; }
-	.pillar:nth-child(2) { background: var(--primary-dark); }
-	.pillar:nth-child(3) { background: var(--accent); }
-
-	.shop-teaser { max-width: 600px; margin: 0 auto 5rem; padding: 0 1.5rem; text-align: center; }
-	.shop-teaser p { color: var(--ink-soft); margin-bottom: 1.5rem; }
-	.shop-link {
-		display: inline-block; background: var(--ink); color: #fff; text-decoration: none;
-		padding: 0.8rem 1.75rem; border-radius: 100px; font-weight: 700;
+	.tool-card:hover::before {
+		transform: scaleX(1);
+	}
+	.tool-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.08);
+	}
+	.tool-tag {
+		display: inline-block;
+		padding: 0.3rem 0.7rem;
+		background: var(--primary-light);
+		color: var(--primary-dark);
+		border-radius: 6px;
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		margin-bottom: 1.25rem;
+	}
+	.tool-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	.tool-card p {
+		color: var(--ink-soft);
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	.tool-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--primary);
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+	.arrow {
+		transition: transform var(--duration-fast) ease;
+	}
+	.tool-card:hover .arrow,
+	.pillar-card:hover .arrow {
+		transform: translateX(4px);
 	}
 
-	@media (max-width: 800px) {
-		.tools-grid, .pillar-grid { grid-template-columns: 1fr; }
+	/* ===== PILLARS ===== */
+	.pillars {
+		padding: 5rem 0;
+		background: var(--bg-warm);
+	}
+	.pillars-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+	.pillar-card {
+		padding: 2.5rem;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		text-decoration: none;
+		color: var(--ink);
+		display: block;
+		transition: all var(--duration-normal) var(--ease-out);
+	}
+	.pillar-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.08);
+	}
+	.pillar-num {
+		display: block;
+		font-family: var(--display);
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--primary);
+		margin-bottom: 1.5rem;
+	}
+	.pillar-card h3 {
+		font-size: 1.75rem;
+		margin-bottom: 0.75rem;
+	}
+	.pillar-card p {
+		color: var(--ink-soft);
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+	.pillar-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--primary);
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+
+	/* ===== ETSY ===== */
+	.etsy {
+		padding: 5rem 0;
+	}
+	.etsy-inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+		background: var(--bg-warm);
+		border-radius: 24px;
+		padding: 3.5rem;
+	}
+	.etsy-copy h2 {
+		font-size: clamp(2rem, 4vw, 2.75rem);
+		margin-bottom: 1rem;
+	}
+	.etsy-copy .section-lede {
+		margin-bottom: 2rem;
+	}
+	.etsy-visual {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.paper-stack {
+		position: relative;
+		width: 220px;
+		height: 280px;
+	}
+	.paper {
+		position: absolute;
+		inset: 0;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		box-shadow: 0 8px 24px rgba(28, 29, 31, 0.08);
+	}
+	.paper-1 { transform: rotate(-6deg) translate(-8px, 4px); }
+	.paper-2 { transform: rotate(3deg) translate(6px, -4px); }
+	.paper-3 { transform: rotate(0deg); }
+
+	/* Scroll reveal */
+	.problem, .tools, .pillars, .etsy {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+	}
+	.problem.revealed, .tools.revealed, .pillars.revealed, .etsy.revealed {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* ===== RESPONSIVE ===== */
+	@media (max-width: 1024px) {
+		.hero {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+			padding: 3rem 24px 4rem;
+		}
+		.tools-grid, .pillars-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		.etsy-inner {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+			padding: 2.5rem;
+		}
+		.problem-visual {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		.pv-arrow {
+			transform: rotate(90deg);
+			text-align: center;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			padding: 0 20px;
+		}
+		.hero {
+			padding: 2.5rem 20px 3.5rem;
+		}
+		.hero-actions {
+			flex-direction: column;
+		}
+		.btn {
+			width: 100%;
+		}
+		.tools-grid, .pillars-grid {
+			grid-template-columns: 1fr;
+		}
+		.demo-sort {
+			grid-template-columns: 1fr;
+		}
+		.pv-sorted {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-copy h1 {
+			font-size: 2.25rem;
+		}
+		.hero-lede {
+			font-size: 1.1rem;
+		}
+		.etsy-inner {
+			padding: 2rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.problem, .tools, .pillars, .etsy {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+		.chip {
+			transition: none;
+		}
 	}
 </style>
