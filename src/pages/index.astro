@@ -2,14 +2,6 @@
 import Base from '../layouts/Base.astro';
 import { etsyLink } from '../data/site';
 
-const intents = [
-	{ label: "Clear my head", href: "/tools/brain-dump" },
-	{ label: "Plan my week", href: "/tools/weekly-reset" },
-	{ label: "Get schoolwork done", href: "/students" },
-	{ label: "Build a routine", href: "/tools/morning-routine" },
-	{ label: "Focus on one thing", href: "/productivity" },
-];
-
 const tools = [
 	{ name: "Brain Dump", desc: "Clear the noise.", href: "/tools/brain-dump", tag: "ADHD" },
 	{ name: "Weekly Reset", desc: "Turn a scattered week into a clear plan.", href: "/tools/weekly-reset", tag: "Productivity" },
@@ -23,69 +15,108 @@ const pillars = [
 ];
 ---
 <Base title="Planning for overwhelmed minds">
-	<!-- HERO -->
-	<section class="hero">
+	<!-- ===== HERO ===== -->
+	<section class="hero" id="hero">
 		<div class="hero-copy">
 			<p class="eyebrow">Planning for overwhelmed minds</p>
 			<h1>Make planning easier when your brain feels overwhelmed.</h1>
 			<p class="hero-lede">Free tools and practical systems that turn scattered thoughts into clear next steps.</p>
 			<div class="hero-actions">
 				<a href="/tools/brain-dump" class="btn btn-primary">Try a free tool</a>
-				<a href="#tools" class="btn btn-secondary">Explore resources</a>
+				<a href="#story" class="btn btn-secondary">Explore resources</a>
+			</div>
+			<div class="hero-trust">
+				<span>Free</span><span>·</span><span>No sign-up</span><span>·</span><span>Private</span>
 			</div>
 		</div>
 
-		<div class="hero-demo" id="brainDemo" aria-label="Brain dump demonstration">
-			<div class="demo-card">
-				<p class="demo-title">What's on your mind?</p>
-				<div class="demo-chips" id="demoChips">
-					<span class="chip" data-cat="later">Buy groceries</span>
-					<span class="chip" data-cat="now">Reply to email</span>
-					<span class="chip" data-cat="deadline">Study for exam</span>
-					<span class="chip" data-cat="now">Doctor appointment</span>
-					<span class="chip" data-cat="deadline">Finish assignment</span>
+		<!-- Immersive thought-sorting environment -->
+		<div class="hero-stage" id="stage" aria-label="Interactive thought sorting demonstration">
+			<div class="stage-glow"></div>
+			<div class="stage-field" id="field">
+				<div class="thought t1" data-cat="now">Reply to email</div>
+				<div class="thought t2" data-cat="deadline">Study for exam</div>
+				<div class="thought t3" data-cat="later">Buy groceries</div>
+				<div class="thought t4" data-cat="now">Doctor appointment</div>
+				<div class="thought t5" data-cat="deadline">Finish assignment</div>
+				<div class="thought t6" data-cat="later">Laundry</div>
+				<div class="thought t7" data-cat="now">Project</div>
+				<div class="thought t8" data-cat="deadline">Meeting</div>
+			</div>
+			<div class="stage-sorter" id="sorter">
+				<div class="sorter-col" data-col="now">
+					<span class="sorter-label">Do now</span>
+					<div class="sorter-items"></div>
 				</div>
-				<div class="demo-sort">
-					<div class="sort-col" data-col="now">
-						<span class="sort-label">Do now</span>
-						<div class="sort-items"></div>
-					</div>
-					<div class="sort-col" data-col="deadline">
-						<span class="sort-label">Deadline</span>
-						<div class="sort-items"></div>
-					</div>
-					<div class="sort-col" data-col="later">
-						<span class="sort-label">Later</span>
-						<div class="sort-items"></div>
-					</div>
+				<div class="sorter-col" data-col="deadline">
+					<span class="sorter-label">Deadline</span>
+					<div class="sorter-items"></div>
+				</div>
+				<div class="sorter-col" data-col="later">
+					<span class="sorter-label">Later</span>
+					<div class="sorter-items"></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- PROBLEM SECTION -->
-	<section class="problem">
+	<!-- ===== SCROLL STORY: CHAOS ===== -->
+	<section class="story" id="story">
 		<div class="container">
-			<div class="problem-head">
+			<div class="story-head">
 				<p class="eyebrow">The problem</p>
 				<h2>Your brain isn't a checklist.</h2>
 				<p class="section-lede">Scattered thoughts pile up until everything feels urgent. The fix isn't more willpower — it's getting it out of your head and into a system.</p>
 			</div>
-			<div class="problem-visual">
-				<div class="pv-scattered">
-					<span>Buy groceries</span><span>Reply to email</span><span>Study for exam</span><span>Doctor appointment</span><span>Finish assignment</span>
+			<div class="chaos-scene">
+				<div class="chaos-chip c1">Buy groceries</div>
+				<div class="chaos-chip c2">Reply to email</div>
+				<div class="chaos-chip c3">Study for exam</div>
+				<div class="chaos-chip c4">Doctor appointment</div>
+				<div class="chaos-chip c5">Finish assignment</div>
+				<div class="chaos-chip c6">Laundry</div>
+				<div class="chaos-chip c7">Project</div>
+				<div class="chaos-chip c8">Meeting</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== SCROLL STORY: SORTING ===== -->
+	<section class="sorting">
+		<div class="container">
+			<div class="sorting-inner">
+				<div class="sorting-copy">
+					<p class="eyebrow">The method</p>
+					<h2>Sort it once. See the next step.</h2>
+					<p class="section-lede">Everything lands in one of three places — do it now, it has a deadline, or it can wait. That's the whole system.</p>
 				</div>
-				<div class="pv-arrow">→</div>
-				<div class="pv-sorted">
-					<div><strong>Do now</strong><span>Reply to email</span><span>Doctor appointment</span></div>
-					<div><strong>Deadline</strong><span>Study for exam</span><span>Finish assignment</span></div>
-					<div><strong>Later</strong><span>Buy groceries</span></div>
+				<div class="sorting-visual">
+					<div class="sorting-flow">
+						<div class="flow-in"><span>Scattered</span></div>
+						<div class="flow-arrow">→</div>
+						<div class="flow-out">
+							<div><strong>Now</strong></div>
+							<div><strong>Deadline</strong></div>
+							<div><strong>Later</strong></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- TOOLS -->
+	<!-- ===== SCROLL STORY: CLARITY ===== -->
+	<section class="clarity">
+		<div class="container">
+			<div class="clarity-inner">
+				<p class="eyebrow">The result</p>
+				<h2>Clear the noise. Find the next step.</h2>
+				<p class="section-lede">A calm, organized plan you can actually start — not another list you'll ignore.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== TOOLS ===== -->
 	<section class="tools" id="tools">
 		<div class="container">
 			<div class="section-head">
@@ -95,51 +126,58 @@ const pillars = [
 			<div class="tools-grid">
 				{tools.map((t) => (
 					<a class="tool-card" href={t.href}>
-						<span class="tool-tag">{t.tag}</span>
-						<h3>{t.name}</h3>
-						<p>{t.desc}</p>
-						<span class="tool-link">Try it free <span class="arrow">→</span></span>
+						<div class="tool-surface">
+							<span class="tool-tag">{t.tag}</span>
+							<h3>{t.name}</h3>
+							<p>{t.desc}</p>
+							<span class="tool-link">Try it free <span class="arrow">→</span></span>
+						</div>
 					</a>
 				))}
 			</div>
 		</div>
 	</section>
 
-	<!-- PILLARS -->
-	<section class="pillars">
+	<!-- ===== PATHS ===== -->
+	<section class="paths">
 		<div class="container">
 			<div class="section-head">
 				<p class="eyebrow">Choose your path</p>
 				<h2>Start with a problem</h2>
 			</div>
-			<div class="pillars-grid">
+			<div class="paths-grid">
 				{pillars.map((p) => (
-					<a class="pillar-card" href={p.href}>
-						<span class="pillar-num">{p.num}</span>
+					<a class="path-card" href={p.href}>
+						<span class="path-num">{p.num}</span>
 						<h3>{p.title}</h3>
 						<p>{p.desc}</p>
-						<span class="pillar-link">Explore <span class="arrow">→</span></span>
+						<span class="path-link">Explore <span class="arrow">→</span></span>
 					</a>
 				))}
 			</div>
 		</div>
 	</section>
 
-	<!-- ETSY -->
-	<section class="etsy">
+	<!-- ===== ETSY / PRINTABLES ===== -->
+	<section class="printables">
 		<div class="container">
-			<div class="etsy-inner">
-				<div class="etsy-copy">
+			<div class="printables-inner">
+				<div class="printables-copy">
 					<p class="eyebrow">Printables</p>
 					<h2>Take the system off-screen.</h2>
 					<p class="section-lede">Prefer paper? The same planning systems are available as printable planners — instant download, designed to reuse.</p>
 					<a class="btn btn-primary" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Browse printable planners →</a>
 				</div>
-				<div class="etsy-visual">
-					<div class="paper-stack">
-						<div class="paper paper-1"></div>
-						<div class="paper paper-2"></div>
-						<div class="paper paper-3"></div>
+				<div class="printables-visual">
+					<div class="planner">
+						<div class="planner-page page-back"></div>
+						<div class="planner-page page-mid"></div>
+						<div class="planner-page page-front">
+							<span class="planner-line"></span>
+							<span class="planner-line"></span>
+							<span class="planner-line short"></span>
+						</div>
+						<div class="planner-spine"></div>
 					</div>
 				</div>
 			</div>
@@ -148,41 +186,53 @@ const pillars = [
 </Base>
 
 <script is:inline>
-	// Brain dump demo animation
+	// ---- Hero thought-sorting animation ----
 	document.addEventListener('DOMContentLoaded', () => {
-		const demo = document.getElementById('brainDemo');
-		if (!demo) return;
+		const stage = document.getElementById('stage');
+		if (!stage) return;
 
 		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const chips = Array.from(demo.querySelectorAll('.chip'));
-		const cols = Array.from(demo.querySelectorAll('.sort-col'));
+		const thoughts = Array.from(stage.querySelectorAll('.thought'));
+		const cols = Array.from(stage.querySelectorAll('.sorter-col'));
 
 		if (prefersReduced) {
 			// Show final sorted state immediately
-			chips.forEach((chip) => {
-				const col = cols.find((c) => c.dataset.col === chip.dataset.cat);
-				if (col) col.querySelector('.sort-items').appendChild(chip);
+			thoughts.forEach((t) => {
+				const col = cols.find((c) => c.dataset.col === t.dataset.cat);
+				if (col) col.querySelector('.sorter-items').appendChild(t);
 			});
-			demo.classList.add('sorted');
+			stage.classList.add('sorted');
 			return;
 		}
 
-		// Animate: scatter → sort
+		// Scatter → sort
 		setTimeout(() => {
-			chips.forEach((chip, i) => {
+			thoughts.forEach((t, i) => {
 				setTimeout(() => {
-					const col = cols.find((c) => c.dataset.col === chip.dataset.cat);
-					if (col) col.querySelector('.sort-items').appendChild(chip);
-					chip.classList.add('placed');
-				}, i * 250);
+					const col = cols.find((c) => c.dataset.col === t.dataset.cat);
+					if (col) col.querySelector('.sorter-items').appendChild(t);
+					t.classList.add('placed');
+				}, 300 + i * 220);
 			});
-			demo.classList.add('sorting');
-		}, 1200);
+			stage.classList.add('sorting');
+		}, 1400);
 
-		setTimeout(() => demo.classList.add('sorted'), 1200 + chips.length * 250 + 400);
+		setTimeout(() => stage.classList.add('sorted'), 1400 + thoughts.length * 220 + 500);
+
+		// ---- Pointer parallax (desktop only) ----
+		const field = document.getElementById('field');
+		if (field && window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+			stage.addEventListener('mousemove', (e) => {
+				const rect = stage.getBoundingClientRect();
+				const x = (e.clientX - rect.left) / rect.width - 0.5;
+				const y = (e.clientY - rect.top) / rect.height - 0.5;
+				field.style.setProperty('--px', (x * 12).toFixed(1) + 'px');
+				field.style.setProperty('--py', (y * 12).toFixed(1) + 'px');
+			});
+		}
 	});
 
-	// Scroll reveal
+	// ---- Scroll reveal ----
 	const revealObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
@@ -190,22 +240,20 @@ const pillars = [
 				revealObserver.unobserve(entry.target);
 			}
 		});
-	}, { threshold: 0.12 });
+	}, { threshold: 0.15 });
 
-	document.querySelectorAll('.problem, .tools, .pillars, .etsy').forEach((el) => {
+	document.querySelectorAll('.story, .sorting, .clarity, .tools, .paths, .printables').forEach((el) => {
 		revealObserver.observe(el);
 	});
 </script>
 
 <style>
-	/* Layout container */
 	.container {
 		max-width: 1280px;
 		margin: 0 auto;
 		padding: 0 32px;
 	}
 
-	/* Eyebrow */
 	.eyebrow {
 		font-size: 0.75rem;
 		font-weight: 600;
@@ -213,6 +261,12 @@ const pillars = [
 		text-transform: uppercase;
 		color: var(--primary);
 		margin: 0 0 1rem;
+	}
+
+	.section-lede {
+		font-size: 1.15rem;
+		color: var(--ink-soft);
+		line-height: 1.6;
 	}
 
 	/* Buttons */
@@ -253,12 +307,12 @@ const pillars = [
 	.hero {
 		max-width: 1280px;
 		margin: 0 auto;
-		padding: 4rem 32px 5rem;
+		padding: 3rem 32px 5rem;
 		display: grid;
 		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-		gap: 4rem;
+		gap: 3rem;
 		align-items: center;
-		min-height: auto;
+		min-height: 88vh;
 	}
 	.hero-copy h1 {
 		font-size: clamp(2.75rem, 5.5vw, 4.25rem);
@@ -271,156 +325,229 @@ const pillars = [
 		line-height: 1.6;
 		color: var(--ink-soft);
 		max-width: 460px;
-		margin-bottom: 2.5rem;
+		margin-bottom: 2rem;
 	}
 	.hero-actions {
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap;
+		margin-bottom: 2rem;
+	}
+	.hero-trust {
+		display: flex;
+		gap: 0.5rem;
+		font-size: 0.85rem;
+		color: var(--ink-muted);
 	}
 
-	/* Hero demo card */
-	.hero-demo {
+	/* Immersive stage */
+	.hero-stage {
 		position: relative;
+		height: 560px;
+		perspective: 1200px;
 	}
-	.demo-card {
+	.stage-glow {
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(ellipse at 50% 40%, var(--primary-light) 0%, transparent 70%);
+		border-radius: 32px;
+		opacity: 0.7;
+	}
+	.stage-field {
+		position: absolute;
+		inset: 0;
+		transform-style: preserve-3d;
+		transform: translate3d(var(--px, 0), var(--py, 0), 0);
+		transition: transform 0.3s ease-out;
+	}
+	.thought {
+		position: absolute;
+		padding: 0.75rem 1.25rem;
 		background: var(--card);
 		border: 1px solid var(--border);
-		border-radius: 20px;
-		padding: 2rem;
-		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.08);
-	}
-	.demo-title {
-		font-family: var(--display);
-		font-weight: 600;
-		font-size: 1.1rem;
-		color: var(--ink);
-		margin-bottom: 1.5rem;
-	}
-	.demo-chips {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75rem;
-		margin-bottom: 1.5rem;
-		min-height: 44px;
-	}
-	.chip {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.5rem 1rem;
-		background: var(--primary-light);
-		color: var(--primary-dark);
-		border-radius: 100px;
-		font-size: 0.875rem;
+		border-radius: 14px;
+		font-size: 0.9rem;
 		font-weight: 500;
-		transition: all 0.5s var(--ease-out);
+		color: var(--ink);
+		box-shadow: 0 12px 32px rgba(28, 29, 31, 0.12);
+		transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+		will-change: transform, opacity;
 	}
-	.demo-sort {
+	.t1 { top: 8%; left: 6%; transform: rotate(-6deg); }
+	.t2 { top: 20%; left: 55%; transform: rotate(4deg); }
+	.t3 { top: 40%; left: 12%; transform: rotate(2deg); }
+	.t4 { top: 55%; left: 60%; transform: rotate(-3deg); }
+	.t5 { top: 12%; left: 30%; transform: rotate(5deg); }
+	.t6 { top: 65%; left: 30%; transform: rotate(-5deg); }
+	.t7 { top: 30%; left: 75%; transform: rotate(3deg); }
+	.t8 { top: 70%; left: 70%; transform: rotate(-2deg); }
+
+	.stage-sorter {
+		position: absolute;
+		inset: 0;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 0.75rem;
-	}
-	.sort-col {
-		background: var(--bg-warm);
-		border: 1px solid var(--border);
-		border-radius: 12px;
+		gap: 1rem;
 		padding: 1rem;
-		min-height: 120px;
-		opacity: 0.4;
-		transition: opacity 0.5s ease;
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
 	}
-	.sort-label {
+	.sorter-col {
+		background: rgba(255, 255, 255, 0.6);
+		backdrop-filter: blur(8px);
+		border: 1px solid var(--border);
+		border-radius: 18px;
+		padding: 1.25rem;
+		min-height: 200px;
+		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.06);
+	}
+	.sorter-label {
 		display: block;
 		font-size: 0.7rem;
 		font-weight: 700;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		color: var(--ink-muted);
+		color: var(--primary);
 		margin-bottom: 0.75rem;
 	}
-	.sort-items {
+	.sorter-items {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
 	}
-	.sort-items .chip {
-		background: var(--card);
-		border: 1px solid var(--border);
-		font-size: 0.8rem;
+	.sorter-items .thought {
+		position: static;
+		transform: none;
+		box-shadow: 0 4px 12px rgba(28, 29, 31, 0.08);
 	}
-	.demo-card.sorting .sort-col {
+	.stage.sorting .stage-sorter {
 		opacity: 1;
+		transform: translateY(0);
 	}
-	.demo-card.sorted .demo-chips {
-		display: none;
+	.stage.sorting .thought {
+		opacity: 0.3;
+	}
+	.stage.sorted .stage-field {
+		opacity: 0;
+	}
+	.stage.sorted .stage-sorter {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
-	/* ===== PROBLEM ===== */
-	.problem {
+	/* ===== SCROLL STORY ===== */
+	.story, .sorting, .clarity, .tools, .paths, .printables {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+	}
+	.story.revealed, .sorting.revealed, .clarity.revealed, .tools.revealed, .paths.revealed, .printables.revealed {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* CHAOS */
+	.story {
 		padding: 5rem 0;
 		background: var(--bg-warm);
 	}
-	.problem-head {
+	.story-head {
 		max-width: 640px;
 		margin-bottom: 3rem;
 	}
-	.problem-head h2 {
+	.story-head h2 {
 		font-size: clamp(2rem, 4vw, 3rem);
 		margin-bottom: 1rem;
 	}
-	.section-lede {
-		font-size: 1.15rem;
-		color: var(--ink-soft);
-		line-height: 1.6;
+	.chaos-scene {
+		position: relative;
+		min-height: 220px;
 	}
-	.problem-visual {
-		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		gap: 2rem;
-		align-items: center;
-	}
-	.pv-scattered {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75rem;
-		align-content: center;
-	}
-	.pv-scattered span {
-		padding: 0.5rem 1rem;
+	.chaos-chip {
+		position: absolute;
+		padding: 0.75rem 1.25rem;
 		background: var(--card);
 		border: 1px solid var(--border);
-		border-radius: 100px;
-		font-size: 0.875rem;
-		transform: rotate(-2deg);
+		border-radius: 14px;
+		font-size: 0.9rem;
+		box-shadow: 0 8px 24px rgba(28, 29, 31, 0.08);
 	}
-	.pv-arrow {
-		font-size: 2rem;
+	.c1 { top: 0; left: 5%; transform: rotate(-5deg); }
+	.c2 { top: 20px; left: 40%; transform: rotate(3deg); }
+	.c3 { top: 0; left: 70%; transform: rotate(-2deg); }
+	.c4 { top: 80px; left: 15%; transform: rotate(4deg); }
+	.c5 { top: 100px; left: 55%; transform: rotate(-4deg); }
+	.c6 { top: 140px; left: 30%; transform: rotate(2deg); }
+	.c7 { top: 60px; left: 85%; transform: rotate(-3deg); }
+	.c8 { top: 160px; left: 70%; transform: rotate(5deg); }
+
+	/* SORTING */
+	.sorting {
+		padding: 5rem 0;
+	}
+	.sorting-inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	.sorting-copy h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin-bottom: 1rem;
+	}
+	.sorting-flow {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	.flow-in {
+		flex: 1;
+		background: var(--bg-warm);
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		padding: 2rem;
+		text-align: center;
+		font-weight: 600;
+		color: var(--ink-soft);
+	}
+	.flow-arrow {
+		font-size: 1.5rem;
 		color: var(--primary);
 	}
-	.pv-sorted {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 0.75rem;
+	.flow-out {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 	}
-	.pv-sorted > div {
+	.flow-out div {
 		background: var(--card);
 		border: 1px solid var(--border);
 		border-radius: 12px;
 		padding: 1rem;
+		text-align: center;
 	}
-	.pv-sorted strong {
-		display: block;
-		font-size: 0.7rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
+	.flow-out strong {
 		color: var(--primary);
-		margin-bottom: 0.5rem;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
-	.pv-sorted span {
-		display: block;
-		font-size: 0.8rem;
-		color: var(--ink-soft);
-		margin-bottom: 0.25rem;
+
+	/* CLARITY */
+	.clarity {
+		padding: 5rem 0;
+		background: var(--primary-light);
+		text-align: center;
+	}
+	.clarity-inner {
+		max-width: 640px;
+		margin: 0 auto;
+	}
+	.clarity h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin-bottom: 1rem;
 	}
 
 	/* ===== TOOLS ===== */
@@ -440,34 +567,24 @@ const pillars = [
 		gap: 1.5rem;
 	}
 	.tool-card {
+		text-decoration: none;
+		color: var(--ink);
+		display: block;
+		perspective: 800px;
+	}
+	.tool-surface {
 		position: relative;
 		padding: 2.5rem;
 		background: var(--card);
 		border: 1px solid var(--border);
-		border-radius: 16px;
-		text-decoration: none;
-		color: var(--ink);
-		display: block;
-		transition: all var(--duration-normal) var(--ease-out);
-		overflow: hidden;
-	}
-	.tool-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 4px;
-		background: var(--primary);
-		transform: scaleX(0);
-		transition: transform var(--duration-normal) var(--ease-out);
-	}
-	.tool-card:hover::before {
-		transform: scaleX(1);
-	}
-	.tool-card:hover {
-		transform: translateY(-4px);
+		border-radius: 20px;
 		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.08);
+		transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+		transform-style: preserve-3d;
+	}
+	.tool-card:hover .tool-surface {
+		transform: translateY(-6px) rotateX(2deg);
+		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.12);
 	}
 	.tool-tag {
 		display: inline-block;
@@ -480,11 +597,11 @@ const pillars = [
 		letter-spacing: 0.05em;
 		margin-bottom: 1.25rem;
 	}
-	.tool-card h3 {
+	.tool-surface h3 {
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
 	}
-	.tool-card p {
+	.tool-surface p {
 		color: var(--ink-soft);
 		font-size: 1rem;
 		margin-bottom: 1.5rem;
@@ -501,35 +618,35 @@ const pillars = [
 		transition: transform var(--duration-fast) ease;
 	}
 	.tool-card:hover .arrow,
-	.pillar-card:hover .arrow {
+	.path-card:hover .arrow {
 		transform: translateX(4px);
 	}
 
-	/* ===== PILLARS ===== */
-	.pillars {
+	/* ===== PATHS ===== */
+	.paths {
 		padding: 5rem 0;
-		background: var(--primary-light);
+		background: var(--bg-warm);
 	}
-	.pillars-grid {
+	.paths-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
 	}
-	.pillar-card {
+	.path-card {
 		padding: 2.5rem;
 		background: var(--card);
 		border: 1px solid var(--border);
-		border-radius: 16px;
+		border-radius: 20px;
 		text-decoration: none;
 		color: var(--ink);
 		display: block;
 		transition: all var(--duration-normal) var(--ease-out);
 	}
-	.pillar-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.08);
+	.path-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.12);
 	}
-	.pillar-num {
+	.path-num {
 		display: block;
 		font-family: var(--display);
 		font-size: 2.5rem;
@@ -537,17 +654,17 @@ const pillars = [
 		color: var(--primary);
 		margin-bottom: 1.5rem;
 	}
-	.pillar-card h3 {
+	.path-card h3 {
 		font-size: 1.75rem;
 		margin-bottom: 0.75rem;
 	}
-	.pillar-card p {
+	.path-card p {
 		color: var(--ink-soft);
 		font-size: 1rem;
 		line-height: 1.6;
 		margin-bottom: 1.5rem;
 	}
-	.pillar-link {
+	.path-link {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -556,14 +673,14 @@ const pillars = [
 		font-size: 0.95rem;
 	}
 
-	/* ===== ETSY ===== */
-	.etsy {
+	/* ===== PRINTABLES ===== */
+	.printables {
 		padding: 5rem 0;
 	}
-	.etsy-inner {
+	.printables-inner {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 4rem;
+		gap: 3rem;
 		align-items: center;
 		background: var(--card);
 		border: 1px solid var(--border);
@@ -571,68 +688,77 @@ const pillars = [
 		padding: 3.5rem;
 		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.06);
 	}
-	.etsy-copy h2 {
+	.printables-copy h2 {
 		font-size: clamp(2rem, 4vw, 2.75rem);
 		margin-bottom: 1rem;
 	}
-	.etsy-copy .section-lede {
+	.printables-copy .section-lede {
 		margin-bottom: 2rem;
 	}
-	.etsy-visual {
+	.printables-visual {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		perspective: 1000px;
 	}
-	.paper-stack {
+	.planner {
 		position: relative;
-		width: 220px;
-		height: 280px;
+		width: 240px;
+		height: 320px;
+		transform-style: preserve-3d;
+		transform: rotateY(-12deg) rotateX(4deg);
 	}
-	.paper {
+	.planner-page {
 		position: absolute;
 		inset: 0;
 		background: var(--card);
 		border: 1px solid var(--border);
-		border-radius: 8px;
-		box-shadow: 0 8px 24px rgba(28, 29, 31, 0.08);
+		border-radius: 6px;
+		box-shadow: 0 12px 32px rgba(28, 29, 31, 0.12);
 	}
-	.paper-1 { transform: rotate(-6deg) translate(-8px, 4px); }
-	.paper-2 { transform: rotate(3deg) translate(6px, -4px); }
-	.paper-3 { transform: rotate(0deg); }
-
-	/* Scroll reveal */
-	.problem, .tools, .pillars, .etsy {
-		opacity: 0;
-		transform: translateY(24px);
-		transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+	.page-back { transform: translateZ(-12px) translateX(6px); }
+	.page-mid { transform: translateZ(-6px) translateX(3px); }
+	.page-front {
+		transform: translateZ(0);
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
 	}
-	.problem.revealed, .tools.revealed, .pillars.revealed, .etsy.revealed {
-		opacity: 1;
-		transform: translateY(0);
+	.planner-line {
+		display: block;
+		height: 8px;
+		background: var(--bg-warm);
+		border-radius: 4px;
+	}
+	.planner-line.short { width: 60%; }
+	.planner-spine {
+		position: absolute;
+		left: -6px;
+		top: 0;
+		bottom: 0;
+		width: 12px;
+		background: var(--primary);
+		border-radius: 3px 0 0 3px;
 	}
 
 	/* ===== RESPONSIVE ===== */
 	@media (max-width: 1024px) {
 		.hero {
 			grid-template-columns: 1fr;
-			gap: 3rem;
+			gap: 2.5rem;
 			padding: 3rem 24px 4rem;
+			min-height: auto;
 		}
-		.tools-grid, .pillars-grid {
+		.hero-stage {
+			height: 480px;
+		}
+		.tools-grid, .paths-grid {
 			grid-template-columns: 1fr 1fr;
 		}
-		.etsy-inner {
+		.sorting-inner, .printables-inner {
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
-			padding: 2.5rem;
-		}
-		.problem-visual {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-		.pv-arrow {
-			transform: rotate(90deg);
-			text-align: center;
 		}
 	}
 
@@ -649,14 +775,27 @@ const pillars = [
 		.btn {
 			width: 100%;
 		}
-		.tools-grid, .pillars-grid {
+		.tools-grid, .paths-grid {
 			grid-template-columns: 1fr;
 		}
-		.demo-sort {
-			grid-template-columns: 1fr;
+		.hero-stage {
+			height: 420px;
 		}
-		.pv-sorted {
+		.stage-sorter {
 			grid-template-columns: 1fr;
+			gap: 0.75rem;
+		}
+		.sorter-col {
+			min-height: auto;
+		}
+		.chaos-scene {
+			min-height: 300px;
+		}
+		.sorting-flow {
+			flex-direction: column;
+		}
+		.flow-arrow {
+			transform: rotate(90deg);
 		}
 	}
 
@@ -667,19 +806,26 @@ const pillars = [
 		.hero-lede {
 			font-size: 1.1rem;
 		}
-		.etsy-inner {
+		.printables-inner {
 			padding: 2rem;
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.problem, .tools, .pillars, .etsy {
+		.story, .sorting, .clarity, .tools, .paths, .printables {
 			opacity: 1;
 			transform: none;
 			transition: none;
 		}
-		.chip {
+		.thought {
 			transition: none;
+		}
+		.hero-stage {
+			perspective: none;
+		}
+		.tool-card:hover .tool-surface,
+		.path-card:hover {
+			transform: none;
 		}
 	}
 </style>
