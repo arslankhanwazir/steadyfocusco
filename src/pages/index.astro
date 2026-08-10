@@ -30,34 +30,8 @@ const pillars = [
 			</div>
 		</div>
 
-		<!-- Immersive thought-sorting environment -->
-		<div class="hero-stage" id="stage" aria-label="Interactive thought sorting demonstration">
-			<div class="stage-glow"></div>
-			<div class="stage-field" id="field">
-				<div class="thought t1" data-cat="now">Reply to email</div>
-				<div class="thought t2" data-cat="deadline">Study for exam</div>
-				<div class="thought t3" data-cat="later">Buy groceries</div>
-				<div class="thought t4" data-cat="now">Doctor appointment</div>
-				<div class="thought t5" data-cat="deadline">Finish assignment</div>
-				<div class="thought t6" data-cat="later">Laundry</div>
-				<div class="thought t7" data-cat="now">Project</div>
-				<div class="thought t8" data-cat="deadline">Meeting</div>
-			</div>
-			<div class="stage-sorter" id="sorter">
-				<div class="sorter-col" data-col="now">
-					<span class="sorter-label">Do now</span>
-					<div class="sorter-items"></div>
-				</div>
-				<div class="sorter-col" data-col="deadline">
-					<span class="sorter-label">Deadline</span>
-					<div class="sorter-items"></div>
-				</div>
-				<div class="sorter-col" data-col="later">
-					<span class="sorter-label">Later</span>
-					<div class="sorter-items"></div>
-				</div>
-			</div>
-		</div>
+		<!-- Persistent 3D thought-cloud visual (Three.js) -->
+		<div class="hero-stage" id="hero3d" aria-label="Interactive 3D thought sorting demonstration"></div>
 	</section>
 
 	<!-- ===== SCROLL STORY: CHAOS ===== -->
@@ -185,52 +159,14 @@ const pillars = [
 	</section>
 </Base>
 
-<script is:inline>
-	// ---- Hero thought-sorting animation ----
-	document.addEventListener('DOMContentLoaded', () => {
-		const stage = document.getElementById('stage');
-		if (!stage) return;
+<script>
+	import { initHero3D } from '../components/Hero3D';
 
-		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const thoughts = Array.from(stage.querySelectorAll('.thought'));
-		const cols = Array.from(stage.querySelectorAll('.sorter-col'));
-
-		if (prefersReduced) {
-			// Show final sorted state immediately
-			thoughts.forEach((t) => {
-				const col = cols.find((c) => c.dataset.col === t.dataset.cat);
-				if (col) col.querySelector('.sorter-items').appendChild(t);
-			});
-			stage.classList.add('sorted');
-			return;
-		}
-
-		// Scatter → sort
-		setTimeout(() => {
-			thoughts.forEach((t, i) => {
-				setTimeout(() => {
-					const col = cols.find((c) => c.dataset.col === t.dataset.cat);
-					if (col) col.querySelector('.sorter-items').appendChild(t);
-					t.classList.add('placed');
-				}, 300 + i * 220);
-			});
-			stage.classList.add('sorting');
-		}, 1400);
-
-		setTimeout(() => stage.classList.add('sorted'), 1400 + thoughts.length * 220 + 500);
-
-		// ---- Pointer parallax (desktop only) ----
-		const field = document.getElementById('field');
-		if (field && window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
-			stage.addEventListener('mousemove', (e) => {
-				const rect = stage.getBoundingClientRect();
-				const x = (e.clientX - rect.left) / rect.width - 0.5;
-				const y = (e.clientY - rect.top) / rect.height - 0.5;
-				field.style.setProperty('--px', (x * 12).toFixed(1) + 'px');
-				field.style.setProperty('--py', (y * 12).toFixed(1) + 'px');
-			});
-		}
-	});
+	// ---- Persistent 3D hero visual ----
+	const container = document.getElementById('hero3d');
+	if (container) {
+		initHero3D({ container });
+	}
 
 	// ---- Scroll reveal ----
 	const revealObserver = new IntersectionObserver((entries) => {
@@ -340,100 +276,17 @@ const pillars = [
 		color: var(--ink-muted);
 	}
 
-	/* Immersive stage */
+	/* Immersive 3D stage */
 	.hero-stage {
 		position: relative;
 		height: 560px;
-		perspective: 1200px;
-	}
-	.stage-glow {
-		position: absolute;
-		inset: 0;
-		background: radial-gradient(ellipse at 50% 40%, var(--primary-light) 0%, transparent 70%);
 		border-radius: 32px;
-		opacity: 0.7;
+		overflow: hidden;
 	}
-	.stage-field {
-		position: absolute;
-		inset: 0;
-		transform-style: preserve-3d;
-		transform: translate3d(var(--px, 0), var(--py, 0), 0);
-		transition: transform 0.3s ease-out;
-	}
-	.thought {
-		position: absolute;
-		padding: 0.75rem 1.25rem;
-		background: var(--card);
-		border: 1px solid var(--border);
-		border-radius: 14px;
-		font-size: 0.9rem;
-		font-weight: 500;
-		color: var(--ink);
-		box-shadow: 0 12px 32px rgba(28, 29, 31, 0.12);
-		transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-		will-change: transform, opacity;
-	}
-	.t1 { top: 8%; left: 6%; transform: rotate(-6deg); }
-	.t2 { top: 20%; left: 55%; transform: rotate(4deg); }
-	.t3 { top: 40%; left: 12%; transform: rotate(2deg); }
-	.t4 { top: 55%; left: 60%; transform: rotate(-3deg); }
-	.t5 { top: 12%; left: 30%; transform: rotate(5deg); }
-	.t6 { top: 65%; left: 30%; transform: rotate(-5deg); }
-	.t7 { top: 30%; left: 75%; transform: rotate(3deg); }
-	.t8 { top: 70%; left: 70%; transform: rotate(-2deg); }
-
-	.stage-sorter {
-		position: absolute;
-		inset: 0;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
-		padding: 1rem;
-		opacity: 0;
-		transform: translateY(20px);
-		transition: opacity 0.6s ease, transform 0.6s ease;
-	}
-	.sorter-col {
-		background: rgba(255, 255, 255, 0.6);
-		backdrop-filter: blur(8px);
-		border: 1px solid var(--border);
-		border-radius: 18px;
-		padding: 1.25rem;
-		min-height: 200px;
-		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.06);
-	}
-	.sorter-label {
+	.hero-stage canvas {
 		display: block;
-		font-size: 0.7rem;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--primary);
-		margin-bottom: 0.75rem;
-	}
-	.sorter-items {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-	.sorter-items .thought {
-		position: static;
-		transform: none;
-		box-shadow: 0 4px 12px rgba(28, 29, 31, 0.08);
-	}
-	.stage.sorting .stage-sorter {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	.stage.sorting .thought {
-		opacity: 0.3;
-	}
-	.stage.sorted .stage-field {
-		opacity: 0;
-	}
-	.stage.sorted .stage-sorter {
-		opacity: 1;
-		transform: translateY(0);
+		width: 100%;
+		height: 100%;
 	}
 
 	/* ===== SCROLL STORY ===== */
@@ -781,13 +634,6 @@ const pillars = [
 		.hero-stage {
 			height: 420px;
 		}
-		.stage-sorter {
-			grid-template-columns: 1fr;
-			gap: 0.75rem;
-		}
-		.sorter-col {
-			min-height: auto;
-		}
 		.chaos-scene {
 			min-height: 300px;
 		}
@@ -815,9 +661,6 @@ const pillars = [
 		.story, .sorting, .clarity, .tools, .paths, .printables {
 			opacity: 1;
 			transform: none;
-			transition: none;
-		}
-		.thought {
 			transition: none;
 		}
 		.hero-stage {
