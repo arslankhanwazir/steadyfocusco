@@ -116,20 +116,15 @@ const webSiteSchema = {
 	<!-- ===== SCROLL STORY: CHAOS ===== -->
 	<section class="story" id="story">
 		<div class="container">
-			<div class="story-head">
-				<p class="eyebrow">The problem</p>
-				<h2>Your brain isn't a checklist.</h2>
-				<p class="section-lede">Scattered thoughts pile up until everything feels urgent. The fix isn't more willpower — it's getting it out of your head and into a system.</p>
-			</div>
-			<div class="chaos-scene">
-				<div class="chaos-chip c1">Buy groceries</div>
-				<div class="chaos-chip c2">Reply to email</div>
-				<div class="chaos-chip c3">Study for exam</div>
-				<div class="chaos-chip c4">Doctor appointment</div>
-				<div class="chaos-chip c5">Finish assignment</div>
-				<div class="chaos-chip c6">Laundry</div>
-				<div class="chaos-chip c7">Project</div>
-				<div class="chaos-chip c8">Meeting</div>
+			<div class="story-inner">
+				<div class="story-copy">
+					<p class="eyebrow">The problem</p>
+					<h2>Your brain isn't a checklist.</h2>
+					<p class="section-lede">Scattered thoughts pile up until everything feels urgent. The fix isn't more willpower — it's getting it out of your head and into a system.</p>
+				</div>
+				<div class="story-visual">
+					<img src="/products/brain-dump-card.png" alt="ADHD brain dump printable showing scattered thoughts organized into a clear system" loading="lazy" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -512,35 +507,29 @@ const webSiteSchema = {
 		background: var(--bg-warm);
 		overflow-x: hidden;
 	}
-	.story-head {
-		max-width: 640px;
-		margin-bottom: 2.5rem;
+	.story-inner {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 3rem;
+		align-items: center;
 	}
-	.story-head h2 {
+	.story-copy {
+		max-width: 640px;
+	}
+	.story-copy h2 {
 		font-size: clamp(2rem, 4vw, 3rem);
 		margin-bottom: 1rem;
 	}
-	.chaos-scene {
-		position: relative;
-		min-height: 220px;
-	}
-	.chaos-chip {
-		position: absolute;
-		padding: 0.75rem 1.25rem;
-		background: var(--card);
+	.story-visual img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: contain;
+		border-radius: 20px;
+		background: #EFECE6;
 		border: 1px solid var(--border);
-		border-radius: 14px;
-		font-size: 0.9rem;
-		box-shadow: 0 8px 24px rgba(28, 29, 31, 0.08);
+		box-shadow: 0 20px 50px rgba(28, 29, 31, 0.10);
 	}
-	.c1 { top: 0; left: 5%; transform: rotate(-5deg); }
-	.c2 { top: 20px; left: 40%; transform: rotate(3deg); }
-	.c3 { top: 0; left: 70%; transform: rotate(-2deg); }
-	.c4 { top: 80px; left: 15%; transform: rotate(4deg); }
-	.c5 { top: 100px; left: 55%; transform: rotate(-4deg); }
-	.c6 { top: 140px; left: 30%; transform: rotate(2deg); }
-	.c7 { top: 60px; right: 0; left: auto; transform: rotate(-3deg); }
-	.c8 { top: 160px; left: 70%; transform: rotate(5deg); }
 
 	/* SORTING */
 	.sorting {
@@ -879,7 +868,7 @@ const webSiteSchema = {
 		.tools-grid, .paths-grid, .explore-grid {
 			grid-template-columns: 1fr 1fr;
 		}
-		.sorting-inner, .printables-inner {
+		.story-inner, .sorting-inner, .printables-inner {
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
 		}
@@ -918,9 +907,6 @@ const webSiteSchema = {
 		.feature-grid {
 			grid-template-columns: 1fr 1fr;
 			gap: 1rem;
-		}
-		.chaos-scene {
-			min-height: 300px;
 		}
 		.sorting-flow {
 			flex-direction: column;
