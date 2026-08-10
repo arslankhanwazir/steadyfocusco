@@ -3,15 +3,15 @@ import Base from '../layouts/Base.astro';
 import { etsyLink } from '../data/site';
 
 const tools = [
-	{ name: "Brain Dump", desc: "Clear the noise.", href: "/tools/brain-dump", tag: "ADHD" },
-	{ name: "Weekly Reset", desc: "Turn a scattered week into a clear plan.", href: "/tools/weekly-reset", tag: "Productivity" },
-	{ name: "Morning Routine", desc: "Build a routine you'll actually use.", href: "/tools/morning-routine", tag: "ADHD" },
+	{ name: "Brain Dump", desc: "Clear the noise.", href: "/tools/brain-dump", tag: "ADHD", color: "purple" },
+	{ name: "Weekly Reset", desc: "Turn a scattered week into a clear plan.", href: "/tools/weekly-reset", tag: "Productivity", color: "green" },
+	{ name: "Morning Routine", desc: "Build a routine you'll actually use.", href: "/tools/morning-routine", tag: "ADHD", color: "amber" },
 ];
 
 const pillars = [
-	{ num: "01", title: "ADHD", desc: "Planning, routines, and systems built around how an ADHD brain actually works.", href: "/adhd" },
-	{ num: "02", title: "Students", desc: "Homework, study planning, and getting assignments done without the spiral.", href: "/students" },
-	{ num: "03", title: "Productivity", desc: "Weekly planning, prioritizing, and routines that don't require willpower.", href: "/productivity" },
+	{ num: "01", title: "ADHD", desc: "Planning, routines, and systems built around how an ADHD brain actually works.", href: "/adhd", color: "green" },
+	{ num: "02", title: "Students", desc: "Homework, study planning, and getting assignments done without the spiral.", href: "/students", color: "amber" },
+	{ num: "03", title: "Productivity", desc: "Weekly planning, prioritizing, and routines that don't require willpower.", href: "/productivity", color: "purple" },
 ];
 ---
 <Base title="Planning for overwhelmed minds">
@@ -30,8 +30,41 @@ const pillars = [
 			</div>
 		</div>
 
-		<!-- Persistent 3D thought-cloud visual (Three.js) -->
-		<div class="hero-stage" id="hero3d" aria-label="Interactive 3D thought sorting demonstration"></div>
+		<!-- Legible floating task-card visual: color = category, matches copy directly -->
+		<div class="hero-stage" id="stage" aria-label="Tasks sorting into now, deadline, and later">
+			<svg class="leaf-accent leaf-hero" viewBox="0 0 100 100" aria-hidden="true"><g fill="#6B8F7B"><ellipse cx="70" cy="20" rx="7" ry="18" transform="rotate(35 70 20)"/><ellipse cx="85" cy="35" rx="6" ry="15" transform="rotate(60 85 35)"/><ellipse cx="55" cy="15" rx="6" ry="14" transform="rotate(10 55 15)"/></g></svg>
+			<div class="stage-field" id="field">
+				<div class="task-card zone-now" style="--x:8%; --y:10%; --r:-6deg; --z:60px;">
+					<span class="dot"></span>Reply to email
+					<small>Do now</small>
+				</div>
+				<div class="task-card zone-deadline" style="--x:38%; --y:36%; --r:2deg; --z:120px;">
+					<span class="dot"></span>Study for exam
+					<small>Deadline · Fri</small>
+				</div>
+				<div class="task-card zone-later small" style="--x:64%; --y:8%; --r:5deg; --z:20px;">
+					<span class="dot"></span>Laundry
+					<small>Later</small>
+				</div>
+				<div class="task-card zone-now small" style="--x:10%; --y:60%; --r:-3deg; --z:40px;">
+					<span class="dot"></span>Doctor appt
+					<small>Do now</small>
+				</div>
+				<div class="task-card zone-deadline small" style="--x:56%; --y:64%; --r:4deg; --z:0px;">
+					<span class="dot"></span>Finish assignment
+					<small>Deadline</small>
+				</div>
+				<div class="task-card zone-later" style="--x:34%; --y:78%; --r:-4deg; --z:80px;">
+					<span class="dot"></span>Buy groceries
+					<small>Later</small>
+				</div>
+			</div>
+			<div class="stage-legend">
+				<span class="legend-item zone-now">Now</span>
+				<span class="legend-item zone-deadline">Deadline</span>
+				<span class="legend-item zone-later">Later</span>
+			</div>
+		</div>
 	</section>
 
 	<!-- ===== SCROLL STORY: CHAOS ===== -->
@@ -58,6 +91,7 @@ const pillars = [
 	<!-- ===== SCROLL STORY: SORTING ===== -->
 	<section class="sorting">
 		<div class="container">
+			<svg class="leaf-accent leaf-sorting" viewBox="0 0 140 100" aria-hidden="true"><g fill="#97C459"><ellipse cx="20" cy="80" rx="8" ry="20" transform="rotate(-20 20 80)"/><ellipse cx="40" cy="90" rx="7" ry="18" transform="rotate(-5 40 90)"/><ellipse cx="5" cy="60" rx="6" ry="16" transform="rotate(-45 5 60)"/></g></svg>
 			<div class="sorting-inner">
 				<div class="sorting-copy">
 					<p class="eyebrow">The method</p>
@@ -99,7 +133,7 @@ const pillars = [
 			</div>
 			<div class="tools-grid">
 				{tools.map((t) => (
-					<a class="tool-card" href={t.href}>
+					<a class={`tool-card c-${t.color}`} href={t.href}>
 						<div class="tool-surface">
 							<span class="tool-tag">{t.tag}</span>
 							<h3>{t.name}</h3>
@@ -121,7 +155,7 @@ const pillars = [
 			</div>
 			<div class="paths-grid">
 				{pillars.map((p) => (
-					<a class="path-card" href={p.href}>
+					<a class={`path-card c-${p.color}`} href={p.href}>
 						<span class="path-num">{p.num}</span>
 						<h3>{p.title}</h3>
 						<p>{p.desc}</p>
@@ -136,11 +170,12 @@ const pillars = [
 	<section class="printables">
 		<div class="container">
 			<div class="printables-inner">
+				<svg class="leaf-accent leaf-printables" viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff"><ellipse cx="50" cy="30" rx="7" ry="17" transform="rotate(20 50 30)"/><ellipse cx="65" cy="45" rx="6" ry="14" transform="rotate(55 65 45)"/><ellipse cx="35" cy="45" rx="6" ry="14" transform="rotate(-30 35 45)"/></g></svg>
 				<div class="printables-copy">
 					<p class="eyebrow">Printables</p>
 					<h2>Take the system off-screen.</h2>
 					<p class="section-lede">Prefer paper? The same planning systems are available as printable planners — instant download, designed to reuse.</p>
-					<a class="btn btn-primary" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Browse printable planners →</a>
+					<a class="btn btn-on-color" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Browse printable planners →</a>
 				</div>
 				<div class="printables-visual">
 					<div class="planner">
@@ -160,12 +195,22 @@ const pillars = [
 </Base>
 
 <script>
-	import { initHero3D } from '../components/Hero3D';
-
-	// ---- Persistent 3D hero visual ----
-	const container = document.getElementById('hero3d');
-	if (container) {
-		initHero3D({ container });
+	// ---- Hero: persistent floating task cards (no WebGL, pure CSS/DOM) ----
+	const stage = document.getElementById('stage');
+	const field = document.getElementById('field');
+	if (stage && field) {
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (!prefersReduced && window.matchMedia('(pointer: fine)').matches) {
+			stage.addEventListener('mousemove', (e) => {
+				const rect = stage.getBoundingClientRect();
+				const x = (e.clientX - rect.left) / rect.width - 0.5;
+				const y = (e.clientY - rect.top) / rect.height - 0.5;
+				field.style.transform = `rotateY(${(x * 8).toFixed(1)}deg) rotateX(${(-y * 8).toFixed(1)}deg)`;
+			});
+			stage.addEventListener('mouseleave', () => {
+				field.style.transform = 'rotateY(0deg) rotateX(0deg)';
+			});
+		}
 	}
 
 	// ---- Scroll reveal ----
@@ -210,33 +255,44 @@ const pillars = [
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.875rem 1.75rem;
-		border-radius: 10px;
-		font-weight: 600;
+		padding: 0.9rem 1.85rem;
+		border-radius: 999px;
+		font-weight: 700;
 		font-size: 1rem;
 		transition: all var(--duration-fast) ease;
 		cursor: pointer;
 		text-decoration: none;
 	}
 	.btn-primary {
-		background: var(--primary);
+		background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 55%), var(--primary);
 		color: #fff;
-		border: 1px solid var(--primary);
+		border: none;
+		box-shadow: 0 10px 24px rgba(74, 107, 90, 0.35);
 	}
 	.btn-primary:hover {
-		background: var(--primary-dark);
-		border-color: var(--primary-dark);
+		background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 55%), var(--primary-dark);
 		transform: translateY(-2px);
+		box-shadow: 0 14px 30px rgba(74, 107, 90, 0.42);
 	}
 	.btn-secondary {
-		background: transparent;
-		color: var(--ink);
-		border: 1.5px solid var(--border);
+		background: #fff;
+		color: var(--primary-dark);
+		border: none;
+		box-shadow: 0 8px 20px rgba(28, 29, 31, 0.10);
 	}
 	.btn-secondary:hover {
-		border-color: var(--primary);
-		color: var(--primary);
 		transform: translateY(-2px);
+		box-shadow: 0 12px 26px rgba(28, 29, 31, 0.14);
+	}
+	.btn-on-color {
+		background: #fff;
+		color: var(--primary-dark);
+		border: none;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+	}
+	.btn-on-color:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
 	}
 
 	/* ===== HERO ===== */
@@ -276,17 +332,79 @@ const pillars = [
 		color: var(--ink-muted);
 	}
 
-	/* Immersive 3D stage */
+	/* Persistent floating task-card hero visual */
 	.hero-stage {
 		position: relative;
 		height: 560px;
-		border-radius: 32px;
-		overflow: hidden;
+		perspective: 1400px;
 	}
-	.hero-stage canvas {
-		display: block;
-		width: 100%;
-		height: 100%;
+	.leaf-accent {
+		position: absolute;
+		pointer-events: none;
+		z-index: 0;
+	}
+	.leaf-hero { top: -10px; right: -10px; width: 120px; height: 120px; opacity: 0.85; }
+	.leaf-sorting { bottom: -20px; left: -20px; width: 140px; height: 100px; opacity: 0.6; }
+	.leaf-printables { top: 10px; right: 20px; width: 90px; height: 90px; opacity: 0.35; }
+	.stage-field {
+		position: absolute;
+		inset: 0;
+		transform-style: preserve-3d;
+		transition: transform 0.4s ease-out;
+	}
+	.task-card {
+		position: absolute;
+		top: var(--y);
+		left: var(--x);
+		transform: translateZ(var(--z)) rotate(var(--r));
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		padding: 0.9rem 1.1rem;
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.85);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 20px 40px rgba(28, 29, 31, 0.12);
+		font-weight: 600;
+		font-size: 0.92rem;
+		color: var(--ink);
+		animation: cardFloat 7s ease-in-out infinite;
+		animation-delay: calc(var(--z) * -0.02s);
+	}
+	.task-card.small { padding: 0.7rem 0.9rem; font-size: 0.8rem; }
+	.task-card .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 0.4rem; }
+	.task-card small { font-weight: 500; font-size: 0.72rem; opacity: 0.7; }
+	.task-card.zone-now { border-left: 4px solid #4A6B5A; }
+	.task-card.zone-now .dot { background: #4A6B5A; }
+	.task-card.zone-deadline { border-left: 4px solid #D98E3F; }
+	.task-card.zone-deadline .dot { background: #D98E3F; }
+	.task-card.zone-later { border-left: 4px solid #7F77DD; }
+	.task-card.zone-later .dot { background: #7F77DD; }
+	@keyframes cardFloat {
+		0%, 100% { transform: translateZ(var(--z)) rotate(var(--r)) translateY(0); }
+		50% { transform: translateZ(var(--z)) rotate(var(--r)) translateY(-14px); }
+	}
+	.stage-legend {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		gap: 0.6rem;
+	}
+	.legend-item {
+		padding: 0.4rem 0.9rem;
+		border-radius: 999px;
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #fff;
+	}
+	.legend-item.zone-now { background: #4A6B5A; }
+	.legend-item.zone-deadline { background: #D98E3F; }
+	.legend-item.zone-later { background: #7F77DD; }
+	@media (prefers-reduced-motion: reduce) {
+		.task-card { animation: none; }
 	}
 
 	/* ===== SCROLL STORY ===== */
@@ -441,15 +559,26 @@ const pillars = [
 	}
 	.tool-tag {
 		display: inline-block;
-		padding: 0.3rem 0.7rem;
-		background: var(--primary-light);
-		color: var(--primary-dark);
-		border-radius: 6px;
+		padding: 0.35rem 0.8rem;
+		border-radius: 999px;
+		color: #fff;
 		font-size: 0.7rem;
-		font-weight: 600;
+		font-weight: 700;
 		letter-spacing: 0.05em;
 		margin-bottom: 1.25rem;
 	}
+	.tool-card.c-purple .tool-surface { background: #EEEDFE; }
+	.tool-card.c-purple .tool-tag { background: #7F77DD; }
+	.tool-card.c-purple h3 { color: #26215C; }
+	.tool-card.c-purple .tool-link { color: #534AB7; }
+	.tool-card.c-green .tool-surface { background: #EAF3DE; }
+	.tool-card.c-green .tool-tag { background: #639922; }
+	.tool-card.c-green h3 { color: #173404; }
+	.tool-card.c-green .tool-link { color: #3B6D11; }
+	.tool-card.c-amber .tool-surface { background: #FAEEDA; }
+	.tool-card.c-amber .tool-tag { background: #BA7517; }
+	.tool-card.c-amber h3 { color: #412402; }
+	.tool-card.c-amber .tool-link { color: #854F0B; }
 	.tool-surface h3 {
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
@@ -463,8 +592,7 @@ const pillars = [
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		color: var(--primary);
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 0.95rem;
 	}
 	.arrow {
@@ -487,24 +615,31 @@ const pillars = [
 	}
 	.path-card {
 		padding: 2.5rem;
-		background: var(--card);
-		border: 1px solid var(--border);
 		border-radius: 20px;
 		text-decoration: none;
-		color: var(--ink);
 		display: block;
 		transition: all var(--duration-normal) var(--ease-out);
+		color: #fff;
 	}
 	.path-card:hover {
 		transform: translateY(-6px);
-		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.12);
+		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.2);
 	}
+	.path-card.c-green { background: #4A6B5A; }
+	.path-card.c-green .path-num { color: #C0DD97; }
+	.path-card.c-green .path-link { color: #E8F1EA; }
+	.path-card.c-amber { background: #D98E3F; color: #412402; }
+	.path-card.c-amber .path-num { color: #fff; }
+	.path-card.c-amber p { color: #633806; }
+	.path-card.c-amber .path-link { color: #412402; }
+	.path-card.c-purple { background: #26215C; }
+	.path-card.c-purple .path-num { color: #AFA9EC; }
+	.path-card.c-purple .path-link { color: #CECBF6; }
 	.path-num {
 		display: block;
 		font-family: var(--display);
 		font-size: 2.5rem;
 		font-weight: 700;
-		color: var(--primary);
 		margin-bottom: 1.5rem;
 	}
 	.path-card h3 {
@@ -512,7 +647,7 @@ const pillars = [
 		margin-bottom: 0.75rem;
 	}
 	.path-card p {
-		color: var(--ink-soft);
+		color: rgba(255,255,255,0.85);
 		font-size: 1rem;
 		line-height: 1.6;
 		margin-bottom: 1.5rem;
@@ -521,8 +656,7 @@ const pillars = [
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		color: var(--primary);
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 0.95rem;
 	}
 
@@ -531,22 +665,25 @@ const pillars = [
 		padding: 5rem 0;
 	}
 	.printables-inner {
+		position: relative;
+		overflow: hidden;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3rem;
 		align-items: center;
-		background: var(--card);
-		border: 1px solid var(--border);
+		background: var(--primary);
 		border-radius: 24px;
 		padding: 3.5rem;
-		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.06);
+		box-shadow: 0 24px 60px rgba(74, 107, 90, 0.25);
 	}
 	.printables-copy h2 {
 		font-size: clamp(2rem, 4vw, 2.75rem);
 		margin-bottom: 1rem;
+		color: #fff;
 	}
 	.printables-copy .section-lede {
 		margin-bottom: 2rem;
+		color: var(--primary-light);
 	}
 	.printables-visual {
 		display: flex;
