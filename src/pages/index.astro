@@ -30,41 +30,8 @@ const pillars = [
 			</div>
 		</div>
 
-		<!-- Legible floating task-card visual: color = category, matches copy directly -->
-		<div class="hero-stage" id="stage" aria-label="Tasks sorting into now, deadline, and later">
-			<svg class="leaf-accent leaf-hero" viewBox="0 0 100 100" aria-hidden="true"><g fill="#6B8F7B"><ellipse cx="70" cy="20" rx="7" ry="18" transform="rotate(35 70 20)"/><ellipse cx="85" cy="35" rx="6" ry="15" transform="rotate(60 85 35)"/><ellipse cx="55" cy="15" rx="6" ry="14" transform="rotate(10 55 15)"/></g></svg>
-			<div class="stage-field" id="field">
-				<div class="task-card zone-now" style="--x:8%; --y:10%; --r:-6deg; --z:60px;">
-					<span class="dot"></span>Reply to email
-					<small>Do now</small>
-				</div>
-				<div class="task-card zone-deadline" style="--x:38%; --y:36%; --r:2deg; --z:120px;">
-					<span class="dot"></span>Study for exam
-					<small>Deadline · Fri</small>
-				</div>
-				<div class="task-card zone-later small" style="--x:64%; --y:8%; --r:5deg; --z:20px;">
-					<span class="dot"></span>Laundry
-					<small>Later</small>
-				</div>
-				<div class="task-card zone-now small" style="--x:10%; --y:60%; --r:-3deg; --z:40px;">
-					<span class="dot"></span>Doctor appt
-					<small>Do now</small>
-				</div>
-				<div class="task-card zone-deadline small" style="--x:56%; --y:64%; --r:4deg; --z:0px;">
-					<span class="dot"></span>Finish assignment
-					<small>Deadline</small>
-				</div>
-				<div class="task-card zone-later" style="--x:34%; --y:78%; --r:-4deg; --z:80px;">
-					<span class="dot"></span>Buy groceries
-					<small>Later</small>
-				</div>
-			</div>
-			<div class="stage-legend">
-				<span class="legend-item zone-now">Now</span>
-				<span class="legend-item zone-deadline">Deadline</span>
-				<span class="legend-item zone-later">Later</span>
-			</div>
-		</div>
+		<!-- Persistent premium 3D thought-cloud visual (Three.js) -->
+		<div class="hero-stage" id="hero3d" aria-label="Interactive 3D thought sorting demonstration"></div>
 	</section>
 
 	<!-- ===== SCROLL STORY: CHAOS ===== -->
@@ -195,22 +162,12 @@ const pillars = [
 </Base>
 
 <script>
-	// ---- Hero: persistent floating task cards (no WebGL, pure CSS/DOM) ----
-	const stage = document.getElementById('stage');
-	const field = document.getElementById('field');
-	if (stage && field) {
-		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		if (!prefersReduced && window.matchMedia('(pointer: fine)').matches) {
-			stage.addEventListener('mousemove', (e) => {
-				const rect = stage.getBoundingClientRect();
-				const x = (e.clientX - rect.left) / rect.width - 0.5;
-				const y = (e.clientY - rect.top) / rect.height - 0.5;
-				field.style.transform = `rotateY(${(x * 8).toFixed(1)}deg) rotateX(${(-y * 8).toFixed(1)}deg)`;
-			});
-			stage.addEventListener('mouseleave', () => {
-				field.style.transform = 'rotateY(0deg) rotateX(0deg)';
-			});
-		}
+	import { initHero3D } from '../components/hero/Hero3D';
+
+	// ---- Persistent premium 3D hero visual ----
+	const container = document.getElementById('hero3d');
+	if (container) {
+		initHero3D({ container });
 	}
 
 	// ---- Scroll reveal ----
@@ -332,80 +289,25 @@ const pillars = [
 		color: var(--ink-muted);
 	}
 
-	/* Persistent floating task-card hero visual */
+	/* Persistent premium 3D hero stage */
 	.hero-stage {
 		position: relative;
 		height: 560px;
-		perspective: 1400px;
+		border-radius: 32px;
+		overflow: hidden;
+	}
+	.hero-stage canvas {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 	.leaf-accent {
 		position: absolute;
 		pointer-events: none;
 		z-index: 0;
 	}
-	.leaf-hero { top: -10px; right: -10px; width: 120px; height: 120px; opacity: 0.85; }
 	.leaf-sorting { bottom: -20px; left: -20px; width: 140px; height: 100px; opacity: 0.6; }
 	.leaf-printables { top: 10px; right: 20px; width: 90px; height: 90px; opacity: 0.35; }
-	.stage-field {
-		position: absolute;
-		inset: 0;
-		transform-style: preserve-3d;
-		transition: transform 0.4s ease-out;
-	}
-	.task-card {
-		position: absolute;
-		top: var(--y);
-		left: var(--x);
-		transform: translateZ(var(--z)) rotate(var(--r));
-		display: flex;
-		flex-direction: column;
-		gap: 0.2rem;
-		padding: 0.9rem 1.1rem;
-		border-radius: 16px;
-		background: rgba(255, 255, 255, 0.85);
-		backdrop-filter: blur(10px);
-		box-shadow: 0 20px 40px rgba(28, 29, 31, 0.12);
-		font-weight: 600;
-		font-size: 0.92rem;
-		color: var(--ink);
-		animation: cardFloat 7s ease-in-out infinite;
-		animation-delay: calc(var(--z) * -0.02s);
-	}
-	.task-card.small { padding: 0.7rem 0.9rem; font-size: 0.8rem; }
-	.task-card .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 0.4rem; }
-	.task-card small { font-weight: 500; font-size: 0.72rem; opacity: 0.7; }
-	.task-card.zone-now { border-left: 4px solid #4A6B5A; }
-	.task-card.zone-now .dot { background: #4A6B5A; }
-	.task-card.zone-deadline { border-left: 4px solid #D98E3F; }
-	.task-card.zone-deadline .dot { background: #D98E3F; }
-	.task-card.zone-later { border-left: 4px solid #7F77DD; }
-	.task-card.zone-later .dot { background: #7F77DD; }
-	@keyframes cardFloat {
-		0%, 100% { transform: translateZ(var(--z)) rotate(var(--r)) translateY(0); }
-		50% { transform: translateZ(var(--z)) rotate(var(--r)) translateY(-14px); }
-	}
-	.stage-legend {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		display: flex;
-		gap: 0.6rem;
-	}
-	.legend-item {
-		padding: 0.4rem 0.9rem;
-		border-radius: 999px;
-		font-size: 0.72rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: #fff;
-	}
-	.legend-item.zone-now { background: #4A6B5A; }
-	.legend-item.zone-deadline { background: #D98E3F; }
-	.legend-item.zone-later { background: #7F77DD; }
-	@media (prefers-reduced-motion: reduce) {
-		.task-card { animation: none; }
-	}
 
 	/* ===== SCROLL STORY ===== */
 	.story, .sorting, .clarity, .tools, .paths, .printables {
