@@ -7,4 +7,47 @@ const meta = clusterMeta.students;
 
 <Base title={`${meta.title} planning`} description={meta.blurb}>
   <ClusterHub cluster="students" />
+  <section class="support">
+    <div class="support-inner">
+      <h2>ADHD-friendly student planning, homework & study tools</h2>
+      <p>
+        Big assignments feel impossible because they're one giant undefined blob.
+        The student planners, printables, and tools here focus on breaking work
+        into small, startable steps — so you can begin without the last-minute
+        spiral. From an <a href="/tools/brain-dump">ADHD student planner</a>
+        approach to homework tracking, the aim is to make the next step obvious.
+      </p>
+      <p>
+        Start with homework planning and assignment tracking: write down what's
+        due, break it into smaller pieces, and check them off as you go. A study
+        planner helps you map out exam prep without overwhelm, while deadline
+        tracking keeps everything visible so nothing slips. The
+        <a href="/printables">homework checklist</a> and
+        <a href="/shop">study planners</a> turn this into a printable system you
+        can reuse.
+      </p>
+      <p>
+        The goal is to reduce school-related overwhelm — not by doing more, but
+        by making each task small enough to actually start.
+      </p>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .support {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
+  }
+  .support-inner h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .support-inner p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+  }
+</style>

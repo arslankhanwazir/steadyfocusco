@@ -18,6 +18,31 @@ const planned = tools.filter((t) => t.status === "planned");
       nothing sent anywhere. Type, sort, download a PDF, done.
     </p>
 
+    <div class="support">
+      <h2>Free ADHD & productivity tools to help you reset and get started</h2>
+      <p>
+        These free tools are designed to lower the cost of starting when your
+        brain feels full. The <a href="/tools/brain-dump">Brain Dump</a> helps
+        you empty your head and sort every thought into what to do now, what has
+        a deadline, and what can wait — so you're not carrying it all at once.
+      </p>
+      <p>
+        The <a href="/tools/weekly-reset">Weekly Reset</a> turns a scattered week
+        into one calm plan, helping you prioritize and organize before the days
+        blur together. And the
+        <a href="/tools/morning-routine">Morning Routine Builder</a> helps you
+        establish a short, realistic routine you'll actually keep — no
+        complicated systems to maintain.
+      </p>
+      <p>
+        Whether you're building routines from scratch or resetting after a
+        hard week, these tools give you a quick, private way to organize your
+        thoughts and find your next step. Want the same systems on paper? Each
+        tool pairs with a matching <a href="/printables">printable</a> or a
+        reusable <a href="/shop">planner</a>.
+      </p>
+    </div>
+
     <div class="grid">
       {
         live.map((t) => (
@@ -72,6 +97,27 @@ const planned = tools.filter((t) => t.status === "planned");
     color: var(--ink-soft);
     max-width: 620px;
     margin: 0 0 2.5rem;
+  }
+  .support {
+    max-width: 760px;
+    margin: 0 0 2.5rem;
+  }
+  .support h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .support p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+  }
+  .support p:last-child {
+    margin-bottom: 0;
+  }
+  .support a {
+    color: var(--accent);
+    font-weight: 600;
   }
   .grid {
     display: grid;

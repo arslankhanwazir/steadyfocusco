@@ -78,6 +78,27 @@ function buyHref(p: Product): string {
     </p>
   </section>
 
+  <section class="shop-intro">
+    <div class="shop-intro-inner">
+      <h2>ADHD planners, student planners & printable PDF products</h2>
+      <p>
+        The SteadyFocusCo shop is a small collection of digital products built
+        around the same idea as the free tools: make the next step obvious and
+        lower the cost of starting. You'll find ADHD planners, student planners,
+        brain dumps, homework trackers, study planners, executive function
+        planners, and routine checklists — all available as instant digital PDF
+        downloads.
+      </p>
+      <p>
+        Every product is a printable PDF you can print at home or open on a
+        tablet and annotate digitally. There's no shipping, no waiting — you
+        download it right after purchase. Each one pairs with a matching
+        <a href="/tools">free tool</a> or <a href="/printables">printable</a> on
+        this site, so you can try the system before you buy the reusable version.
+      </p>
+    </div>
+  </section>
+
   <section class="shop-grid-wrap">
     <div class="shop-grid">
       {
@@ -159,6 +180,29 @@ function buyHref(p: Product): string {
     font-size: 1.15rem;
     color: var(--ink-soft);
     margin: 0;
+  }
+
+  .shop-intro {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    padding: 0 1.5rem;
+  }
+  .shop-intro-inner h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .shop-intro-inner p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+  }
+  .shop-intro-inner p:last-child {
+    margin-bottom: 0;
+  }
+  .shop-intro-inner a {
+    color: var(--accent);
+    font-weight: 600;
   }
 
   .shop-grid-wrap {
