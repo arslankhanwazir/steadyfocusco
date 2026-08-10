@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://steadyfocusco.relaxin.workers.dev/sitemap-index.xml

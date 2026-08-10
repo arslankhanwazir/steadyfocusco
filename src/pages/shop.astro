@@ -16,6 +16,31 @@ interface Product {
 const products = (productData.products ?? []) as Product[];
 const isSeed = productData.source === "seed";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", Astro.site).toString() },
+    { "@type": "ListItem", position: 2, name: "Shop", item: new URL("/shop", Astro.site).toString() },
+  ],
+};
+const productSchemas = products
+  .filter((p) => p.listing_id != null && p.title)
+  .map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.title,
+    image: p.image || undefined,
+    description: `${p.title} — a printable planner from SteadyFocusCo.`,
+    offers: {
+      "@type": "Offer",
+      price: p.price || undefined,
+      priceCurrency: p.currency_code || "USD",
+      url: p.url || undefined,
+      availability: "https://schema.org/InStock",
+    },
+  }));
+
 function displayPrice(p: Product): string {
   if (!p.price) return "";
   return p.currency_code === "USD"
@@ -39,6 +64,10 @@ function buyHref(p: Product): string {
   title="Shop"
   description="Browse SteadyFocusCo's ADHD and student planning printables. Every purchase happens securely on Etsy — this page just shows what's in the shop."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {productSchemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
   <section class="shop-hero">
     <p class="eyebrow">The shop</p>
     <h1>Printable planners & systems</h1>

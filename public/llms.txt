@@ -1,0 +1,40 @@
+# SteadyFocusCo
+
+SteadyFocusCo provides ADHD-friendly planners, printables, checklists, and free productivity tools designed to reduce overwhelm, improve focus, and make planning easier.
+
+## What the site provides
+
+- ADHD-friendly planners and printables
+- Productivity and executive-function tools
+- Free interactive tools (no sign-up required)
+- Practical guides on ADHD planning, study skills, and routines
+- A shop with printable planners (purchases handled on Etsy)
+
+## Key sections
+
+- Home: https://steadyfocusco.relaxin.workers.dev/
+- ADHD: https://steadyfocusco.relaxin.workers.dev/adhd
+- Students: https://steadyfocusco.relaxin.workers.dev/students
+- Productivity: https://steadyfocusco.relaxin.workers.dev/productivity
+- Free tools: https://steadyfocusco.relaxin.workers.dev/tools
+- Free printables: https://steadyfocusco.relaxin.workers.dev/printables
+- Guides: https://steadyfocusco.relaxin.workers.dev/guides
+- Shop: https://steadyfocusco.relaxin.workers.dev/shop
+- About: https://steadyfocusco.relaxin.workers.dev/about
+
+## Free tools
+
+- Brain Dump: https://steadyfocusco.relaxin.workers.dev/tools/brain-dump
+- Weekly Reset: https://steadyfocusco.relaxin.workers.dev/tools/weekly-reset
+- Morning Routine Builder: https://steadyfocusco.relaxin.workers.dev/tools/morning-routine
+
+## Printables
+
+- ADHD Brain Dump Sheet: https://steadyfocusco.relaxin.workers.dev/printables/adhd-brain-dump
+- Weekly Reset Sheet: https://steadyfocusco.relaxin.workers.dev/printables/weekly-reset-sheet
+- Homework / Assignment Checklist: https://steadyfocusco.relaxin.workers.dev/printables/homework-checklist
+- Morning Routine Checklist: https://steadyfocusco.relaxin.workers.dev/printables/morning-checklist
+
+## Shop
+
+Printable planners are sold through the SteadyFocusCo Etsy shop. The site links to Etsy for all purchases; SteadyFocusCo never processes payments directly.

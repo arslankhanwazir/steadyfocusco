@@ -13,14 +13,36 @@ const pillars = [
 	{ num: "02", title: "Students", desc: "Homework, study planning, and getting assignments done without the spiral.", href: "/students", color: "amber" },
 	{ num: "03", title: "Productivity", desc: "Weekly planning, prioritizing, and routines that don't require willpower.", href: "/productivity", color: "purple" },
 ];
+
+const siteUrl = new URL(Astro.url.pathname, Astro.site);
+const orgSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "SteadyFocusCo",
+	"url": new URL("/", Astro.site).toString(),
+	"logo": new URL("/logo.png", Astro.site).toString(),
+	"description": "ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier.",
+};
+const webSiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": "SteadyFocusCo",
+	"url": new URL("/", Astro.site).toString(),
+	"description": "ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier.",
+};
 ---
-<Base title="Planning for overwhelmed minds">
+<Base
+	title="ADHD Planners & Productivity Tools for Overwhelm | SteadyFocusCo"
+	description="ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier."
+>
+	<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+	<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
 	<!-- ===== HERO ===== -->
 	<section class="hero" id="hero">
 		<div class="hero-copy">
-			<p class="eyebrow">Planning for overwhelmed minds</p>
-			<h1>Make planning easier when your brain feels overwhelmed.</h1>
-			<p class="hero-lede">Free tools and practical systems that turn scattered thoughts into clear next steps.</p>
+			<p class="eyebrow">ADHD-friendly planning</p>
+			<h1>ADHD planners, printables & productivity tools that reduce overwhelm.</h1>
+			<p class="hero-lede">Free ADHD productivity tools, executive-function supports, and printable planners that turn scattered thoughts into clear next steps — built for daily routines and focus.</p>
 			<div class="hero-actions">
 				<a href="/tools/brain-dump" class="btn btn-primary">Try a free tool</a>
 				<a href="#story" class="btn btn-secondary">Explore resources</a>
@@ -133,6 +155,33 @@ const pillars = [
 		</div>
 	</section>
 
+	<!-- ===== EXPLORE MORE ===== -->
+	<section class="explore">
+		<div class="container">
+			<div class="section-head">
+				<p class="eyebrow">Keep exploring</p>
+				<h2>More ways to plan with less overwhelm</h2>
+			</div>
+			<div class="explore-grid">
+				<a class="explore-card" href="/guides">
+					<h3>Guides</h3>
+					<p>Practical ADHD planning, executive-function, and study guides written in plain language.</p>
+					<span class="explore-link">Read the guides <span class="arrow">→</span></span>
+				</a>
+				<a class="explore-card" href="/printables">
+					<h3>Free printables</h3>
+					<p>Reusable ADHD printables and checklists you can download and print at home.</p>
+					<span class="explore-link">Browse printables <span class="arrow">→</span></span>
+				</a>
+				<a class="explore-card" href="/shop">
+					<h3>Shop</h3>
+					<p>ADHD planners and printable systems for students, adults, and daily routines.</p>
+					<span class="explore-link">Visit the shop <span class="arrow">→</span></span>
+				</a>
+			</div>
+		</div>
+	</section>
+
 	<!-- ===== ETSY / PRINTABLES ===== -->
 	<section class="printables">
 		<div class="container">
@@ -180,7 +229,7 @@ const pillars = [
 		});
 	}, { threshold: 0.15 });
 
-	document.querySelectorAll('.story, .sorting, .clarity, .tools, .paths, .printables').forEach((el) => {
+	document.querySelectorAll('.story, .sorting, .clarity, .tools, .paths, .explore, .printables').forEach((el) => {
 		revealObserver.observe(el);
 	});
 </script>
@@ -310,12 +359,12 @@ const pillars = [
 	.leaf-printables { top: 10px; right: 20px; width: 90px; height: 90px; opacity: 0.35; }
 
 	/* ===== SCROLL STORY ===== */
-	.story, .sorting, .clarity, .tools, .paths, .printables {
+	.story, .sorting, .clarity, .tools, .paths, .explore, .printables {
 		opacity: 0;
 		transform: translateY(24px);
 		transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 	}
-	.story.revealed, .sorting.revealed, .clarity.revealed, .tools.revealed, .paths.revealed, .printables.revealed {
+	.story.revealed, .sorting.revealed, .clarity.revealed, .tools.revealed, .paths.revealed, .explore.revealed, .printables.revealed {
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -562,6 +611,48 @@ const pillars = [
 		font-size: 0.95rem;
 	}
 
+	/* ===== EXPLORE ===== */
+	.explore {
+		padding: 5rem 0;
+		background: var(--bg-warm);
+	}
+	.explore-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+	.explore-card {
+		display: block;
+		padding: 2.5rem;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 20px;
+		text-decoration: none;
+		color: var(--ink);
+		transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+	}
+	.explore-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.12);
+	}
+	.explore-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: 0.6rem;
+	}
+	.explore-card p {
+		color: var(--ink-soft);
+		font-size: 1rem;
+		margin-bottom: 1.25rem;
+	}
+	.explore-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 700;
+		font-size: 0.95rem;
+		color: var(--primary);
+	}
+
 	/* ===== PRINTABLES ===== */
 	.printables {
 		padding: 5rem 0;
@@ -645,7 +736,7 @@ const pillars = [
 		.hero-stage {
 			height: 480px;
 		}
-		.tools-grid, .paths-grid {
+		.tools-grid, .paths-grid, .explore-grid {
 			grid-template-columns: 1fr 1fr;
 		}
 		.sorting-inner, .printables-inner {
@@ -655,6 +746,9 @@ const pillars = [
 	}
 
 	@media (max-width: 768px) {
+		.tools-grid, .paths-grid, .explore-grid {
+			grid-template-columns: 1fr;
+		}
 		.container {
 			padding: 0 20px;
 		}
