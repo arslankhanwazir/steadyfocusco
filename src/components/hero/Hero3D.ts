@@ -205,8 +205,20 @@ export function initHero3D({ container }: Hero3DOptions) {
     );
 
     const target = zonePositions[def.zone].clone();
-    const zoneIndex = TASKS.filter((t) => t.zone === def.zone).indexOf(def);
-    target.y += zoneIndex * 0.6;
+    const zoneSiblings = TASKS.filter((t) => t.zone === def.zone);
+    const zoneIndex = zoneSiblings.indexOf(def);
+    const zoneCount = zoneSiblings.length;
+    // Spread siblings in the same zone around a small ring instead of
+    // stacking them in a straight vertical column at identical x/z.
+    // A pure y-offset put every task in a zone on the same x/z axis,
+    // so bodies and labels lined up in front of/behind each other and
+    // clipped/overlapped on screen. A ring gives each task its own
+    // x, y, and z offset so neighbors don't sit on the same sightline.
+    const ringAngle = (zoneIndex / zoneCount) * Math.PI * 2;
+    const ringRadiusXY = 0.85;
+    target.x += Math.cos(ringAngle) * ringRadiusXY;
+    target.y += Math.sin(ringAngle) * ringRadiusXY * 0.55;
+    target.z += Math.sin(ringAngle * 1.3) * 0.5;
 
     group.position.copy(scatter);
     scene.add(group);
