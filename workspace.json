@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-09T23:52:49.579Z",
-  "generatedAtEpochMs": 1786319569579,
+  "generatedAt": "2026-08-10T00:16:36.793Z",
+  "generatedAtEpochMs": 1786320996793,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "website",
     "root": "f:\\etsy\\website",
-    "activeFile": "src/pages/printables/[slug].astro",
+    "activeFile": ".gitignore",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,22 +22,26 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "src/pages/printables/[slug].astro",
+      ".gitignore",
       "src/layouts/Base.astro",
       "src/pages/shop.astro",
       "astro.config.mjs",
-      "src/components/BrainDump.tsx",
-      "src/components/MorningRoutine.tsx",
-      "src/components/WeeklyReset.tsx",
+      "package.json",
       "src/pages/guides/[slug].astro",
-      ".gitignore",
+      "src/pages/printables/[slug].astro",
+      ".env.example",
       "AGENTS.md",
       "README.md",
-      "package-lock.json"
+      "package-lock.json",
+      "tsconfig.json"
     ],
     "stats": {
-      "totalFiles": 55,
+      "totalFiles": 98,
       "topLevelAreas": [
+        {
+          "name": "pins-out",
+          "count": 42
+        },
         {
           "name": "src",
           "count": 24
@@ -56,17 +60,17 @@
         },
         {
           "name": "scripts",
-          "count": 1
+          "count": 2
         }
       ],
       "primaryFileTypes": [
         {
-          "name": ".astro",
-          "count": 17
+          "name": ".png",
+          "count": 51
         },
         {
-          "name": ".png",
-          "count": 9
+          "name": ".astro",
+          "count": 17
         },
         {
           "name": ".json",
@@ -85,12 +89,12 @@
           "count": 3
         },
         {
-          "name": "[no extension]",
+          "name": ".mjs",
           "count": 2
         },
         {
-          "name": ".css",
-          "count": 1
+          "name": "[no extension]",
+          "count": 2
         }
       ],
       "keyFiles": [
@@ -181,6 +185,258 @@
           "isKeyFile": true
         },
         {
+          "path": "pins-out/guide-adhd-morning-routine-ideas-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-adhd-morning-routine-ideas-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-adhd-morning-routine-ideas-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-breaking-down-a-big-assignment-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-breaking-down-a-big-assignment-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-breaking-down-a-big-assignment-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-executive-function-explained-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-executive-function-explained-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-executive-function-explained-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-how-to-brain-dump-when-overwhelmed-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-how-to-brain-dump-when-overwhelmed-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-how-to-brain-dump-when-overwhelmed-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-how-to-stop-procrastinating-on-homework-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-how-to-stop-procrastinating-on-homework-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-how-to-stop-procrastinating-on-homework-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-weekly-planning-with-adhd-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-weekly-planning-with-adhd-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-weekly-planning-with-adhd-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-why-traditional-planners-dont-work-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-why-traditional-planners-dont-work-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/guide-why-traditional-planners-dont-work-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-adhd-brain-dump-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-adhd-brain-dump-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-adhd-brain-dump-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-homework-checklist-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-homework-checklist-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-homework-checklist-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-morning-checklist-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-morning-checklist-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-morning-checklist-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-weekly-reset-sheet-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-weekly-reset-sheet-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/printable-weekly-reset-sheet-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-brain-dump-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-brain-dump-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-brain-dump-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-morning-routine-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-morning-routine-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-morning-routine-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-weekly-reset-a.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-weekly-reset-b.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "pins-out/tool-weekly-reset-c.png",
+          "topLevelArea": "pins-out",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/favicon.ico",
           "topLevelArea": "public",
           "extension": ".ico",
@@ -257,6 +513,12 @@
           "topLevelArea": "[root]",
           "extension": ".md",
           "isKeyFile": true
+        },
+        {
+          "path": "scripts/generate-pins.mjs",
+          "topLevelArea": "scripts",
+          "extension": ".mjs",
+          "isKeyFile": false
         },
         {
           "path": "scripts/sync-etsy-products.js",
@@ -460,7 +722,8 @@
       "prebuild": "node scripts/sync-etsy-products.js",
       "build": "astro build",
       "preview": "astro preview",
-      "astro": "astro"
+      "astro": "astro",
+      "pins": "node scripts/generate-pins.mjs"
     },
     "dependencies": {
       "@astrojs/react": "^6.0.2",
@@ -470,14 +733,15 @@
       "astro": "^7.2.0",
       "jspdf": "^4.2.1",
       "react": "^19.2.8",
-      "react-dom": "^19.2.8"
+      "react-dom": "^19.2.8",
+      "sharp": "^0.35.3"
     },
     "devDependencies": {}
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-09T23:52:45.393Z",
+    "lastActivityAt": "2026-08-10T00:16:34.098Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 28,
+    "trackedFileSnapshotCount": 29,
     "changeTypeCounts": {
       "save": 40,
       "create": 0,
@@ -486,6 +750,38 @@
     }
   },
   "trackedSnapshots": [
+    {
+      "filePath": ".gitignore",
+      "updatedAt": 1786320994098,
+      "lineCount": 29,
+      "charCount": 293,
+      "hash": "4a2ad0bea3f9",
+      "preview": "# build output / dist/ / .output/ / # generated assets / pins-out/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log..."
+    },
+    {
+      "filePath": "package.json",
+      "updatedAt": 1786320902721,
+      "lineCount": 29,
+      "charCount": 675,
+      "hash": "25a4b7e4097e",
+      "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":..."
+    },
+    {
+      "filePath": "scripts/generate-pins.mjs",
+      "updatedAt": 1786320878254,
+      "lineCount": 346,
+      "charCount": 10801,
+      "hash": "1446f58418b4",
+      "preview": "#!/usr/bin/env node / /** / * SteadyFocusCo Pinterest Pin Generator / * / * Generates 1000×1500 PNG pins for guides, tools, and printables. / * Reads content from src/data/site.ts and outputs to pins-out/. / */ / impo..."
+    },
+    {
+      "filePath": "src/layouts/Base.astro",
+      "updatedAt": 1786320139055,
+      "lineCount": 175,
+      "charCount": 5920,
+      "hash": "8bcabde454dd",
+      "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
+    },
     {
       "filePath": "src/pages/printables/[slug].astro",
       "updatedAt": 1786319565393,
@@ -517,41 +813,137 @@
       "charCount": 7018,
       "hash": "6a287040489f",
       "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM: utm_source=site&utm_medium=tool&utm_campaign=wee..."
-    },
-    {
-      "filePath": "src/components/BrainDump.tsx",
-      "updatedAt": 1786319388695,
-      "lineCount": 254,
-      "charCount": 6615,
-      "hash": "2b79eeadb893",
-      "preview": "import { useState } from \"react\"; / import \"./tools.css\"; / import { createWriter, today } from \"./pdf\"; / import { etsyLink } from \"../data/site\"; / // Etsy CTA — UTM per spec: utm_source=site&utm_medium=tool&utm_cam..."
-    },
-    {
-      "filePath": "src/pages/shop.astro",
-      "updatedAt": 1786319368717,
-      "lineCount": 251,
-      "charCount": 6183,
-      "hash": "f6d894cd78bb",
-      "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { etsyLink, ETSY_SHOP_URL } from \"../data/site\"; / import productData from \"../data/products.json\"; / interface Product { / listing_id: number | null; / title:..."
-    },
-    {
-      "filePath": "src/layouts/Base.astro",
-      "updatedAt": 1786319331484,
-      "lineCount": 171,
-      "charCount": 5686,
-      "hash": "a776dfd396d1",
-      "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
-    },
-    {
-      "filePath": "src/pages/index.astro",
-      "updatedAt": 1786319303695,
-      "lineCount": 114,
-      "charCount": 5110,
-      "hash": "7676942640c4",
-      "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r..."
     }
   ],
   "recentChanges": [
+    {
+      "type": "save",
+      "path": ".gitignore",
+      "toPath": "",
+      "summary": "Line 5: inserted 4 lines.",
+      "recordedAt": "2026-08-10T00:16:34.098Z",
+      "recordedAtEpochMs": 1786320994098,
+      "before": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 260,
+        "hash": "fb459322e8f5",
+        "preview": "# build output / dist/ / .output/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log / .DS_Store / Thumbs.db / # edit...",
+        "updatedAt": 1786320994098
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 29,
+        "charCount": 293,
+        "hash": "4a2ad0bea3f9",
+        "preview": "# build output / dist/ / .output/ / # generated assets / pins-out/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log...",
+        "updatedAt": 1786320994098
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 0,
+        "addedLines": 4,
+        "summary": "Line 5: inserted 4 lines.",
+        "beforeFragment": "",
+        "afterFragment": "generated assets / pins-out/ / #"
+      }
+    },
+    {
+      "type": "save",
+      "path": "package.json",
+      "toPath": "",
+      "summary": "Line 14: inserted 2 lines.",
+      "recordedAt": "2026-08-10T00:15:02.721Z",
+      "recordedAtEpochMs": 1786320902721,
+      "before": {
+        "kind": "text",
+        "lineCount": 28,
+        "charCount": 629,
+        "hash": "a949c8817e42",
+        "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":...",
+        "updatedAt": 1786320902721
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 29,
+        "charCount": 675,
+        "hash": "25a4b7e4097e",
+        "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":...",
+        "updatedAt": 1786320902721
+      },
+      "diff": {
+        "lineStart": 14,
+        "removedLines": 0,
+        "addedLines": 2,
+        "summary": "Line 14: inserted 2 lines.",
+        "beforeFragment": "",
+        "afterFragment": ", / \"pins\": \"node scripts/generate-pins.mjs\""
+      }
+    },
+    {
+      "type": "save",
+      "path": "scripts/generate-pins.mjs",
+      "toPath": "",
+      "summary": "Line 1: inserted 346 lines.",
+      "recordedAt": "2026-08-10T00:14:38.254Z",
+      "recordedAtEpochMs": 1786320878254,
+      "before": {
+        "kind": "text",
+        "lineCount": 0,
+        "charCount": 0,
+        "hash": "empty",
+        "preview": "",
+        "updatedAt": 1786320878254
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 346,
+        "charCount": 10801,
+        "hash": "1446f58418b4",
+        "preview": "#!/usr/bin/env node / /** / * SteadyFocusCo Pinterest Pin Generator / * / * Generates 1000×1500 PNG pins for guides, tools, and printables. / * Reads content from src/data/site.ts and outputs to pins-out/. / */ / impo...",
+        "updatedAt": 1786320878254
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 0,
+        "addedLines": 346,
+        "summary": "Line 1: inserted 346 lines.",
+        "beforeFragment": "",
+        "afterFragment": "#!/usr/bin/env node / /** / * SteadyFocusCo Pinterest Pin Generator / * / * Generates 1000×1500 PNG pins for guides, tools, and printables. / * Reads content from src/data/site...."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/layouts/Base.astro",
+      "toPath": "",
+      "summary": "Line 49: inserted 5 lines.",
+      "recordedAt": "2026-08-10T00:02:19.055Z",
+      "recordedAtEpochMs": 1786320139055,
+      "before": {
+        "kind": "text",
+        "lineCount": 171,
+        "charCount": 5686,
+        "hash": "a776dfd396d1",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786320139055
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 175,
+        "charCount": 5920,
+        "hash": "8bcabde454dd",
+        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
+        "updatedAt": 1786320139055
+      },
+      "diff": {
+        "lineStart": 49,
+        "removedLines": 0,
+        "addedLines": 5,
+        "summary": "Line 49: inserted 5 lines.",
+        "beforeFragment": "",
+        "afterFragment": "<!-- Cloudflare Web Analytics --> / <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"5e5fa2e52ce84f5787ee32beab26f06d\"}..."
+      }
+    },
     {
       "type": "save",
       "path": "src/pages/printables/[slug].astro",
@@ -903,159 +1295,27 @@
         "beforeFragment": "<div> / <h3>About</h3> / <a href=\"/about\">About SteadyFocusCo</a> / </div> / <div> / <h3>Free tools</h3> / <a href=\"/tools/brain-dump\">Brain dump tool</a> / <a href=\"/tools/week...",
         "afterFragment": "<div> / <h3>Free tools</h3> / <a href=\"/tools/brain-dump\">Brain dump tool</a> / <a href=\"/tools/weekly-reset\">Weekly reset</a> / <a href=\"/printables\">All printables</a> / </div..."
       }
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Line 79: replaced 5 lines with 8 lines.",
-      "recordedAt": "2026-08-09T23:32:57.203Z",
-      "recordedAtEpochMs": 1786318377203,
-      "before": {
-        "kind": "text",
-        "lineCount": 168,
-        "charCount": 5544,
-        "hash": "d3ebdd08b4d4",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786318377203
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 171,
-        "charCount": 5596,
-        "hash": "0152c3c7bf06",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786318377203
-      },
-      "diff": {
-        "lineStart": 79,
-        "removedLines": 5,
-        "addedLines": 8,
-        "summary": "Line 79: replaced 5 lines with 8 lines.",
-        "beforeFragment": "bout\">About</a> / <a href=\"/adhd\">ADHD planning</a> / <a href=\"/students\">For students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/guides\">Guides",
-        "afterFragment": "dhd\">ADHD planning</a> / <a href=\"/students\">For students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/guides\">Guides</a> / </div> / <div> / <h3>About</h3> / <a hr..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Line 58: replaced 20 lines with 22 lines.",
-      "recordedAt": "2026-08-09T23:30:50.975Z",
-      "recordedAtEpochMs": 1786318250975,
-      "before": {
-        "kind": "text",
-        "lineCount": 166,
-        "charCount": 5483,
-        "hash": "90884aa250a0",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786318250975
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 168,
-        "charCount": 5544,
-        "hash": "d3ebdd08b4d4",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786318250975
-      },
-      "diff": {
-        "lineStart": 58,
-        "removedLines": 20,
-        "addedLines": 22,
-        "summary": "Line 58: replaced 20 lines with 22 lines.",
-        "beforeFragment": "tools\">Tools</a> / <a href=\"/adhd\">ADHD</a> / <a href=\"/students\">Students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/printables\">Free printables</a> / <a href=\"...",
-        "afterFragment": "about\">About</a> / <a href=\"/tools\">Tools</a> / <a href=\"/adhd\">ADHD</a> / <a href=\"/students\">Students</a> / <a href=\"/productivity\">Productivity</a> / <a href=\"/printables\">Fr..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/about.astro",
-      "toPath": "",
-      "summary": "Line 1: inserted 80 lines.",
-      "recordedAt": "2026-08-09T23:30:34.873Z",
-      "recordedAtEpochMs": 1786318234873,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786318234873
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 80,
-        "charCount": 2379,
-        "hash": "fff9ab106247",
-        "preview": "--- / import Base from \"../layouts/Base.astro\"; / --- / <Base / title=\"About SteadyFocusCo\" / description=\"Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digit...",
-        "updatedAt": 1786318234873
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 80,
-        "summary": "Line 1: inserted 80 lines.",
-        "beforeFragment": "",
-        "afterFragment": "--- / import Base from \"../layouts/Base.astro\"; / --- / <Base / title=\"About SteadyFocusCo\" / description=\"Planning and organization tools for overwhelmed minds. SteadyFocusCo c..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/layouts/Base.astro",
-      "toPath": "",
-      "summary": "Line 62: replaced 19 lines with 21 lines.",
-      "recordedAt": "2026-08-09T23:25:07.743Z",
-      "recordedAtEpochMs": 1786317907743,
-      "before": {
-        "kind": "text",
-        "lineCount": 164,
-        "charCount": 5424,
-        "hash": "e3a4137688aa",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786317907743
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 166,
-        "charCount": 5483,
-        "hash": "90884aa250a0",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786317907743
-      },
-      "diff": {
-        "lineStart": 62,
-        "removedLines": 19,
-        "addedLines": 21,
-        "summary": "Line 62: replaced 19 lines with 21 lines.",
-        "beforeFragment": "shop\">Shop</a> / <a href=\"/printables\">Free printables</a> / </nav> / </header> / <main> / <slot /> / </main> / <footer class=\"site-footer\"> / <div class=\"footer-grid\"> / <div>...",
-        "afterFragment": "printables\">Free printables</a> / <a href=\"/guides\">Guides</a> / <a href=\"/shop\">Shop</a> / </nav> / </header> / <main> / <slot /> / </main> / <footer class=\"site-footer\"> / <di..."
-      }
     }
   ],
   "hotFiles": [
     {
       "filePath": "src/layouts/Base.astro",
-      "count": 10
+      "count": 11
     },
     {
       "filePath": "src/pages/shop.astro",
       "count": 3
     },
     {
+      "filePath": ".gitignore",
+      "count": 2
+    },
+    {
       "filePath": "astro.config.mjs",
       "count": 2
     },
     {
-      "filePath": "src/components/BrainDump.tsx",
-      "count": 2
-    },
-    {
-      "filePath": "src/components/MorningRoutine.tsx",
-      "count": 2
-    },
-    {
-      "filePath": "src/components/WeeklyReset.tsx",
+      "filePath": "package.json",
       "count": 2
     },
     {
@@ -1065,32 +1325,32 @@
     {
       "filePath": "src/pages/printables/[slug].astro",
       "count": 2
+    },
+    {
+      "filePath": ".env.example",
+      "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-10 40b2edd reorder nav: put About last after Guides",
-    "statusSummary": "11 modifieds",
-    "changedFileCount": 11,
+    "headSummary": "2026-08-10 12b55be Add Cloudflare Web Analytics tracking",
+    "statusSummary": "6 modifieds, 1 untracked",
+    "changedFileCount": 7,
     "statusLines": [
+      "M .gitignore",
       "M graphify-out/WORKSPACE_MEMORY.md",
-      "M src/components/BrainDump.tsx",
-      "M src/components/MorningRoutine.tsx",
-      "M src/components/WeeklyReset.tsx",
-      "M src/layouts/Base.astro",
-      "M src/pages/guides/[slug].astro",
-      "M src/pages/index.astro",
-      "M src/pages/printables/[slug].astro",
-      "M src/pages/shop.astro",
+      "M package-lock.json",
+      "M package.json",
       "M workspace.json",
-      "M workspacememory.md"
+      "M workspacememory.md",
+      "?? scripts/generate-pins.mjs"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 40b2edd by Arslan Khan on 2026-08-09\n  reorder nav: put About last after Guides\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
+    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 12b55be by Arslan Khan on 2026-08-10\n  Add Cloudflare Web Analytics tracking\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
   },
   "graphify": {
     "reportAvailable": false,

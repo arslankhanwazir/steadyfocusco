@@ -2,6 +2,9 @@
 dist/
 .output/
 
+# generated assets
+pins-out/
+
 # dependencies
 node_modules/
 
