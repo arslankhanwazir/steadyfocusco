@@ -53,7 +53,7 @@ const webSiteSchema = {
 		</div>
 
 		<!-- Persistent premium 3D thought-cloud visual (Three.js) -->
-		<div class="hero-stage" id="hero3d" aria-label="Interactive 3D thought sorting demonstration"></div>
+		<div class="hero-stage" id="hero3d" aria-hidden="true"></div>
 	</section>
 
 	<!-- ===== SCROLL STORY: CHAOS ===== -->
@@ -305,31 +305,35 @@ const webSiteSchema = {
 	.hero {
 		max-width: 1280px;
 		margin: 0 auto;
-		padding: 3rem 32px 5rem;
+		padding: 3rem 32px 4rem;
 		display: grid;
-		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: 3rem;
 		align-items: center;
-		min-height: 88vh;
+		min-height: 65vh;
+	}
+	.hero-copy {
+		position: relative;
+		z-index: 1;
 	}
 	.hero-copy h1 {
-		font-size: clamp(2.75rem, 5.5vw, 4.25rem);
-		line-height: 1.05;
-		letter-spacing: -0.03em;
-		margin-bottom: 1.5rem;
+		font-size: clamp(2rem, 4vw, 3rem);
+		line-height: 1.1;
+		letter-spacing: -0.02em;
+		margin-bottom: 1rem;
 	}
 	.hero-lede {
-		font-size: 1.25rem;
+		font-size: 1.15rem;
 		line-height: 1.6;
 		color: var(--ink-soft);
-		max-width: 460px;
-		margin-bottom: 2rem;
+		max-width: 480px;
+		margin-bottom: 1.75rem;
 	}
 	.hero-actions {
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap;
-		margin-bottom: 2rem;
+		margin-bottom: 1.5rem;
 	}
 	.hero-trust {
 		display: flex;
@@ -341,14 +345,16 @@ const webSiteSchema = {
 	/* Persistent premium 3D hero stage */
 	.hero-stage {
 		position: relative;
-		height: 560px;
-		border-radius: 32px;
+		height: min(560px, 70vh);
+		border-radius: 28px;
 		overflow: hidden;
+		background: radial-gradient(ellipse at center, rgba(107,143,123,0.08) 0%, transparent 70%);
 	}
 	.hero-stage canvas {
 		display: block;
-		width: 100%;
-		height: 100%;
+		width: 100% !important;
+		height: 100% !important;
+		max-width: 100%;
 	}
 	.leaf-accent {
 		position: absolute;
@@ -371,13 +377,13 @@ const webSiteSchema = {
 
 	/* CHAOS */
 	.story {
-		padding: 5rem 0;
+		padding: 4rem 0;
 		background: var(--bg-warm);
 		overflow-x: hidden;
 	}
 	.story-head {
 		max-width: 640px;
-		margin-bottom: 3rem;
+		margin-bottom: 2.5rem;
 	}
 	.story-head h2 {
 		font-size: clamp(2rem, 4vw, 3rem);
@@ -407,7 +413,7 @@ const webSiteSchema = {
 
 	/* SORTING */
 	.sorting {
-		padding: 5rem 0;
+		padding: 4rem 0;
 		position: relative;
 		overflow-x: hidden;
 	}
@@ -462,7 +468,7 @@ const webSiteSchema = {
 
 	/* CLARITY */
 	.clarity {
-		padding: 5rem 0;
+		padding: 4rem 0;
 		background: var(--primary-light);
 		text-align: center;
 	}
@@ -477,11 +483,11 @@ const webSiteSchema = {
 
 	/* ===== TOOLS ===== */
 	.tools {
-		padding: 5rem 0;
+		padding: 4rem 0;
 	}
 	.section-head {
 		max-width: 640px;
-		margin-bottom: 3rem;
+		margin-bottom: 2.5rem;
 	}
 	.section-head h2 {
 		font-size: clamp(2rem, 4vw, 3rem);
@@ -495,21 +501,19 @@ const webSiteSchema = {
 		text-decoration: none;
 		color: var(--ink);
 		display: block;
-		perspective: 800px;
 	}
 	.tool-surface {
 		position: relative;
-		padding: 2.5rem;
+		padding: 2.25rem;
 		background: var(--card);
 		border: 1px solid var(--border);
 		border-radius: 20px;
-		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.08);
+		box-shadow: 0 12px 32px rgba(28, 29, 31, 0.06);
 		transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
-		transform-style: preserve-3d;
 	}
 	.tool-card:hover .tool-surface {
-		transform: translateY(-6px) rotateX(2deg);
-		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.12);
+		transform: translateY(-4px);
+		box-shadow: 0 20px 48px rgba(28, 29, 31, 0.10);
 	}
 	.tool-tag {
 		display: inline-block;
@@ -559,7 +563,7 @@ const webSiteSchema = {
 
 	/* ===== PATHS ===== */
 	.paths {
-		padding: 5rem 0;
+		padding: 4rem 0;
 		background: var(--bg-warm);
 	}
 	.paths-grid {
@@ -568,16 +572,16 @@ const webSiteSchema = {
 		gap: 1.5rem;
 	}
 	.path-card {
-		padding: 2.5rem;
+		padding: 2.25rem;
 		border-radius: 20px;
 		text-decoration: none;
 		display: block;
-		transition: all var(--duration-normal) var(--ease-out);
+		transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
 		color: #fff;
 	}
 	.path-card:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.2);
+		transform: translateY(-4px);
+		box-shadow: 0 20px 48px rgba(28, 29, 31, 0.15);
 	}
 	.path-card.c-green { background: #4A6B5A; }
 	.path-card.c-green .path-num { color: #C0DD97; }
@@ -616,7 +620,7 @@ const webSiteSchema = {
 
 	/* ===== EXPLORE ===== */
 	.explore {
-		padding: 5rem 0;
+		padding: 4rem 0;
 		background: var(--bg-warm);
 	}
 	.explore-grid {
@@ -626,7 +630,7 @@ const webSiteSchema = {
 	}
 	.explore-card {
 		display: block;
-		padding: 2.5rem;
+		padding: 2.25rem;
 		background: var(--card);
 		border: 1px solid var(--border);
 		border-radius: 20px;
@@ -635,8 +639,8 @@ const webSiteSchema = {
 		transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
 	}
 	.explore-card:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.12);
+		transform: translateY(-4px);
+		box-shadow: 0 20px 48px rgba(28, 29, 31, 0.10);
 	}
 	.explore-card h3 {
 		font-size: 1.5rem;
@@ -658,7 +662,7 @@ const webSiteSchema = {
 
 	/* ===== PRINTABLES ===== */
 	.printables {
-		padding: 5rem 0;
+		padding: 4rem 0;
 	}
 	.printables-inner {
 		position: relative;
@@ -737,7 +741,7 @@ const webSiteSchema = {
 			min-height: auto;
 		}
 		.hero-stage {
-			height: 480px;
+			height: min(420px, 55vh);
 		}
 		.tools-grid, .paths-grid, .explore-grid {
 			grid-template-columns: 1fr 1fr;
@@ -756,7 +760,14 @@ const webSiteSchema = {
 			padding: 0 20px;
 		}
 		.hero {
-			padding: 2.5rem 20px 3.5rem;
+			padding: 2.5rem 20px 3rem;
+			gap: 2rem;
+		}
+		.hero-copy h1 {
+			font-size: clamp(1.9rem, 6vw, 2.5rem);
+		}
+		.hero-lede {
+			font-size: 1.05rem;
 		}
 		.hero-actions {
 			flex-direction: column;
@@ -768,7 +779,7 @@ const webSiteSchema = {
 			grid-template-columns: 1fr;
 		}
 		.hero-stage {
-			height: 420px;
+			height: min(340px, 50vh);
 		}
 		.chaos-scene {
 			min-height: 300px;
@@ -783,10 +794,10 @@ const webSiteSchema = {
 
 	@media (max-width: 480px) {
 		.hero-copy h1 {
-			font-size: 2.25rem;
+			font-size: 1.85rem;
 		}
 		.hero-lede {
-			font-size: 1.1rem;
+			font-size: 1rem;
 		}
 		.printables-inner {
 			padding: 2rem;
