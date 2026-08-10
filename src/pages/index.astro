@@ -39,21 +39,78 @@ const webSiteSchema = {
 	<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
 	<!-- ===== HERO ===== -->
 	<section class="hero" id="hero">
-		<div class="hero-copy">
-			<p class="eyebrow">ADHD-friendly planning</p>
-			<h1>ADHD planners, printables & productivity tools that reduce overwhelm.</h1>
-			<p class="hero-lede">Free ADHD productivity tools, executive-function supports, and printable planners that turn scattered thoughts into clear next steps — built for daily routines and focus.</p>
-			<div class="hero-actions">
-				<a href="/tools/brain-dump" class="btn btn-primary">Try a free tool</a>
-				<a href="#story" class="btn btn-secondary">Explore resources</a>
-			</div>
-			<div class="hero-trust">
-				<span>Free</span><span>·</span><span>No sign-up</span><span>·</span><span>Private</span>
+		<div class="container">
+			<div class="hero-grid">
+				<div class="hero-copy">
+					<p class="eyebrow">ADHD-friendly planning</p>
+					<h1>ADHD planners, printables & <span class="text-accent">productivity tools</span> that reduce overwhelm.</h1>
+					<p class="hero-lede">Free ADHD productivity tools, executive-function supports, and printable planners that turn scattered thoughts into clear next steps — built for daily routines and focus.</p>
+					<div class="hero-actions">
+						<a href="/shop" class="btn btn-primary">Explore Planners</a>
+						<a href="/tools" class="btn btn-secondary">Free Tools</a>
+					</div>
+					<p class="hero-trust">Designed with care <span>·</span> Made to help <span>·</span> Here for you.</p>
+				</div>
+				<div class="hero-visual">
+					<div class="hero-image-wrap">
+						<img src="/products/weekly-planner-adults.png" alt="SteadyFocusCo weekly planner flat-lay with planner pages, daily focus sheet, and pen" loading="eager" fetchpriority="high" />
+						<div class="hero-float-card">
+							<p class="hero-float-title">Made for how your brain works.</p>
+							<ul class="hero-float-list">
+								<li>Reduce overwhelm</li>
+								<li>Build routines</li>
+								<li>Stay consistent</li>
+								<li>Feel more in control</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	</section>
 
-		<!-- Persistent premium 3D thought-cloud visual (Three.js) -->
-		<div class="hero-stage" id="hero3d" aria-hidden="true"></div>
+	<!-- ===== FEATURE STRIP ===== -->
+	<section class="feature-strip">
+		<div class="container">
+			<div class="feature-grid">
+				<div class="feature">
+					<div class="feature-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.5 4.5-3 6s-3 3.5-3 5.5"/><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6s3 3.5 3 5.5"/><circle cx="12" cy="9" r="2.5"/></svg>
+					</div>
+					<div>
+						<p class="feature-title">ADHD-Friendly</p>
+						<p class="feature-desc">Designed for real life and real brains.</p>
+					</div>
+				</div>
+				<div class="feature">
+					<div class="feature-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h4"/></svg>
+					</div>
+					<div>
+						<p class="feature-title">Printable & Reusable</p>
+						<p class="feature-desc">Use it your way, anytime.</p>
+					</div>
+				</div>
+				<div class="feature">
+					<div class="feature-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5-7 5 7"/><path d="M5 17h14"/><path d="M7 21h10"/></svg>
+					</div>
+					<div>
+						<p class="feature-title">Instant Access</p>
+						<p class="feature-desc">Download and start today.</p>
+					</div>
+				</div>
+				<div class="feature">
+					<div class="feature-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+					</div>
+					<div>
+						<p class="feature-title">Made with Care</p>
+						<p class="feature-desc">Thoughtfully designed to support you.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- ===== SCROLL STORY: CHAOS ===== -->
@@ -211,14 +268,6 @@ const webSiteSchema = {
 </Base>
 
 <script>
-	import { initHero3D } from '../components/hero/Hero3D';
-
-	// ---- Persistent premium 3D hero visual ----
-	const container = document.getElementById('hero3d');
-	if (container) {
-		initHero3D({ container });
-	}
-
 	// ---- Scroll reveal ----
 	const revealObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
@@ -236,7 +285,7 @@ const webSiteSchema = {
 
 <style>
 	.container {
-		max-width: 1280px;
+		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0 32px;
 	}
@@ -262,7 +311,7 @@ const webSiteSchema = {
 		align-items: center;
 		justify-content: center;
 		padding: 0.9rem 1.85rem;
-		border-radius: 999px;
+		border-radius: 10px;
 		font-weight: 700;
 		font-size: 1rem;
 		transition: all var(--duration-fast) ease;
@@ -270,20 +319,20 @@ const webSiteSchema = {
 		text-decoration: none;
 	}
 	.btn-primary {
-		background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 55%), var(--primary);
+		background: var(--primary);
 		color: #fff;
 		border: none;
 		box-shadow: 0 10px 24px rgba(74, 107, 90, 0.35);
 	}
 	.btn-primary:hover {
-		background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 55%), var(--primary-dark);
+		background: var(--primary-dark);
 		transform: translateY(-2px);
 		box-shadow: 0 14px 30px rgba(74, 107, 90, 0.42);
 	}
 	.btn-secondary {
 		background: #fff;
 		color: var(--primary-dark);
-		border: none;
+		border: 1px solid var(--border);
 		box-shadow: 0 8px 20px rgba(28, 29, 31, 0.10);
 	}
 	.btn-secondary:hover {
@@ -303,37 +352,40 @@ const webSiteSchema = {
 
 	/* ===== HERO ===== */
 	.hero {
-		max-width: 1280px;
-		margin: 0 auto;
-		padding: 3rem 32px 4rem;
+		background: linear-gradient(180deg, #F7F5F0 0%, #FAFAF8 100%);
+		padding: 3rem 0 4rem;
+	}
+	.hero-grid {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
 		gap: 3rem;
 		align-items: center;
-		min-height: 65vh;
 	}
 	.hero-copy {
 		position: relative;
 		z-index: 1;
 	}
 	.hero-copy h1 {
-		font-size: clamp(2rem, 4vw, 3rem);
-		line-height: 1.1;
-		letter-spacing: -0.02em;
-		margin-bottom: 1rem;
+		font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+		line-height: 1.08;
+		letter-spacing: -0.03em;
+		margin-bottom: 1.25rem;
+	}
+	.text-accent {
+		color: var(--primary);
 	}
 	.hero-lede {
 		font-size: 1.15rem;
 		line-height: 1.6;
 		color: var(--ink-soft);
-		max-width: 480px;
+		max-width: 520px;
 		margin-bottom: 1.75rem;
 	}
 	.hero-actions {
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.25rem;
 	}
 	.hero-trust {
 		display: flex;
@@ -341,28 +393,109 @@ const webSiteSchema = {
 		font-size: 0.85rem;
 		color: var(--ink-muted);
 	}
-
-	/* Persistent premium 3D hero stage */
-	.hero-stage {
+	.hero-visual {
 		position: relative;
-		height: min(560px, 70vh);
-		border-radius: 28px;
+	}
+	.hero-image-wrap {
+		position: relative;
+		border-radius: 24px;
 		overflow: hidden;
-		background: radial-gradient(ellipse at center, rgba(107,143,123,0.08) 0%, transparent 70%);
+		background: #EFECE6;
+		border: 1px solid var(--border);
+		box-shadow: 0 24px 60px rgba(28, 29, 31, 0.10);
 	}
-	.hero-stage canvas {
+	.hero-image-wrap img {
+		width: 100%;
+		height: auto;
 		display: block;
-		width: 100% !important;
-		height: 100% !important;
-		max-width: 100%;
+		object-fit: cover;
+		aspect-ratio: 4/3;
 	}
-	.leaf-accent {
+	.hero-float-card {
 		position: absolute;
-		pointer-events: none;
-		z-index: 0;
+		left: -24px;
+		bottom: 24px;
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		padding: 1.1rem 1.25rem;
+		box-shadow: 0 16px 40px rgba(28, 29, 31, 0.12);
+		max-width: 260px;
 	}
-	.leaf-sorting { bottom: -20px; left: -20px; width: 140px; height: 100px; opacity: 0.6; }
-	.leaf-printables { top: 10px; right: 20px; width: 90px; height: 90px; opacity: 0.35; }
+	.hero-float-title {
+		font-family: var(--display);
+		font-weight: 700;
+		font-size: 1rem;
+		margin: 0 0 0.6rem;
+		color: var(--ink);
+	}
+	.hero-float-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.35rem;
+	}
+	.hero-float-list li {
+		font-size: 0.9rem;
+		color: var(--ink-soft);
+		padding-left: 1.4rem;
+		position: relative;
+	}
+	.hero-float-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--primary);
+		font-weight: 700;
+	}
+
+	/* ===== FEATURE STRIP ===== */
+	.feature-strip {
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+		background: #fff;
+		padding: 1.75rem 0;
+	}
+	.feature-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.25rem;
+		align-items: center;
+	}
+	.feature {
+		display: flex;
+		align-items: center;
+		gap: 0.9rem;
+	}
+	.feature-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 10px;
+		background: var(--primary-light);
+		color: var(--primary-dark);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+	.feature-icon svg {
+		width: 20px;
+		height: 20px;
+	}
+	.feature-title {
+		font-family: var(--display);
+		font-weight: 700;
+		font-size: 0.95rem;
+		margin: 0 0 0.15rem;
+		color: var(--ink);
+	}
+	.feature-desc {
+		font-size: 0.85rem;
+		color: var(--ink-soft);
+		margin: 0;
+		line-height: 1.4;
+	}
 
 	/* ===== SCROLL STORY ===== */
 	.story, .sorting, .clarity, .tools, .paths, .explore, .printables {
@@ -734,14 +867,16 @@ const webSiteSchema = {
 
 	/* ===== RESPONSIVE ===== */
 	@media (max-width: 1024px) {
-		.hero {
+		.hero-grid {
 			grid-template-columns: 1fr;
 			gap: 2.5rem;
-			padding: 3rem 24px 4rem;
-			min-height: auto;
 		}
-		.hero-stage {
-			height: min(420px, 55vh);
+		.hero-image-wrap {
+			max-width: 560px;
+		}
+		.hero-float-card {
+			left: 12px;
+			bottom: 12px;
 		}
 		.tools-grid, .paths-grid, .explore-grid {
 			grid-template-columns: 1fr 1fr;
@@ -760,8 +895,7 @@ const webSiteSchema = {
 			padding: 0 20px;
 		}
 		.hero {
-			padding: 2.5rem 20px 3rem;
-			gap: 2rem;
+			padding: 2.5rem 0 3rem;
 		}
 		.hero-copy h1 {
 			font-size: clamp(1.9rem, 6vw, 2.5rem);
@@ -775,11 +909,17 @@ const webSiteSchema = {
 		.btn {
 			width: 100%;
 		}
-		.tools-grid, .paths-grid {
-			grid-template-columns: 1fr;
+		.hero-image-wrap {
+			max-width: 100%;
 		}
-		.hero-stage {
-			height: min(340px, 50vh);
+		.hero-float-card {
+			position: static;
+			max-width: 100%;
+			margin-top: 1rem;
+		}
+		.feature-grid {
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
 		}
 		.chaos-scene {
 			min-height: 300px;
@@ -799,6 +939,9 @@ const webSiteSchema = {
 		.hero-lede {
 			font-size: 1rem;
 		}
+		.feature-grid {
+			grid-template-columns: 1fr;
+		}
 		.printables-inner {
 			padding: 2rem;
 		}
@@ -809,9 +952,6 @@ const webSiteSchema = {
 			opacity: 1;
 			transform: none;
 			transition: none;
-		}
-		.hero-stage {
-			perspective: none;
 		}
 		.tool-card:hover .tool-surface,
 		.path-card:hover {
