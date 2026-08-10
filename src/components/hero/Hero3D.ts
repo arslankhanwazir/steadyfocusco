@@ -195,13 +195,20 @@ export function initHero3D({ container }: Hero3DOptions) {
     label.position.z = 0.36;
     group.add(label);
 
-    // scatter position
+    // scatter position — radius must control true distance from the
+    // central cloud (radius 1.5), not just the x-component. The old
+    // formula only scaled x by `radius` while y/z used fixed small
+    // amplitudes (1.4, 0.8), so any task whose angle landed near
+    // 90°/270° (cos(angle) ≈ 0) collapsed to a distance of ~1.0 from
+    // origin — inside the cloud sphere. Now radius scales the full
+    // x/z distance, and y fans out deterministically by task index
+    // so items aren't all banded into the same thin y-range either.
     const angle = (i / TASKS.length) * Math.PI * 2;
-    const radius = 3 + (i % 3) * 0.5;
+    const radius = 3.2 + (i % 3) * 0.6;
     const scatter = new THREE.Vector3(
       Math.cos(angle) * radius,
-      Math.sin(angle * 1.7) * 1.4,
-      Math.sin(angle) * 0.8,
+      (i - (TASKS.length - 1) / 2) * 0.55,
+      Math.sin(angle) * radius,
     );
 
     const target = zonePositions[def.zone].clone();
