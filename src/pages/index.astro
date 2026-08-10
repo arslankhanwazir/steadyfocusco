@@ -373,6 +373,7 @@ const webSiteSchema = {
 	.story {
 		padding: 5rem 0;
 		background: var(--bg-warm);
+		overflow-x: hidden;
 	}
 	.story-head {
 		max-width: 640px;
@@ -401,12 +402,14 @@ const webSiteSchema = {
 	.c4 { top: 80px; left: 15%; transform: rotate(4deg); }
 	.c5 { top: 100px; left: 55%; transform: rotate(-4deg); }
 	.c6 { top: 140px; left: 30%; transform: rotate(2deg); }
-	.c7 { top: 60px; left: 85%; transform: rotate(-3deg); }
+	.c7 { top: 60px; right: 0; left: auto; transform: rotate(-3deg); }
 	.c8 { top: 160px; left: 70%; transform: rotate(5deg); }
 
 	/* SORTING */
 	.sorting {
 		padding: 5rem 0;
+		position: relative;
+		overflow-x: hidden;
 	}
 	.sorting-inner {
 		display: grid;
