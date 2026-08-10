@@ -11,12 +11,16 @@
 // automatically with no manual edits.
 //
 // Required env (put in .env, which is gitignored):
-//   ETSY_API_KEY   - your app's keystring (x-api-key)
-//   ETSY_SHOP_ID   - numeric shop id  (preferred)   OR
-//   ETSY_SHOP_NAME - shop name, e.g. steadyfocusco   (resolved to an id)
+//   ETSY_SHARED_SECRET - app Shared Secret, sent as the x-api-key header
+//                        (Etsy Open API v3 requires the shared secret here,
+//                        not the keystring).
+//   ETSY_ACCESS_TOKEN  - OAuth2 access token, sent as Authorization: Bearer.
+//   ETSY_SHOP_ID       - numeric shop id  (preferred)   OR
+//   ETSY_SHOP_NAME     - shop name, e.g. steadyfocusco   (resolved to an id)
 // Optional:
-//   ETSY_ACCESS_TOKEN - OAuth2 token; when present the script uses the
-//                       getListingsByShop endpoint with state=active.
+//   ETSY_REFRESH_TOKEN - OAuth2 refresh token. When the access token expires
+//                        (HTTP 401), the script refreshes it automatically
+//                        and retries once. Tokens are never printed.
 //
 // If credentials are missing or the API call fails, the existing
 // src/data/products.json (the committed seed) is left untouched so the build
@@ -29,7 +33,9 @@ import { dirname, resolve } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const OUT = resolve(ROOT, "src/data/products.json");
+const ENV_PATH = resolve(ROOT, ".env");
 const API = "https://openapi.etsy.com/v3/application";
+const TOKEN_URL = "https://api.etsy.com/v3/public/oauth/token";
 const DEFAULT_SHOP_NAME = "steadyfocusco";
 
 // ---- tiny .env loader (no dependency) --------------------------------------
@@ -52,6 +58,25 @@ function loadDotEnv() {
     }
     if (!(key in process.env)) process.env[key] = val;
   }
+}
+
+// ---- write a single key back into .env (preserving other lines) ------------
+function setEnvValue(key, value) {
+  if (!existsSync(ENV_PATH)) return;
+  const lines = readFileSync(ENV_PATH, "utf8").split("\n");
+  const out = [];
+  let replaced = false;
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith(`${key}=`)) {
+      out.push(`${key}=${value}`);
+      replaced = true;
+    } else {
+      out.push(line);
+    }
+  }
+  if (!replaced) out.push(`${key}=${value}`);
+  writeFileSync(ENV_PATH, out.join("\n") + "\n", "utf8");
 }
 
 // ---- helpers ----------------------------------------------------------------
@@ -89,9 +114,72 @@ function pickImage(listing) {
   return null;
 }
 
-async function apiGet(path, { apiKey, token }) {
-  const headers = { "x-api-key": apiKey };
-  if (token) headers.Authorization = `Bearer ${token}`;
+// Fetch the best available image URL for a single listing via the Etsy v3
+// listing-images endpoint. Falls back through url_570xN -> url_fullxfull ->
+// url_680x540 -> url. Returns null if the listing has no images or the call
+// fails (so the sync can continue without breaking).
+async function fetchListingImage(listingId, auth) {
+  if (!listingId) return null;
+  try {
+    const data = await apiGetWithRefresh(`/listings/${listingId}/images`, auth);
+    const imgs = data.results || [];
+    if (imgs.length === 0) return null;
+    const first = imgs[0];
+    return (
+      first.url_570xN ||
+      first.url_fullxfull ||
+      first.url_680x540 ||
+      first.url ||
+      null
+    );
+  } catch {
+    return null;
+  }
+}
+
+// ---- OAuth token refresh (mirrors scripts/etsy-oauth.mjs) -------------------
+// Refreshes the access token using ETSY_REFRESH_TOKEN, writes the new tokens
+// back to .env, and returns the new access token. Never prints tokens.
+async function refreshAccessToken() {
+  const refreshToken = process.env.ETSY_REFRESH_TOKEN;
+  const clientId = process.env.ETSY_API_KEY; // keystring is the OAuth client_id
+  if (!refreshToken || !clientId) {
+    throw new Error(
+      "Access token expired but ETSY_REFRESH_TOKEN / ETSY_API_KEY are not set — cannot refresh.",
+    );
+  }
+  const body = new URLSearchParams({
+    grant_type: "refresh_token",
+    client_id: clientId,
+    refresh_token: refreshToken,
+  });
+  const res = await fetch(TOKEN_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      `Token refresh failed (${res.status}): ${JSON.stringify(data)}`,
+    );
+  }
+  if (!data.access_token) {
+    throw new Error("Token refresh returned no access_token.");
+  }
+  setEnvValue("ETSY_ACCESS_TOKEN", data.access_token);
+  if (data.refresh_token) setEnvValue("ETSY_REFRESH_TOKEN", data.refresh_token);
+  process.env.ETSY_ACCESS_TOKEN = data.access_token;
+  if (data.refresh_token) process.env.ETSY_REFRESH_TOKEN = data.refresh_token;
+  return data.access_token;
+}
+
+// ---- Etsy API GET with keystring:shared-secret x-api-key + Bearer token -----
+async function apiGet(path, { apiKey, sharedSecret, token }) {
+  const headers = {
+    "x-api-key": `${apiKey}:${sharedSecret}`,
+    Authorization: `Bearer ${token}`,
+  };
   const res = await fetch(`${API}${path}`, { headers });
   if (!res.ok) {
     const body = await res.text().catch(() => "");
@@ -100,12 +188,28 @@ async function apiGet(path, { apiKey, token }) {
   return res.json();
 }
 
+// Wraps apiGet: on HTTP 401 (expired token) it refreshes once and retries.
+async function apiGetWithRefresh(path, auth) {
+  try {
+    return await apiGet(path, auth);
+  } catch (err) {
+    if (/Etsy API 401/.test(err.message)) {
+      console.warn(
+        "[sync-etsy] Access token expired (401) — refreshing and retrying once.",
+      );
+      auth.token = await refreshAccessToken();
+      return await apiGet(path, auth);
+    }
+    throw err;
+  }
+}
+
 async function resolveShopId(auth) {
   if (process.env.ETSY_SHOP_ID && /^\d+$/.test(process.env.ETSY_SHOP_ID)) {
     return process.env.ETSY_SHOP_ID;
   }
   const name = process.env.ETSY_SHOP_NAME || DEFAULT_SHOP_NAME;
-  const data = await apiGet(
+  const data = await apiGetWithRefresh(
     `/shops?shop_name=${encodeURIComponent(name)}`,
     auth,
   );
@@ -119,16 +223,14 @@ async function fetchActiveListings(shopId, auth) {
   const limit = 100;
   let offset = 0;
 
-  // With an OAuth token we can use getListingsByShop?state=active.
-  // With only an API key, the public "active" collection endpoint is used.
-  const basePath = auth.token
-    ? `/shops/${shopId}/listings`
-    : `/shops/${shopId}/listings/active`;
+  // /listings/active already restricts results to active listings.
+  const basePath = `/shops/${shopId}/listings/active`;
 
   while (true) {
-    const stateParam = auth.token ? "&state=active" : "";
-    const path = `${basePath}?limit=${limit}&offset=${offset}&includes=Images${stateParam}`;
-    const data = await apiGet(path, auth);
+    const path =
+      `${basePath}?limit=${limit}` + `&offset=${offset}` + `&includes=Images`;
+
+    const data = await apiGetWithRefresh(path, auth);
     const batch = data.results || [];
     listings.push(...batch);
     if (batch.length < limit) break;
@@ -140,35 +242,42 @@ async function fetchActiveListings(shopId, auth) {
 async function main() {
   loadDotEnv();
   const apiKey = process.env.ETSY_API_KEY;
+  const sharedSecret = process.env.ETSY_SHARED_SECRET;
   const token = process.env.ETSY_ACCESS_TOKEN;
 
-  if (!apiKey) {
+  if (!apiKey || !sharedSecret || !token) {
     console.warn(
-      "[sync-etsy] ETSY_API_KEY not set — skipping live sync. " +
+      "[sync-etsy] ETSY_API_KEY, ETSY_SHARED_SECRET and/or ETSY_ACCESS_TOKEN not set — skipping live sync. " +
         "Keeping existing src/data/products.json (seed). " +
-        "Set ETSY_API_KEY + ETSY_SHOP_ID (or ETSY_SHOP_NAME) in .env to pull live listings.",
+        "Run `node scripts/etsy-oauth.mjs` to obtain tokens, then set ETSY_API_KEY + ETSY_SHARED_SECRET + ETSY_SHOP_ID (or ETSY_SHOP_NAME) in .env.",
     );
     return;
   }
 
-  const auth = { apiKey, token };
+  const auth = { apiKey, sharedSecret, token };
   try {
     const shopId = await resolveShopId(auth);
     console.log(`[sync-etsy] Resolved shop id: ${shopId}`);
     const raw = await fetchActiveListings(shopId, auth);
 
-    const products = raw
+    // Fetch images sequentially to respect Etsy rate limits and keep the
+    // per-listing image calls reliable.
+    const products = [];
+    for (const l of raw) {
       // Only active listings ever reach the site.
-      .filter((l) => (l.state ? l.state === "active" : true))
-      .map((l) => ({
-        listing_id: l.listing_id ?? null,
+      if (l.state && l.state !== "active") continue;
+      const listingId = l.listing_id ?? null;
+      const image = pickImage(l) || (await fetchListingImage(listingId, auth));
+      products.push({
+        listing_id: listingId,
         title: l.title ?? "",
         price: formatPrice(l.price),
         currency_code: l.price?.currency_code || l.currency_code || "USD",
-        image: pickImage(l),
-        url: l.url || `https://www.etsy.com/listing/${l.listing_id}`,
+        image,
+        url: l.url || `https://www.etsy.com/listing/${listingId}`,
         cluster: clusterFromTitle(l.title ?? ""),
-      }));
+      });
+    }
 
     if (products.length === 0) {
       console.warn(
@@ -188,8 +297,9 @@ async function main() {
       `[sync-etsy] Wrote ${products.length} active listings to src/data/products.json`,
     );
   } catch (err) {
+    // Fail-safe: never destroy the existing seed. Report the real reason.
     console.warn(
-      `[sync-etsy] Live sync failed (${err.message}). ` +
+      `[sync-etsy] Live sync failed: ${err.message}. ` +
         "Keeping existing src/data/products.json so the build can continue.",
     );
   }

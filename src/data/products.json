@@ -1,80 +1,79 @@
 {
-    "source": "seed",
-    "shop": "steadyfocusco",
-    "syncedAt": null,
-    "note": "Fallback seed used when the Etsy API sync has not run (no credentials). Titles/prices are from the shop's own listing list; image is null and url points to the real shop landing page because listing IDs/photos are only known after a real API sync. Run `npm run sync:etsy` with ETSY_API_KEY + ETSY_SHOP_ID set to replace this with live data.",
-    "products": [
-        {
-            "listing_id": null,
-            "title": "ADHD Student Planner Bundle",
-            "price": "9.99",
-            "currency_code": "USD",
-            "image": "/products/bundle.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "students"
-        },
-        {
-            "listing_id": null,
-            "title": "ADHD Brain Dump Printable (Homework Reset System)",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/brain-dump.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "adhd"
-        },
-        {
-            "listing_id": null,
-            "title": "ADHD Homework Tracker Printable",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/homework-tracker.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "students"
-        },
-        {
-            "listing_id": null,
-            "title": "ADHD Study Planner PDF",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/study-planner.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "students"
-        },
-        {
-            "listing_id": null,
-            "title": "Executive Function Planner PDF",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/executive-function.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "productivity"
-        },
-        {
-            "listing_id": null,
-            "title": "ADHD Weekly Planner for Adults",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/weekly-planner-adults.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "productivity"
-        },
-        {
-            "listing_id": null,
-            "title": "ADHD Brain Dump Printable for Adults",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/brain-dump-adults.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "adhd"
-        },
-        {
-            "listing_id": null,
-            "title": "ADHD Morning Routine Checklist for Adults",
-            "price": "3.99",
-            "currency_code": "USD",
-            "image": "/products/morning-routine.png",
-            "url": "https://steadyfocusco.etsy.com",
-            "cluster": "adhd"
-        }
-    ]
+  "source": "etsy-api",
+  "shop": "steadyfocusco",
+  "syncedAt": "2026-08-10T13:12:11.142Z",
+  "products": [
+    {
+      "listing_id": 4552836196,
+      "title": "ADHD Morning Routine Checklist for Adults | Morning Reset Printable PDF",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/a18940/8360390000/il_570xN.8360390000_akt9.jpg",
+      "url": "https://www.etsy.com/listing/4552836196/adhd-morning-routine-checklist-for",
+      "cluster": "adhd"
+    },
+    {
+      "listing_id": 4552435631,
+      "title": "ADHD Brain Dump Printable for Adults | Clear Your Mind Worksheet PDF",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/dfce22/8357481078/il_570xN.8357481078_jir1.jpg",
+      "url": "https://www.etsy.com/listing/4552435631/adhd-brain-dump-printable-for-adults",
+      "cluster": "adhd"
+    },
+    {
+      "listing_id": 4551728277,
+      "title": "ADHD Weekly Planner for Adults | Weekly Reset Printable PDF",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/9de589/8352463724/il_570xN.8352463724_ovdh.jpg",
+      "url": "https://www.etsy.com/listing/4551728277/adhd-weekly-planner-for-adults-weekly",
+      "cluster": "productivity"
+    },
+    {
+      "listing_id": 4549555987,
+      "title": "ADHD Student Planner Bundle | Focus & Stop Overwhelm PDF",
+      "price": "9.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/0f05df/8343712320/il_570xN.8343712320_rk6k.jpg",
+      "url": "https://www.etsy.com/listing/4549555987/adhd-student-planner-bundle-focus-stop",
+      "cluster": "students"
+    },
+    {
+      "listing_id": 4549561340,
+      "title": "Executive Function Planner PDF | ADHD Weekly Focus Organizer",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/53a0b3/8343337808/il_570xN.8343337808_3fin.jpg",
+      "url": "https://www.etsy.com/listing/4549561340/executive-function-planner-pdf-adhd",
+      "cluster": "productivity"
+    },
+    {
+      "listing_id": 4549542728,
+      "title": "ADHD Study Planner PDF | Exam Prep Without Overwhelm",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/c3cf2e/8387885295/il_570xN.8387885295_ko0e.jpg",
+      "url": "https://www.etsy.com/listing/4549542728/adhd-study-planner-pdf-exam-prep-without",
+      "cluster": "students"
+    },
+    {
+      "listing_id": 4549519458,
+      "title": "ADHD Homework Tracker Printable | Daily Focus System PDF",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/b683de/8339855774/il_570xN.8339855774_4cdt.jpg",
+      "url": "https://www.etsy.com/listing/4549519458/adhd-homework-tracker-printable-daily",
+      "cluster": "students"
+    },
+    {
+      "listing_id": 4549480819,
+      "title": "ADHD Brain Dump Printable | Homework Reset System PDF",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/0916a0/8339294822/il_570xN.8339294822_7b6v.jpg",
+      "url": "https://www.etsy.com/listing/4549480819/adhd-brain-dump-printable-homework-reset",
+      "cluster": "students"
+    }
+  ]
 }
