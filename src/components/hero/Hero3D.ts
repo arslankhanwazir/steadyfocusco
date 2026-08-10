@@ -156,6 +156,7 @@ export function initHero3D({ container }: Hero3DOptions) {
 
   const tasks: {
     group: THREE.Group;
+    spin: THREE.Group;
     scatter: THREE.Vector3;
     target: THREE.Vector3;
     speed: number;
@@ -170,14 +171,20 @@ export function initHero3D({ container }: Hero3DOptions) {
   TASKS.forEach((def, i) => {
     const group = new THREE.Group();
 
+    // spin: holds only the body, so its continuous rotation never
+    // carries the label out of view (labels stay direct children of
+    // `group`, which only translates/floats — it never spins)
+    const spin = new THREE.Group();
+    group.add(spin);
+
     // rounded capsule body
     const bodyGeo = new THREE.CapsuleGeometry(0.34, 0.5, 4, 12);
     const body = new THREE.Mesh(bodyGeo, taskMat);
     body.castShadow = true;
     body.receiveShadow = true;
-    group.add(body);
+    spin.add(body);
 
-    // label plane (crisp text, always readable)
+    // label plane (crisp text, always readable) — not part of `spin`
     const labelTex = makeLabelTexture(def.label, "#1C1D1F", "#ffffff");
     const labelMat = new THREE.MeshBasicMaterial({
       map: labelTex,
@@ -204,13 +211,18 @@ export function initHero3D({ container }: Hero3DOptions) {
     group.position.copy(scatter);
     scene.add(group);
 
-    tasks.push({ group, scatter, target, speed: 0.6 + (i % 4) * 0.15 });
+    tasks.push({ group, spin, scatter, target, speed: 0.6 + (i % 4) * 0.15 });
   });
 
   // ---- Zone platforms with labels ----
-  const zones: { group: THREE.Group }[] = [];
+  const zones: { group: THREE.Group; spin: THREE.Group }[] = [];
   Object.entries(zonePositions).forEach(([key, pos]) => {
     const group = new THREE.Group();
+
+    // spin: holds only the platform disc — zoneLabel stays a direct,
+    // non-rotating child of `group` for the same reason as task labels
+    const spin = new THREE.Group();
+    group.add(spin);
 
     // frosted platform
     const platformGeo = new THREE.CylinderGeometry(1.15, 1.35, 0.08, 24);
@@ -225,7 +237,7 @@ export function initHero3D({ container }: Hero3DOptions) {
     const platform = new THREE.Mesh(platformGeo, platformMat);
     platform.position.y = -0.95;
     platform.castShadow = true;
-    group.add(platform);
+    spin.add(platform);
 
     // zone label
     const zoneTex = makeLabelTexture(
@@ -248,7 +260,7 @@ export function initHero3D({ container }: Hero3DOptions) {
     group.position.copy(pos);
     group.scale.setScalar(0.001); // hidden until organized
     scene.add(group);
-    zones.push({ group });
+    zones.push({ group, spin });
   });
 
   // ---- State machine ----
@@ -335,15 +347,15 @@ export function initHero3D({ container }: Hero3DOptions) {
       const pos = new THREE.Vector3().lerpVectors(task.scatter, task.target, t);
       pos.y += Math.sin(now * 0.001 * task.speed + task.scatter.x) * 0.08;
       task.group.position.lerp(pos, 0.05);
-      task.group.rotation.x += dt * task.speed * 0.1;
-      task.group.rotation.y += dt * task.speed * 0.15;
+      task.spin.rotation.x += dt * task.speed * 0.1;
+      task.spin.rotation.y += dt * task.speed * 0.15;
     });
 
     // zones scale in/out with organization
     zones.forEach((z, i) => {
       const s = easeInOut(Math.max(0, Math.min(1, currentT)));
       z.group.scale.setScalar(0.001 + s * 1);
-      z.group.rotation.y += dt * 0.05 * (i + 1);
+      z.spin.rotation.y += dt * 0.05 * (i + 1);
     });
 
     // camera parallax
