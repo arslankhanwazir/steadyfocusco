@@ -114,25 +114,56 @@ function pickImage(listing) {
   return null;
 }
 
+// Listing IDs for the 3 products that previously surfaced with null/unusable
+// images on the deployed site. We log image resolution for these specifically.
+const IMAGE_DEBUG_LISTING_IDS = new Set([
+  4549542728, // ADHD Study Planner PDF
+  4549519458, // ADHD Homework Tracker Printable
+  4549480819, // ADHD Brain Dump Printable
+]);
+
 // Fetch the best available image URL for a single listing via the Etsy v3
 // listing-images endpoint. Falls back through url_570xN -> url_fullxfull ->
-// url_680x540 -> url. Returns null if the listing has no images or the call
-// fails (so the sync can continue without breaking).
+// url_680x540 -> url -> url_170x135 -> url_75x75. Returns null if the listing
+// has no images or the call fails (so the sync can continue without breaking).
 async function fetchListingImage(listingId, auth) {
   if (!listingId) return null;
   try {
     const data = await apiGetWithRefresh(`/listings/${listingId}/images`, auth);
     const imgs = data.results || [];
-    if (imgs.length === 0) return null;
+    if (imgs.length === 0) {
+      if (IMAGE_DEBUG_LISTING_IDS.has(listingId)) {
+        console.log(
+          `[sync-etsy] image debug: listing ${listingId} has no images (0 results).`,
+        );
+      }
+      return null;
+    }
     const first = imgs[0];
-    return (
+    const url =
       first.url_570xN ||
       first.url_fullxfull ||
       first.url_680x540 ||
       first.url ||
-      null
-    );
-  } catch {
+      first.url_170x135 ||
+      first.url_75x75 ||
+      null;
+    if (IMAGE_DEBUG_LISTING_IDS.has(listingId)) {
+      console.log(
+        `[sync-etsy] image debug: listing ${listingId} image URL ${
+          url ? "FOUND" : "NOT FOUND"
+        } (fields: ${Object.keys(first)
+          .filter((k) => /^url_/.test(k))
+          .join(",")}).`,
+      );
+    }
+    return url;
+  } catch (err) {
+    if (IMAGE_DEBUG_LISTING_IDS.has(listingId)) {
+      console.log(
+        `[sync-etsy] image debug: listing ${listingId} image fetch failed (${err.message}).`,
+      );
+    }
     return null;
   }
 }
