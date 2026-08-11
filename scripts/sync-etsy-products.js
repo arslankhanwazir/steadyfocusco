@@ -254,12 +254,14 @@ async function fetchActiveListings(shopId, auth) {
   const limit = 100;
   let offset = 0;
 
-  // /listings/active already restricts results to active listings.
-  const basePath = `/shops/${shopId}/listings/active`;
+  // Use the general shop listings endpoint with an explicit active state.
+  const basePath = `/shops/${shopId}/listings`;
 
   while (true) {
     const path =
-      `${basePath}?limit=${limit}` + `&offset=${offset}` + `&includes=Images`;
+      `${basePath}?state=active&limit=${limit}` +
+      `&offset=${offset}` +
+      `&includes=Images`;
 
     const data = await apiGetWithRefresh(path, auth);
     const batch = data.results || [];
