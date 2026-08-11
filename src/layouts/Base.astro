@@ -17,6 +17,25 @@ const fullTitle = `${title} · ${siteName}`;
 // Canonical + absolute OG URLs. Astro.site is set in astro.config.mjs.
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
+
+const year = new Date().getFullYear();
+
+// Primary navigation — labels and destinations preserved from the previous global nav.
+const navLinks = [
+	{ label: "Planners", href: "/shop" },
+	{ label: "Printables", href: "/printables" },
+	{ label: "Tools", href: "/tools" },
+	{ label: "Resources", href: "/guides" },
+	{ label: "About", href: "/about" },
+];
+
+function isActive(href: string): boolean {
+	if (href === "/") return Astro.url.pathname === "/";
+	return (
+		Astro.url.pathname === href ||
+		Astro.url.pathname.startsWith(href + "/")
+	);
+}
 ---
 <html lang="en">
 	<head>
@@ -46,7 +65,7 @@ const ogImage = new URL(image, Astro.site);
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
-		
+
 		<!-- Cloudflare Web Analytics -->
 		<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5e5fa2e52ce84f5787ee32beab26f06d"}'></script>
 		<!-- End Cloudflare Web Analytics -->
@@ -55,54 +74,127 @@ const ogImage = new URL(image, Astro.site);
 	<body>
 	<header class="site-header">
 		<div class="site-header-inner">
-		<a href="/" class="brand">
-				<img src="/logo.png" alt="SteadyFocusCo" class="brand-logo" />
+			<a href="/" class="brand" aria-label="SteadyFocusCo home">
+				<img src="/logo.png" alt="" class="brand-logo" />
 				<span class="brand-text">SteadyFocus<span>Co</span></span>
 			</a>
-			<nav>
-				<a href="/shop">Planners</a>
-				<a href="/printables">Printables</a>
-				<a href="/tools">Tools</a>
-				<a href="/guides">Resources</a>
-				<a href="/about">About</a>
+			<nav class="site-nav" id="site-nav" aria-label="Primary">
+				{navLinks.map((link) => (
+					<a
+						href={link.href}
+						class:list={["nav-link", { "is-active": isActive(link.href) }]}
+					>{link.label}</a>
+				))}
 				<a href="/shop" class="nav-cta">Shop Planners</a>
 			</nav>
+			<button
+				class="nav-toggle"
+				id="nav-toggle"
+				type="button"
+				aria-expanded="false"
+				aria-controls="site-nav"
+				aria-label="Open menu"
+			>
+				<span class="nav-toggle-bar" aria-hidden="true"></span>
+				<span class="nav-toggle-bar" aria-hidden="true"></span>
+				<span class="nav-toggle-bar" aria-hidden="true"></span>
+			</button>
 		</div>
 	</header>
 		<main>
 			<slot />
 		</main>
 		<footer class="site-footer">
-			<div class="footer-grid">
-				<div>
-					<span class="brand">SteadyFocus<span>Co</span></span>
-					<p>Planning tools for brains that don't do linear.</p>
+			<div class="footer-inner">
+				<div class="footer-top">
+					<div class="footer-brand">
+						<a href="/" class="brand footer-brand-link" aria-label="SteadyFocusCo home">
+							<img src="/logo.png" alt="" class="brand-logo" />
+							<span class="brand-text">SteadyFocus<span>Co</span></span>
+						</a>
+						<p>Planning tools for brains that don't do linear.</p>
+						<a
+							href="https://steadyfocusco.etsy.com?utm_source=site&utm_medium=footer&utm_campaign=site"
+							class="footer-cta"
+							target="_blank"
+							rel="sponsored noopener"
+							data-analytics-event="etsy_click"
+						>
+							<span>Etsy store</span><span class="cta-arrow" aria-hidden="true">↗</span>
+						</a>
+						<span class="footer-dots" aria-hidden="true">
+							<span class="dot dot-sage"></span>
+							<span class="dot dot-pink"></span>
+							<span class="dot dot-blue"></span>
+							<span class="dot dot-amber"></span>
+						</span>
+					</div>
+					<div class="footer-cols">
+						<div class="footer-col">
+							<h3>Explore</h3>
+							<a href="/adhd">ADHD planning</a>
+							<a href="/students">For students</a>
+							<a href="/productivity">Productivity</a>
+							<a href="/guides">Guides</a>
+						</div>
+						<div class="footer-col">
+							<h3>Free tools</h3>
+							<a href="/tools/brain-dump">Brain dump tool</a>
+							<a href="/tools/weekly-reset">Weekly reset</a>
+							<a href="/printables">All printables</a>
+						</div>
+						<div class="footer-col">
+							<h3>Shop</h3>
+							<a href="https://steadyfocusco.etsy.com?utm_source=site&utm_medium=footer&utm_campaign=site" target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Etsy store ↗</a>
+						</div>
+						<div class="footer-col">
+							<h3>About</h3>
+							<a href="/about">About SteadyFocusCo</a>
+						</div>
+					</div>
 				</div>
-			<div>
-				<h3>Explore</h3>
-				<a href="/adhd">ADHD planning</a>
-				<a href="/students">For students</a>
-				<a href="/productivity">Productivity</a>
-				<a href="/guides">Guides</a>
-			</div>
-				<div>
-					<h3>Free tools</h3>
-					<a href="/tools/brain-dump">Brain dump tool</a>
-					<a href="/tools/weekly-reset">Weekly reset</a>
-					<a href="/printables">All printables</a>
-				</div>
-				<div>
-					<h3>Shop</h3>
-					<a href="https://steadyfocusco.etsy.com?utm_source=site&utm_medium=footer&utm_campaign=site" target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Etsy store ↗</a>
-				</div>
-				<div>
-					<h3>About</h3>
-					<a href="/about">About SteadyFocusCo</a>
+				<div class="footer-bottom">
+					<span class="footer-copy">© {year} SteadyFocusCo</span>
 				</div>
 			</div>
 		</footer>
 	</body>
 </html>
+
+<script is:inline>
+	(function () {
+		var toggle = document.getElementById("nav-toggle");
+		var nav = document.getElementById("site-nav");
+		if (!toggle || !nav) return;
+
+		function setOpen(open) {
+			nav.classList.toggle("nav-open", open);
+			toggle.setAttribute("aria-expanded", open ? "true" : "false");
+			toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+		}
+
+		toggle.addEventListener("click", function () {
+			setOpen(!nav.classList.contains("nav-open"));
+		});
+
+		// Close on Escape
+		document.addEventListener("keydown", function (e) {
+			if (e.key === "Escape") setOpen(false);
+		});
+
+		// Close on outside click
+		document.addEventListener("click", function (e) {
+			if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+				setOpen(false);
+			}
+		});
+
+		// Close when a link is chosen
+		nav.addEventListener("click", function (e) {
+			if (e.target.closest("a")) setOpen(false);
+		});
+	})();
+</script>
 
 <style is:global>
 	:root {
@@ -118,11 +210,19 @@ const ogImage = new URL(image, Astro.site);
 		--accent: #D98E3F;
 		--card: #FFFFFF;
 		--border: #E8E6E1;
-		
+
+		/* Supporting pastel accents (only as subtle UI detail) */
+		--sage-tint: #EAF3EC;
+		--pink-tint: #F9EAEE;
+		--blue-tint: #E9EFF8;
+		--sage-soft: #C0DD97;
+		--footer-bg: #3E5C4E;
+		--footer-bg-deep: #334D41;
+
 		/* Typography */
 		--display: 'Sora', system-ui, sans-serif;
 		--body: 'Inter', system-ui, sans-serif;
-		
+
 		/* Spacing */
 		--space-xs: 0.5rem;
 		--space-sm: 1rem;
@@ -130,7 +230,7 @@ const ogImage = new URL(image, Astro.site);
 		--space-lg: 2.5rem;
 		--space-xl: 4rem;
 		--space-2xl: 6rem;
-		
+
 		/* Motion */
 		--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 		--duration-fast: 150ms;
@@ -151,7 +251,7 @@ const ogImage = new URL(image, Astro.site);
 		overflow-x: hidden;
 		max-width: 100%;
 	}
-	
+
 	/* Typography scale */
 	h1, h2, h3, h4 {
 		font-family: var(--display);
@@ -160,59 +260,65 @@ const ogImage = new URL(image, Astro.site);
 		margin: 0;
 		letter-spacing: -0.02em;
 	}
-	
+
 	h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
 	h2 { font-size: clamp(2rem, 4vw, 3rem); }
 	h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-	
+
 	p {
 		margin: 0 0 1.5em;
 		line-height: 1.7;
 	}
-	
+
 	a {
 		color: var(--primary);
 		text-decoration: none;
 		transition: color var(--duration-fast) ease;
 	}
-	
+
 	a:hover {
 		color: var(--primary-dark);
 	}
-	
+
 	a:focus-visible, button:focus-visible {
 		outline: 2px solid var(--primary);
 		outline-offset: 3px;
 		border-radius: 2px;
 	}
-	
+
 	@media (prefers-reduced-motion: reduce) {
-		* { 
-			animation: none !important; 
-			transition: none !important; 
+		* {
+			animation: none !important;
+			transition: none !important;
 		}
 	}
 
-	/* Navigation */
+	/* ===== GLOBAL HEADER ===== */
 	.site-header {
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		background: rgba(250, 250, 248, 0.85);
+		height: 78px;
+		background: rgba(250, 250, 248, 0.82);
 		backdrop-filter: blur(20px) saturate(180%);
 		-webkit-backdrop-filter: blur(20px) saturate(180%);
 		border-bottom: 1px solid var(--border);
+		box-shadow:
+			inset 0 -1px 0 rgba(255, 255, 255, 0.6),
+			0 1px 2px rgba(28, 29, 31, 0.03),
+			0 6px 18px rgba(28, 29, 31, 0.04);
 	}
-	
+
 	.site-header-inner {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		gap: 1.5rem;
 		max-width: 1200px;
+		height: 100%;
 		margin: 0 auto;
-		padding: 1.25rem 2rem;
+		padding: 0 2rem;
 	}
-	
+
 	.brand {
 		display: flex;
 		align-items: center;
@@ -223,162 +329,410 @@ const ogImage = new URL(image, Astro.site);
 		color: var(--ink);
 		text-decoration: none;
 		letter-spacing: -0.01em;
+		white-space: nowrap;
 	}
-	
+
 	.brand-logo {
 		height: 2rem;
 		width: auto;
 	}
-	
+
 	.brand span {
 		color: var(--primary);
 	}
-	
-	.site-header nav {
+
+	.brand:hover {
+		color: var(--ink);
+	}
+
+	/* Primary nav (desktop) */
+	.site-nav {
 		display: flex;
 		align-items: center;
-		gap: 1.5rem;
+		margin-left: auto;
+		gap: 0.25rem;
 	}
-	
-	.site-header nav a {
+
+	.nav-link {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.62rem 1rem;
+		border-radius: 999px;
 		color: var(--ink-soft);
 		text-decoration: none;
 		font-weight: 500;
-		font-size: 0.85rem;
-		transition: color var(--duration-fast) ease;
-		position: relative;
+		font-size: 0.875rem;
 		white-space: nowrap;
+		transition:
+			color var(--duration-fast) ease,
+			background var(--duration-fast) var(--ease-out);
 	}
-	
-	.site-header nav a::after {
-		content: '';
-		position: absolute;
-		bottom: -4px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background: var(--primary);
-		transition: width var(--duration-normal) var(--ease-out);
-	}
-	
-	.site-header nav a:hover::after,
-	.site-header nav a:focus::after {
-		width: 100%;
-	}
-	
-	.site-header nav a:hover {
+
+	.nav-link:hover,
+	.nav-link:focus-visible {
 		color: var(--ink);
+		background: var(--sage-tint);
 	}
-	
+
+	.nav-link.is-active {
+		color: var(--primary-dark);
+		background: var(--primary-light);
+		font-weight: 600;
+	}
+
+	/* Shop Planners CTA — tactile premium button */
 	.nav-cta {
 		display: inline-flex;
 		align-items: center;
-		padding: 0.625rem 1.25rem;
-		background: var(--primary);
-		color: #fff !important;
-		border-radius: 8px;
+		justify-content: center;
+		margin-left: 0.5rem;
+		padding: 0.68rem 1.45rem;
+		background: linear-gradient(180deg, #79A28B 0%, var(--primary) 60%, #5F856F 100%);
+		color: #fff;
+		border-radius: 13px;
 		font-weight: 600;
 		font-size: 0.875rem;
-		transition: all var(--duration-fast) ease;
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.28),
+			inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+			0 2px 4px rgba(28, 29, 31, 0.06),
+			0 10px 22px rgba(74, 107, 90, 0.32);
+		transition:
+			transform var(--duration-fast) var(--ease-out),
+			box-shadow var(--duration-fast) ease,
+			background var(--duration-fast) ease;
 	}
-	
-	.nav-cta:hover {
-		background: var(--primary-dark);
-		transform: translateY(-1px);
-	}
-	
+
 	.nav-cta::after {
 		display: none;
 	}
 
-	/* Footer */
-	.site-footer {
-		border-top: 1px solid var(--border);
-		padding: var(--space-xl) 2rem;
-		background: var(--bg-warm);
-	}
-	
-	.footer-grid {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: 1.5fr 1fr 1fr 1fr;
-		gap: 3rem;
-	}
-	
-	.footer-grid p {
-		color: var(--ink-soft);
-		font-size: 0.9rem;
-		line-height: 1.6;
-	}
-	
-	.footer-grid h3 {
-		font-size: 0.75rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--ink-muted);
-		font-family: var(--body);
-		font-weight: 600;
-		margin-bottom: 1rem;
-	}
-	
-	.footer-grid a {
-		display: block;
-		color: var(--ink-soft);
-		text-decoration: none;
-		margin-bottom: 0.75rem;
-		font-size: 0.9rem;
-		transition: color var(--duration-fast) ease;
-	}
-	
-	.footer-grid a:hover {
-		color: var(--primary);
+	.nav-cta:hover {
+		transform: translateY(-2px);
+		background: linear-gradient(180deg, #86AD95 0%, var(--primary) 55%, var(--primary-dark) 100%);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.32),
+			inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 4px 8px rgba(28, 29, 31, 0.08),
+			0 16px 30px rgba(74, 107, 90, 0.40);
 	}
 
-	@media (max-width: 768px) {
+	.nav-cta:active {
+		transform: translateY(0);
+		box-shadow:
+			inset 0 2px 6px rgba(28, 29, 31, 0.18),
+			0 2px 4px rgba(74, 107, 90, 0.24);
+	}
+
+	.nav-cta:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 3px;
+	}
+
+	/* Hamburger toggle (hidden on desktop) */
+	.nav-toggle {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+		width: 44px;
+		height: 44px;
+		padding: 0;
+		margin-left: auto;
+		background: transparent;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		cursor: pointer;
+		transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease;
+	}
+
+	.nav-toggle:hover {
+		background: var(--sage-tint);
+		border-color: #D5E0D8;
+	}
+
+	.nav-toggle-bar {
+		display: block;
+		width: 20px;
+		height: 2px;
+		border-radius: 2px;
+		background: var(--ink-soft);
+		transition: background var(--duration-fast) ease;
+	}
+
+	.nav-toggle[aria-expanded="true"] .nav-toggle-bar {
+		background: var(--primary-dark);
+	}
+
+	/* ===== GLOBAL FOOTER ===== */
+	.site-footer {
+		position: relative;
+		background:
+			radial-gradient(120% 100% at 85% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 45%),
+			radial-gradient(90% 80% at 0% 100%, rgba(192, 221, 151, 0.06) 0%, rgba(192, 221, 151, 0) 55%),
+			linear-gradient(160deg, #4A6B5A 0%, #3E5C4E 58%, #334D41 100%);
+		color: rgba(255, 255, 255, 0.82);
+		overflow: hidden;
+	}
+
+	.site-footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+		pointer-events: none;
+		z-index: 2;
+	}
+
+	.footer-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 3.5rem 2rem 1.5rem;
+	}
+
+	.footer-top {
+		display: grid;
+		grid-template-columns: 1.1fr 2fr;
+		gap: 3rem;
+		align-items: start;
+		padding-bottom: 2.5rem;
+	}
+
+	/* Footer brand area */
+	.footer-brand {
+		position: relative;
+		max-width: 300px;
+	}
+
+	.footer-brand-link {
+		color: #fff;
+		margin-bottom: 0.75rem;
+	}
+
+	.footer-brand-link .brand-text span {
+		color: var(--sage-soft);
+	}
+
+	.footer-brand-link:hover {
+		color: #fff;
+	}
+
+	.footer-brand p {
+		color: rgba(255, 255, 255, 0.74);
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin: 0 0 1.5rem;
+	}
+
+	.footer-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.7rem 1.3rem;
+		background: #fff;
+		color: var(--primary-dark);
+		border-radius: 13px;
+		font-weight: 700;
+		font-size: 0.95rem;
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.5),
+			0 4px 10px rgba(28, 29, 31, 0.18),
+			0 10px 22px rgba(28, 29, 31, 0.14);
+		transition:
+			transform var(--duration-fast) var(--ease-out),
+			background var(--duration-fast) ease,
+			color var(--duration-fast) ease,
+			box-shadow var(--duration-fast) ease;
+	}
+
+	.footer-cta:hover {
+		transform: translateY(-2px);
+		background: var(--sage-tint);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.6),
+			0 6px 14px rgba(28, 29, 31, 0.22),
+			0 16px 30px rgba(28, 29, 31, 0.18);
+	}
+
+	.cta-arrow {
+		display: inline-flex;
+		transition: transform var(--duration-fast) var(--ease-out);
+	}
+
+	.footer-cta:hover .cta-arrow {
+		transform: translate(2px, -2px);
+	}
+
+	/* Decorative pastel dots — small "jewelry" accents */
+	.footer-dots {
+		display: inline-flex;
+		gap: 0.4rem;
+		margin-top: 1.5rem;
+	}
+
+	.dot {
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		opacity: 0.85;
+	}
+
+	.dot-sage { background: var(--sage-soft); }
+	.dot-pink { background: #F2B8C6; }
+	.dot-blue { background: #AFC4E8; }
+	.dot-amber { background: var(--accent); }
+
+	/* Footer columns */
+	.footer-cols {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+
+	.footer-col h3 {
+		font-family: var(--body);
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: rgba(255, 255, 255, 0.62);
+		margin: 0 0 1.1rem;
+	}
+
+	.footer-col a {
+		display: block;
+		color: rgba(255, 255, 255, 0.82);
+		text-decoration: none;
+		margin-bottom: 0.7rem;
+		font-size: 0.92rem;
+		transition: color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-out);
+	}
+
+	.footer-col a:hover,
+	.footer-col a:focus-visible {
+		color: var(--sage-soft);
+		transform: translateX(3px);
+	}
+
+	/* Footer bottom legal / copyright row */
+	.footer-bottom {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-top: 1px solid rgba(255, 255, 255, 0.14);
+		padding-top: 1.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.footer-copy {
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.55);
+		letter-spacing: 0.02em;
+	}
+
+	/* ===== RESPONSIVE HEADER / FOOTER ===== */
+	@media (max-width: 900px) {
+		.site-header {
+			height: 72px;
+		}
+
 		.site-header-inner {
-			flex-wrap: wrap;
-			gap: 1rem;
+			padding: 0 1.25rem;
+			gap: 0.5rem;
 		}
-		
-		.site-header nav {
+
+		.nav-toggle {
+			display: flex;
+		}
+
+		/* Sidebar-style dropdown below the header */
+		.site-nav {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			margin-left: 0;
+			padding: 1rem;
+			gap: 0.25rem;
+			background: rgba(250, 250, 248, 0.98);
+			backdrop-filter: blur(20px) saturate(180%);
+			-webkit-backdrop-filter: blur(20px) saturate(180%);
+			border-bottom: 1px solid var(--border);
+			box-shadow: 0 18px 40px rgba(28, 29, 31, 0.12);
+			max-height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+			transition:
+				max-height var(--duration-normal) var(--ease-out),
+				opacity var(--duration-normal) ease,
+				visibility var(--duration-normal) ease;
+		}
+
+		.site-nav.nav-open {
+			max-height: 520px;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.nav-link {
+			padding: 0.9rem 1rem;
+			font-size: 1rem;
+			border-radius: 12px;
 			width: 100%;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 0.75rem 1.25rem;
 		}
-		
-		.site-header nav a {
-			font-size: 0.875rem;
-			white-space: normal;
-		}
-		
+
 		.nav-cta {
+			margin: 0.5rem 0 0;
 			width: 100%;
 			justify-content: center;
+			padding: 0.95rem 1.5rem;
+			font-size: 1rem;
 		}
-		
-		.footer-grid {
-			grid-template-columns: 1fr 1fr;
-			gap: 2rem;
+
+		.footer-top {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+
+		.footer-brand {
+			max-width: none;
+		}
+
+		.footer-cols {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem 1.5rem;
 		}
 	}
-	
-	@media (max-width: 480px) {
+
+	@media (max-width: 560px) {
 		.site-header-inner {
-			padding: 1rem;
+			padding: 0 1rem;
 		}
-		
-		.site-header nav {
-			gap: 0.6rem 0.9rem;
+
+		.brand {
+			font-size: 1.1rem;
 		}
-		
-		.site-header nav a {
-			font-size: 0.8rem;
+
+		.footer-inner {
+			padding: 2.75rem 1.25rem 1.25rem;
 		}
-		
-		.footer-grid {
+
+		.footer-cols {
 			grid-template-columns: 1fr;
+			gap: 1.75rem;
+		}
+
+		.dot {
+			width: 6px;
+			height: 6px;
 		}
 	}
 </style>
