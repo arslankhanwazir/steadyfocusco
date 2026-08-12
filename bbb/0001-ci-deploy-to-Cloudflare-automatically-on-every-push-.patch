@@ -1,0 +1,42 @@
+From 571f33a1c9ece20d9be46cda33b233fc49513e4f Mon Sep 17 00:00:00 2001
+From: Arslan Khan <arslankhanwazir@gmail.com>
+Date: Mon, 10 Aug 2026 19:11:23 +0000
+Subject: [PATCH] ci: deploy to Cloudflare automatically on every push to main
+
+Previously the Cloudflare deploy hook was only triggered by the
+hourly Etsy-sync cron job, so pushes to main didn't go live until
+the next scheduled run (up to 1hr delay). This adds a dedicated
+workflow that fires the same deploy hook immediately on push.
+---
+ .github/workflows/deploy.yml | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ create mode 100644 .github/workflows/deploy.yml
+
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+new file mode 100644
+index 0000000..321b40f
+--- /dev/null
++++ b/.github/workflows/deploy.yml
+@@ -0,0 +1,19 @@
++name: Deploy to Cloudflare
++
++on:
++  push:
++    branches:
++      - main
++  workflow_dispatch:
++
++jobs:
++  trigger-cloudflare-deploy:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Trigger Cloudflare Deploy Hook
++        run: |
++          curl --fail --silent --show-error \
++            --request POST \
++            --url "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}"
++        env:
++          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+-- 
+2.43.0
+

@@ -1,3 +1,4 @@
+---
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import BrainDump from "../../components/BrainDump.tsx";
@@ -26,4 +27,5 @@ const brainDumpSchema = webApplicationSchema(siteBase, toolData);
   <ToolShell slug="brain-dump">
     <BrainDump client:load />
   </ToolShell>
+
 </Base>

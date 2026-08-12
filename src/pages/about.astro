@@ -1,11 +1,28 @@
 ---
 import Base from "../layouts/Base.astro";
+import { webPageSchema, breadcrumbSchema } from "../data/schema";
+
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+const pageSchemas = webPageSchema(siteBase, {
+  type: "AboutPage",
+  name: "About SteadyFocusCo",
+  description:
+    "Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digital tools for ADHD, students, and anyone who finds traditional planning systems don't work for them.",
+  path: "/about",
+  breadcrumb: breadcrumbSchema(siteBase, [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]),
+});
 ---
 
 <Base
   title="About SteadyFocusCo"
   description="Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digital tools for ADHD, students, and anyone who finds traditional planning systems don't work for them."
 >
+  {pageSchemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)}></script>
+  ))}
   <section class="about-page">
     <div class="about-content">
       <h1>About SteadyFocusCo</h1>

@@ -1,3 +1,4 @@
+---
 import Base from "../../layouts/Base.astro";
 import { guides, etsyLink } from "../../data/site";
 import { articleSchema, breadcrumbSchema } from "../../data/schema";
@@ -24,8 +25,6 @@ const articleData = {
   headline: guide.title,
   description: guide.description,
   path: `/guides/${guide.slug}`,
-  datePublished: guide.publishedAt ?? undefined,
-  dateModified: guide.updatedAt ?? undefined,
 };
 
 const breadcrumbData = {
@@ -50,7 +49,7 @@ const breadcrumbSchemaData = breadcrumbSchema(siteBase, [
     <p class="lede">{guide.description}</p>
 
     <div class="prose">
-      {guide.content ?? guide.description}
+      {guide.description}
 
       <h2>What to expect</h2>
       <p>
@@ -60,4 +59,5 @@ const breadcrumbSchemaData = breadcrumbSchema(siteBase, [
       </p>
     </div>
   </article>
+
 </Base>

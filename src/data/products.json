@@ -1,8 +1,17 @@
 {
   "source": "etsy-api",
   "shop": "steadyfocusco",
-  "syncedAt": "2026-08-10T13:32:53.724Z",
+  "syncedAt": "2026-08-12T15:33:08.293Z",
   "products": [
+    {
+      "listing_id": 4553846174,
+      "title": "ADHD Evening Routine Checklist for Adults | Wind Down Printable PDF | Night Routine Planner",
+      "price": "3.99",
+      "currency_code": "USD",
+      "image": "https://i.etsystatic.com/67187699/r/il/d9bdc1/8367878554/il_570xN.8367878554_ms3s.jpg",
+      "url": "https://www.etsy.com/listing/4553846174/adhd-evening-routine-checklist-for",
+      "cluster": "adhd"
+    },
     {
       "listing_id": 4552836196,
       "title": "ADHD Morning Routine Checklist for Adults | Morning Reset Printable PDF",
