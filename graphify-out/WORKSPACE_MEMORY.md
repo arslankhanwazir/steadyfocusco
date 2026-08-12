@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-12T22:07:57.949Z
+Generated: 2026-08-12T22:21:38.764Z
 Workspace: website
 Workspace root: f:\etsy\website
 Refresh reason: tracked-change
@@ -16,13 +16,13 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-12T22:07:53.980Z
+- Last activity: 2026-08-12T22:21:34.548Z
 ## Workspace Focus
-- Active file in focus: src/pages/tools/weekly-reset.astro
-- Hottest files right now: src/pages/printables/[slug].astro (10), src/pages/guides/[slug].astro (7), src/data/schema.ts (4), src/pages/tools/brain-dump.astro (4)
-- Suggested starting points: src/pages/tools/weekly-reset.astro, src/pages/printables/[slug].astro, src/pages/guides/[slug].astro, src/data/schema.ts, src/pages/tools/brain-dump.astro, src/pages/tools/morning-routine.astro
+- Active file in focus: src/pages/tools/morning-routine.astro
+- Hottest files right now: src/pages/printables/[slug].astro (9), src/pages/guides/[slug].astro (6), src/pages/tools/morning-routine.astro (5), src/data/schema.ts (4)
+- Suggested starting points: src/pages/tools/morning-routine.astro, src/pages/printables/[slug].astro, src/pages/guides/[slug].astro, src/data/schema.ts, src/pages/tools/brain-dump.astro, src/pages/tools/weekly-reset.astro
 ## Current Workspace
-- Active file: src/pages/tools/weekly-reset.astro
+- Active file: src/pages/tools/morning-routine.astro
 - Tracked files in snapshot: 117
 - Top-level areas: pins-out (42), src (26), public (21), [root] (17), .astro (4), scripts (3), .github (2), bbb (2)
 - Primary file types: .png (57), .astro (18), .json (6), .patch (5), .ts (5), .md (4), .mjs (3), .tsx (3)
@@ -37,8 +37,20 @@ Structured manifest: workspace.json
 - Logged change events: 40
 - Change mix: save (40)
 - Remembered file snapshots: 43
-- Working tree summary: 7 modifieds, 1 added, 5 conflicteds
+- Working tree summary: 7 modifieds
 ## Tracked Snapshots
+- src/pages/tools/morning-routine.astro | 145 lines | 6770 chars | hash 762fe6c41e8a
+  Last snapshot: 2026-08-12T22:21:34.548Z
+  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema, bread..."
+- src/pages/productivity.astro | 169 lines | 5745 chars | hash e06ef233a17a
+  Last snapshot: 2026-08-12T22:21:07.787Z
+  Preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- src/pages/students.astro | 179 lines | 6158 chars | hash bc91df54d5e9
+  Last snapshot: 2026-08-12T22:20:38.336Z
+  Preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- src/pages/adhd.astro | 182 lines | 6407 chars | hash 439a81ce0dbc
+  Last snapshot: 2026-08-12T22:20:09.082Z
+  Preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
 - src/pages/tools/weekly-reset.astro | 156 lines | 7279 chars | hash c9480ba5a463
   Last snapshot: 2026-08-12T22:07:53.980Z
   Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema, breadcrumbS..."
@@ -51,20 +63,43 @@ Structured manifest: workspace.json
 - src/pages/guides/[slug].astro | 322 lines | 16517 chars | hash d9003c8acabe
   Last snapshot: 2026-08-12T22:00:46.502Z
   Preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
-- src/data/schema.ts | 214 lines | 6816 chars | hash 1e035880ee17
-  Last snapshot: 2026-08-12T21:57:00.347Z
-  Preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
-- README.md | 107 lines | 4959 chars | hash e98430f31df4
-  Last snapshot: 2026-08-12T21:25:04.322Z
-  Preview: "# SteadyFocusCo / ADHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and productivity resource for peo..."
-- src/pages/404.astro | 103 lines | 2739 chars | hash ef263a85b9bf
-  Last snapshot: 2026-08-12T21:24:27.314Z
-  Preview: "--- / import Base from "../layouts/Base.astro"; / // 404 page — intentionally noindex so it never appears in search results. / --- / <Base / title="Page not found" / description="The page you're looking for couldn't b..."
-- src/pages/tools/morning-routine.astro | 145 lines | 6773 chars | hash 54939ef28442
-  Last snapshot: 2026-08-12T21:23:57.135Z
-  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema, bread..."
 
 ## Recent Changes
+### 2026-08-12T22:21:34.548Z | saved | src/pages/tools/morning-routine.astro
+- Summary: Line 48: replaced 1 line with 1 line.
+- Before: 145 lines | 6,773 chars | hash 54939ef28442 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema, bread..."
+- After: 145 lines | 6,770 chars | hash 762fe6c41e8a | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema, bread..."
+- Previous fragment: "Builder"
+- Current fragment: "Tool"
+
+### 2026-08-12T22:21:07.787Z | saved | src/pages/productivity.astro
+- Summary: Line 43: replaced 1 line with 1 line.
+- Before: 169 lines | 5,712 chars | hash 99a84e159739 | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- After: 169 lines | 5,745 chars | hash e06ef233a17a | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- Previous fragment: "{`${meta.title} planning`}"
+- Current fragment: ""Productivity tools: planning & routines without overwhelm""
+
+### 2026-08-12T22:20:38.336Z | saved | src/pages/students.astro
+- Summary: Line 48: replaced 1 line with 1 line.
+- Before: 179 lines | 6,133 chars | hash 8305046cf257 | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- After: 179 lines | 6,158 chars | hash bc91df54d5e9 | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- Previous fragment: "{`${meta.title} planning`}"
+- Current fragment: ""Student planning: homework & study tools for ADHD""
+
+### 2026-08-12T22:20:09.082Z | saved | src/pages/adhd.astro
+- Summary: Line 48: replaced 1 line with 1 line.
+- Before: 182 lines | 6,383 chars | hash 24ffc285d231 | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- After: 182 lines | 6,407 chars | hash 439a81ce0dbc | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- Previous fragment: "{`${meta.title} planning`}"
+- Current fragment: ""ADHD planning: free tools, printables & planners""
+
+### 2026-08-12T22:19:29.635Z | saved | src/pages/adhd.astro
+- Summary: Line 13: replaced 1 line with 1 line.
+- Before: 182 lines | 6,346 chars | hash d5cbc59d78e4 | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- After: 182 lines | 6,383 chars | hash 24ffc285d231 | preview: "--- / import Base from "../layouts/Base.astro"; / import ClusterHub from "../components/ClusterHub.astro"; / import { clusterMeta } from "../data/site"; / import { webPageSchema, breadcrumbSchema, faqSchema } from "....."
+- Previous fragment: "planning"
+- Current fragment: "-friendly planning: tools, printables & guides"
+
 ### 2026-08-12T22:07:53.980Z | saved | src/pages/tools/weekly-reset.astro
 - Summary: Line 22: replaced 143 lines with 135 lines.
 - Before: 164 lines | 7,442 chars | hash a023f7ae7d4d | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema, breadcrumbS..."
@@ -134,68 +169,28 @@ Structured manifest: workspace.json
 - After: 323 lines | 16,519 chars | hash a7d4b33ff643 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
 - Previous fragment: "guidesForCluster,"
 
-### 2026-08-12T21:40:01.917Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 7: replaced 1 line with 7 lines.
-- Before: 157 lines | 8,275 chars | hash d75e6acef01e | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- After: 163 lines | 8,405 chars | hash a0f968e851c3 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- Previous fragment: "const printableContent"
-- Current fragment: "interface PrintableContent { / whatItIs: string; / howToUse: string; / tips: string[]; / } / const printableContent: Record<string, PrintableContent>"
-
-### 2026-08-12T21:29:20.796Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 7: replaced 268 lines with 151 lines.
-- Before: 274 lines | 9,015 chars | hash f862b6a6ad3f | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- After: 157 lines | 8,275 chars | hash d75e6acef01e | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- Previous fragment: "// Per-printable editorial content — practical, useful, and grounded in what / // each sheet actually does. No invented claims. / const printableContent = { / "adhd-brain-dump":..."
-- Current fragment: "const printableContent = { / "adhd-brain-dump": { / whatItIs: "The ADHD Brain Dump Sheet is a one-page, reusable template for getting scattered thoughts out of your head and ont..."
-
-### 2026-08-12T21:27:12.365Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 9: removed 4 lines.
-- Before: 277 lines | 9,096 chars | hash ccedb7f490e5 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- After: 274 lines | 9,015 chars | hash f862b6a6ad3f | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- Previous fragment: ": Record< / string, / { whatItIs: string; howToUse: string; tips: string[] } / >"
-
-### 2026-08-12T21:26:11.697Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 3: replaced 7 lines with 2 lines.
-- Before: 282 lines | 9,078 chars | hash 9014bb483c58 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / guides, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / // P..."
-- After: 277 lines | 9,096 chars | hash ccedb7f490e5 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
-- Previous fragment: "printables, / toolBySlug, / etsyLink, / guides, / type Printable,"
-- Current fragment: "printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable"
-
-### 2026-08-12T21:25:04.322Z | saved | README.md
-- Summary: Line 3: replaced 70 lines with 104 lines.
-- Before: 73 lines | 2,533 chars | hash 1efa80f3cdf0 | preview: "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
-- After: 107 lines | 4,959 chars | hash e98430f31df4 | preview: "# SteadyFocusCo / ADHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and productivity resource for peo..."
-- Previous fragment: "digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides des..."
-- Current fragment: "DHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and producti..."
-
 
 ## Hot Files
-- src/pages/printables/[slug].astro (10 tracked changes)
-- src/pages/guides/[slug].astro (7 tracked changes)
+- src/pages/printables/[slug].astro (9 tracked changes)
+- src/pages/guides/[slug].astro (6 tracked changes)
+- src/pages/tools/morning-routine.astro (5 tracked changes)
 - src/data/schema.ts (4 tracked changes)
-- src/pages/tools/brain-dump.astro (4 tracked changes)
-- src/pages/tools/morning-routine.astro (4 tracked changes)
-- src/pages/tools/weekly-reset.astro (4 tracked changes)
-- README.md (3 tracked changes)
+- src/pages/tools/brain-dump.astro (3 tracked changes)
+- src/pages/tools/weekly-reset.astro (3 tracked changes)
+- README.md (2 tracked changes)
 - src/layouts/Base.astro (2 tracked changes)
 
 ## Git Snapshot
-- Branch: HEAD
-- HEAD: 2026-08-12 142bd8f Add ETSY_SHOP_URL to organization schema
-- Working tree summary: 7 modifieds, 1 added, 5 conflicteds
-- M  README.md
-- MM graphify-out/WORKSPACE_MEMORY.md
-- M  src/data/products.json
-- UU src/data/schema.ts
-- M  src/layouts/Base.astro
-- A  src/pages/404.astro
-- UU src/pages/guides/[slug].astro
-- UU src/pages/printables/[slug].astro
-- UU src/pages/tools/brain-dump.astro
-- M  src/pages/tools/morning-routine.astro
-- UU src/pages/tools/weekly-reset.astro
-- MM workspace.json
-- Additional git status lines were omitted for brevity.
+- Branch: main
+- HEAD: 2026-08-13 37426f5 Complete SEO and GEO optimization
+- Working tree summary: 7 modifieds
+- M graphify-out/WORKSPACE_MEMORY.md
+- M src/pages/adhd.astro
+- M src/pages/productivity.astro
+- M src/pages/students.astro
+- M src/pages/tools/morning-routine.astro
+- M workspace.json
+- M workspacememory.md
 
 ## GitHub Snapshot
 GitHub Repository: arslankhanwazir/steadyfocusco
@@ -203,8 +198,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 142bd8f by arslankhanwazir on 2026-08-12
-  Add ETSY_SHOP_URL to organization schema
+- 37426f5 by Arslan Khan on 2026-08-12
+  Complete SEO and GEO optimization
 
 URL: https://github.com/arslankhanwazir/steadyfocusco
 

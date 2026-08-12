@@ -10,7 +10,7 @@ const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
 
 const pageSchemas = webPageSchema(siteBase, {
 	type: "CollectionPage",
-	name: "ADHD planning",
+	name: "ADHD-friendly planning: tools, printables & guides",
 	description: meta.blurb,
 	path: "/adhd",
 	breadcrumb: breadcrumbSchema(siteBase, [
@@ -45,7 +45,7 @@ const faqs = [
 const faqSchemaData = faqSchema(siteBase, { path: "/adhd", questions: faqs });
 ---
 
-<Base title={`${meta.title} planning`} description={meta.blurb}>
+<Base title="ADHD planning: free tools, printables & planners" description={meta.blurb}>
 	{pageSchemas.map((s) => (
 		<script type="application/ld+json" set:html={JSON.stringify(s)}></script>
 	))}

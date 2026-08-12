@@ -40,7 +40,7 @@ const faqs = [
 const faqSchemaData = faqSchema(siteBase, { path: "/productivity", questions: faqs });
 ---
 
-<Base title={`${meta.title} planning`} description={meta.blurb}>
+<Base title="Productivity tools: planning & routines without overwhelm" description={meta.blurb}>
 	{pageSchemas.map((s) => (
 		<script type="application/ld+json" set:html={JSON.stringify(s)}></script>
 	))}
