@@ -8,6 +8,8 @@
 // All functions take `base` = the site origin WITHOUT trailing slash, e.g.
 //   new URL("/", Astro.site).toString().replace(/\/$/, "")
 
+import { ETSY_SHOP_URL } from "./site";
+
 export const ORGANIZATION_ID = "steadyfocusco-org";
 export const WEBSITE_ID = "steadyfocusco-website";
 
@@ -31,6 +33,7 @@ export function organizationSchema(base: string) {
     url: abs(base, "/"),
     logo: abs(base, "/logo.png"),
     description: SITE_DESCRIPTION,
+    sameAs: [ETSY_SHOP_URL],
   };
 }
 
