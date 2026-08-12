@@ -1,3 +1,4 @@
+---
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import MorningRoutine from "../../components/MorningRoutine.tsx";
@@ -13,9 +14,11 @@ const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
     name: "Morning Routine Builder",
     description: "Free interactive tool: build a short, realistic morning sequence you'll actually keep — ordered and time-boxed for you.",
     applicationCategory: "LifestyleApplication",
+    path: "/tools/morning-routine",
   })}]
 >
   <ToolShell slug="morning-routine">
     <MorningRoutine client:load />
   </ToolShell>
+
 </Base>

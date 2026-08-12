@@ -1,3 +1,4 @@
+---
 import Base from "../../layouts/Base.astro";
 import {
   printables,
@@ -25,10 +26,7 @@ const productData: Parameters<typeof productSchema>[1] = {
   name: printable.title,
   description: printable.description,
   path: `/printables/${printable.slug}`,
-  image: printable.image ?? null,
   offerUrl: shopHref,
-  price: printable.price ?? null,
-  currency: printable.currency ?? null,
 };
 
 const productSchemaData = productSchema(siteBase, productData);
@@ -56,4 +54,5 @@ const productSchemaData = productSchema(siteBase, productData);
       }
     </div>
   </article>
+
 </Base>
