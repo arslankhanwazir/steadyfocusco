@@ -2,23 +2,25 @@
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import MorningRoutine from "../../components/MorningRoutine.tsx";
-
 import { webApplicationSchema } from "../../data/schema";
 
 const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
 
+const toolSchema = webApplicationSchema(siteBase, {
+  name: "Morning Routine Builder",
+  description:
+    "Free interactive tool: build a short, realistic morning sequence you'll actually keep — ordered and time-boxed for you.",
+  path: "/tools/morning-routine",
+  applicationCategory: "LifestyleApplication",
+});
+---
+
 <Base
   title="Morning Routine Builder"
   description="Free morning routine builder: list what you want in your morning and get an ordered, time-boxed routine with start times you can download as a PDF."
-  schema={[webApplicationSchema(siteBase, {
-    name: "Morning Routine Builder",
-    description: "Free interactive tool: build a short, realistic morning sequence you'll actually keep — ordered and time-boxed for you.",
-    applicationCategory: "LifestyleApplication",
-    path: "/tools/morning-routine",
-  })}]
+  schema={[toolSchema]}
 >
   <ToolShell slug="morning-routine">
     <MorningRoutine client:load />
   </ToolShell>
-
 </Base>
