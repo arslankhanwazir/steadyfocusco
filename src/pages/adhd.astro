@@ -2,54 +2,181 @@
 import Base from "../layouts/Base.astro";
 import ClusterHub from "../components/ClusterHub.astro";
 import { clusterMeta } from "../data/site";
+import { webPageSchema, breadcrumbSchema, faqSchema } from "../data/schema";
+
 const meta = clusterMeta.adhd;
+
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+
+const pageSchemas = webPageSchema(siteBase, {
+	type: "CollectionPage",
+	name: "ADHD planning",
+	description: meta.blurb,
+	path: "/adhd",
+	breadcrumb: breadcrumbSchema(siteBase, [
+		{ name: "Home", path: "/" },
+		{ name: "ADHD", path: "/adhd" },
+	]),
+});
+
+const faqs = [
+	{
+		question: "What is ADHD-friendly planning?",
+		answer:
+			"ADHD-friendly planning is a way of organizing tasks and routines that works with how an ADHD brain actually operates. Instead of relying on willpower, memory, or long checklists, it gets thoughts out of your head, makes the next step obvious, and lowers the cost of starting.",
+	},
+	{
+		question: "Who can benefit from ADHD-friendly planning?",
+		answer:
+			"ADHD-friendly planning is useful for anyone who finds traditional planners and to-do lists overwhelming — people with ADHD, busy students, and adults juggling work and home. The tools are designed to reduce overwhelm and help you build routines that are easier to stick to.",
+	},
+	{
+		question: "What makes an ADHD-friendly planner different?",
+		answer:
+				"Unlike a standard planner with many blank boxes, an ADHD-friendly planner focuses on a few key principles: capturing everything in one place, sorting it into clear categories, making the next step obvious, and keeping the system simple enough to actually use every day.",
+	},
+	{
+		question: "What tools does SteadyFocusCo provide?",
+		answer:
+			"SteadyFocusCo offers free interactive tools (a brain dump, a weekly reset, and a morning routine builder), reusable printable sheets, matching planners on Etsy, and practical guides on ADHD planning and routines.",
+	},
+];
+
+const faqSchemaData = faqSchema(siteBase, { path: "/adhd", questions: faqs });
 ---
 
 <Base title={`${meta.title} planning`} description={meta.blurb}>
-  <ClusterHub cluster="adhd" />
-  <section class="support">
-    <div class="support-inner">
-      <h2>ADHD planners, printables & tools that work with your brain</h2>
-      <p>
-        Traditional planners assume you'll start a task on command and remember
-        what you can't see. ADHD-friendly planning flips that: get it out of your
-        head, make the next step obvious, and lower the cost of starting. That's
-        what the ADHD planners, printables, and free tools here are built to do.
-      </p>
-      <p>
-        Executive function — the mental skills behind starting, planning, and
-        switching between tasks — is often where overwhelm begins. These resources
-        support it directly: a <a href="/tools/brain-dump">brain dump</a> to clear
-        your head, a <a href="/tools/weekly-reset">weekly reset</a> to organize
-        your week, and a <a href="/tools/morning-routine">morning routine</a> to
-        build a calmer start to the day. Each pairs with a matching
-        <a href="/printables">printable</a> or <a href="/shop">planner</a> when
-        you want a reusable, paper version.
-      </p>
-      <p>
-        Whether you're planning for school, work, or everyday life, the goal is
-        the same: reduce overwhelm, improve focus, and build routines that
-        actually stick. Start with one small step — you don't need a perfect
-        system.
-      </p>
-    </div>
-  </section>
+	{pageSchemas.map((s) => (
+		<script type="application/ld+json" set:html={JSON.stringify(s)}></script>
+	))}
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchemaData)}></script>
+	<ClusterHub cluster="adhd" />
+	<section class="support">
+		<div class="support-inner">
+			<h2>ADHD planners, printables & tools that work with your brain</h2>
+			<p>
+				Traditional planners assume you'll start a task on command and remember
+				what you can't see. ADHD-friendly planning flips that: get it out of your
+				head, make the next step obvious, and lower the cost of starting. That's
+				what the ADHD planners, printables, and free tools here are built to do.
+			</p>
+			<p>
+				Executive function — the mental skills behind starting, planning, and
+				switching between tasks — is often where overwhelm begins. These resources
+				support it directly: a <a href="/tools/brain-dump">brain dump</a> to clear
+				your head, a <a href="/tools/weekly-reset">weekly reset</a> to organize
+				your week, and a <a href="/tools/morning-routine">morning routine</a> to
+				build a calmer start to the day. Each pairs with a matching
+				<a href="/printables">printable</a> or <a href="/shop">planner</a> when
+				you want a reusable, paper version.
+			</p>
+			<p>
+				Whether you're planning for school, work, or everyday life, the goal is
+				the same: reduce overwhelm, improve focus, and build routines that
+				actually stick. Start with one small step — you don't need a perfect
+				system.
+			</p>
+
+			<h3>What is ADHD-friendly planning?</h3>
+			<p>
+				ADHD-friendly planning is a practical way of organizing tasks and routines
+				that works with how an ADHD brain actually operates. It emphasizes getting
+				thoughts out of your head, making the next step obvious, and lowering the
+				cost of starting over relying on willpower or memory.
+			</p>
+
+			<h3>Who can benefit from ADHD-friendly planning?</h3>
+			<p>
+				Anyone who finds traditional planners overwhelming can benefit — people
+				with ADHD, students, and adults managing busy or scattered schedules. The
+				goal is to reduce overwhelm and build routines that are easier to follow
+				and maintain.
+			</p>
+
+			<h3>What makes an ADHD-friendly planner different?</h3>
+			<p>
+				An ADHD-friendly planner is typically simpler than a standard one. It uses
+				clear categories, keeps the layout uncluttered, and focuses on the next
+				obvious step rather than demanding perfect daily tracking. The design
+				principles prioritize ease of use and consistency.
+			</p>
+
+			<h3>What tools does SteadyFocusCo provide?</h3>
+			<p>
+				SteadyFocusCo provides free interactive tools, printable sheets, matching
+				planners on Etsy, and practical guides covering ADHD planning, routines,
+				and executive-function support.
+			</p>
+		</div>
+	</section>
+
+	<section class="faq">
+		<div class="faq-inner">
+			<h2>ADHD planning — frequently asked questions</h2>
+			<div class="faq-list">
+				{faqs.map((f) => (
+					<details class="faq-item">
+						<summary>{f.question}</summary>
+						<p>{f.answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
 </Base>
 
 <style>
-  .support {
-    max-width: 760px;
-    margin: 0 auto 4rem;
-    padding: 0 1.5rem;
-  }
-  .support-inner h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .support-inner p {
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin: 0 0 1.25rem;
-  }
+	.support {
+		max-width: 760px;
+		margin: 0 auto 2.5rem;
+		padding: 0 1.5rem;
+	}
+	.support-inner h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.support-inner h3 {
+		font-size: 1.2rem;
+		margin: 2rem 0 0.5rem;
+		color: var(--ink);
+	}
+	.support-inner p {
+		color: var(--ink-soft);
+		font-size: 1.05rem;
+		line-height: 1.7;
+		margin: 0 0 1.25rem;
+	}
+
+	.faq {
+		max-width: 760px;
+		margin: 0 auto 4rem;
+		padding: 0 1.5rem;
+	}
+	.faq-inner h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1.25rem;
+	}
+	.faq-list {
+		display: grid;
+		gap: 0.75rem;
+	}
+	.faq-item {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1rem 1.25rem;
+	}
+	.faq-item summary {
+		font-weight: 700;
+		color: var(--ink);
+		cursor: pointer;
+		font-family: var(--display);
+		font-size: 1.05rem;
+	}
+	.faq-item p {
+		color: var(--ink-soft);
+		font-size: 1rem;
+		line-height: 1.7;
+		margin: 0.75rem 0 0;
+	}
 </style>

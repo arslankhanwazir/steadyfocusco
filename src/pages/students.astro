@@ -2,52 +2,178 @@
 import Base from "../layouts/Base.astro";
 import ClusterHub from "../components/ClusterHub.astro";
 import { clusterMeta } from "../data/site";
+import { webPageSchema, breadcrumbSchema, faqSchema } from "../data/schema";
+
 const meta = clusterMeta.students;
+
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+
+const pageSchemas = webPageSchema(siteBase, {
+	type: "CollectionPage",
+	name: "Students",
+	description: meta.blurb,
+	path: "/students",
+	breadcrumb: breadcrumbSchema(siteBase, [
+		{ name: "Home", path: "/" },
+		{ name: "Students", path: "/students" },
+	]),
+});
+
+const faqs = [
+	{
+		question: "What is an ADHD-friendly student planner?",
+		answer:
+			"An ADHD-friendly student planner is a simple planning system designed to help students break big assignments into small, startable steps. It focuses on making the next step obvious and reducing the overwhelm that often comes with traditional planners and long to-do lists.",
+	},
+	{
+		question: "Who is this student planning system for?",
+		answer:
+			"This planning system is for students who find big assignments overwhelming — including students with ADHD, or anyone who struggles to start or finish work when it feels like one giant task. It's built to help you begin without the last-minute spiral.",
+	},
+	{
+		question: "How can students use a simple planning system?",
+		answer:
+			"Start by writing down what's due, then break it into smaller pieces and check each one off as you go. Use a homework tracker to keep assignments visible, and a study planner to map out exam prep without overwhelm. Small, visible steps are the key.",
+	},
+	{
+		question: "What student planning tools does SteadyFocusCo offer?",
+		answer:
+			"SteadyFocusCo offers free printables (like a homework checklist and assignment tracker), free interactive tools, matching student planners on Etsy, and practical guides on studying and homework with ADHD.",
+	},
+];
+
+const faqSchemaData = faqSchema(siteBase, { path: "/students", questions: faqs });
 ---
 
 <Base title={`${meta.title} planning`} description={meta.blurb}>
-  <ClusterHub cluster="students" />
-  <section class="support">
-    <div class="support-inner">
-      <h2>ADHD-friendly student planning, homework & study tools</h2>
-      <p>
-        Big assignments feel impossible because they're one giant undefined blob.
-        The student planners, printables, and tools here focus on breaking work
-        into small, startable steps — so you can begin without the last-minute
-        spiral. From an <a href="/tools/brain-dump">ADHD student planner</a>
-        approach to homework tracking, the aim is to make the next step obvious.
-      </p>
-      <p>
-        Start with homework planning and assignment tracking: write down what's
-        due, break it into smaller pieces, and check them off as you go. A study
-        planner helps you map out exam prep without overwhelm, while deadline
-        tracking keeps everything visible so nothing slips. The
-        <a href="/printables">homework checklist</a> and
-        <a href="/shop">study planners</a> turn this into a printable system you
-        can reuse.
-      </p>
-      <p>
-        The goal is to reduce school-related overwhelm — not by doing more, but
-        by making each task small enough to actually start.
-      </p>
-    </div>
-  </section>
+	{pageSchemas.map((s) => (
+		<script type="application/ld+json" set:html={JSON.stringify(s)}></script>
+	))}
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchemaData)}></script>
+	<ClusterHub cluster="students" />
+	<section class="support">
+		<div class="support-inner">
+			<h2>ADHD-friendly student planning, homework & study tools</h2>
+			<p>
+				Big assignments feel impossible because they're one giant undefined blob.
+				The student planners, printables, and tools here focus on breaking work
+				into small, startable steps — so you can begin without the last-minute
+				spiral. From an <a href="/tools/brain-dump">ADHD student planner</a>
+				approach to homework tracking, the aim is to make the next step obvious.
+			</p>
+			<p>
+				Start with homework planning and assignment tracking: write down what's
+				due, break it into smaller pieces, and check them off as you go. A study
+				planner helps you map out exam prep without overwhelm, while deadline
+				tracking keeps everything visible so nothing slips. The
+				<a href="/printables">homework checklist</a> and
+				<a href="/shop">study planners</a> turn this into a printable system you
+				can reuse.
+			</p>
+			<p>
+				The goal is to reduce school-related overwhelm — not by doing more, but
+				by making each task small enough to actually start.
+			</p>
+
+			<h3>What is an ADHD-friendly student planner?</h3>
+			<p>
+				An ADHD-friendly student planner is a simple planning system designed to
+				help students break big assignments into small, startable steps. It
+				reduces overwhelm by making the next step obvious and keeping work
+				visible, rather than relying on memory or willpower.
+			</p>
+
+			<h3>Who is this student planning system for?</h3>
+			<p>
+				This system is for students who find big assignments overwhelming —
+				including students with ADHD, or anyone who struggles to start or finish
+				work when it feels like one large task. It's built for homework, study
+				planning, and assignment tracking.
+			</p>
+
+			<h3>How can students use a simple planning system?</h3>
+			<p>
+				Start by writing down what's due and breaking it into smaller pieces.
+				Then check each piece off as you go, and keep assignments visible with a
+				tracker. A study planner helps you map out exam prep without overwhelm.
+			</p>
+
+			<h3>What student planning tools does SteadyFocusCo offer?</h3>
+			<p>
+				SteadyFocusCo offers free printables such as a homework checklist, free
+				interactive tools, matching student planners on Etsy, and practical guides
+				covering studying and homework with ADHD.
+			</p>
+		</div>
+	</section>
+
+	<section class="faq">
+		<div class="faq-inner">
+			<h2>Student planning — frequently asked questions</h2>
+			<div class="faq-list">
+				{faqs.map((f) => (
+					<details class="faq-item">
+						<summary>{f.question}</summary>
+						<p>{f.answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
 </Base>
 
 <style>
-  .support {
-    max-width: 760px;
-    margin: 0 auto 4rem;
-    padding: 0 1.5rem;
-  }
-  .support-inner h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .support-inner p {
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin: 0 0 1.25rem;
-  }
+	.support {
+		max-width: 760px;
+		margin: 0 auto 2.5rem;
+		padding: 0 1.5rem;
+	}
+	.support-inner h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.support-inner h3 {
+		font-size: 1.2rem;
+		margin: 2rem 0 0.5rem;
+		color: var(--ink);
+	}
+	.support-inner p {
+		color: var(--ink-soft);
+		font-size: 1.05rem;
+		line-height: 1.7;
+		margin: 0 0 1.25rem;
+	}
+
+	.faq {
+		max-width: 760px;
+		margin: 0 auto 4rem;
+		padding: 0 1.5rem;
+	}
+	.faq-inner h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1.25rem;
+	}
+	.faq-list {
+		display: grid;
+		gap: 0.75rem;
+	}
+	.faq-item {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1rem 1.25rem;
+	}
+	.faq-item summary {
+		font-weight: 700;
+		color: var(--ink);
+		cursor: pointer;
+		font-family: var(--display);
+		font-size: 1.05rem;
+	}
+	.faq-item p {
+		color: var(--ink-soft);
+		font-size: 1rem;
+		line-height: 1.7;
+		margin: 0.75rem 0 0;
+	}
 </style>

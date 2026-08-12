@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { etsyLink } from '../data/site';
+import { webPageSchema } from '../data/schema';
 
 const tools = [
 	{ name: "Brain Dump", desc: "Clear the noise.", href: "/tools/brain-dump", tag: "ADHD", color: "purple" },
@@ -14,29 +15,22 @@ const pillars = [
 	{ num: "03", title: "Productivity", desc: "Weekly planning, prioritizing, and routines that don't require willpower.", href: "/productivity", color: "purple" },
 ];
 
-const siteUrl = new URL(Astro.url.pathname, Astro.site);
-const orgSchema = {
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	"name": "SteadyFocusCo",
-	"url": new URL("/", Astro.site).toString(),
-	"logo": new URL("/logo.png", Astro.site).toString(),
-	"description": "ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier.",
-};
-const webSiteSchema = {
-	"@context": "https://schema.org",
-	"@type": "WebSite",
-	"name": "SteadyFocusCo",
-	"url": new URL("/", Astro.site).toString(),
-	"description": "ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier.",
-};
+// Organization + WebSite schema is injected globally by Base layout.
+// Add page-level WebPage schema here.
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+const pageSchema = webPageSchema(siteBase, {
+	type: "WebPage",
+	name: "ADHD Planners & Productivity Tools for Overwhelm | SteadyFocusCo",
+	description:
+		"ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier.",
+	path: "/",
+});
 ---
 <Base
 	title="ADHD Planners & Productivity Tools for Overwhelm | SteadyFocusCo"
 	description="ADHD-friendly planners, printables, checklists and free productivity tools designed to reduce overwhelm, improve focus and make planning easier."
+	schema={pageSchema}
 >
-	<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
-	<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
 	<!-- ===== HERO ===== -->
 	<section class="hero" id="hero">
 		<div class="container">
@@ -245,6 +239,34 @@ const webSiteSchema = {
 					<h2>Take the system off-screen.</h2>
 					<p class="section-lede">Prefer paper? The same planning systems are available as printable planners — instant download, designed to reuse.</p>
 					<a class="btn btn-on-color" href={etsyLink({ medium: "homepage", campaign: "homepage" })} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">Browse printable planners →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== ABOUT THE BRAND ===== -->
+	<section class="about">
+		<div class="container">
+			<div class="about-inner">
+				<p class="eyebrow">About SteadyFocusCo</p>
+				<h2>Planning tools for brains that don't do linear</h2>
+				<p class="about-lede">
+					SteadyFocusCo is a digital planning and productivity resource for people who
+					find traditional planning systems overwhelming. We make ADHD-friendly printable
+					planners, free productivity tools, executive-function resources, student planning
+					resources, and practical guides designed to reduce overwhelm and make planning
+					easier to follow.
+				</p>
+				<div class="about-offers">
+					<h3>What SteadyFocusCo offers</h3>
+					<ul>
+						<li><a href="/adhd">ADHD-friendly planners</a></li>
+						<li><a href="/printables">Printable planning resources</a></li>
+						<li><a href="/tools">Free productivity tools</a></li>
+						<li><a href="/guides">Executive-function resources</a></li>
+						<li><a href="/students">Student planning resources</a></li>
+						<li><a href="/guides">Productivity guides</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -1094,6 +1116,69 @@ const webSiteSchema = {
 			0 1px 2px rgba(28, 29, 31, 0.08),
 			0 16px 32px rgba(28, 29, 31, 0.20),
 			0 32px 60px rgba(28, 29, 31, 0.14);
+	}
+
+	/* ===== ABOUT ===== */
+	.about {
+		padding: 4rem 0;
+		background: var(--bg-warm);
+		border-top: 1px solid var(--border);
+	}
+	.about-inner {
+		max-width: 760px;
+		margin: 0 auto;
+	}
+	.about-inner .eyebrow {
+		color: var(--primary);
+	}
+	.about-inner h2 {
+		font-size: clamp(1.9rem, 4vw, 2.5rem);
+		color: var(--ink);
+		margin-bottom: 1rem;
+	}
+	.about-lede {
+		color: var(--ink-soft);
+		font-size: 1.15rem;
+		line-height: 1.7;
+		margin: 0 0 2rem;
+	}
+	.about-offers {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 18px;
+		padding: 1.75rem 2rem;
+	}
+	.about-offers h3 {
+		font-size: 1.05rem;
+		margin-bottom: 1rem;
+		color: var(--ink);
+	}
+	.about-offers ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem 1.5rem;
+	}
+	.about-offers li::before {
+		content: '✓';
+		color: var(--primary);
+		font-weight: 700;
+		margin-right: 0.5rem;
+	}
+	.about-offers a {
+		color: var(--primary-dark);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.about-offers a:hover {
+		text-decoration: underline;
+	}
+	@media (max-width: 560px) {
+		.about-offers ul {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	/* ===== RESPONSIVE ===== */

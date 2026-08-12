@@ -2,53 +2,168 @@
 import Base from "../layouts/Base.astro";
 import ClusterHub from "../components/ClusterHub.astro";
 import { clusterMeta } from "../data/site";
+import { webPageSchema, breadcrumbSchema, faqSchema } from "../data/schema";
+
 const meta = clusterMeta.productivity;
+
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+
+const pageSchemas = webPageSchema(siteBase, {
+	type: "CollectionPage",
+	name: "Productivity",
+	description: meta.blurb,
+	path: "/productivity",
+	breadcrumb: breadcrumbSchema(siteBase, [
+		{ name: "Home", path: "/" },
+		{ name: "Productivity", path: "/productivity" },
+	]),
+});
+
+const faqs = [
+	{
+		question: "What is a simple productivity system?",
+		answer:
+			"A simple productivity system is a lightweight way of organizing tasks and routines that reduces friction instead of adding more to manage. It focuses on a few clear steps — like a weekly reset, a brain dump, and a short morning routine — rather than complex tools that are hard to maintain.",
+	},
+	{
+		question: "Why can simpler planning systems be easier to follow?",
+		answer:
+			"Simpler planning systems are easier to follow because they lower the cost of starting and don't rely on willpower. When the next step is obvious and the system is quick to use, you're more likely to keep it up consistently — especially when you're busy or overwhelmed.",
+	},
+	{
+		question: "What productivity tools does SteadyFocusCo provide?",
+		answer:
+			"SteadyFocusCo provides free interactive tools (a weekly reset, a brain dump, and a morning routine builder), reusable printable sheets, matching planners on Etsy, and practical guides on planning, prioritization, and routines.",
+	},
+];
+
+const faqSchemaData = faqSchema(siteBase, { path: "/productivity", questions: faqs });
 ---
 
 <Base title={`${meta.title} planning`} description={meta.blurb}>
-  <ClusterHub cluster="productivity" />
-  <section class="support">
-    <div class="support-inner">
-      <h2>Productivity tools, planning & routines that reduce overwhelm</h2>
-      <p>
-        Productivity here isn't about doing more — it's about reducing friction.
-        The free tools, printables, and guides in this section focus on planning,
-        prioritization, focus, and routines that don't rely on willpower you
-        don't have in the moment. That's especially useful for anyone managing
-        executive function challenges or a busy, scattered schedule.
-      </p>
-      <p>
-        Start with a <a href="/tools/weekly-reset">weekly reset</a> to turn a
-        scattered week into one calm plan, or a <a href="/tools/brain-dump">brain
-        dump</a> to clear your head and prioritize what matters. A
-        <a href="/tools/morning-routine">morning routine</a> builds a calmer,
-        steadier start to the day. When you want it on paper, the
-        <a href="/printables">printables</a> and <a href="/shop">planners</a>
-        give you reusable systems for time management, focus, and daily routines.
-      </p>
-      <p>
-        The goal is simpler planning, better prioritization, and routines that
-        keep running on autopilot — so you can focus on actually getting things
-        done.
-      </p>
-    </div>
-  </section>
+	{pageSchemas.map((s) => (
+		<script type="application/ld+json" set:html={JSON.stringify(s)}></script>
+	))}
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchemaData)}></script>
+	<ClusterHub cluster="productivity" />
+	<section class="support">
+		<div class="support-inner">
+			<h2>Productivity tools, planning & routines that reduce overwhelm</h2>
+			<p>
+				Productivity here isn't about doing more — it's about reducing friction.
+				The free tools, printables, and guides in this section focus on planning,
+				prioritization, focus, and routines that don't rely on willpower you
+				don't have in the moment. That's especially useful for anyone managing
+				executive function challenges or a busy, scattered schedule.
+			</p>
+			<p>
+				Start with a <a href="/tools/weekly-reset">weekly reset</a> to turn a
+				scattered week into one calm plan, or a <a href="/tools/brain-dump">brain
+				dump</a> to clear your head and prioritize what matters. A
+				<a href="/tools/morning-routine">morning routine</a> builds a calmer,
+				steadier start to the day. When you want it on paper, the
+				<a href="/printables">printables</a> and <a href="/shop">planners</a>
+				give you reusable systems for time management, focus, and daily routines.
+			</p>
+			<p>
+				The goal is simpler planning, better prioritization, and routines that
+				keep running on autopilot — so you can focus on actually getting things
+				done.
+			</p>
+
+			<h3>What is a simple productivity system?</h3>
+			<p>
+				A simple productivity system is a lightweight way of organizing tasks and
+				routines that reduces friction instead of adding more to manage. It
+				focuses on a few clear steps — like a weekly reset, a brain dump, and a
+				short morning routine — rather than complex tools that are hard to
+				maintain.
+			</p>
+
+			<h3>Why can simpler planning systems be easier to follow?</h3>
+			<p>
+				Simpler planning systems are easier to follow because they lower the cost
+				of starting and don't rely on willpower. When the next step is obvious
+				and the system is quick to use, you're more likely to keep it up
+				consistently — especially when you're busy or overwhelmed.
+			</p>
+
+			<h3>What productivity tools does SteadyFocusCo provide?</h3>
+			<p>
+				SteadyFocusCo provides free interactive tools, reusable printable sheets,
+				matching planners on Etsy, and practical guides on planning,
+				prioritization, and routines.
+			</p>
+		</div>
+	</section>
+
+	<section class="faq">
+		<div class="faq-inner">
+			<h2>Productivity — frequently asked questions</h2>
+			<div class="faq-list">
+				{faqs.map((f) => (
+					<details class="faq-item">
+						<summary>{f.question}</summary>
+						<p>{f.answer}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</section>
 </Base>
 
 <style>
-  .support {
-    max-width: 760px;
-    margin: 0 auto 4rem;
-    padding: 0 1.5rem;
-  }
-  .support-inner h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .support-inner p {
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin: 0 0 1.25rem;
-  }
+	.support {
+		max-width: 760px;
+		margin: 0 auto 2.5rem;
+		padding: 0 1.5rem;
+	}
+	.support-inner h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.support-inner h3 {
+		font-size: 1.2rem;
+		margin: 2rem 0 0.5rem;
+		color: var(--ink);
+	}
+	.support-inner p {
+		color: var(--ink-soft);
+		font-size: 1.05rem;
+		line-height: 1.7;
+		margin: 0 0 1.25rem;
+	}
+
+	.faq {
+		max-width: 760px;
+		margin: 0 auto 4rem;
+		padding: 0 1.5rem;
+	}
+	.faq-inner h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1.25rem;
+	}
+	.faq-list {
+		display: grid;
+		gap: 0.75rem;
+	}
+	.faq-item {
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1rem 1.25rem;
+	}
+	.faq-item summary {
+		font-weight: 700;
+		color: var(--ink);
+		cursor: pointer;
+		font-family: var(--display);
+		font-size: 1.05rem;
+	}
+	.faq-item p {
+		color: var(--ink-soft);
+		font-size: 1rem;
+		line-height: 1.7;
+		margin: 0.75rem 0 0;
+	}
 </style>

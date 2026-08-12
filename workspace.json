@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-10T10:21:58.855Z",
-  "generatedAtEpochMs": 1786357318855,
+  "generatedAt": "2026-08-12T14:35:58.804Z",
+  "generatedAtEpochMs": 1786545358804,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "website",
     "root": "f:\\etsy\\website",
-    "activeFile": "src/pages/index.astro",
+    "activeFile": "README.md",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "src/pages/index.astro",
-      "src/layouts/Base.astro",
-      "astro.config.mjs",
-      "scripts/generate-pins.mjs",
-      "src/pages/shop.astro",
-      ".gitignore",
-      "package.json",
-      "src/components/BrainDump.tsx",
-      "AGENTS.md",
       "README.md",
+      "src/pages/index.astro",
+      "src/pages/tools/brain-dump.astro",
+      "src/data/schema.ts",
+      "src/layouts/Base.astro",
+      "src/pages/tools/morning-routine.astro",
+      "src/pages/tools/weekly-reset.astro",
+      "src/pages/about.astro",
+      ".gitignore",
+      "AGENTS.md",
       "package-lock.json",
-      "tsconfig.json"
+      "package.json"
     ],
     "stats": {
-      "totalFiles": 99,
+      "totalFiles": 115,
       "topLevelAreas": [
         {
           "name": "pins-out",
@@ -47,12 +47,12 @@
           "count": 25
         },
         {
-          "name": "[root]",
-          "count": 14
+          "name": "public",
+          "count": 20
         },
         {
-          "name": "public",
-          "count": 12
+          "name": "[root]",
+          "count": 17
         },
         {
           "name": ".astro",
@@ -60,13 +60,21 @@
         },
         {
           "name": "scripts",
+          "count": 3
+        },
+        {
+          "name": ".github",
+          "count": 2
+        },
+        {
+          "name": "bbb",
           "count": 2
         }
       ],
       "primaryFileTypes": [
         {
           "name": ".png",
-          "count": 51
+          "count": 57
         },
         {
           "name": ".astro",
@@ -77,6 +85,10 @@
           "count": 6
         },
         {
+          "name": ".patch",
+          "count": 5
+        },
+        {
           "name": ".ts",
           "count": 5
         },
@@ -85,16 +97,12 @@
           "count": 4
         },
         {
-          "name": ".tsx",
+          "name": ".mjs",
           "count": 3
         },
         {
-          "name": ".mjs",
-          "count": 2
-        },
-        {
-          "name": "[no extension]",
-          "count": 2
+          "name": ".tsx",
+          "count": 3
         }
       ],
       "keyFiles": [
@@ -143,10 +151,40 @@
           "isKeyFile": false
         },
         {
+          "path": ".github/workflows/deploy.yml",
+          "topLevelArea": ".github",
+          "extension": ".yml",
+          "isKeyFile": false
+        },
+        {
+          "path": ".github/workflows/etsy-sync.yml",
+          "topLevelArea": ".github",
+          "extension": ".yml",
+          "isKeyFile": false
+        },
+        {
           "path": ".gitignore",
           "topLevelArea": "[root]",
           "extension": "[no extension]",
           "isKeyFile": true
+        },
+        {
+          "path": "0001-chore-remove-stray-homepage-color-rebuild.patch-from.patch",
+          "topLevelArea": "[root]",
+          "extension": ".patch",
+          "isKeyFile": false
+        },
+        {
+          "path": "0001-fix-correct-same-zone-task-spacing-to-actually-clear.patch",
+          "topLevelArea": "[root]",
+          "extension": ".patch",
+          "isKeyFile": false
+        },
+        {
+          "path": "0001-fix-correct-scatter-state-formula-that-let-tasks-col.patch",
+          "topLevelArea": "[root]",
+          "extension": ".patch",
+          "isKeyFile": false
         },
         {
           "path": "AGENTS.md",
@@ -158,6 +196,18 @@
           "path": "astro.config.mjs",
           "topLevelArea": "[root]",
           "extension": ".mjs",
+          "isKeyFile": false
+        },
+        {
+          "path": "bbb/0001-ci-deploy-to-Cloudflare-automatically-on-every-push-.patch",
+          "topLevelArea": "bbb",
+          "extension": ".patch",
+          "isKeyFile": false
+        },
+        {
+          "path": "bbb/homepage-color-rebuild.patch",
+          "topLevelArea": "bbb",
+          "extension": ".patch",
           "isKeyFile": false
         },
         {
@@ -449,6 +499,12 @@
           "isKeyFile": false
         },
         {
+          "path": "public/llms.txt",
+          "topLevelArea": "public",
+          "extension": ".txt",
+          "isKeyFile": false
+        },
+        {
           "path": "public/logo.png",
           "topLevelArea": "public",
           "extension": ".png",
@@ -456,6 +512,18 @@
         },
         {
           "path": "public/products/brain-dump-adults.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/brain-dump-card.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/brain-dump-tool-card.png",
           "topLevelArea": "public",
           "extension": ".png",
           "isKeyFile": false
@@ -479,7 +547,19 @@
           "isKeyFile": false
         },
         {
+          "path": "public/products/clear-next-step-bg.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/products/executive-function.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/hero-planner.png",
           "topLevelArea": "public",
           "extension": ".png",
           "isKeyFile": false
@@ -491,7 +571,19 @@
           "isKeyFile": false
         },
         {
+          "path": "public/products/morning-routine-tool-card.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
           "path": "public/products/morning-routine.png",
+          "topLevelArea": "public",
+          "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/products/sort-system-card.png",
           "topLevelArea": "public",
           "extension": ".png",
           "isKeyFile": false
@@ -503,9 +595,15 @@
           "isKeyFile": false
         },
         {
-          "path": "public/products/weekly-planner-adults.png",
+          "path": "public/products/weekly-reset-tool-card.png",
           "topLevelArea": "public",
           "extension": ".png",
+          "isKeyFile": false
+        },
+        {
+          "path": "public/robots.txt",
+          "topLevelArea": "public",
+          "extension": ".txt",
           "isKeyFile": false
         },
         {
@@ -513,6 +611,12 @@
           "topLevelArea": "[root]",
           "extension": ".md",
           "isKeyFile": true
+        },
+        {
+          "path": "scripts/etsy-oauth.mjs",
+          "topLevelArea": "scripts",
+          "extension": ".mjs",
+          "isKeyFile": false
         },
         {
           "path": "scripts/generate-pins.mjs",
@@ -536,12 +640,6 @@
           "path": "src/components/ClusterHub.astro",
           "topLevelArea": "src",
           "extension": ".astro",
-          "isKeyFile": false
-        },
-        {
-          "path": "src/components/Hero3D.ts",
-          "topLevelArea": "src",
-          "extension": ".ts",
           "isKeyFile": false
         },
         {
@@ -578,6 +676,12 @@
           "path": "src/data/products.json",
           "topLevelArea": "src",
           "extension": ".json",
+          "isKeyFile": false
+        },
+        {
+          "path": "src/data/schema.ts",
+          "topLevelArea": "src",
+          "extension": ".ts",
           "isKeyFile": false
         },
         {
@@ -748,9 +852,9 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-10T10:21:55.743Z",
+    "lastActivityAt": "2026-08-12T14:35:55.190Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 30,
+    "trackedFileSnapshotCount": 42,
     "changeTypeCounts": {
       "save": 40,
       "create": 0,
@@ -760,606 +864,619 @@
   },
   "trackedSnapshots": [
     {
-      "filePath": "src/pages/index.astro",
-      "updatedAt": 1786357315743,
-      "lineCount": 674,
-      "charCount": 16298,
-      "hash": "4d62c724beab",
-      "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl..."
+      "filePath": "README.md",
+      "updatedAt": 1786545355190,
+      "lineCount": 73,
+      "charCount": 2461,
+      "hash": "436222edb04e",
+      "preview": "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
     },
     {
-      "filePath": "src/components/Hero3D.ts",
-      "updatedAt": 1786356487220,
-      "lineCount": 336,
-      "charCount": 10866,
-      "hash": "edc2e797f06b",
-      "preview": "// Three.js hero scene: a persistent \"thought cloud\" with floating task objects. / // Scattered state -> organized zones (DO NOW / DEADLINE / LATER) -> hold -> return. / // Fully self-contained, GPU-accelerated, respe..."
+      "filePath": "src/pages/tools/brain-dump.astro",
+      "updatedAt": 1786544884229,
+      "lineCount": 12,
+      "charCount": 457,
+      "hash": "7e6840058afc",
+      "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / <Base / title=\"Brain Dump tool\" / description=\"Free..."
+    },
+    {
+      "filePath": "src/pages/tools/weekly-reset.astro",
+      "updatedAt": 1786544765626,
+      "lineCount": 26,
+      "charCount": 1025,
+      "hash": "1f98f21001f2",
+      "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webPageSchema, SITE_DESCRIPTION } from..."
+    },
+    {
+      "filePath": "src/pages/tools/morning-routine.astro",
+      "updatedAt": 1786544561696,
+      "lineCount": 21,
+      "charCount": 900,
+      "hash": "a49d54306f97",
+      "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from \"../...."
+    },
+    {
+      "filePath": "src/pages/about.astro",
+      "updatedAt": 1786544151429,
+      "lineCount": 169,
+      "charCount": 6566,
+      "hash": "0a55425f2e2c",
+      "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { webPageSchema, breadcrumbSchema } from \"../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchemas = webP..."
+    },
+    {
+      "filePath": "src/pages/index.astro",
+      "updatedAt": 1786544075206,
+      "lineCount": 1289,
+      "charCount": 35968,
+      "hash": "54d32f52da0c",
+      "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / import { webPageSchema } from '../data/schema'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/..."
+    },
+    {
+      "filePath": "src/pages/productivity.astro",
+      "updatedAt": 1786544020438,
+      "lineCount": 169,
+      "charCount": 5712,
+      "hash": "99a84e159739",
+      "preview": "--- / import Base from \"../layouts/Base.astro\"; / import ClusterHub from \"../components/ClusterHub.astro\"; / import { clusterMeta } from \"../data/site\"; / import { webPageSchema, breadcrumbSchema, faqSchema } from \"....."
     },
     {
       "filePath": "src/layouts/Base.astro",
-      "updatedAt": 1786326702943,
-      "lineCount": 379,
-      "charCount": 8472,
-      "hash": "bb69a176e591",
-      "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default..."
-    },
-    {
-      "filePath": "scripts/generate-pins.mjs",
-      "updatedAt": 1786321310923,
-      "lineCount": 478,
-      "charCount": 15189,
-      "hash": "c6679cf02fd1",
-      "preview": "#!/usr/bin/env node / /** / * SteadyFocusCo Pinterest Pin Generator / * / * Generates 1000×1500 PNG pins for guides, tools, and printables. / * Reads content from src/data/site.ts and outputs to pins-out/. / */ / impo..."
-    },
-    {
-      "filePath": ".gitignore",
-      "updatedAt": 1786320994098,
-      "lineCount": 29,
-      "charCount": 293,
-      "hash": "4a2ad0bea3f9",
-      "preview": "# build output / dist/ / .output/ / # generated assets / pins-out/ / # dependencies / node_modules/ / # astro / .astro/ / # secrets — never commit / .env / .env.* / !.env.example / # logs / os / npm-debug.log* / *.log..."
-    },
-    {
-      "filePath": "package.json",
-      "updatedAt": 1786320902721,
-      "lineCount": 29,
-      "charCount": 675,
-      "hash": "25a4b7e4097e",
-      "preview": "{ / \"name\": \"steadyfocusco\", / \"type\": \"module\", / \"version\": \"0.0.1\", / \"engines\": { / \"node\": \">=22.12.0\" / }, / \"scripts\": { / \"dev\": \"astro dev\", / \"sync:etsy\": \"node scripts/sync-etsy-products.js\", / \"prebuild\":..."
-    },
-    {
-      "filePath": "src/pages/printables/[slug].astro",
-      "updatedAt": 1786319565393,
-      "lineCount": 365,
-      "charCount": 8938,
-      "hash": "143cda39f4a6",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (..."
-    },
-    {
-      "filePath": "src/pages/guides/[slug].astro",
-      "updatedAt": 1786319515003,
-      "lineCount": 133,
-      "charCount": 3401,
-      "hash": "8c17dea9f74b",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
+      "updatedAt": 1786543925271,
+      "lineCount": 761,
+      "charCount": 19302,
+      "hash": "ba22f3d4be3d",
+      "preview": "--- / import { / organizationSchema, / webSiteSchema, / } from \"../data/schema\"; / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / /** Optional page-level JSON-LD ob..."
     }
   ],
   "recentChanges": [
     {
       "type": "save",
-      "path": "src/pages/index.astro",
+      "path": "README.md",
       "toPath": "",
-      "summary": "Line 666: removed 4 lines.",
-      "recordedAt": "2026-08-10T10:21:55.743Z",
-      "recordedAtEpochMs": 1786357315743,
+      "summary": "Line 1: replaced 43 lines with 72 lines.",
+      "recordedAt": "2026-08-12T14:35:55.190Z",
+      "recordedAtEpochMs": 1786545355190,
       "before": {
         "kind": "text",
-        "lineCount": 677,
-        "charCount": 16336,
-        "hash": "343389669a26",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786357315742
+        "lineCount": 44,
+        "charCount": 1558,
+        "hash": "e04b6352dd03",
+        "preview": "# Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure / Inside of your Astro project, you'll...",
+        "updatedAt": 1786545355190
       },
       "after": {
         "kind": "text",
-        "lineCount": 674,
-        "charCount": 16298,
-        "hash": "4d62c724beab",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786357315743
-      },
-      "diff": {
-        "lineStart": 666,
-        "removedLines": 4,
-        "addedLines": 0,
-        "summary": "Line 666: removed 4 lines.",
-        "beforeFragment": "thought { / transition: none; / } / .",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 637: removed 8 lines.",
-      "recordedAt": "2026-08-10T10:21:25.955Z",
-      "recordedAtEpochMs": 1786357285955,
-      "before": {
-        "kind": "text",
-        "lineCount": 684,
-        "charCount": 16447,
-        "hash": "31d62348df34",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786357285955
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 677,
-        "charCount": 16336,
-        "hash": "343389669a26",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786357285955
-      },
-      "diff": {
-        "lineStart": 637,
-        "removedLines": 8,
-        "addedLines": 0,
-        "summary": "Line 637: removed 8 lines.",
-        "beforeFragment": "stage-sorter { / grid-template-columns: 1fr; / gap: 0.75rem; / } / .sorter-col { / min-height: auto; / } / .",
-        "afterFragment": ""
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 279: replaced 94 lines with 11 lines.",
-      "recordedAt": "2026-08-10T10:20:55.398Z",
-      "recordedAtEpochMs": 1786357255398,
-      "before": {
-        "kind": "text",
-        "lineCount": 767,
-        "charCount": 18612,
-        "hash": "f161ff202bc0",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786357255397
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 684,
-        "charCount": 16447,
-        "hash": "31d62348df34",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786357255398
-      },
-      "diff": {
-        "lineStart": 279,
-        "removedLines": 94,
-        "addedLines": 11,
-        "summary": "Line 279: replaced 94 lines with 11 lines.",
-        "beforeFragment": "stage */ / .hero-stage { / position: relative; / height: 560px; / perspective: 1200px; / } / .stage-glow { / position: absolute; / inset: 0; / background: radial-gradient(ellips...",
-        "afterFragment": "3D stage */ / .hero-stage { / position: relative; / height: 560px; / border-radius: 32px; / overflow: hidden; / } / .hero-stage canvas { / display: block; / width: 100%; / heigh..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 162: replaced 46 lines with 8 lines.",
-      "recordedAt": "2026-08-10T10:11:49.380Z",
-      "recordedAtEpochMs": 1786356709380,
-      "before": {
-        "kind": "text",
-        "lineCount": 805,
-        "charCount": 20067,
-        "hash": "80c0f4e40da7",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786356709380
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 767,
-        "charCount": 18612,
-        "hash": "f161ff202bc0",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786356709380
-      },
-      "diff": {
-        "lineStart": 162,
-        "removedLines": 46,
-        "addedLines": 8,
-        "summary": "Line 162: replaced 46 lines with 8 lines.",
-        "beforeFragment": "is:inline> / // ---- Hero thought-sorting animation ---- / document.addEventListener('DOMContentLoaded', () => { / const stage = document.getElementById('stage'); / if (!stage)...",
-        "afterFragment": "> / import { initHero3D } from '../components/Hero3D'; / // ---- Persistent 3D hero visual ---- / const container = document.getElementById('hero3d'); / if (container) { / initH..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 33: replaced 28 lines with 2 lines.",
-      "recordedAt": "2026-08-10T10:10:42.705Z",
-      "recordedAtEpochMs": 1786356642705,
-      "before": {
-        "kind": "text",
-        "lineCount": 831,
-        "charCount": 21135,
-        "hash": "e29befa48040",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786356642704
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 805,
-        "charCount": 20067,
-        "hash": "80c0f4e40da7",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786356642705
-      },
-      "diff": {
-        "lineStart": 33,
-        "removedLines": 28,
-        "addedLines": 2,
-        "summary": "Line 33: replaced 28 lines with 2 lines.",
-        "beforeFragment": "Immersive thought-sorting environment --> / <div class=\"hero-stage\" id=\"stage\" aria-label=\"Interactive thought sorting demonstration\"> / <div class=\"stage-glow\"></div> / <div cl...",
-        "afterFragment": "Persistent 3D thought-cloud visual (Three.js) --> / <div class=\"hero-stage\" id=\"hero3d\" aria-label=\"Interactive 3D thought sorting demonstration\">"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/components/Hero3D.ts",
-      "toPath": "",
-      "summary": "Line 1: inserted 336 lines.",
-      "recordedAt": "2026-08-10T10:08:07.220Z",
-      "recordedAtEpochMs": 1786356487220,
-      "before": {
-        "kind": "text",
-        "lineCount": 0,
-        "charCount": 0,
-        "hash": "empty",
-        "preview": "",
-        "updatedAt": 1786356487219
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 336,
-        "charCount": 10866,
-        "hash": "edc2e797f06b",
-        "preview": "// Three.js hero scene: a persistent \"thought cloud\" with floating task objects. / // Scattered state -> organized zones (DO NOW / DEADLINE / LATER) -> hold -> return. / // Fully self-contained, GPU-accelerated, respe...",
-        "updatedAt": 1786356487220
+        "lineCount": 73,
+        "charCount": 2461,
+        "hash": "436222edb04e",
+        "preview": "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over...",
+        "updatedAt": 1786545355190
       },
       "diff": {
         "lineStart": 1,
-        "removedLines": 0,
-        "addedLines": 336,
-        "summary": "Line 1: inserted 336 lines.",
-        "beforeFragment": "",
-        "afterFragment": "// Three.js hero scene: a persistent \"thought cloud\" with floating task objects. / // Scattered state -> organized zones (DO NOW / DEADLINE / LATER) -> hold -> return. / // Full..."
+        "removedLines": 43,
+        "addedLines": 72,
+        "summary": "Line 1: replaced 43 lines with 72 lines.",
+        "beforeFragment": "Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure...",
+        "afterFragment": "SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and pr..."
       }
     },
     {
       "type": "save",
-      "path": "src/pages/index.astro",
+      "path": "src/pages/tools/brain-dump.astro",
       "toPath": "",
-      "summary": "Line 5: replaced 678 lines with 824 lines.",
-      "recordedAt": "2026-08-10T02:01:17.976Z",
-      "recordedAtEpochMs": 1786327277976,
+      "summary": "Line 5: replaced 21 lines with 4 lines.",
+      "recordedAt": "2026-08-12T14:28:04.229Z",
+      "recordedAtEpochMs": 1786544884229,
       "before": {
         "kind": "text",
-        "lineCount": 685,
-        "charCount": 16505,
-        "hash": "50494a6556dd",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786327277975
+        "lineCount": 29,
+        "charCount": 1086,
+        "hash": "7b983b627068",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webPageSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786544884229
       },
       "after": {
         "kind": "text",
-        "lineCount": 831,
-        "charCount": 21135,
-        "hash": "e29befa48040",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekl...",
-        "updatedAt": 1786327277976
+        "lineCount": 12,
+        "charCount": 457,
+        "hash": "7e6840058afc",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / <Base / title=\"Brain Dump tool\" / description=\"Free...",
+        "updatedAt": 1786544884229
       },
       "diff": {
         "lineStart": 5,
-        "removedLines": 678,
-        "addedLines": 824,
-        "summary": "Line 5: replaced 678 lines with 824 lines.",
-        "beforeFragment": "intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-reset\" }, / { label: \"Get schoolwork done\", href: \"/students...",
-        "afterFragment": "tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/tools/brain-dump\", tag: \"ADHD\" }, / { name: \"Weekly Reset\", desc: \"Turn a scattered week into a clear plan.\",..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 511: replaced 1 line with 1 line.",
-      "recordedAt": "2026-08-10T01:54:40.129Z",
-      "recordedAtEpochMs": 1786326880129,
-      "before": {
-        "kind": "text",
-        "lineCount": 685,
-        "charCount": 16499,
-        "hash": "a8cbbdb85f70",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786326880128
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 685,
-        "charCount": 16505,
-        "hash": "50494a6556dd",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786326880129
-      },
-      "diff": {
-        "lineStart": 511,
-        "removedLines": 1,
-        "addedLines": 1,
-        "summary": "Line 511: replaced 1 line with 1 line.",
-        "beforeFragment": "bg-warm",
-        "afterFragment": "primary-light"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 568: replaced 3 lines with 5 lines.",
-      "recordedAt": "2026-08-10T01:54:04.022Z",
-      "recordedAtEpochMs": 1786326844022,
-      "before": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 16417,
-        "hash": "f536dfc8d43d",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786326844021
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 685,
-        "charCount": 16499,
-        "hash": "a8cbbdb85f70",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786326844022
-      },
-      "diff": {
-        "lineStart": 568,
-        "removedLines": 3,
-        "addedLines": 5,
-        "summary": "Line 568: replaced 3 lines with 5 lines.",
-        "beforeFragment": "bg-warm); / border-radius: 24px; / padding: 3.5rem",
-        "afterFragment": "card); / border: 1px solid var(--border); / border-radius: 24px; / padding: 3.5rem; / box-shadow: 0 24px 60px rgba(28, 29, 31, 0.06)"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/index.astro",
-      "toPath": "",
-      "summary": "Line 258: replaced 4 lines with 4 lines.",
-      "recordedAt": "2026-08-10T01:53:30.001Z",
-      "recordedAtEpochMs": 1786326810001,
-      "before": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 16395,
-        "hash": "f5325fe8fd58",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786326810000
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 683,
-        "charCount": 16417,
-        "hash": "f536dfc8d43d",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786326810001
-      },
-      "diff": {
-        "lineStart": 258,
-        "removedLines": 4,
+        "removedLines": 21,
         "addedLines": 4,
-        "summary": "Line 258: replaced 4 lines with 4 lines.",
-        "beforeFragment": "0.9fr 1.1fr; / gap: 4rem; / align-items: center; / min-height: 80vh",
-        "afterFragment": "minmax(0, 0.9fr) minmax(0, 1.1fr); / gap: 4rem; / align-items: center; / min-height: auto"
+        "summary": "Line 5: replaced 21 lines with 4 lines.",
+        "beforeFragment": "import { webPageSchema } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchema = webPageSchema(siteBase, { / ty...",
+        "afterFragment": "<Base / title=\"Brain Dump tool\" / description=\"Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sur..."
       }
     },
     {
       "type": "save",
-      "path": "src/layouts/Base.astro",
+      "path": "src/pages/tools/brain-dump.astro",
       "toPath": "",
-      "summary": "Line 297: removed 2 lines.",
-      "recordedAt": "2026-08-10T01:51:42.943Z",
-      "recordedAtEpochMs": 1786326702943,
+      "summary": "Line 13: replaced 1 line with 4 lines.",
+      "recordedAt": "2026-08-12T14:27:23.433Z",
+      "recordedAtEpochMs": 1786544843433,
       "before": {
         "kind": "text",
-        "lineCount": 380,
-        "charCount": 8504,
-        "hash": "0e9fe1710eaa",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786326702940
+        "lineCount": 26,
+        "charCount": 1003,
+        "hash": "811669e35a3e",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webPageSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786544843433
       },
       "after": {
         "kind": "text",
-        "lineCount": 379,
-        "charCount": 8472,
-        "hash": "bb69a176e591",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786326702943
+        "lineCount": 29,
+        "charCount": 1086,
+        "hash": "7b983b627068",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webPageSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786544843433
       },
       "diff": {
-        "lineStart": 297,
-        "removedLines": 2,
+        "lineStart": 13,
+        "removedLines": 1,
+        "addedLines": 4,
+        "summary": "Line 13: replaced 1 line with 4 lines.",
+        "beforeFragment": "path: \"/tools/brain-dump\"",
+        "afterFragment": "breadcrumb: [ / { name: \"Home\", path: \"/\" }, / { name: \"Brain Dump\", path: \"/tools/brain-dump\" }, / ]"
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/brain-dump.astro",
+      "toPath": "",
+      "summary": "Line 5: removed 1 line.",
+      "recordedAt": "2026-08-12T14:26:43.007Z",
+      "recordedAtEpochMs": 1786544803007,
+      "before": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 1021,
+        "hash": "d7ae54b013a7",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webPageSchema, SITE_DESCRIPTION } from \"../...",
+        "updatedAt": 1786544803007
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 1003,
+        "hash": "811669e35a3e",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webPageSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786544803007
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 1,
         "addedLines": 0,
-        "summary": "Line 297: removed 2 lines.",
-        "beforeFragment": "margin-top: var(--space-2xl);",
+        "summary": "Line 5: removed 1 line.",
+        "beforeFragment": ", SITE_DESCRIPTION",
         "afterFragment": ""
       }
     },
     {
       "type": "save",
-      "path": "src/layouts/Base.astro",
+      "path": "src/pages/tools/weekly-reset.astro",
       "toPath": "",
-      "summary": "Line 240: replaced 10 lines with 11 lines.",
-      "recordedAt": "2026-08-10T01:49:28.622Z",
-      "recordedAtEpochMs": 1786326568622,
+      "summary": "Line 5: replaced 12 lines with 18 lines.",
+      "recordedAt": "2026-08-12T14:26:05.626Z",
+      "recordedAtEpochMs": 1786544765626,
       "before": {
         "kind": "text",
-        "lineCount": 379,
-        "charCount": 8480,
-        "hash": "2a0637d7591b",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786326568622
+        "lineCount": 20,
+        "charCount": 827,
+        "hash": "560413a934f9",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / const siteBase = new URL(\"/\", Astro.site).toStri...",
+        "updatedAt": 1786544765626
       },
       "after": {
         "kind": "text",
-        "lineCount": 380,
-        "charCount": 8504,
-        "hash": "0e9fe1710eaa",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786326568622
+        "lineCount": 26,
+        "charCount": 1025,
+        "hash": "1f98f21001f2",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webPageSchema, SITE_DESCRIPTION } from...",
+        "updatedAt": 1786544765626
       },
       "diff": {
-        "lineStart": 240,
-        "removedLines": 10,
+        "lineStart": 5,
+        "removedLines": 12,
+        "addedLines": 18,
+        "summary": "Line 5: replaced 12 lines with 18 lines.",
+        "beforeFragment": "const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / <Base / title=\"Weekly Reset tool\" / description=\"Free weekly reset tool: turn a scattered brain-dump o...",
+        "afterFragment": "import { webPageSchema, SITE_DESCRIPTION } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchema = webPageSchem..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/brain-dump.astro",
+      "toPath": "",
+      "summary": "Line 5: replaced 13 lines with 18 lines.",
+      "recordedAt": "2026-08-12T14:25:16.613Z",
+      "recordedAtEpochMs": 1786544716613,
+      "before": {
+        "kind": "text",
+        "lineCount": 21,
+        "charCount": 863,
+        "hash": "ee2b6be5e158",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema } from \"../../data/sch...",
+        "updatedAt": 1786544716613
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 26,
+        "charCount": 1021,
+        "hash": "d7ae54b013a7",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webPageSchema, SITE_DESCRIPTION } from \"../...",
+        "updatedAt": 1786544716613
+      },
+      "diff": {
+        "lineStart": 5,
+        "removedLines": 13,
+        "addedLines": 18,
+        "summary": "Line 5: replaced 13 lines with 18 lines.",
+        "beforeFragment": "ApplicationSchema } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / <Base / title=\"Brain Dump tool\" / description=\"Free br...",
+        "afterFragment": "PageSchema, SITE_DESCRIPTION } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchema = webPageSchema(siteBase,..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/brain-dump.astro",
+      "toPath": "",
+      "summary": "Line 1: replaced 27 lines with 21 lines.",
+      "recordedAt": "2026-08-12T14:24:26.371Z",
+      "recordedAtEpochMs": 1786544666371,
+      "before": {
+        "kind": "text",
+        "lineCount": 27,
+        "charCount": 903,
+        "hash": "7bb56b85c74f",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- / import { webApplicationSchema } from \".....",
+        "updatedAt": 1786544666371
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 21,
+        "charCount": 863,
+        "hash": "ee2b6be5e158",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema } from \"../../data/sch...",
+        "updatedAt": 1786544666371
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 27,
+        "addedLines": 21,
+        "summary": "Line 1: replaced 27 lines with 21 lines.",
+        "beforeFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- /...",
+        "afterFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { web..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/weekly-reset.astro",
+      "toPath": "",
+      "summary": "Line 1: replaced 23 lines with 20 lines.",
+      "recordedAt": "2026-08-12T14:23:26.159Z",
+      "recordedAtEpochMs": 1786544606159,
+      "before": {
+        "kind": "text",
+        "lineCount": 23,
+        "charCount": 870,
+        "hash": "3f8c46c449ee",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --- / import { webApplicationSchema } from...",
+        "updatedAt": 1786544606159
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 20,
+        "charCount": 827,
+        "hash": "560413a934f9",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / const siteBase = new URL(\"/\", Astro.site).toStri...",
+        "updatedAt": 1786544606159
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 23,
+        "addedLines": 20,
+        "summary": "Line 1: replaced 23 lines with 20 lines.",
+        "beforeFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --...",
+        "afterFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / const si..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/morning-routine.astro",
+      "toPath": "",
+      "summary": "Line 1: replaced 21 lines with 21 lines.",
+      "recordedAt": "2026-08-12T14:22:41.696Z",
+      "recordedAtEpochMs": 1786544561696,
+      "before": {
+        "kind": "text",
+        "lineCount": 21,
+        "charCount": 849,
+        "hash": "b7d5a2c7fe49",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / const siteBase = new URL(\"/\", Astro....",
+        "updatedAt": 1786544561696
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 21,
+        "charCount": 900,
+        "hash": "a49d54306f97",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from \"../....",
+        "updatedAt": 1786544561696
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 21,
+        "addedLines": 21,
+        "summary": "Line 1: replaced 21 lines with 21 lines.",
+        "beforeFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"...",
+        "afterFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / im..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/morning-routine.astro",
+      "toPath": "",
+      "summary": "Line 1: replaced 19 lines with 21 lines.",
+      "recordedAt": "2026-08-12T14:20:30.116Z",
+      "recordedAtEpochMs": 1786544430116,
+      "before": {
+        "kind": "text",
+        "lineCount": 19,
+        "charCount": 839,
+        "hash": "02003c555450",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / const siteBase = new URL(\"/\", Astro.site)....",
+        "updatedAt": 1786544430116
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 21,
+        "charCount": 849,
+        "hash": "b7d5a2c7fe49",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / const siteBase = new URL(\"/\", Astro....",
+        "updatedAt": 1786544430116
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 19,
+        "addedLines": 21,
+        "summary": "Line 1: replaced 19 lines with 21 lines.",
+        "beforeFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / co...",
+        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/morning-routine.astro",
+      "toPath": "",
+      "summary": "Line 1: replaced 23 lines with 19 lines.",
+      "recordedAt": "2026-08-12T14:20:13.555Z",
+      "recordedAtEpochMs": 1786544413555,
+      "before": {
+        "kind": "text",
+        "lineCount": 23,
+        "charCount": 889,
+        "hash": "ba6a3538b5b5",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / --- / import { webApplicationSchema...",
+        "updatedAt": 1786544413554
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 19,
+        "charCount": 839,
+        "hash": "02003c555450",
+        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / const siteBase = new URL(\"/\", Astro.site)....",
+        "updatedAt": 1786544413555
+      },
+      "diff": {
+        "lineStart": 1,
+        "removedLines": 23,
+        "addedLines": 19,
+        "summary": "Line 1: replaced 23 lines with 19 lines.",
+        "beforeFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"...",
+        "afterFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / co..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/tools/morning-routine.astro",
+      "toPath": "",
+      "summary": "Line 7: replaced 3 lines with 11 lines.",
+      "recordedAt": "2026-08-12T14:18:44.576Z",
+      "recordedAtEpochMs": 1786544324576,
+      "before": {
+        "kind": "text",
+        "lineCount": 15,
+        "charCount": 493,
+        "hash": "05c2fac16b31",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / --- / <Base / title=\"Morning Routine...",
+        "updatedAt": 1786544324576
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 23,
+        "charCount": 889,
+        "hash": "ba6a3538b5b5",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / --- / import { webApplicationSchema...",
+        "updatedAt": 1786544324576
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 3,
         "addedLines": 11,
-        "summary": "Line 240: replaced 10 lines with 11 lines.",
-        "beforeFragment": "2.5rem; / } / .site-header nav a { / color: var(--ink-soft); / text-decoration: none; / font-weight: 500; / font-size: 0.9rem; / transition: color var(--duration-fast) ease; / p...",
-        "afterFragment": "1.5rem; / } / .site-header nav a { / color: var(--ink-soft); / text-decoration: none; / font-weight: 500; / font-size: 0.85rem; / transition: color var(--duration-fast) ease; /..."
+        "summary": "Line 7: replaced 3 lines with 11 lines.",
+        "beforeFragment": "<Base / title=\"Morning Routine Builder\" / description=\"Free morning routine builder: list what you want in your morning and get an ordered, time-boxed routine with start times y...",
+        "afterFragment": "import { webApplicationSchema } from \"../../data/schema\"; / <Base / title=\"Morning Routine Builder\" / description=\"Free morning routine builder: list what you want in your morni..."
       }
     },
     {
       "type": "save",
-      "path": "src/layouts/Base.astro",
+      "path": "src/pages/tools/weekly-reset.astro",
       "toPath": "",
-      "summary": "Line 57: replaced 14 lines with 16 lines.",
-      "recordedAt": "2026-08-10T01:49:03.768Z",
-      "recordedAtEpochMs": 1786326543768,
+      "summary": "Line 7: replaced 3 lines with 11 lines.",
+      "recordedAt": "2026-08-12T14:18:29.040Z",
+      "recordedAtEpochMs": 1786544309040,
       "before": {
         "kind": "text",
-        "lineCount": 377,
-        "charCount": 8423,
-        "hash": "3baf2c944f75",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786326543768
+        "lineCount": 15,
+        "charCount": 474,
+        "hash": "e589a5cabbf2",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --- / <Base / title=\"Weekly Reset tool\" /...",
+        "updatedAt": 1786544309040
       },
       "after": {
         "kind": "text",
-        "lineCount": 379,
-        "charCount": 8480,
-        "hash": "2a0637d7591b",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786326543768
+        "lineCount": 23,
+        "charCount": 870,
+        "hash": "3f8c46c449ee",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / --- / import { webApplicationSchema } from...",
+        "updatedAt": 1786544309040
       },
       "diff": {
-        "lineStart": 57,
-        "removedLines": 14,
-        "addedLines": 16,
-        "summary": "Line 57: replaced 14 lines with 16 lines.",
-        "beforeFragment": "a href=\"/\" class=\"brand\"> / <img src=\"/logo.png\" alt=\"SteadyFocusCo\" class=\"brand-logo\" /> / <span class=\"brand-text\">SteadyFocus<span>Co</span></span> / </a> / <nav> / <a href=...",
-        "afterFragment": "div class=\"site-header-inner\"> / <a href=\"/\" class=\"brand\"> / <img src=\"/logo.png\" alt=\"SteadyFocusCo\" class=\"brand-logo\" /> / <span class=\"brand-text\">SteadyFocus<span>Co</span..."
+        "lineStart": 7,
+        "removedLines": 3,
+        "addedLines": 11,
+        "summary": "Line 7: replaced 3 lines with 11 lines.",
+        "beforeFragment": "<Base / title=\"Weekly Reset tool\" / description=\"Free weekly reset tool: turn a scattered brain-dump of tasks into a calm week — top 3 priorities plus a day-by-day plan you can...",
+        "afterFragment": "import { webApplicationSchema } from \"../../data/schema\"; / <Base / title=\"Weekly Reset tool\" / description=\"Free weekly reset tool: turn a scattered brain-dump of tasks into a..."
       }
     },
     {
       "type": "save",
-      "path": "src/pages/index.astro",
+      "path": "src/pages/tools/brain-dump.astro",
       "toPath": "",
-      "summary": "Line 6: replaced 220 lines with 678 lines.",
-      "recordedAt": "2026-08-10T01:39:29.047Z",
-      "recordedAtEpochMs": 1786325969047,
+      "summary": "Line 7: replaced 3 lines with 15 lines.",
+      "recordedAt": "2026-08-12T14:17:53.922Z",
+      "recordedAtEpochMs": 1786544273922,
       "before": {
         "kind": "text",
-        "lineCount": 225,
-        "charCount": 8863,
-        "hash": "cb3adaf533df",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\", icon: \"brain\" }, / { label: \"Plan my week\", href: \"...",
-        "updatedAt": 1786325969046
+        "lineCount": 15,
+        "charCount": 469,
+        "hash": "103bc4443951",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- / <Base / title=\"Brain Dump tool\" / descri...",
+        "updatedAt": 1786544273922
       },
       "after": {
         "kind": "text",
-        "lineCount": 683,
-        "charCount": 16395,
-        "hash": "f5325fe8fd58",
-        "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / const intents = [ / { label: \"Clear my head\", href: \"/tools/brain-dump\" }, / { label: \"Plan my week\", href: \"/tools/weekly-r...",
-        "updatedAt": 1786325969047
+        "lineCount": 27,
+        "charCount": 903,
+        "hash": "7bb56b85c74f",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / --- / import { webApplicationSchema } from \".....",
+        "updatedAt": 1786544273922
       },
       "diff": {
-        "lineStart": 6,
-        "removedLines": 220,
-        "addedLines": 678,
-        "summary": "Line 6: replaced 220 lines with 678 lines.",
-        "beforeFragment": ", icon: \"brain\" }, / { label: \"Plan my week\", href: \"/tools/weekly-reset\", icon: \"calendar\" }, / { label: \"Get schoolwork done\", href: \"/students\", icon: \"school\" }, / { label:...",
-        "afterFragment": "}, / { label: \"Plan my week\", href: \"/tools/weekly-reset\" }, / { label: \"Get schoolwork done\", href: \"/students\" }, / { label: \"Build a routine\", href: \"/tools/morning-routine\"..."
+        "lineStart": 7,
+        "removedLines": 3,
+        "addedLines": 15,
+        "summary": "Line 7: replaced 3 lines with 15 lines.",
+        "beforeFragment": "<Base / title=\"Brain Dump tool\" / description=\"Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sur...",
+        "afterFragment": "import { webApplicationSchema } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / <Base / title=\"Brain Dump tool\" / descript..."
       }
     },
     {
       "type": "save",
-      "path": "src/layouts/Base.astro",
+      "path": "src/pages/about.astro",
       "toPath": "",
-      "summary": "Line 312: removed 2 lines.",
-      "recordedAt": "2026-08-10T01:29:43.814Z",
-      "recordedAtEpochMs": 1786325383814,
+      "summary": "Line 3: replaced 6 lines with 23 lines.",
+      "recordedAt": "2026-08-12T14:15:51.429Z",
+      "recordedAtEpochMs": 1786544151429,
       "before": {
         "kind": "text",
-        "lineCount": 378,
-        "charCount": 8426,
-        "hash": "b11b5bcfb16a",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786325383813
+        "lineCount": 152,
+        "charCount": 5824,
+        "hash": "95caf47da7ed",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / --- / <Base / title=\"About SteadyFocusCo\" / description=\"Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digit...",
+        "updatedAt": 1786544151429
       },
       "after": {
         "kind": "text",
-        "lineCount": 377,
-        "charCount": 8423,
-        "hash": "3baf2c944f75",
-        "preview": "--- / interface Props { / title: string; / description?: string; / image?: string; / noindex?: boolean; / } / const { / title, / description = \"Planning and organization for overwhelmed minds.\", / image = \"/og-default...",
-        "updatedAt": 1786325383814
+        "lineCount": 169,
+        "charCount": 6566,
+        "hash": "0a55425f2e2c",
+        "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { webPageSchema, breadcrumbSchema } from \"../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchemas = webP...",
+        "updatedAt": 1786544151429
       },
       "diff": {
-        "lineStart": 312,
-        "removedLines": 2,
-        "addedLines": 0,
-        "summary": "Line 312: removed 2 lines.",
-        "beforeFragment": "}",
-        "afterFragment": ""
+        "lineStart": 3,
+        "removedLines": 6,
+        "addedLines": 23,
+        "summary": "Line 3: replaced 6 lines with 23 lines.",
+        "beforeFragment": "--- / <Base / title=\"About SteadyFocusCo\" / description=\"Planning and organization tools for overwhelmed minds. SteadyFocusCo creates printable planners and free digital tools f...",
+        "afterFragment": "import { webPageSchema, breadcrumbSchema } from \"../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchemas = webPageSchema(..."
       }
     }
   ],
   "hotFiles": [
     {
       "filePath": "src/pages/index.astro",
-      "count": 13
-    },
-    {
-      "filePath": "src/layouts/Base.astro",
       "count": 12
     },
     {
-      "filePath": "astro.config.mjs",
-      "count": 2
+      "filePath": "src/pages/tools/brain-dump.astro",
+      "count": 6
     },
     {
-      "filePath": "scripts/generate-pins.mjs",
-      "count": 2
+      "filePath": "src/data/schema.ts",
+      "count": 5
     },
     {
-      "filePath": "src/pages/shop.astro",
-      "count": 2
+      "filePath": "src/layouts/Base.astro",
+      "count": 5
     },
     {
-      "filePath": ".gitignore",
+      "filePath": "src/pages/tools/morning-routine.astro",
+      "count": 4
+    },
+    {
+      "filePath": "src/pages/tools/weekly-reset.astro",
+      "count": 3
+    },
+    {
+      "filePath": "README.md",
       "count": 1
     },
     {
-      "filePath": "package.json",
-      "count": 1
-    },
-    {
-      "filePath": "src/components/BrainDump.tsx",
+      "filePath": "src/pages/about.astro",
       "count": 1
     }
   ],
   "git": {
     "available": true,
     "branch": "main",
-    "headSummary": "2026-08-10 2767022 Premium art-directed homepage redesign",
-    "statusSummary": "6 modifieds, 1 untracked",
-    "changedFileCount": 7,
+    "headSummary": "2026-08-11 f29bce4 Redesign global header and footer",
+    "statusSummary": "15 modifieds, 5 untrackeds",
+    "changedFileCount": 20,
     "statusLines": [
+      "M .vscode/extensions.json",
+      "M README.md",
       "M graphify-out/WORKSPACE_MEMORY.md",
-      "M package-lock.json",
-      "M package.json",
+      "M src/data/products.json",
+      "M src/layouts/Base.astro",
+      "M src/pages/about.astro",
+      "M src/pages/adhd.astro",
       "M src/pages/index.astro",
+      "M src/pages/productivity.astro",
+      "M src/pages/students.astro",
+      "M src/pages/tools/brain-dump.astro",
+      "M src/pages/tools/morning-routine.astro",
+      "M src/pages/tools/weekly-reset.astro",
       "M workspace.json",
       "M workspacememory.md",
-      "?? src/components/Hero3D.ts"
+      "?? 0001-chore-remove-stray-homepage-color-rebuild.patch-from.patch",
+      "?? 0001-fix-correct-same-zone-task-spacing-to-actually-clear.patch",
+      "?? 0001-fix-correct-scatter-state-formula-that-let-tasks-col.patch",
+      "?? bbb/",
+      "?? src/data/schema.ts"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 2767022 by Arslan Khan on 2026-08-10\n  Premium art-directed homepage redesign\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
+    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- f29bce4 by Arslan Khan on 2026-08-11\n  Redesign global header and footer\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
   },
   "graphify": {
     "reportAvailable": false,
