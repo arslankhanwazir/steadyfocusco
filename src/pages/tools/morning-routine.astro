@@ -2,7 +2,8 @@
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import MorningRoutine from "../../components/MorningRoutine.tsx";
-import { webApplicationSchema } from "../../data/schema";
+import { webApplicationSchema, breadcrumbSchema, faqSchema } from "../../data/schema";
+import { guides, printables } from "../../data/site";
 
 const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
 
@@ -13,14 +14,132 @@ const toolSchema = webApplicationSchema(siteBase, {
   path: "/tools/morning-routine",
   applicationCategory: "LifestyleApplication",
 });
+
+const toolBreadcrumb = breadcrumbSchema(siteBase, [
+  { name: "Home", path: "/" },
+  { name: "Tools", path: "/tools" },
+  { name: "Morning Routine Builder", path: "/tools/morning-routine" },
+]);
+
+const faqs = [
+  {
+    question: "How can a morning routine be made easier to start?",
+    answer:
+      "Keep it short, pick a sensible order, and make the next step obvious. A simple checklist or a small set of steps you can follow without thinking lowers the cost of starting.",
+  },
+  {
+    question: "What should an ADHD morning routine include?",
+    answer:
+      "A few small, realistic steps like waking, hydrating, getting ready, eating, and planning the day. The exact steps depend on your life — the key is keeping it short enough to actually do.",
+  },
+  {
+    question: "How do I use the free morning routine builder?",
+    answer:
+      "Type the steps you want in your morning — in any order, one per line. Add a time like '10 min stretch' if you want. Then click 'Build my routine' to get a sensible order with stamped start times you can download as a PDF.",
+  },
+];
+
+const faqSchemaData = faqSchema(siteBase, { path: "/tools/morning-routine", questions: faqs });
+const morningGuides = guides.filter((g) => g.clusters.includes("adhd"));
+const morningPrintable = printables.find((p) => p.slug === "morning-checklist");
 ---
 
 <Base
   title="Morning Routine Builder"
   description="Free morning routine builder: list what you want in your morning and get an ordered, time-boxed routine with start times you can download as a PDF."
-  schema={[toolSchema]}
+  schema={[toolSchema, toolBreadcrumb, faqSchemaData]}
 >
   <ToolShell slug="morning-routine">
     <MorningRoutine client:load />
   </ToolShell>
+
+  <section class="tool-seo">
+    <h2>What is a morning routine builder?</h2>
+    <p>
+      A morning routine builder is a tool that helps you turn a list of morning
+      steps into an ordered, time-boxed sequence. Instead of trying to remember
+      what to do in what order, you list your steps — in any order — and the
+      tool sorts them into a sensible routine with start times. The result is a
+      simple plan that's much easier to actually follow.
+    </p>
+
+    <h2>How can a morning routine be made easier to start?</h2>
+    <p>
+      The key is keeping the routine short and making the next step obvious.
+      When the sequence is small and the order is clear, you can follow it
+      without relying on motivation or memory. Start with just three or four
+      steps, and build from there once the routine sticks.
+    </p>
+
+    <h2>How to use this morning routine builder</h2>
+    <p>
+      Type the steps you want your morning to include — one per line, in any
+      order. Add a time if you want, like '10 min stretch'. The tool sorts your
+      steps into a sensible order (wake, hydrate, get ready, eat, plan) and
+      stamps each with a start time. Once you're happy, download it as a PDF.
+      It all runs in your browser — nothing is saved or sent anywhere.
+    </p>
+
+    <h2>Who is this tool for?</h2>
+    <p>
+      This morning routine builder is for anyone who finds mornings chaotic —
+      people with ADHD, busy parents, and anyone who wants a calmer start to
+      the day without a complicated system. It's built around the idea that a
+      short, realistic routine you actually keep is better than a long,
+      perfect one you abandon.
+    </p>
+
+    <h2>Morning routine frequently asked questions</h2>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="tool-related-links">
+    <h2>Keep going</h2>
+    <div class="related-grid">
+      {
+        morningPrintable && (
+          <a class="rel-card" href={`/printables/${morningPrintable.slug}`}>
+            <strong>{morningPrintable.title}</strong>
+            <span>{morningPrintable.description}</span>
+          </a>
+        )
+      }
+      {morningGuides.slice(0, 4).map((g) => (
+        <a class="rel-card" href={`/guides/${g.slug}`}>
+          <strong>{g.title}</strong>
+          <span>{g.description}</span>
+        </a>
+      ))}
+      <a class="rel-card" href="/printables">
+        <strong>Free printables</strong>
+        <span>Reusable ADHD printables you can print at home.</span>
+      </a>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .tool-seo { max-width: 900px; margin: 1rem auto 3rem; padding: 0 1.5rem; }
+  .tool-seo h2 { font-size: 1.4rem; margin: 2.25rem 0 0.75rem; }
+  .tool-seo > h2:first-child { margin-top: 2.5rem; }
+  .tool-seo p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 0 0 1.25rem; }
+  .tool-related-links { max-width: 1100px; margin: 0 auto 4rem; padding: 2rem 1.5rem 0; border-top: 1px solid var(--border); }
+  .tool-related-links h2 { font-size: 1.25rem; margin-bottom: 1.25rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .rel-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-decoration: none; color: var(--ink); transition: border-color 0.15s; }
+  .rel-card:hover { border-color: var(--primary); }
+  .rel-card strong { display: block; font-family: var(--display); font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .rel-card span { color: var(--ink-soft); font-size: 0.92rem; }
+  .faq-list { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+  .faq-item summary { font-weight: 700; color: var(--ink); cursor: pointer; font-family: var(--display); font-size: 1.05rem; }
+  .faq-item p { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; margin: 0.75rem 0 0; }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+</style>

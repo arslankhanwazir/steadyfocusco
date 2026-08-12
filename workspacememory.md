@@ -1,6 +1,6 @@
 # Workspace Memory
 This file is maintained automatically by Code Janitor so Claude, Codex, Bob, and any other AI agent can reuse repo context without rescanning everything from scratch.
-Generated: 2026-08-12T15:25:33.051Z
+Generated: 2026-08-12T22:07:57.949Z
 Workspace: website
 Workspace root: f:\etsy\website
 Refresh reason: tracked-change
@@ -16,16 +16,16 @@ Structured manifest: workspace.json
 - Audience: any AI agent working in this repository can treat this file as the current handoff ledger.
 - Graphify report: not available yet
 - Graphify graph: not available yet
-- Last activity: 2026-08-12T15:25:26.377Z
+- Last activity: 2026-08-12T22:07:53.980Z
 ## Workspace Focus
-- Active file in focus: src/pages/tools/morning-routine.astro
-- Hottest files right now: src/pages/tools/brain-dump.astro (8), src/pages/tools/morning-routine.astro (7), src/pages/tools/weekly-reset.astro (5), src/layouts/Base.astro (3)
-- Suggested starting points: src/pages/tools/morning-routine.astro, src/pages/tools/brain-dump.astro, src/pages/tools/weekly-reset.astro, src/layouts/Base.astro, src/pages/guides/[slug].astro, src/pages/index.astro
+- Active file in focus: src/pages/tools/weekly-reset.astro
+- Hottest files right now: src/pages/printables/[slug].astro (10), src/pages/guides/[slug].astro (7), src/data/schema.ts (4), src/pages/tools/brain-dump.astro (4)
+- Suggested starting points: src/pages/tools/weekly-reset.astro, src/pages/printables/[slug].astro, src/pages/guides/[slug].astro, src/data/schema.ts, src/pages/tools/brain-dump.astro, src/pages/tools/morning-routine.astro
 ## Current Workspace
-- Active file: src/pages/tools/morning-routine.astro
-- Tracked files in snapshot: 115
-- Top-level areas: pins-out (42), src (25), public (20), [root] (17), .astro (4), scripts (3), .github (2), bbb (2)
-- Primary file types: .png (57), .astro (17), .json (6), .patch (5), .ts (5), .md (4), .mjs (3), .tsx (3)
+- Active file: src/pages/tools/weekly-reset.astro
+- Tracked files in snapshot: 117
+- Top-level areas: pins-out (42), src (26), public (21), [root] (17), .astro (4), scripts (3), .github (2), bbb (2)
+- Primary file types: .png (57), .astro (18), .json (6), .patch (5), .ts (5), .md (4), .mjs (3), .tsx (3)
 - Key files: .gitignore, AGENTS.md, README.md, package-lock.json, package.json, tsconfig.json
 ## Package Snapshot
 - Package: steadyfocusco v0.0.1
@@ -36,166 +36,165 @@ Structured manifest: workspace.json
 ## Current Stack
 - Logged change events: 40
 - Change mix: save (40)
-- Remembered file snapshots: 42
-- Working tree summary: 10 modifieds, 4 untrackeds
+- Remembered file snapshots: 43
+- Working tree summary: 7 modifieds, 1 added, 5 conflicteds
 ## Tracked Snapshots
-- src/pages/tools/morning-routine.astro | 26 lines | 974 chars | hash 3a6db8abe09d
-  Last snapshot: 2026-08-12T15:25:26.377Z
-  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from..."
-- src/pages/printables/[slug].astro | 58 lines | 1559 chars | hash fb86d12fad62
-  Last snapshot: 2026-08-12T15:19:34.118Z
-  Preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / export functio..."
-- src/pages/guides/[slug].astro | 63 lines | 1672 chars | hash d3aa0a4b24d0
-  Last snapshot: 2026-08-12T15:07:32.237Z
-  Preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / export function getStaticPaths() { / re..."
-- src/pages/tools/weekly-reset.astro | 31 lines | 1059 chars | hash 0344c29bfc9b
-  Last snapshot: 2026-08-12T15:05:55.871Z
-  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema } from "../...."
-- src/pages/tools/brain-dump.astro | 31 lines | 1054 chars | hash 04d98716cc1a
-  Last snapshot: 2026-08-12T15:05:38.238Z
-  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema } from "../../da..."
-- README.md | 73 lines | 2533 chars | hash 1efa80f3cdf0
-  Last snapshot: 2026-08-12T14:56:01.402Z
-  Preview: "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
-- src/pages/about.astro | 169 lines | 6566 chars | hash 0a55425f2e2c
-  Last snapshot: 2026-08-12T14:15:51.429Z
-  Preview: "--- / import Base from "../layouts/Base.astro"; / import { webPageSchema, breadcrumbSchema } from "../data/schema"; / const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, ""); / const pageSchemas = webP..."
-- src/pages/index.astro | 1289 lines | 35968 chars | hash 54d32f52da0c
-  Last snapshot: 2026-08-12T14:14:35.206Z
-  Preview: "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / import { webPageSchema } from '../data/schema'; / const tools = [ / { name: "Brain Dump", desc: "Clear the noise.", href: "/..."
+- src/pages/tools/weekly-reset.astro | 156 lines | 7279 chars | hash c9480ba5a463
+  Last snapshot: 2026-08-12T22:07:53.980Z
+  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema, breadcrumbS..."
+- src/pages/tools/brain-dump.astro | 228 lines | 7612 chars | hash 651f317933f3
+  Last snapshot: 2026-08-12T22:07:14.821Z
+  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema, breadcrumbSchem..."
+- src/pages/printables/[slug].astro | 163 lines | 8405 chars | hash a0f968e851c3
+  Last snapshot: 2026-08-12T22:03:27.682Z
+  Preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- src/pages/guides/[slug].astro | 322 lines | 16517 chars | hash d9003c8acabe
+  Last snapshot: 2026-08-12T22:00:46.502Z
+  Preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+- src/data/schema.ts | 214 lines | 6816 chars | hash 1e035880ee17
+  Last snapshot: 2026-08-12T21:57:00.347Z
+  Preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- README.md | 107 lines | 4959 chars | hash e98430f31df4
+  Last snapshot: 2026-08-12T21:25:04.322Z
+  Preview: "# SteadyFocusCo / ADHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and productivity resource for peo..."
+- src/pages/404.astro | 103 lines | 2739 chars | hash ef263a85b9bf
+  Last snapshot: 2026-08-12T21:24:27.314Z
+  Preview: "--- / import Base from "../layouts/Base.astro"; / // 404 page — intentionally noindex so it never appears in search results. / --- / <Base / title="Page not found" / description="The page you're looking for couldn't b..."
+- src/pages/tools/morning-routine.astro | 145 lines | 6773 chars | hash 54939ef28442
+  Last snapshot: 2026-08-12T21:23:57.135Z
+  Preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema, bread..."
 
 ## Recent Changes
-### 2026-08-12T15:25:26.377Z | saved | src/pages/tools/morning-routine.astro
-- Summary: Line 5: replaced 19 lines with 21 lines.
-- Before: 24 lines | 944 chars | hash f77b0479bbcf | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from..."
-- After: 26 lines | 974 chars | hash 3a6db8abe09d | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from..."
-- Previous fragment: "import { webApplicationSchema } from "../../data/schema"; / const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, ""); / <Base / title="Morning Routine Builder" /..."
-- Current fragment: "import { webApplicationSchema } from "../../data/schema"; / const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, ""); / const toolSchema = webApplicationSchema(si..."
+### 2026-08-12T22:07:53.980Z | saved | src/pages/tools/weekly-reset.astro
+- Summary: Line 22: replaced 143 lines with 135 lines.
+- Before: 164 lines | 7,442 chars | hash a023f7ae7d4d | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema, breadcrumbS..."
+- After: 156 lines | 7,279 chars | hash c9480ba5a463 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema, breadcrumbS..."
+- Previous fragment: "<<<<<<< HEAD / ======= / const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: "Home", path: "/" }, / { name: "Tools", path: "/tools" }, / { name: "Weekly Reset", path:..."
+- Current fragment: "const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: "Home", path: "/" }, / { name: "Tools", path: "/tools" }, / { name: "Weekly Reset", path: "/tools/weekly-reset" },..."
 
-### 2026-08-12T15:19:34.118Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 29: replaced 4 lines with 1 line.
-- Before: 61 lines | 1,670 chars | hash 1589d7c74b6c | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / export functio..."
-- After: 58 lines | 1,559 chars | hash fb86d12fad62 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / export functio..."
-- Previous fragment: "image: printable.image ?? null, / offerUrl: shopHref, / price: printable.price ?? null, / currency: printable.currency ?? null"
-- Current fragment: "offerUrl: shopHref"
+### 2026-08-12T22:07:14.821Z | saved | src/pages/tools/brain-dump.astro
+- Summary: Line 22: replaced 215 lines with 207 lines.
+- Before: 236 lines | 7,775 chars | hash 002855d717cc | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema, breadcrumbSchem..."
+- After: 228 lines | 7,612 chars | hash 651f317933f3 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema, breadcrumbSchem..."
+- Previous fragment: "<<<<<<< HEAD / ======= / const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: "Home", path: "/" }, / { name: "Tools", path: "/tools" }, / { name: "Brain Dump", path: "/..."
+- Current fragment: "const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: "Home", path: "/" }, / { name: "Tools", path: "/tools" }, / { name: "Brain Dump", path: "/tools/brain-dump" }, / ])..."
 
-### 2026-08-12T15:07:32.237Z | saved | src/pages/guides/[slug].astro
-- Summary: Line 28: replaced 27 lines with 25 lines.
-- Before: 65 lines | 1,786 chars | hash 179fff7e7daa | preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / export function getStaticPaths() { / re..."
-- After: 63 lines | 1,672 chars | hash d3aa0a4b24d0 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / export function getStaticPaths() { / re..."
-- Previous fragment: "datePublished: guide.publishedAt ?? undefined, / dateModified: guide.updatedAt ?? undefined, / }; / const breadcrumbData = { / path: `/guides/${guide.slug}`, / }; / const articl..."
-- Current fragment: "}; / const breadcrumbData = { / path: `/guides/${guide.slug}`, / }; / const articleSchemaData = articleSchema(siteBase, articleData); / const breadcrumbSchemaData = breadcrumbSc..."
+### 2026-08-12T22:03:27.682Z | saved | src/pages/printables/[slug].astro
+- Summary: Line 74: replaced 171 lines with 90 lines.
+- Before: 244 lines | 13,949 chars | hash a08dff3feb03 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- After: 163 lines | 8,405 chars | hash a0f968e851c3 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- Previous fragment: "--- / const content = printableContent[printable.slug] ?? null; / const relatedGuides = guides.filter((g) => / g.clusters.some((c) => printable.clusters.includes(c)), / ); / ---..."
+- Current fragment: "const content = printableContent[printable.slug] ?? null; / const relatedGuides = guides.filter((g) => / g.clusters.some((c) => printable.clusters.includes(c)), / ); / --- / <Ba..."
 
-### 2026-08-12T15:06:44.504Z | saved | src/pages/guides/[slug].astro
-- Summary: Line 1: replaced 62 lines with 64 lines.
-- Before: 63 lines | 1,779 chars | hash 54699ff701ad | preview: "import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / export function getStaticPaths() { / return g..."
-- After: 65 lines | 1,786 chars | hash 179fff7e7daa | preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / export function getStaticPaths() { / re..."
-- Previous fragment: "import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / expor..."
-- Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+### 2026-08-12T22:02:53.982Z | saved | src/pages/printables/[slug].astro
+- Summary: Line 124: replaced 4 lines with 79 lines.
+- Before: 169 lines | 8,497 chars | hash 8613d894a72b | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- After: 244 lines | 13,949 chars | hash a08dff3feb03 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- Previous fragment: "</article> / <<<<<<< HEAD / </Bas"
+- Current fragment: "{ / relatedGuides.length > 0 && ( / <aside class="related"> / <h2>Related guides</h2> / <div class="related-grid"> / {relatedGuides.map((g) => ( / <a class="rel-card" href={`/gu..."
 
-### 2026-08-12T15:06:15.251Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 1: replaced 58 lines with 60 lines.
-- Before: 59 lines | 1,663 chars | hash ea7914df64df | preview: "import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / export function getS..."
-- After: 61 lines | 1,670 chars | hash 1589d7c74b6c | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / export functio..."
-- Previous fragment: "import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "....."
-- Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } fr..."
+### 2026-08-12T22:00:46.502Z | saved | src/pages/guides/[slug].astro
+- Summary: Line 29: replaced 334 lines with 294 lines.
+- Before: 362 lines | 17,860 chars | hash d3ba65364e8a | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+- After: 322 lines | 16,517 chars | hash d9003c8acabe | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+- Previous fragment: "`You can do a brain dump on paper, or use the free SteadyFocusCo brain dump tool. It takes the thoughts you type and automatically sorts them into Do Now, Deadline, Quick Task,..."
+- Current fragment: ""You can do a brain dump on paper, or use the free SteadyFocusCo brain dump tool. It takes the thoughts you type and automatically sorts them into Do Now, Deadline, Quick Task,..."
 
-### 2026-08-12T15:05:55.871Z | saved | src/pages/tools/weekly-reset.astro
-- Summary: Line 1: replaced 28 lines with 30 lines.
-- Before: 29 lines | 1,052 chars | hash d3ac3721554b | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema } from "../../data..."
-- After: 31 lines | 1,059 chars | hash 0344c29bfc9b | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema } from "../...."
-- Previous fragment: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import {..."
-- Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / im..."
+### 2026-08-12T21:58:11.422Z | saved | src/pages/guides/[slug].astro
+- Summary: Line 231: replaced 2 lines with 34 lines.
+- Before: 330 lines | 16,676 chars | hash 3af1a83fd16a | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+- After: 362 lines | 17,860 chars | hash d3ba65364e8a | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+- Previous fragment: "<<<<<<< HEAD / ---"
+- Current fragment: "const content = guideContent[guide.slug] ?? { sections: [] }; / // Related guides from the same cluster(s), excluding the current one. / const relatedGuides = guides / .filter((..."
 
-### 2026-08-12T15:05:38.238Z | saved | src/pages/tools/brain-dump.astro
-- Summary: Line 1: replaced 28 lines with 30 lines.
-- Before: 29 lines | 1,047 chars | hash d6f70a618218 | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema } from "../../data/sch..."
-- After: 31 lines | 1,054 chars | hash 04d98716cc1a | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema } from "../../da..."
-- Previous fragment: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { web..."
-- Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import..."
+### 2026-08-12T21:57:00.347Z | saved | src/data/schema.ts
+- Summary: Line 26: replaced 23 lines with 12 lines.
+- Before: 225 lines | 7,179 chars | hash 5a0c13c69efe | preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- After: 214 lines | 6,816 chars | hash 1e035880ee17 | preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- Previous fragment: "// Official Etsy shop — a real, owned property of the brand. / sameAs: ["https://steadyfocusco.etsy.com"], / >>>>>>> 2c17bad (Complete SEO and GEO optimization) / }; / } / /** T..."
+- Current fragment: "/** The brand — the shared root of the schema graph. */ / export function organizationSchema(base: string) { / return { / "@context": "https://schema.org", / "@type": "Organizat..."
 
-### 2026-08-12T15:04:47.140Z | saved | src/pages/tools/morning-routine.astro
-- Summary: Line 17: inserted 2 lines.
-- Before: 23 lines | 907 chars | hash 664d9fd92373 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from..."
-- After: 24 lines | 944 chars | hash f77b0479bbcf | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from..."
-- Current fragment: "path: "/tools/morning-routine","
+### 2026-08-12T21:54:44.108Z | saved | src/data/schema.ts
+- Summary: Line 26: replaced 17 lines with 19 lines.
+- Before: 223 lines | 7,173 chars | hash 959355333fc7 | preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- After: 225 lines | 7,179 chars | hash 5a0c13c69efe | preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- Previous fragment: "/** The brand — the shared root of the schema graph. */ / export function organizationSchema(base: string) { / return { / "@context": "https://schema.org", / "@type": "Organizat..."
+- Current fragment: "// Official Etsy shop — a real, owned property of the brand. / sameAs: ["https://steadyfocusco.etsy.com"], / >>>>>>> 2c17bad (Complete SEO and GEO optimization) / }; / } / /** T..."
 
-### 2026-08-12T15:04:27.170Z | saved | src/pages/tools/morning-routine.astro
-- Summary: Line 1: replaced 20 lines with 22 lines.
-- Before: 21 lines | 900 chars | hash a49d54306f97 | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from "../...."
-- After: 23 lines | 907 chars | hash 664d9fd92373 | preview: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / import { webApplicationSchema } from..."
-- Previous fragment: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"; / im..."
-- Current fragment: "--- / import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import MorningRoutine from "../../components/MorningRoutine.tsx"..."
+### 2026-08-12T21:53:41.150Z | saved | src/data/schema.ts
+- Summary: Line 35: replaced 3 lines with 8 lines.
+- Before: 218 lines | 6,941 chars | hash 2a96896fdbb5 | preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- After: 223 lines | 7,173 chars | hash 959355333fc7 | preview: "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
+- Previous fragment: "description: SITE_DESCRIPTION, / <<<<<<< HEAD / sameAs: [ETSY_SHOP_URL],"
+- Current fragment: "// Official Etsy shop — a real, owned property of the brand. / sameAs: ["https://steadyfocusco.etsy.com"], / >>>>>>> 2c17bad (Complete SEO and GEO optimization) / }; / descripti..."
 
-### 2026-08-12T14:56:01.402Z | saved | README.md
-- Summary: Line 1: replaced 43 lines with 72 lines.
-- Before: 44 lines | 1,601 chars | hash ac5807090cb6 | preview: "# Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure / Inside of your Astro project, you'll..."
-- After: 73 lines | 2,533 chars | hash 1efa80f3cdf0 | preview: "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
-- Previous fragment: "Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure..."
-- Current fragment: "SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and pr..."
+### 2026-08-12T21:46:24.757Z | saved | src/pages/guides/[slug].astro
+- Summary: Line 7: removed 2 lines.
+- Before: 324 lines | 16,540 chars | hash 4a584f76dd75 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / guidesForCluster, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "...."
+- After: 323 lines | 16,519 chars | hash a7d4b33ff643 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; /..."
+- Previous fragment: "guidesForCluster,"
 
-### 2026-08-12T14:55:40.119Z | saved | src/pages/tools/weekly-reset.astro
-- Summary: Line 4: replaced 19 lines with 22 lines.
-- Before: 26 lines | 1,025 chars | hash 1f98f21001f2 | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webPageSchema, SITE_DESCRIPTION } from..."
-- After: 29 lines | 1,052 chars | hash d3ac3721554b | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import WeeklyReset from "../../components/WeeklyReset.tsx"; / import { webApplicationSchema } from "../../data..."
-- Previous fragment: "import { webPageSchema, SITE_DESCRIPTION } from "../../data/schema"; / const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, ""); / const pageSchema = webPageSchem..."
-- Current fragment: "import { webApplicationSchema } from "../../data/schema"; / export function getStaticPaths() { / return []; / } / const siteBase = new URL("/", Astro.site).toString().replace(/\..."
+### 2026-08-12T21:40:01.917Z | saved | src/pages/printables/[slug].astro
+- Summary: Line 7: replaced 1 line with 7 lines.
+- Before: 157 lines | 8,275 chars | hash d75e6acef01e | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- After: 163 lines | 8,405 chars | hash a0f968e851c3 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- Previous fragment: "const printableContent"
+- Current fragment: "interface PrintableContent { / whatItIs: string; / howToUse: string; / tips: string[]; / } / const printableContent: Record<string, PrintableContent>"
 
-### 2026-08-12T14:54:37.364Z | saved | src/pages/tools/brain-dump.astro
-- Summary: Line 4: replaced 4 lines with 21 lines.
-- Before: 12 lines | 457 chars | hash 7e6840058afc | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / <Base / title="Brain Dump tool" / description="Free..."
-- After: 29 lines | 1,047 chars | hash d6f70a618218 | preview: "import Base from "../../layouts/Base.astro"; / import ToolShell from "../../components/ToolShell.astro"; / import BrainDump from "../../components/BrainDump.tsx"; / import { webApplicationSchema } from "../../data/sch..."
-- Previous fragment: "<Base / title="Brain Dump tool" / description="Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sur..."
-- Current fragment: "import { webApplicationSchema } from "../../data/schema"; / export function getStaticPaths() { / return []; / } / const siteBase = new URL("/", Astro.site).toString().replace(/\..."
+### 2026-08-12T21:29:20.796Z | saved | src/pages/printables/[slug].astro
+- Summary: Line 7: replaced 268 lines with 151 lines.
+- Before: 274 lines | 9,015 chars | hash f862b6a6ad3f | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- After: 157 lines | 8,275 chars | hash d75e6acef01e | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- Previous fragment: "// Per-printable editorial content — practical, useful, and grounded in what / // each sheet actually does. No invented claims. / const printableContent = { / "adhd-brain-dump":..."
+- Current fragment: "const printableContent = { / "adhd-brain-dump": { / whatItIs: "The ADHD Brain Dump Sheet is a one-page, reusable template for getting scattered thoughts out of your head and ont..."
 
-### 2026-08-12T14:53:21.633Z | saved | src/pages/guides/[slug].astro
-- Summary: Line 1: replaced 154 lines with 63 lines.
-- Before: 154 lines | 4,387 chars | hash 75a7870ce232 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s..."
-- After: 63 lines | 1,779 chars | hash 54699ff701ad | preview: "import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / export function getStaticPaths() { / return g..."
-- Previous fragment: "--- / import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / export function getStaticPaths() { / return guides.map((g) => ({ param..."
-- Current fragment: "import Base from "../../layouts/Base.astro"; / import { guides, etsyLink } from "../../data/site"; / import { articleSchema, breadcrumbSchema } from "../../data/schema"; / expor..."
+### 2026-08-12T21:27:12.365Z | saved | src/pages/printables/[slug].astro
+- Summary: Line 9: removed 4 lines.
+- Before: 277 lines | 9,096 chars | hash ccedb7f490e5 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- After: 274 lines | 9,015 chars | hash f862b6a6ad3f | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- Previous fragment: ": Record< / string, / { whatItIs: string; howToUse: string; tips: string[] } / >"
 
-### 2026-08-12T14:51:20.258Z | saved | src/pages/printables/[slug].astro
-- Summary: Line 1: replaced 365 lines with 59 lines.
-- Before: 365 lines | 8,938 chars | hash 143cda39f4a6 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / export function getStaticPaths() { / return printables.map((p) => (..."
-- After: 59 lines | 1,663 chars | hash ea7914df64df | preview: "import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / export function getS..."
-- Previous fragment: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / export function getStaticPa..."
-- Current fragment: "import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from "../../data/site"; / import { productSchema } from "....."
+### 2026-08-12T21:26:11.697Z | saved | src/pages/printables/[slug].astro
+- Summary: Line 3: replaced 7 lines with 2 lines.
+- Before: 282 lines | 9,078 chars | hash 9014bb483c58 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { / printables, / toolBySlug, / etsyLink, / guides, / type Printable, / } from "../../data/site"; / import { productSchema } from "../../data/schema"; / // P..."
+- After: 277 lines | 9,096 chars | hash ccedb7f490e5 | preview: "--- / import Base from "../../layouts/Base.astro"; / import { printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable } from "../../data/site"; / import { productSchema } from "../..."
+- Previous fragment: "printables, / toolBySlug, / etsyLink, / guides, / type Printable,"
+- Current fragment: "printables, toolBySlug, etsyLink, guides } from "../../data/site"; / import type { Printable"
 
-### 2026-08-12T14:35:55.190Z | saved | README.md
-- Summary: Line 1: replaced 43 lines with 72 lines.
-- Before: 44 lines | 1,558 chars | hash e04b6352dd03 | preview: "# Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure / Inside of your Astro project, you'll..."
-- After: 73 lines | 2,461 chars | hash 436222edb04e | preview: "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
-- Previous fragment: "Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure..."
-- Current fragment: "SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and pr..."
+### 2026-08-12T21:25:04.322Z | saved | README.md
+- Summary: Line 3: replaced 70 lines with 104 lines.
+- Before: 73 lines | 2,533 chars | hash 1efa80f3cdf0 | preview: "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
+- After: 107 lines | 4,959 chars | hash e98430f31df4 | preview: "# SteadyFocusCo / ADHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and productivity resource for peo..."
+- Previous fragment: "digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides des..."
+- Current fragment: "DHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and producti..."
 
 
 ## Hot Files
-- src/pages/tools/brain-dump.astro (8 tracked changes)
-- src/pages/tools/morning-routine.astro (7 tracked changes)
-- src/pages/tools/weekly-reset.astro (5 tracked changes)
-- src/layouts/Base.astro (3 tracked changes)
-- src/pages/guides/[slug].astro (3 tracked changes)
-- src/pages/index.astro (3 tracked changes)
-- src/pages/printables/[slug].astro (3 tracked changes)
-- README.md (2 tracked changes)
+- src/pages/printables/[slug].astro (10 tracked changes)
+- src/pages/guides/[slug].astro (7 tracked changes)
+- src/data/schema.ts (4 tracked changes)
+- src/pages/tools/brain-dump.astro (4 tracked changes)
+- src/pages/tools/morning-routine.astro (4 tracked changes)
+- src/pages/tools/weekly-reset.astro (4 tracked changes)
+- README.md (3 tracked changes)
+- src/layouts/Base.astro (2 tracked changes)
 
 ## Git Snapshot
-- Branch: main
-- HEAD: 2026-08-12 69d89b2 fix: resolve remaining GEO schema errors
-- Working tree summary: 10 modifieds, 4 untrackeds
-- M .vscode/extensions.json
-- M graphify-out/WORKSPACE_MEMORY.md
-- M src/data/products.json
-- M src/pages/about.astro
-- M src/pages/guides/[slug].astro
-- M src/pages/tools/brain-dump.astro
-- M src/pages/tools/morning-routine.astro
-- M src/pages/tools/weekly-reset.astro
-- M workspace.json
-- M workspacememory.md
-- ?? 0001-chore-remove-stray-homepage-color-rebuild.patch-from.patch
-- ?? 0001-fix-correct-same-zone-task-spacing-to-actually-clear.patch
+- Branch: HEAD
+- HEAD: 2026-08-12 142bd8f Add ETSY_SHOP_URL to organization schema
+- Working tree summary: 7 modifieds, 1 added, 5 conflicteds
+- M  README.md
+- MM graphify-out/WORKSPACE_MEMORY.md
+- M  src/data/products.json
+- UU src/data/schema.ts
+- M  src/layouts/Base.astro
+- A  src/pages/404.astro
+- UU src/pages/guides/[slug].astro
+- UU src/pages/printables/[slug].astro
+- UU src/pages/tools/brain-dump.astro
+- M  src/pages/tools/morning-routine.astro
+- UU src/pages/tools/weekly-reset.astro
+- MM workspace.json
 - Additional git status lines were omitted for brevity.
 
 ## GitHub Snapshot
@@ -204,8 +203,8 @@ Visibility: public | Default branch: main
 Stars: 0 | Forks: 0 | Open issues: 0
 
 Latest commit on main:
-- 69d89b2 by Arslan Khan on 2026-08-12
-  fix: resolve remaining GEO schema errors
+- 142bd8f by arslankhanwazir on 2026-08-12
+  Add ETSY_SHOP_URL to organization schema
 
 URL: https://github.com/arslankhanwazir/steadyfocusco
 

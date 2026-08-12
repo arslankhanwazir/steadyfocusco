@@ -33,6 +33,7 @@ export function organizationSchema(base: string) {
     url: abs(base, "/"),
     logo: abs(base, "/logo.png"),
     description: SITE_DESCRIPTION,
+    // Official Etsy shop — a real, owned property of the brand.
     sameAs: [ETSY_SHOP_URL],
   };
 }

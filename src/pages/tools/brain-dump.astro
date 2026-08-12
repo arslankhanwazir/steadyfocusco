@@ -2,7 +2,8 @@
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import BrainDump from "../../components/BrainDump.tsx";
-import { webApplicationSchema } from "../../data/schema";
+import { webApplicationSchema, breadcrumbSchema, faqSchema } from "../../data/schema";
+import { guides, printables } from "../../data/site";
 
 export function getStaticPaths() {
   return [];
@@ -18,15 +19,210 @@ const toolData = {
 };
 
 const brainDumpSchema = webApplicationSchema(siteBase, toolData);
+const toolBreadcrumb = breadcrumbSchema(siteBase, [
+  { name: "Home", path: "/" },
+  { name: "Tools", path: "/tools" },
+  { name: "Brain Dump", path: "/tools/brain-dump" },
+]);
+
+const faqs = [
+  {
+    question: "What is an ADHD brain dump?",
+    answer:
+      "An ADHD brain dump is a simple way to move scattered thoughts, tasks, reminders, and worries out of your head and into one place so they can be sorted into actionable next steps.",
+  },
+  {
+    question: "How does a brain dump help organize thoughts?",
+    answer:
+      "It separates the act of capturing thoughts from the act of organizing them. By getting everything out first, you can then sort items by what needs doing now, what has a deadline, what's quick, and what can wait — instead of carrying it all at once.",
+  },
+  {
+    question: "How do I use the free brain dump tool?",
+    answer:
+      "Type everything on your mind into the box — one thought per line. Then click 'Sort it for me'. The tool automatically categorizes each thought into Do Now, Deadline, Quick Task, Later, or Not Sure, and lets you download the sorted list as a PDF.",
+  },
+];
+
+const faqSchemaData = faqSchema(siteBase, { path: "/tools/brain-dump", questions: faqs });
+
+// Related content for internal linking
+const relatedGuides = guides.filter((g) => g.clusters.includes("adhd") || g.clusters.includes("productivity"));
+const brainDumpPrintable = printables.find((p) => p.slug === "adhd-brain-dump");
 ---
 
 <Base
-  title="Brain Dump tool"
+  title="Brain Dump Tool"
   description="Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sure. Download as a PDF."
-  schema={[brainDumpSchema]}
+  schema={[brainDumpSchema, toolBreadcrumb, faqSchemaData]}
 >
   <ToolShell slug="brain-dump">
     <BrainDump client:load />
   </ToolShell>
 
+  <section class="tool-seo">
+    <h2>What is an ADHD brain dump?</h2>
+    <p>
+      An ADHD brain dump is a simple way to move scattered thoughts, tasks, reminders,
+      and worries out of your head and into one place so they can be sorted into
+      actionable next steps. When everything feels urgent, it's usually because too
+      much is being held in your head at once. A brain dump changes that: get it all
+      out first, then make sense of it after.
+    </p>
+
+    <h2>How does a brain dump help organize thoughts?</h2>
+    <p>
+      Most planning fails because we try to organize while we're still carrying
+      everything in our heads. A brain dump separates the act of capturing from the
+      act of organizing. Once your thoughts are on the page, you can sort them by
+      what needs doing now, what has a deadline, what's a quick task, what can wait,
+      and what's unsure — which makes the next step much easier to see.
+    </p>
+
+    <h2>How to use this brain dump tool</h2>
+    <p>
+      Type everything on your mind into the box above — one thought per line. Don't
+      organize while you type; that's this tool's job. Click "Sort it for me" and
+      each thought gets categorized into Do Now, Deadline, Quick Task, Later, or
+      Not Sure. When you're happy with the result, download the sorted list as a PDF.
+      Everything runs in your browser — nothing is saved or sent anywhere.
+    </p>
+
+    <h2>Who is this tool for?</h2>
+    <p>
+      This brain dump tool is for anyone who feels overwhelmed by scattered thoughts
+      and to-do lists — people with ADHD, busy students, and adults juggling work and
+      home. If you've ever stared at a full to-do list and felt worse, this gives you
+      a quick, private way to get everything out and find your next step.
+    </p>
+
+    <h2>Brain dump frequently asked questions</h2>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="tool-related-links">
+    <h2>Keep going</h2>
+    <div class="related-grid">
+      {
+        brainDumpPrintable && (
+          <a class="rel-card" href={`/printables/${brainDumpPrintable.slug}`}>
+            <strong>{brainDumpPrintable.title}</strong>
+            <span>{brainDumpPrintable.description}</span>
+          </a>
+        )
+      }
+      {
+        relatedGuides.slice(0, 4).map((g) => (
+          <a class="rel-card" href={`/guides/${g.slug}`}>
+            <strong>{g.title}</strong>
+            <span>{g.description}</span>
+          </a>
+        ))
+      }
+      <a class="rel-card" href="/printables">
+        <strong>Free printables</strong>
+        <span>Reusable ADHD printables you can print at home.</span>
+      </a>
+      <a class="rel-card" href="/guides">
+        <strong>Practical guides</strong>
+        <span>ADHD planning, routines, and study guides.</span>
+      </a>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .tool-seo {
+    max-width: 900px;
+    margin: 1rem auto 3rem;
+    padding: 0 1.5rem;
+  }
+  .tool-seo h2 {
+    font-size: 1.4rem;
+    margin: 2.25rem 0 0.75rem;
+  }
+  .tool-seo > h2:first-child {
+    margin-top: 2.5rem;
+  }
+  .tool-seo p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+  }
+
+  .tool-related-links {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 2rem 1.5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .tool-related-links h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .rel-card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  .rel-card:hover {
+    border-color: var(--primary);
+  }
+  .rel-card strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .rel-card span {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+  }
+  .faq-item summary {
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: var(--display);
+    font-size: 1.05rem;
+  }
+  .faq-item p {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0.75rem 0 0;
+  }
+  @media (max-width: 700px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

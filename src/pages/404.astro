@@ -1,0 +1,103 @@
+---
+import Base from "../layouts/Base.astro";
+
+// 404 page — intentionally noindex so it never appears in search results.
+---
+
+<Base
+  title="Page not found"
+  description="The page you're looking for couldn't be found. Explore SteadyFocusCo's free tools, printables, and guides instead."
+  noindex
+>
+  <section class="nf">
+    <p class="eyebrow">404</p>
+    <h1>That page couldn't be found</h1>
+    <p class="lede">
+      The link may be outdated, or the page may have moved. Here are a few
+      useful places to go instead.
+    </p>
+
+    <div class="nf-grid">
+      <a class="nf-card" href="/">
+        <strong>Home</strong>
+        <span>ADHD planners, printables & productivity tools.</span>
+      </a>
+      <a class="nf-card" href="/tools">
+        <strong>Free tools</strong>
+        <span>Brain dump, weekly reset, and morning routine builder.</span>
+      </a>
+      <a class="nf-card" href="/printables">
+        <strong>Free printables</strong>
+        <span>Reusable planning sheets you can print at home.</span>
+      </a>
+      <a class="nf-card" href="/guides">
+        <strong>Guides</strong>
+        <span>Practical ADHD planning and study guides.</span>
+      </a>
+      <a class="nf-card" href="/shop">
+        <strong>Shop</strong>
+        <span>ADHD planners and printable systems on Etsy.</span>
+      </a>
+      <a class="nf-card" href="/about">
+        <strong>About</strong>
+        <span>What SteadyFocusCo is and who it's for.</span>
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    max-width: 760px;
+    margin: 4rem auto 5rem;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.5rem;
+  }
+  .nf h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+  .nf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    text-align: left;
+  }
+  .nf-card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  .nf-card:hover {
+    border-color: var(--primary);
+  }
+  .nf-card strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .nf-card span {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+</style>

@@ -1,12 +1,53 @@
 ---
 import Base from "../../layouts/Base.astro";
-import {
-  printables,
-  toolBySlug,
-  etsyLink,
-  type Printable,
-} from "../../data/site";
+import { printables, toolBySlug, etsyLink, guides } from "../../data/site";
+import type { Printable } from "../../data/site";
 import { productSchema } from "../../data/schema";
+
+interface PrintableContent {
+  whatItIs: string;
+  howToUse: string;
+  tips: string[];
+}
+
+const printableContent: Record<string, PrintableContent> = {
+  "adhd-brain-dump": {
+    whatItIs: "The ADHD Brain Dump Sheet is a one-page, reusable template for getting scattered thoughts out of your head and onto paper. It includes simple sorting columns - Do Now, Deadlines, Quick, Later - so a pile of thoughts becomes a short, startable list.",
+    howToUse: "Print the sheet (or open it on a tablet and annotate digitally). Set a timer for 5-10 minutes and write down everything on your mind, one thought per line. When the timer ends, sort each thought into its column. Start with the Do Now column - that's your immediate next step.",
+    tips: [
+      "Keep the sheet somewhere visible - a clipboard, the fridge, or your desk.",
+      "Do a brain dump at the same time each day so it becomes a routine, not a reaction.",
+      "It's okay if some thoughts land in 'Later' and stay there for a while.",
+    ],
+  },
+  "weekly-reset-sheet": {
+    whatItIs: "The Weekly Reset Sheet is a gentle one-page weekly planner. It has three priority slots at the top, a day-by-day grid for spreading tasks across the week, and a small wins box so you can see what went well.",
+    howToUse: "At the start of your week (Sunday evening or Monday morning), list your top three priorities. Then write the tasks you need to do into each day's box. Keep it short - if a day looks too full, move something. At the end of the week, note your small wins.",
+    tips: [
+      "Don't try to fill every day completely - leave space for the unexpected.",
+      "Review the sheet for a few minutes each morning so the plan stays visible.",
+      "Use the same sheet weekly or print a fresh one whenever it feels cluttered.",
+    ],
+  },
+  "homework-checklist": {
+    whatItIs: "The Homework / Assignment Checklist is a step-by-step printable that breaks a big assignment into small, checkable pieces. Instead of staring at one overwhelming task, you see a list of concrete steps to complete one at a time.",
+    howToUse: "Write the assignment name at the top, then break it into the smallest steps you can think of - read the instructions, gather notes, outline, draft section one, revise, submit. Check each piece off as you go. Completing small steps keeps momentum without the last-minute spiral.",
+    tips: [
+      "Write steps as actions, not outcomes - 'open the document' is easier to start than 'write the essay'.",
+      "If a step feels too big, break it into two smaller steps.",
+      "Keep the checklist visible while you work so you can see progress.",
+    ],
+  },
+  "morning-checklist": {
+    whatItIs: "The Morning Routine Checklist is a short, tick-as-you-go printable you can fill in with your own steps. It's designed to be simple enough to actually use - no long list, just the sequence that makes your morning work.",
+    howToUse: "Fill in the steps you want your morning to include - in the order that makes sense for you. Keep it short: five to eight steps is plenty. Print it and stick it where you'll see it (the mirror or the fridge works well), and tick each step as you go.",
+    tips: [
+      "Start with just three or four steps and add more once the routine sticks.",
+      "Put your checklist where you'll actually look at it in the morning.",
+      "Don't worry about perfect - a routine you use most days is better than a perfect one you abandon.",
+    ],
+  },
+};
 
 export function getStaticPaths() {
   return printables.map((p) => ({ params: { slug: p.slug } }));
@@ -30,6 +71,12 @@ const productData: Parameters<typeof productSchema>[1] = {
 };
 
 const productSchemaData = productSchema(siteBase, productData);
+
+const content = printableContent[printable.slug] ?? null;
+
+const relatedGuides = guides.filter((g) =>
+  g.clusters.some((c) => printable.clusters.includes(c)),
+);
 ---
 
 <Base
@@ -54,6 +101,63 @@ const productSchemaData = productSchema(siteBase, productData);
         )
       }
     </div>
+
+    {
+      content && (
+        <div class="prose">
+          <h2>What this printable does</h2>
+          <p>{content.whatItIs}</p>
+
+          <h2>How to use it</h2>
+          <p>{content.howToUse}</p>
+
+          <h2>Tips for making it stick</h2>
+          <ul>
+            {content.tips.map((tip) => (
+              <li>{tip}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </article>
 
+  {
+    relatedGuides.length > 0 && (
+      <aside class="related">
+        <h2>Related guides</h2>
+        <div class="related-grid">
+          {relatedGuides.map((g) => (
+            <a class="rel-card" href={`/guides/${g.slug}`}>
+              <strong>{g.title}</strong>
+              <span>{g.description}</span>
+            </a>
+          ))}
+        </div>
+      </aside>
+    )
+  }
 </Base>
+
+<style>
+  .printable { max-width: 760px; margin: 3rem auto 2.5rem; padding: 0 1.5rem; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem; }
+  .lede { font-size: 1.15rem; color: var(--ink-soft); margin: 0 0 1.5rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.5rem; }
+  .btn-print { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.4rem; background: var(--primary); border: none; border-radius: 100px; color: #fff; font-family: var(--body); font-size: 0.95rem; font-weight: 700; cursor: pointer; }
+  .btn-print:hover { background: var(--primary-dark); }
+  .btn-tool { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.4rem; background: var(--card); border: 1px solid var(--border); border-radius: 100px; color: var(--primary-dark); text-decoration: none; font-weight: 600; }
+  .prose h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; }
+  .prose p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 0 0 1.25rem; }
+  .prose ul { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; padding-left: 1.25rem; margin: 0 0 1.25rem; }
+  .prose li { margin-bottom: 0.5rem; }
+  .related { max-width: 1100px; margin: 0 auto 4rem; padding: 2rem 1.5rem 0; border-top: 1px solid var(--border); }
+  .related h2 { font-size: 1.25rem; margin-bottom: 1.25rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .rel-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-decoration: none; color: var(--ink); transition: border-color 0.15s; }
+  .rel-card:hover { border-color: var(--primary); }
+  .rel-card strong { display: block; font-family: var(--display); font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .rel-card span { color: var(--ink-soft); font-size: 0.92rem; }
+  @media (max-width: 520px) { .actions { flex-direction: column; align-items: stretch; } .btn-print, .btn-tool { justify-content: center; } }
+  @media print { .no-print { display: none !important; } .related, .site-header, .site-footer { display: none !important; } }
+</style>

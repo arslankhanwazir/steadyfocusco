@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T15:25:33.051Z",
-  "generatedAtEpochMs": 1786548333051,
+  "generatedAt": "2026-08-12T22:07:57.949Z",
+  "generatedAtEpochMs": 1786572477949,
   "generator": {
     "name": "Code Janitor",
     "feature": "workspace-memory"
@@ -14,7 +14,7 @@
   "workspace": {
     "name": "website",
     "root": "f:\\etsy\\website",
-    "activeFile": "src/pages/tools/morning-routine.astro",
+    "activeFile": "src/pages/tools/weekly-reset.astro",
     "refreshReason": "tracked-change",
     "outputFiles": {
       "markdown": "graphify-out/WORKSPACE_MEMORY.md",
@@ -22,21 +22,21 @@
       "structuredManifest": "workspace.json"
     },
     "suggestedStartingPoints": [
-      "src/pages/tools/morning-routine.astro",
-      "src/pages/tools/brain-dump.astro",
       "src/pages/tools/weekly-reset.astro",
-      "src/layouts/Base.astro",
-      "src/pages/guides/[slug].astro",
-      "src/pages/index.astro",
       "src/pages/printables/[slug].astro",
+      "src/pages/guides/[slug].astro",
+      "src/data/schema.ts",
+      "src/pages/tools/brain-dump.astro",
+      "src/pages/tools/morning-routine.astro",
       "README.md",
+      "src/layouts/Base.astro",
       ".gitignore",
       "AGENTS.md",
       "package-lock.json",
       "package.json"
     ],
     "stats": {
-      "totalFiles": 115,
+      "totalFiles": 117,
       "topLevelAreas": [
         {
           "name": "pins-out",
@@ -44,11 +44,11 @@
         },
         {
           "name": "src",
-          "count": 25
+          "count": 26
         },
         {
           "name": "public",
-          "count": 20
+          "count": 21
         },
         {
           "name": "[root]",
@@ -78,7 +78,7 @@
         },
         {
           "name": ".astro",
-          "count": 17
+          "count": 18
         },
         {
           "name": ".json",
@@ -511,6 +511,12 @@
           "isKeyFile": false
         },
         {
+          "path": "public/og-default.svg",
+          "topLevelArea": "public",
+          "extension": ".svg",
+          "isKeyFile": false
+        },
+        {
           "path": "public/products/brain-dump-adults.png",
           "topLevelArea": "public",
           "extension": ".png",
@@ -697,6 +703,12 @@
           "isKeyFile": false
         },
         {
+          "path": "src/pages/404.astro",
+          "topLevelArea": "src",
+          "extension": ".astro",
+          "isKeyFile": false
+        },
+        {
           "path": "src/pages/about.astro",
           "topLevelArea": "src",
           "extension": ".astro",
@@ -852,9 +864,9 @@
     }
   },
   "currentStack": {
-    "lastActivityAt": "2026-08-12T15:25:26.377Z",
+    "lastActivityAt": "2026-08-12T22:07:53.980Z",
     "trackedChangeCount": 40,
-    "trackedFileSnapshotCount": 42,
+    "trackedFileSnapshotCount": 43,
     "changeTypeCounts": {
       "save": 40,
       "create": 0,
@@ -864,613 +876,612 @@
   },
   "trackedSnapshots": [
     {
-      "filePath": "src/pages/tools/morning-routine.astro",
-      "updatedAt": 1786548326377,
-      "lineCount": 26,
-      "charCount": 974,
-      "hash": "3a6db8abe09d",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from..."
-    },
-    {
-      "filePath": "src/pages/printables/[slug].astro",
-      "updatedAt": 1786547974118,
-      "lineCount": 58,
-      "charCount": 1559,
-      "hash": "fb86d12fad62",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / export functio..."
-    },
-    {
-      "filePath": "src/pages/guides/[slug].astro",
-      "updatedAt": 1786547252237,
-      "lineCount": 63,
-      "charCount": 1672,
-      "hash": "d3aa0a4b24d0",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / export function getStaticPaths() { / re..."
-    },
-    {
       "filePath": "src/pages/tools/weekly-reset.astro",
-      "updatedAt": 1786547155871,
-      "lineCount": 31,
-      "charCount": 1059,
-      "hash": "0344c29bfc9b",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema } from \"../...."
+      "updatedAt": 1786572473980,
+      "lineCount": 156,
+      "charCount": 7279,
+      "hash": "c9480ba5a463",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema, breadcrumbS..."
     },
     {
       "filePath": "src/pages/tools/brain-dump.astro",
-      "updatedAt": 1786547138238,
-      "lineCount": 31,
-      "charCount": 1054,
-      "hash": "04d98716cc1a",
-      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema } from \"../../da..."
+      "updatedAt": 1786572434821,
+      "lineCount": 228,
+      "charCount": 7612,
+      "hash": "651f317933f3",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema, breadcrumbSchem..."
+    },
+    {
+      "filePath": "src/pages/printables/[slug].astro",
+      "updatedAt": 1786572207682,
+      "lineCount": 163,
+      "charCount": 8405,
+      "hash": "a0f968e851c3",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../..."
+    },
+    {
+      "filePath": "src/pages/guides/[slug].astro",
+      "updatedAt": 1786572046502,
+      "lineCount": 322,
+      "charCount": 16517,
+      "hash": "d9003c8acabe",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /..."
+    },
+    {
+      "filePath": "src/data/schema.ts",
+      "updatedAt": 1786571820347,
+      "lineCount": 214,
+      "charCount": 6816,
+      "hash": "1e035880ee17",
+      "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /..."
     },
     {
       "filePath": "README.md",
-      "updatedAt": 1786546561402,
-      "lineCount": 73,
-      "charCount": 2533,
-      "hash": "1efa80f3cdf0",
-      "preview": "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over..."
+      "updatedAt": 1786569904322,
+      "lineCount": 107,
+      "charCount": 4959,
+      "hash": "e98430f31df4",
+      "preview": "# SteadyFocusCo / ADHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and productivity resource for peo..."
     },
     {
-      "filePath": "src/pages/about.astro",
-      "updatedAt": 1786544151429,
-      "lineCount": 169,
-      "charCount": 6566,
-      "hash": "0a55425f2e2c",
-      "preview": "--- / import Base from \"../layouts/Base.astro\"; / import { webPageSchema, breadcrumbSchema } from \"../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchemas = webP..."
+      "filePath": "src/pages/404.astro",
+      "updatedAt": 1786569867314,
+      "lineCount": 103,
+      "charCount": 2739,
+      "hash": "ef263a85b9bf",
+      "preview": "--- / import Base from \"../layouts/Base.astro\"; / // 404 page — intentionally noindex so it never appears in search results. / --- / <Base / title=\"Page not found\" / description=\"The page you're looking for couldn't b..."
     },
     {
-      "filePath": "src/pages/index.astro",
-      "updatedAt": 1786544075206,
-      "lineCount": 1289,
-      "charCount": 35968,
-      "hash": "54d32f52da0c",
-      "preview": "--- / import Base from '../layouts/Base.astro'; / import { etsyLink } from '../data/site'; / import { webPageSchema } from '../data/schema'; / const tools = [ / { name: \"Brain Dump\", desc: \"Clear the noise.\", href: \"/..."
+      "filePath": "src/pages/tools/morning-routine.astro",
+      "updatedAt": 1786569837135,
+      "lineCount": 145,
+      "charCount": 6773,
+      "hash": "54939ef28442",
+      "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema, bread..."
     }
   ],
   "recentChanges": [
     {
       "type": "save",
-      "path": "src/pages/tools/morning-routine.astro",
-      "toPath": "",
-      "summary": "Line 5: replaced 19 lines with 21 lines.",
-      "recordedAt": "2026-08-12T15:25:26.377Z",
-      "recordedAtEpochMs": 1786548326377,
-      "before": {
-        "kind": "text",
-        "lineCount": 24,
-        "charCount": 944,
-        "hash": "f77b0479bbcf",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from...",
-        "updatedAt": 1786548326376
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 26,
-        "charCount": 974,
-        "hash": "3a6db8abe09d",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from...",
-        "updatedAt": 1786548326377
-      },
-      "diff": {
-        "lineStart": 5,
-        "removedLines": 19,
-        "addedLines": 21,
-        "summary": "Line 5: replaced 19 lines with 21 lines.",
-        "beforeFragment": "import { webApplicationSchema } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / <Base / title=\"Morning Routine Builder\" /...",
-        "afterFragment": "import { webApplicationSchema } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const toolSchema = webApplicationSchema(si..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/printables/[slug].astro",
-      "toPath": "",
-      "summary": "Line 29: replaced 4 lines with 1 line.",
-      "recordedAt": "2026-08-12T15:19:34.118Z",
-      "recordedAtEpochMs": 1786547974118,
-      "before": {
-        "kind": "text",
-        "lineCount": 61,
-        "charCount": 1670,
-        "hash": "1589d7c74b6c",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / export functio...",
-        "updatedAt": 1786547974118
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 58,
-        "charCount": 1559,
-        "hash": "fb86d12fad62",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / export functio...",
-        "updatedAt": 1786547974118
-      },
-      "diff": {
-        "lineStart": 29,
-        "removedLines": 4,
-        "addedLines": 1,
-        "summary": "Line 29: replaced 4 lines with 1 line.",
-        "beforeFragment": "image: printable.image ?? null, / offerUrl: shopHref, / price: printable.price ?? null, / currency: printable.currency ?? null",
-        "afterFragment": "offerUrl: shopHref"
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/guides/[slug].astro",
-      "toPath": "",
-      "summary": "Line 28: replaced 27 lines with 25 lines.",
-      "recordedAt": "2026-08-12T15:07:32.237Z",
-      "recordedAtEpochMs": 1786547252237,
-      "before": {
-        "kind": "text",
-        "lineCount": 65,
-        "charCount": 1786,
-        "hash": "179fff7e7daa",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / export function getStaticPaths() { / re...",
-        "updatedAt": 1786547252237
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 63,
-        "charCount": 1672,
-        "hash": "d3aa0a4b24d0",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / export function getStaticPaths() { / re...",
-        "updatedAt": 1786547252237
-      },
-      "diff": {
-        "lineStart": 28,
-        "removedLines": 27,
-        "addedLines": 25,
-        "summary": "Line 28: replaced 27 lines with 25 lines.",
-        "beforeFragment": "datePublished: guide.publishedAt ?? undefined, / dateModified: guide.updatedAt ?? undefined, / }; / const breadcrumbData = { / path: `/guides/${guide.slug}`, / }; / const articl...",
-        "afterFragment": "}; / const breadcrumbData = { / path: `/guides/${guide.slug}`, / }; / const articleSchemaData = articleSchema(siteBase, articleData); / const breadcrumbSchemaData = breadcrumbSc..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/guides/[slug].astro",
-      "toPath": "",
-      "summary": "Line 1: replaced 62 lines with 64 lines.",
-      "recordedAt": "2026-08-12T15:06:44.504Z",
-      "recordedAtEpochMs": 1786547204504,
-      "before": {
-        "kind": "text",
-        "lineCount": 63,
-        "charCount": 1779,
-        "hash": "54699ff701ad",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / export function getStaticPaths() { / return g...",
-        "updatedAt": 1786547204504
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 65,
-        "charCount": 1786,
-        "hash": "179fff7e7daa",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / export function getStaticPaths() { / re...",
-        "updatedAt": 1786547204504
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 62,
-        "addedLines": 64,
-        "summary": "Line 1: replaced 62 lines with 64 lines.",
-        "beforeFragment": "import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / expor...",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/printables/[slug].astro",
-      "toPath": "",
-      "summary": "Line 1: replaced 58 lines with 60 lines.",
-      "recordedAt": "2026-08-12T15:06:15.251Z",
-      "recordedAtEpochMs": 1786547175251,
-      "before": {
-        "kind": "text",
-        "lineCount": 59,
-        "charCount": 1663,
-        "hash": "ea7914df64df",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / export function getS...",
-        "updatedAt": 1786547175251
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 61,
-        "charCount": 1670,
-        "hash": "1589d7c74b6c",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / export functio...",
-        "updatedAt": 1786547175251
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 58,
-        "addedLines": 60,
-        "summary": "Line 1: replaced 58 lines with 60 lines.",
-        "beforeFragment": "import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \".....",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } fr..."
-      }
-    },
-    {
-      "type": "save",
       "path": "src/pages/tools/weekly-reset.astro",
       "toPath": "",
-      "summary": "Line 1: replaced 28 lines with 30 lines.",
-      "recordedAt": "2026-08-12T15:05:55.871Z",
-      "recordedAtEpochMs": 1786547155871,
+      "summary": "Line 22: replaced 143 lines with 135 lines.",
+      "recordedAt": "2026-08-12T22:07:53.980Z",
+      "recordedAtEpochMs": 1786572473980,
       "before": {
         "kind": "text",
-        "lineCount": 29,
-        "charCount": 1052,
-        "hash": "d3ac3721554b",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema } from \"../../data...",
-        "updatedAt": 1786547155871
+        "lineCount": 164,
+        "charCount": 7442,
+        "hash": "a023f7ae7d4d",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema, breadcrumbS...",
+        "updatedAt": 1786572473980
       },
       "after": {
         "kind": "text",
-        "lineCount": 31,
-        "charCount": 1059,
-        "hash": "0344c29bfc9b",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema } from \"../....",
-        "updatedAt": 1786547155871
+        "lineCount": 156,
+        "charCount": 7279,
+        "hash": "c9480ba5a463",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema, breadcrumbS...",
+        "updatedAt": 1786572473980
       },
       "diff": {
-        "lineStart": 1,
-        "removedLines": 28,
-        "addedLines": 30,
-        "summary": "Line 1: replaced 28 lines with 30 lines.",
-        "beforeFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import {...",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / im..."
+        "lineStart": 22,
+        "removedLines": 143,
+        "addedLines": 135,
+        "summary": "Line 22: replaced 143 lines with 135 lines.",
+        "beforeFragment": "<<<<<<< HEAD / ======= / const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: \"Home\", path: \"/\" }, / { name: \"Tools\", path: \"/tools\" }, / { name: \"Weekly Reset\", path:...",
+        "afterFragment": "const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: \"Home\", path: \"/\" }, / { name: \"Tools\", path: \"/tools\" }, / { name: \"Weekly Reset\", path: \"/tools/weekly-reset\" },..."
       }
     },
     {
       "type": "save",
       "path": "src/pages/tools/brain-dump.astro",
       "toPath": "",
-      "summary": "Line 1: replaced 28 lines with 30 lines.",
-      "recordedAt": "2026-08-12T15:05:38.238Z",
-      "recordedAtEpochMs": 1786547138238,
+      "summary": "Line 22: replaced 215 lines with 207 lines.",
+      "recordedAt": "2026-08-12T22:07:14.821Z",
+      "recordedAtEpochMs": 1786572434821,
       "before": {
         "kind": "text",
-        "lineCount": 29,
-        "charCount": 1047,
-        "hash": "d6f70a618218",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema } from \"../../data/sch...",
-        "updatedAt": 1786547138238
+        "lineCount": 236,
+        "charCount": 7775,
+        "hash": "002855d717cc",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema, breadcrumbSchem...",
+        "updatedAt": 1786572434821
       },
       "after": {
         "kind": "text",
-        "lineCount": 31,
-        "charCount": 1054,
-        "hash": "04d98716cc1a",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema } from \"../../da...",
-        "updatedAt": 1786547138238
+        "lineCount": 228,
+        "charCount": 7612,
+        "hash": "651f317933f3",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema, breadcrumbSchem...",
+        "updatedAt": 1786572434821
       },
       "diff": {
-        "lineStart": 1,
-        "removedLines": 28,
-        "addedLines": 30,
-        "summary": "Line 1: replaced 28 lines with 30 lines.",
-        "beforeFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { web...",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import..."
+        "lineStart": 22,
+        "removedLines": 215,
+        "addedLines": 207,
+        "summary": "Line 22: replaced 215 lines with 207 lines.",
+        "beforeFragment": "<<<<<<< HEAD / ======= / const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: \"Home\", path: \"/\" }, / { name: \"Tools\", path: \"/tools\" }, / { name: \"Brain Dump\", path: \"/...",
+        "afterFragment": "const toolBreadcrumb = breadcrumbSchema(siteBase, [ / { name: \"Home\", path: \"/\" }, / { name: \"Tools\", path: \"/tools\" }, / { name: \"Brain Dump\", path: \"/tools/brain-dump\" }, / ])..."
       }
     },
     {
       "type": "save",
-      "path": "src/pages/tools/morning-routine.astro",
+      "path": "src/pages/printables/[slug].astro",
       "toPath": "",
-      "summary": "Line 17: inserted 2 lines.",
-      "recordedAt": "2026-08-12T15:04:47.140Z",
-      "recordedAtEpochMs": 1786547087140,
+      "summary": "Line 74: replaced 171 lines with 90 lines.",
+      "recordedAt": "2026-08-12T22:03:27.682Z",
+      "recordedAtEpochMs": 1786572207682,
       "before": {
         "kind": "text",
-        "lineCount": 23,
-        "charCount": 907,
-        "hash": "664d9fd92373",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from...",
-        "updatedAt": 1786547087140
+        "lineCount": 244,
+        "charCount": 13949,
+        "hash": "a08dff3feb03",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786572207682
       },
       "after": {
         "kind": "text",
-        "lineCount": 24,
-        "charCount": 944,
-        "hash": "f77b0479bbcf",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from...",
-        "updatedAt": 1786547087140
+        "lineCount": 163,
+        "charCount": 8405,
+        "hash": "a0f968e851c3",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786572207682
       },
       "diff": {
-        "lineStart": 17,
-        "removedLines": 0,
+        "lineStart": 74,
+        "removedLines": 171,
+        "addedLines": 90,
+        "summary": "Line 74: replaced 171 lines with 90 lines.",
+        "beforeFragment": "--- / const content = printableContent[printable.slug] ?? null; / const relatedGuides = guides.filter((g) => / g.clusters.some((c) => printable.clusters.includes(c)), / ); / ---...",
+        "afterFragment": "const content = printableContent[printable.slug] ?? null; / const relatedGuides = guides.filter((g) => / g.clusters.some((c) => printable.clusters.includes(c)), / ); / --- / <Ba..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 124: replaced 4 lines with 79 lines.",
+      "recordedAt": "2026-08-12T22:02:53.982Z",
+      "recordedAtEpochMs": 1786572173982,
+      "before": {
+        "kind": "text",
+        "lineCount": 169,
+        "charCount": 8497,
+        "hash": "8613d894a72b",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786572173982
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 244,
+        "charCount": 13949,
+        "hash": "a08dff3feb03",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786572173982
+      },
+      "diff": {
+        "lineStart": 124,
+        "removedLines": 4,
+        "addedLines": 79,
+        "summary": "Line 124: replaced 4 lines with 79 lines.",
+        "beforeFragment": "</article> / <<<<<<< HEAD / </Bas",
+        "afterFragment": "{ / relatedGuides.length > 0 && ( / <aside class=\"related\"> / <h2>Related guides</h2> / <div class=\"related-grid\"> / {relatedGuides.map((g) => ( / <a class=\"rel-card\" href={`/gu..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/guides/[slug].astro",
+      "toPath": "",
+      "summary": "Line 29: replaced 334 lines with 294 lines.",
+      "recordedAt": "2026-08-12T22:00:46.502Z",
+      "recordedAtEpochMs": 1786572046502,
+      "before": {
+        "kind": "text",
+        "lineCount": 362,
+        "charCount": 17860,
+        "hash": "d3ba65364e8a",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786572046501
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 322,
+        "charCount": 16517,
+        "hash": "d9003c8acabe",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786572046502
+      },
+      "diff": {
+        "lineStart": 29,
+        "removedLines": 334,
+        "addedLines": 294,
+        "summary": "Line 29: replaced 334 lines with 294 lines.",
+        "beforeFragment": "`You can do a brain dump on paper, or use the free SteadyFocusCo brain dump tool. It takes the thoughts you type and automatically sorts them into Do Now, Deadline, Quick Task,...",
+        "afterFragment": "\"You can do a brain dump on paper, or use the free SteadyFocusCo brain dump tool. It takes the thoughts you type and automatically sorts them into Do Now, Deadline, Quick Task,..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/guides/[slug].astro",
+      "toPath": "",
+      "summary": "Line 231: replaced 2 lines with 34 lines.",
+      "recordedAt": "2026-08-12T21:58:11.422Z",
+      "recordedAtEpochMs": 1786571891422,
+      "before": {
+        "kind": "text",
+        "lineCount": 330,
+        "charCount": 16676,
+        "hash": "3af1a83fd16a",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786571891422
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 362,
+        "charCount": 17860,
+        "hash": "d3ba65364e8a",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786571891422
+      },
+      "diff": {
+        "lineStart": 231,
+        "removedLines": 2,
+        "addedLines": 34,
+        "summary": "Line 231: replaced 2 lines with 34 lines.",
+        "beforeFragment": "<<<<<<< HEAD / ---",
+        "afterFragment": "const content = guideContent[guide.slug] ?? { sections: [] }; / // Related guides from the same cluster(s), excluding the current one. / const relatedGuides = guides / .filter((..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/data/schema.ts",
+      "toPath": "",
+      "summary": "Line 26: replaced 23 lines with 12 lines.",
+      "recordedAt": "2026-08-12T21:57:00.347Z",
+      "recordedAtEpochMs": 1786571820347,
+      "before": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 7179,
+        "hash": "5a0c13c69efe",
+        "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /...",
+        "updatedAt": 1786571820347
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 214,
+        "charCount": 6816,
+        "hash": "1e035880ee17",
+        "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /...",
+        "updatedAt": 1786571820347
+      },
+      "diff": {
+        "lineStart": 26,
+        "removedLines": 23,
+        "addedLines": 12,
+        "summary": "Line 26: replaced 23 lines with 12 lines.",
+        "beforeFragment": "// Official Etsy shop — a real, owned property of the brand. / sameAs: [\"https://steadyfocusco.etsy.com\"], / >>>>>>> 2c17bad (Complete SEO and GEO optimization) / }; / } / /** T...",
+        "afterFragment": "/** The brand — the shared root of the schema graph. */ / export function organizationSchema(base: string) { / return { / \"@context\": \"https://schema.org\", / \"@type\": \"Organizat..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/data/schema.ts",
+      "toPath": "",
+      "summary": "Line 26: replaced 17 lines with 19 lines.",
+      "recordedAt": "2026-08-12T21:54:44.108Z",
+      "recordedAtEpochMs": 1786571684108,
+      "before": {
+        "kind": "text",
+        "lineCount": 223,
+        "charCount": 7173,
+        "hash": "959355333fc7",
+        "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /...",
+        "updatedAt": 1786571684107
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 225,
+        "charCount": 7179,
+        "hash": "5a0c13c69efe",
+        "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /...",
+        "updatedAt": 1786571684108
+      },
+      "diff": {
+        "lineStart": 26,
+        "removedLines": 17,
+        "addedLines": 19,
+        "summary": "Line 26: replaced 17 lines with 19 lines.",
+        "beforeFragment": "/** The brand — the shared root of the schema graph. */ / export function organizationSchema(base: string) { / return { / \"@context\": \"https://schema.org\", / \"@type\": \"Organizat...",
+        "afterFragment": "// Official Etsy shop — a real, owned property of the brand. / sameAs: [\"https://steadyfocusco.etsy.com\"], / >>>>>>> 2c17bad (Complete SEO and GEO optimization) / }; / } / /** T..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/data/schema.ts",
+      "toPath": "",
+      "summary": "Line 35: replaced 3 lines with 8 lines.",
+      "recordedAt": "2026-08-12T21:53:41.150Z",
+      "recordedAtEpochMs": 1786571621150,
+      "before": {
+        "kind": "text",
+        "lineCount": 218,
+        "charCount": 6941,
+        "hash": "2a96896fdbb5",
+        "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /...",
+        "updatedAt": 1786571621149
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 223,
+        "charCount": 7173,
+        "hash": "959355333fc7",
+        "preview": "// Centralized JSON-LD schema builders for SteadyFocusCo. / // / // Every builder returns schema.org objects which can be joined into a / // connected graph via stable @id references, so the brand, website, pages, / /...",
+        "updatedAt": 1786571621150
+      },
+      "diff": {
+        "lineStart": 35,
+        "removedLines": 3,
+        "addedLines": 8,
+        "summary": "Line 35: replaced 3 lines with 8 lines.",
+        "beforeFragment": "description: SITE_DESCRIPTION, / <<<<<<< HEAD / sameAs: [ETSY_SHOP_URL],",
+        "afterFragment": "// Official Etsy shop — a real, owned property of the brand. / sameAs: [\"https://steadyfocusco.etsy.com\"], / >>>>>>> 2c17bad (Complete SEO and GEO optimization) / }; / descripti..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/guides/[slug].astro",
+      "toPath": "",
+      "summary": "Line 7: removed 2 lines.",
+      "recordedAt": "2026-08-12T21:46:24.757Z",
+      "recordedAtEpochMs": 1786571184757,
+      "before": {
+        "kind": "text",
+        "lineCount": 324,
+        "charCount": 16540,
+        "hash": "4a584f76dd75",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / guidesForCluster, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"....",
+        "updatedAt": 1786571184756
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 323,
+        "charCount": 16519,
+        "hash": "a7d4b33ff643",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / guides, / etsyLink, / toolBySlug, / toolsForCluster, / } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; /...",
+        "updatedAt": 1786571184757
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 2,
+        "addedLines": 0,
+        "summary": "Line 7: removed 2 lines.",
+        "beforeFragment": "guidesForCluster,",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 7: replaced 1 line with 7 lines.",
+      "recordedAt": "2026-08-12T21:40:01.917Z",
+      "recordedAtEpochMs": 1786570801917,
+      "before": {
+        "kind": "text",
+        "lineCount": 157,
+        "charCount": 8275,
+        "hash": "d75e6acef01e",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786570801917
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 163,
+        "charCount": 8405,
+        "hash": "a0f968e851c3",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786570801917
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 1,
+        "addedLines": 7,
+        "summary": "Line 7: replaced 1 line with 7 lines.",
+        "beforeFragment": "const printableContent",
+        "afterFragment": "interface PrintableContent { / whatItIs: string; / howToUse: string; / tips: string[]; / } / const printableContent: Record<string, PrintableContent>"
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 7: replaced 268 lines with 151 lines.",
+      "recordedAt": "2026-08-12T21:29:20.796Z",
+      "recordedAtEpochMs": 1786570160796,
+      "before": {
+        "kind": "text",
+        "lineCount": 274,
+        "charCount": 9015,
+        "hash": "f862b6a6ad3f",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786570160795
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 157,
+        "charCount": 8275,
+        "hash": "d75e6acef01e",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786570160796
+      },
+      "diff": {
+        "lineStart": 7,
+        "removedLines": 268,
+        "addedLines": 151,
+        "summary": "Line 7: replaced 268 lines with 151 lines.",
+        "beforeFragment": "// Per-printable editorial content — practical, useful, and grounded in what / // each sheet actually does. No invented claims. / const printableContent = { / \"adhd-brain-dump\":...",
+        "afterFragment": "const printableContent = { / \"adhd-brain-dump\": { / whatItIs: \"The ADHD Brain Dump Sheet is a one-page, reusable template for getting scattered thoughts out of your head and ont..."
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 9: removed 4 lines.",
+      "recordedAt": "2026-08-12T21:27:12.365Z",
+      "recordedAtEpochMs": 1786570032365,
+      "before": {
+        "kind": "text",
+        "lineCount": 277,
+        "charCount": 9096,
+        "hash": "ccedb7f490e5",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786570032365
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 274,
+        "charCount": 9015,
+        "hash": "f862b6a6ad3f",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786570032365
+      },
+      "diff": {
+        "lineStart": 9,
+        "removedLines": 4,
+        "addedLines": 0,
+        "summary": "Line 9: removed 4 lines.",
+        "beforeFragment": ": Record< / string, / { whatItIs: string; howToUse: string; tips: string[] } / >",
+        "afterFragment": ""
+      }
+    },
+    {
+      "type": "save",
+      "path": "src/pages/printables/[slug].astro",
+      "toPath": "",
+      "summary": "Line 3: replaced 7 lines with 2 lines.",
+      "recordedAt": "2026-08-12T21:26:11.697Z",
+      "recordedAtEpochMs": 1786569971697,
+      "before": {
+        "kind": "text",
+        "lineCount": 282,
+        "charCount": 9078,
+        "hash": "9014bb483c58",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / guides, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / // P...",
+        "updatedAt": 1786569971693
+      },
+      "after": {
+        "kind": "text",
+        "lineCount": 277,
+        "charCount": 9096,
+        "hash": "ccedb7f490e5",
+        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable } from \"../../data/site\"; / import { productSchema } from \"../...",
+        "updatedAt": 1786569971697
+      },
+      "diff": {
+        "lineStart": 3,
+        "removedLines": 7,
         "addedLines": 2,
-        "summary": "Line 17: inserted 2 lines.",
-        "beforeFragment": "",
-        "afterFragment": "path: \"/tools/morning-routine\","
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/tools/morning-routine.astro",
-      "toPath": "",
-      "summary": "Line 1: replaced 20 lines with 22 lines.",
-      "recordedAt": "2026-08-12T15:04:27.170Z",
-      "recordedAtEpochMs": 1786547067170,
-      "before": {
-        "kind": "text",
-        "lineCount": 21,
-        "charCount": 900,
-        "hash": "a49d54306f97",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from \"../....",
-        "updatedAt": 1786547067170
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 23,
-        "charCount": 907,
-        "hash": "664d9fd92373",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / import { webApplicationSchema } from...",
-        "updatedAt": 1786547067170
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 20,
-        "addedLines": 22,
-        "summary": "Line 1: replaced 20 lines with 22 lines.",
-        "beforeFragment": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"; / im...",
-        "afterFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import MorningRoutine from \"../../components/MorningRoutine.tsx\"..."
+        "summary": "Line 3: replaced 7 lines with 2 lines.",
+        "beforeFragment": "printables, / toolBySlug, / etsyLink, / guides, / type Printable,",
+        "afterFragment": "printables, toolBySlug, etsyLink, guides } from \"../../data/site\"; / import type { Printable"
       }
     },
     {
       "type": "save",
       "path": "README.md",
       "toPath": "",
-      "summary": "Line 1: replaced 43 lines with 72 lines.",
-      "recordedAt": "2026-08-12T14:56:01.402Z",
-      "recordedAtEpochMs": 1786546561402,
+      "summary": "Line 3: replaced 70 lines with 104 lines.",
+      "recordedAt": "2026-08-12T21:25:04.322Z",
+      "recordedAtEpochMs": 1786569904322,
       "before": {
-        "kind": "text",
-        "lineCount": 44,
-        "charCount": 1601,
-        "hash": "ac5807090cb6",
-        "preview": "# Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure / Inside of your Astro project, you'll...",
-        "updatedAt": 1786546561402
-      },
-      "after": {
         "kind": "text",
         "lineCount": 73,
         "charCount": 2533,
         "hash": "1efa80f3cdf0",
         "preview": "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over...",
-        "updatedAt": 1786546561402
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 43,
-        "addedLines": 72,
-        "summary": "Line 1: replaced 43 lines with 72 lines.",
-        "beforeFragment": "Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure...",
-        "afterFragment": "SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and pr..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/tools/weekly-reset.astro",
-      "toPath": "",
-      "summary": "Line 4: replaced 19 lines with 22 lines.",
-      "recordedAt": "2026-08-12T14:55:40.119Z",
-      "recordedAtEpochMs": 1786546540119,
-      "before": {
-        "kind": "text",
-        "lineCount": 26,
-        "charCount": 1025,
-        "hash": "1f98f21001f2",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webPageSchema, SITE_DESCRIPTION } from...",
-        "updatedAt": 1786546540119
+        "updatedAt": 1786569904322
       },
       "after": {
         "kind": "text",
-        "lineCount": 29,
-        "charCount": 1052,
-        "hash": "d3ac3721554b",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import WeeklyReset from \"../../components/WeeklyReset.tsx\"; / import { webApplicationSchema } from \"../../data...",
-        "updatedAt": 1786546540119
+        "lineCount": 107,
+        "charCount": 4959,
+        "hash": "e98430f31df4",
+        "preview": "# SteadyFocusCo / ADHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and productivity resource for peo...",
+        "updatedAt": 1786569904322
       },
       "diff": {
-        "lineStart": 4,
-        "removedLines": 19,
-        "addedLines": 22,
-        "summary": "Line 4: replaced 19 lines with 22 lines.",
-        "beforeFragment": "import { webPageSchema, SITE_DESCRIPTION } from \"../../data/schema\"; / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\/$/, \"\"); / const pageSchema = webPageSchem...",
-        "afterFragment": "import { webApplicationSchema } from \"../../data/schema\"; / export function getStaticPaths() { / return []; / } / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/tools/brain-dump.astro",
-      "toPath": "",
-      "summary": "Line 4: replaced 4 lines with 21 lines.",
-      "recordedAt": "2026-08-12T14:54:37.364Z",
-      "recordedAtEpochMs": 1786546477364,
-      "before": {
-        "kind": "text",
-        "lineCount": 12,
-        "charCount": 457,
-        "hash": "7e6840058afc",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / <Base / title=\"Brain Dump tool\" / description=\"Free...",
-        "updatedAt": 1786546477364
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 29,
-        "charCount": 1047,
-        "hash": "d6f70a618218",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import ToolShell from \"../../components/ToolShell.astro\"; / import BrainDump from \"../../components/BrainDump.tsx\"; / import { webApplicationSchema } from \"../../data/sch...",
-        "updatedAt": 1786546477364
-      },
-      "diff": {
-        "lineStart": 4,
-        "removedLines": 4,
-        "addedLines": 21,
-        "summary": "Line 4: replaced 4 lines with 21 lines.",
-        "beforeFragment": "<Base / title=\"Brain Dump tool\" / description=\"Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sur...",
-        "afterFragment": "import { webApplicationSchema } from \"../../data/schema\"; / export function getStaticPaths() { / return []; / } / const siteBase = new URL(\"/\", Astro.site).toString().replace(/\\..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/guides/[slug].astro",
-      "toPath": "",
-      "summary": "Line 1: replaced 154 lines with 63 lines.",
-      "recordedAt": "2026-08-12T14:53:21.633Z",
-      "recordedAtEpochMs": 1786546401633,
-      "before": {
-        "kind": "text",
-        "lineCount": 154,
-        "charCount": 4387,
-        "hash": "75a7870ce232",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ params: { slug: g.slug } })); / } / const { s...",
-        "updatedAt": 1786546401633
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 63,
-        "charCount": 1779,
-        "hash": "54699ff701ad",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / export function getStaticPaths() { / return g...",
-        "updatedAt": 1786546401633
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 154,
-        "addedLines": 63,
-        "summary": "Line 1: replaced 154 lines with 63 lines.",
-        "beforeFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / export function getStaticPaths() { / return guides.map((g) => ({ param...",
-        "afterFragment": "import Base from \"../../layouts/Base.astro\"; / import { guides, etsyLink } from \"../../data/site\"; / import { articleSchema, breadcrumbSchema } from \"../../data/schema\"; / expor..."
-      }
-    },
-    {
-      "type": "save",
-      "path": "src/pages/printables/[slug].astro",
-      "toPath": "",
-      "summary": "Line 1: replaced 365 lines with 59 lines.",
-      "recordedAt": "2026-08-12T14:51:20.258Z",
-      "recordedAtEpochMs": 1786546280258,
-      "before": {
-        "kind": "text",
-        "lineCount": 365,
-        "charCount": 8938,
-        "hash": "143cda39f4a6",
-        "preview": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPaths() { / return printables.map((p) => (...",
-        "updatedAt": 1786546280258
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 59,
-        "charCount": 1663,
-        "hash": "ea7914df64df",
-        "preview": "import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"../../data/schema\"; / export function getS...",
-        "updatedAt": 1786546280258
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 365,
-        "addedLines": 59,
-        "summary": "Line 1: replaced 365 lines with 59 lines.",
-        "beforeFragment": "--- / import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / export function getStaticPa...",
-        "afterFragment": "import Base from \"../../layouts/Base.astro\"; / import { / printables, / toolBySlug, / etsyLink, / type Printable, / } from \"../../data/site\"; / import { productSchema } from \"....."
-      }
-    },
-    {
-      "type": "save",
-      "path": "README.md",
-      "toPath": "",
-      "summary": "Line 1: replaced 43 lines with 72 lines.",
-      "recordedAt": "2026-08-12T14:35:55.190Z",
-      "recordedAtEpochMs": 1786545355190,
-      "before": {
-        "kind": "text",
-        "lineCount": 44,
-        "charCount": 1558,
-        "hash": "e04b6352dd03",
-        "preview": "# Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure / Inside of your Astro project, you'll...",
-        "updatedAt": 1786545355190
-      },
-      "after": {
-        "kind": "text",
-        "lineCount": 73,
-        "charCount": 2461,
-        "hash": "436222edb04e",
-        "preview": "# SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce over...",
-        "updatedAt": 1786545355190
-      },
-      "diff": {
-        "lineStart": 1,
-        "removedLines": 43,
-        "addedLines": 72,
-        "summary": "Line 1: replaced 43 lines with 72 lines.",
-        "beforeFragment": "Astro Starter Kit: Minimal / ```sh / npm create astro@latest -- --template minimal / ``` / > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun! / ## 🚀 Project Structure...",
-        "afterFragment": "SteadyFocusCo / A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and pr..."
+        "lineStart": 3,
+        "removedLines": 70,
+        "addedLines": 104,
+        "summary": "Line 3: replaced 70 lines with 104 lines.",
+        "beforeFragment": "digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides des...",
+        "afterFragment": "DHD-friendly planners, printable productivity resources, and free tools designed to reduce overwhelm and make planning easier. / SteadyFocusCo is a digital planning and producti..."
       }
     }
   ],
   "hotFiles": [
     {
-      "filePath": "src/pages/tools/brain-dump.astro",
-      "count": 8
-    },
-    {
-      "filePath": "src/pages/tools/morning-routine.astro",
-      "count": 7
-    },
-    {
-      "filePath": "src/pages/tools/weekly-reset.astro",
-      "count": 5
-    },
-    {
-      "filePath": "src/layouts/Base.astro",
-      "count": 3
+      "filePath": "src/pages/printables/[slug].astro",
+      "count": 10
     },
     {
       "filePath": "src/pages/guides/[slug].astro",
-      "count": 3
+      "count": 7
     },
     {
-      "filePath": "src/pages/index.astro",
-      "count": 3
+      "filePath": "src/data/schema.ts",
+      "count": 4
     },
     {
-      "filePath": "src/pages/printables/[slug].astro",
-      "count": 3
+      "filePath": "src/pages/tools/brain-dump.astro",
+      "count": 4
+    },
+    {
+      "filePath": "src/pages/tools/morning-routine.astro",
+      "count": 4
+    },
+    {
+      "filePath": "src/pages/tools/weekly-reset.astro",
+      "count": 4
     },
     {
       "filePath": "README.md",
+      "count": 3
+    },
+    {
+      "filePath": "src/layouts/Base.astro",
       "count": 2
     }
   ],
   "git": {
     "available": true,
-    "branch": "main",
-    "headSummary": "2026-08-12 69d89b2 fix: resolve remaining GEO schema errors",
-    "statusSummary": "10 modifieds, 4 untrackeds",
-    "changedFileCount": 14,
+    "branch": "HEAD",
+    "headSummary": "2026-08-12 142bd8f Add ETSY_SHOP_URL to organization schema",
+    "statusSummary": "7 modifieds, 1 added, 5 conflicteds",
+    "changedFileCount": 13,
     "statusLines": [
-      "M .vscode/extensions.json",
-      "M graphify-out/WORKSPACE_MEMORY.md",
-      "M src/data/products.json",
-      "M src/pages/about.astro",
-      "M src/pages/guides/[slug].astro",
-      "M src/pages/tools/brain-dump.astro",
-      "M src/pages/tools/morning-routine.astro",
-      "M src/pages/tools/weekly-reset.astro",
-      "M workspace.json",
-      "M workspacememory.md",
-      "?? 0001-chore-remove-stray-homepage-color-rebuild.patch-from.patch",
-      "?? 0001-fix-correct-same-zone-task-spacing-to-actually-clear.patch",
-      "?? 0001-fix-correct-scatter-state-formula-that-let-tasks-col.patch",
-      "?? bbb/"
+      "M  README.md",
+      "MM graphify-out/WORKSPACE_MEMORY.md",
+      "M  src/data/products.json",
+      "UU src/data/schema.ts",
+      "M  src/layouts/Base.astro",
+      "A  src/pages/404.astro",
+      "UU src/pages/guides/[slug].astro",
+      "UU src/pages/printables/[slug].astro",
+      "UU src/pages/tools/brain-dump.astro",
+      "M  src/pages/tools/morning-routine.astro",
+      "UU src/pages/tools/weekly-reset.astro",
+      "MM workspace.json",
+      "MM workspacememory.md"
     ],
     "error": ""
   },
   "github": {
     "available": true,
-    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 69d89b2 by Arslan Khan on 2026-08-12\n  fix: resolve remaining GEO schema errors\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
+    "summary": "GitHub Repository: arslankhanwazir/steadyfocusco\nVisibility: public | Default branch: main\nStars: 0 | Forks: 0 | Open issues: 0\n\nLatest commit on main:\n- 142bd8f by arslankhanwazir on 2026-08-12\n  Add ETSY_SHOP_URL to organization schema\n\nURL: https://github.com/arslankhanwazir/steadyfocusco"
   },
   "graphify": {
     "reportAvailable": false,

@@ -1,7 +1,202 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { guides, etsyLink } from "../../data/site";
+import {
+  guides,
+  etsyLink,
+  toolBySlug,
+  toolsForCluster,
+} from "../../data/site";
 import { articleSchema, breadcrumbSchema } from "../../data/schema";
+
+// Per-guide editorial content — written for the real resource each guide describes.
+// No fabricated claims, statistics, or medical credentials.
+const guideContent: Record<
+  string,
+  { sections: Array<{ heading: string; body: string }>; faqs?: Array<{ q: string; a: string }> }
+> = {
+  "how-to-brain-dump-when-overwhelmed": {
+    sections: [
+      {
+        heading: "Why a brain dump helps when you're overwhelmed",
+        body: "When everything feels urgent, it's usually because too much is being held in your head at once. A brain dump is a simple way to move scattered thoughts, tasks, reminders, and worries out of your head and into one place — so you can see what's actually there and sort it into actionable next steps. The point isn't to organize while you write; it's to get everything out first, then make sense of it after.",
+      },
+      {
+        heading: "How to do a brain dump",
+        body: "Set a short timer (5–10 minutes works well) and write down everything on your mind — one thought per line. Don't judge, sort, or filter. When the time is up, look at the list and group items into simple buckets: what needs doing now, what has a deadline, what's a quick task, what can wait, and what's unsure. This turns a pile of thoughts into a short, startable plan.",
+      },
+      {
+        heading: "Use the free brain dump tool",
+        body: "You can do a brain dump on paper, or use the free SteadyFocusCo brain dump tool. It takes the thoughts you type and automatically sorts them into Do Now, Deadline, Quick Task, Later, and Not Sure categories, then lets you download the sorted list as a PDF. It runs entirely in your browser — nothing is saved or sent anywhere.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is an ADHD brain dump?",
+        a: "An ADHD brain dump is a simple way to move scattered thoughts, tasks, reminders, and worries out of your head and into one place so they can be sorted into actionable next steps.",
+      },
+      {
+        q: "How does a brain dump help organize thoughts?",
+        a: "It separates the act of capturing thoughts from the act of organizing them. By getting everything out first, you can then sort items by what needs doing now, what has a deadline, what's quick, and what can wait — instead of carrying it all at once.",
+      },
+    ],
+  },
+  "weekly-planning-with-adhd": {
+    sections: [
+      {
+        heading: "Why traditional weekly planning fails",
+        body: "Standard planners assume you'll fill in every box, remember every appointment, and start tasks on command. For an ADHD brain, that's a lot of invisible demand. By week two, those planners often get abandoned because they add more to manage instead of reducing overwhelm.",
+      },
+      {
+        heading: "A lighter weekly reset that sticks",
+        body: "A weekly reset is shorter and gentler. You pick your top three priorities for the week, spread the rest across actual days, and keep one place to see it all. Because the system is small and the next step is obvious, it's much easier to keep up consistently.",
+      },
+      {
+        heading: "Use the free weekly reset tool",
+        body: "The SteadyFocusCo weekly reset tool turns a scattered brain-dump of tasks into a calm week. Add your tasks, and it sorts a top-3 priorities list and spreads each task across the days of the week. You can then download the plan as a PDF. It's private, browser-based, and free.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How does the weekly reset work?",
+        a: "You add the tasks for your week, and the tool pulls out a top-3 priorities list and spreads each task across the days of the week. The result is a calm, day-by-day plan you can download as a PDF.",
+      },
+      {
+        q: "Why is weekly planning harder with ADHD?",
+        a: "Traditional weekly planning relies on memory, sustained attention, and starting tasks on command — all of which can be unreliable when executive function is stretched. A simpler, shorter reset lowers the cost of starting and makes consistency easier.",
+      },
+    ],
+  },
+  "breaking-down-a-big-assignment": {
+    sections: [
+      {
+        heading: "Why big assignments feel impossible",
+        body: "A large assignment often feels like one giant, undefined blob. There's no obvious first step, so it's easy to avoid starting — which makes the deadline feel more overwhelming. The fix is to break the assignment into small, concrete pieces you can actually check off.",
+      },
+      {
+        heading: "How to break it down",
+        body: "Start by writing down the full task, then split it into the smallest steps you can think of — read the instructions, gather notes, outline, draft a section, revise, submit. Each step should be something you could start within a few minutes. Once you have the list, work through it one small piece at a time rather than trying to tackle the whole assignment at once.",
+      },
+      {
+        heading: "Tools and printables that help",
+        body: "The free homework breakdown approach pairs well with the printable homework / assignment checklist, which gives you a step-by-step sheet to check each piece off. For students, the ADHD homework tracker printable is a reusable daily system for tracking assignments without the last-minute spiral.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How do you break down a big assignment?",
+        a: "Write down the full task, then split it into the smallest startable steps — like reading the instructions, gathering notes, and outlining. Work through them one at a time and check each off as you go.",
+      },
+      {
+        q: "What makes a big assignment feel overwhelming?",
+        a: "It usually feels like one giant, undefined blob with no obvious first step. Breaking it into small, concrete pieces lowers the cost of starting and makes the work feel manageable.",
+      },
+    ],
+  },
+  "why-traditional-planners-dont-work": {
+    sections: [
+      {
+        heading: "What standard planners get wrong",
+        body: "Most traditional planners assume a brain that starts tasks on command, remembers what it can't see, and gets motivated by a blank grid. For many people — especially those with ADHD — those assumptions don't hold, so the planner gets abandoned rather than used.",
+      },
+      {
+        heading: "What to look for instead",
+        body: "An alternative planning system focuses on a few key things: capturing everything in one place, making the next step obvious, keeping the layout uncluttered, and being simple enough to use every day. The goal isn't to track more — it's to reduce overwhelm and make starting easier.",
+      },
+      {
+        heading: "Free ways to try a different approach",
+        body: "You can experiment with a brain dump, a weekly reset, or a morning routine builder — all free, browser-based tools. If a paper system would help, the printables and ADHD planners in the shop are built around the same principles.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why don't traditional planners work for ADHD?",
+        a: "Traditional planners assume you'll start tasks on command and remember what you can't see, and they often feel cluttered and demanding. For an ADHD brain, that adds to overwhelm instead of reducing it.",
+      },
+      {
+        q: "What should an ADHD-friendly planner look like?",
+        a: "It should be simple to use every day, make the next step obvious, and keep the layout uncluttered. It focuses on capturing and sorting thoughts rather than demanding perfect daily tracking.",
+      },
+    ],
+  },
+  "adhd-morning-routine-ideas": {
+    sections: [
+      {
+        heading: "Build a routine that fits your actual mornings",
+        body: "An ADHD-friendly morning routine doesn't have to be long or complicated. It just needs a few small, realistic steps ordered in a way that makes sense — wake up, hydrate, get ready, have breakfast, plan the day. When the sequence is short and the order is clear, it's much easier to follow through without relying on motivation.",
+      },
+      {
+        heading: "How to use a routine builder",
+        body: "List the steps you want your morning to include — in any order. Add a time if you want, like '10 min stretch.' The morning routine builder sorts your steps into a sensible order and stamps start times into a routine you can download as a PDF. Keep it short enough that it's actually doable most days.",
+      },
+      {
+        heading: "A printable version to keep visible",
+        body: "The ADHD morning routine checklist is a printable, tick-as-you-go version you can stick on the mirror or fridge. Seeing the sequence keeps it from becoming something you have to remember.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How can a morning routine be made easier to start?",
+        a: "Keep it short, pick a sensible order, and make the next step obvious. A simple checklist or a small set of steps you can follow without thinking lowers the cost of starting.",
+      },
+      {
+        q: "What should an ADHD morning routine include?",
+        a: "A few small, realistic steps like waking, hydrating, getting ready, eating, and planning the day. The exact steps depend on your life — the key is keeping it short enough to actually do.",
+      },
+    ],
+  },
+  "how-to-stop-procrastinating-on-homework": {
+    sections: [
+      {
+        heading: "Procrastination is usually overwhelm in disguise",
+        body: "When a task feels too big or too vague, the brain tends to avoid it. Procrastination on homework isn't usually laziness — it's a reaction to a starting cost that feels too high. The fix is to lower that cost by making the first step small and obvious.",
+      },
+      {
+        heading: "How to lower the starting cost",
+        body: "Break the assignment into the smallest possible first step — like opening the document, reading the prompt, or writing one sentence. Set a short timer and give yourself permission to stop after a few minutes. Often, the hardest part is just beginning, and once you've started, it's easier to keep going.",
+      },
+      {
+        heading: "Use the right resources",
+        body: "The printable homework / assignment checklist turns a big task into small, checkable pieces. For students, pairing this with a study planner can help you map out exam prep without the last-minute spiral.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why do I keep procrastinating on homework?",
+        a: "Procrastination is usually overwhelm in disguise — the task feels too big or vague to start. Lowering the starting cost with a tiny first step (like reading the prompt for a few minutes) makes it easier to begin.",
+      },
+      {
+        q: "How do I stop procrastinating on homework?",
+        a: "Break the assignment into the smallest possible first step, set a short timer, and allow yourself to start small. Pairing this with a step-by-step checklist helps you keep moving one piece at a time.",
+      },
+    ],
+  },
+  "executive-function-explained": {
+    sections: [
+      {
+        heading: "What executive function actually is",
+        body: "Executive function is the set of mental skills that help you start tasks, hold a plan in mind, and switch between steps. When these skills are stretched — as they often are with ADHD, stress, or a busy schedule — planning can feel genuinely harder, not because you're disorganized, but because the demand on the brain is higher.",
+      },
+      {
+        heading: "Why it makes planning hard",
+        body: "If starting a task is hard, you need the next step to be obvious. If holding a plan in mind is hard, you need to keep it visible. If switching between steps is hard, you need fewer, clearer transitions. This is why simple, visible planning tools help: they lower the demand on the very skills that are being stretched.",
+      },
+      {
+        heading: "Small supports that help",
+        body: "A brain dump reduces the load of holding everything in your head. A weekly reset makes the week's plan visible and startable. A short morning routine turns a chaotic start into a predictable sequence. Each one is a small support that works with your brain rather than against it.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is executive function in simple terms?",
+        a: "Executive function is the set of mental skills that help you start tasks, hold a plan in mind, and switch between steps. When these are stretched, planning feels harder.",
+      },
+      {
+        q: "How can executive function be supported?",
+        a: "By lowering demand: make the next step obvious, keep the plan visible, and reduce the number of decisions. Simple, visible planning tools are one practical way to do that.",
+      },
+    ],
+  },
+};
 
 export function getStaticPaths() {
   return guides.map((g) => ({ params: { slug: g.slug } }));
@@ -27,21 +222,34 @@ const articleData = {
   path: `/guides/${guide.slug}`,
 };
 
-const breadcrumbData = {
-  path: `/guides/${guide.slug}`,
-};
-
 const articleSchemaData = articleSchema(siteBase, articleData);
 const breadcrumbSchemaData = breadcrumbSchema(siteBase, [
   { name: "Home", path: "/" },
   { name: "Guides", path: "/guides" },
   { name: guide.title, path: `/guides/${guide.slug}` },
 ]);
+
+const content = guideContent[guide.slug] ?? { sections: [] };
+
+// Related guides from the same cluster(s), excluding the current one.
+const relatedGuides = guides
+  .filter((g) => g.slug !== guide.slug)
+  .filter((g) => g.clusters.some((c) => guide.clusters.includes(c)));
+
+// Related live tools from the guide's clusters.
+const relatedTools = toolsForCluster(guide.clusters[0]).filter(
+  (t) => t.status === "live",
+);
+
+const relatedTool = guide.relatedTool ? toolBySlug(guide.relatedTool) : null;
+const printableSlug = guide.relatedPrintable ?? null;
 ---
+
 <Base
   title={guide.title}
   description={guide.description}
   schema={[articleSchemaData, breadcrumbSchemaData]}
+  ogType="article"
 >
   <article class="guide">
     <p class="eyebrow">Guide</p>
@@ -49,15 +257,66 @@ const breadcrumbSchemaData = breadcrumbSchema(siteBase, [
     <p class="lede">{guide.description}</p>
 
     <div class="prose">
-      {guide.description}
+      {
+        content.sections.map((s) => (
+          <>
+            <h2>{s.heading}</h2>
+            <p>{s.body}</p>
+          </>
+        ))
+      }
 
-      <h2>What to expect</h2>
-      <p>
-        This guide covers the practical steps for {guide.title.toLowerCase()}. You'll
-        find a clear method you can use today, along with links to matching tools
-        and printables if you want to put it into practice immediately.
-      </p>
+      {
+        content.faqs && content.faqs.length > 0 && (
+          <>
+            <h2>Frequently asked questions</h2>
+            {content.faqs.map((f) => (
+              <>
+                <h3>{f.q}</h3>
+                <p>{f.a}</p>
+              </>
+            ))}
+          </>
+        )
+      }
     </div>
   </article>
 
+  <aside class="related">
+    <h2>Try it now</h2>
+    <div class="related-grid">
+      {
+        relatedTool && (
+          <a class="rel-card" href={`/tools/${relatedTool.slug}`}>
+            <strong>{relatedTool.name}</strong>
+            <span>{relatedTool.tagline}</span>
+          </a>
+        )
+      }
+      {
+        printableSlug && (
+          <a class="rel-card" href={`/printables/${printableSlug}`}>
+            <strong>Free printable</strong>
+            <span>Download a printable sheet for this guide.</span>
+          </a>
+        )
+      }
+      <a class="rel-card" href={shopHref} target="_blank" rel="sponsored noopener">
+        <strong>Reusable planner</strong>
+        <span>Related {guide.relatedProduct} available on Etsy.</span>
+      </a>
+    </div>
+
+    <h2>Related guides</h2>
+    <div class="related-grid">
+      {
+        relatedGuides.map((g) => (
+          <a class="rel-card" href={`/guides/${g.slug}`}>
+            <strong>{g.title}</strong>
+            <span>{g.description}</span>
+          </a>
+        ))
+      }
+    </div>
+  </aside>
 </Base>

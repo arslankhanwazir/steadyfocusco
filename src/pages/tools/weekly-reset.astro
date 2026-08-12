@@ -2,7 +2,8 @@
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import WeeklyReset from "../../components/WeeklyReset.tsx";
-import { webApplicationSchema } from "../../data/schema";
+import { webApplicationSchema, breadcrumbSchema, faqSchema } from "../../data/schema";
+import { guides, printables } from "../../data/site";
 
 export function getStaticPaths() {
   return [];
@@ -18,15 +19,138 @@ const toolData = {
 };
 
 const weeklyResetSchema = webApplicationSchema(siteBase, toolData);
+const toolBreadcrumb = breadcrumbSchema(siteBase, [
+  { name: "Home", path: "/" },
+  { name: "Tools", path: "/tools" },
+  { name: "Weekly Reset", path: "/tools/weekly-reset" },
+]);
+
+const faqs = [
+  {
+    question: "How does the weekly reset work?",
+    answer:
+      "You add the tasks for your week, and the tool identifies your top 3 priorities and spreads each task across the days of the week. The result is a calm, day-by-day plan you can download as a PDF.",
+  },
+  {
+    question: "Why is weekly planning harder with ADHD?",
+    answer:
+      "Traditional weekly planning relies on memory, sustained attention, and starting tasks on command — all of which can be unreliable when executive function is stretched. A simpler, shorter reset lowers the cost of starting and makes consistency easier.",
+  },
+  {
+    question: "How do I use the free weekly reset tool?",
+    answer:
+      "Type the tasks that need to happen this week — one per line. Mark your big ones with '*' or the word 'important'. Mention a day (e.g. 'call bank Monday') and it'll land there; everything else gets spread across the week. Then click 'Build my week' to see your plan.",
+  },
+];
+
+const faqSchemaData = faqSchema(siteBase, { path: "/tools/weekly-reset", questions: faqs });
+const relatedGuides = guides.filter((g) => g.clusters.includes("productivity") || g.clusters.includes("adhd"));
+const weeklyResetPrintable = printables.find((p) => p.slug === "weekly-reset-sheet");
 ---
 
 <Base
-  title="Weekly Reset tool"
+  title="Weekly Reset Tool"
   description="Free weekly reset tool: turn a scattered brain-dump of tasks into a calm week — top 3 priorities plus a day-by-day plan you can download as a PDF."
-  schema={[weeklyResetSchema]}
+  schema={[weeklyResetSchema, toolBreadcrumb, faqSchemaData]}
 >
   <ToolShell slug="weekly-reset">
     <WeeklyReset client:load />
   </ToolShell>
 
+  <section class="tool-seo">
+    <h2>What is a weekly reset?</h2>
+    <p>
+      A weekly reset is a short planning routine that turns a scattered week into
+      one calm plan. Instead of trying to track everything in a traditional
+      multi-section planner, you pick your top three priorities for the week,
+      spread the rest across actual days, and keep one place to see it all. The
+      result is a lighter, more usable planning system that's easier to stick to.
+    </p>
+
+    <h2>How does the weekly reset work?</h2>
+    <p>
+      You add the tasks that need to happen this week. The tool identifies the
+      most important ones — marked with '*' or the word 'important' — and turns
+      them into a top-3 priorities list. Tasks that mention a day (like "call
+      bank Monday") land on that day. Everything else gets spread across
+      Monday to Friday so no single day becomes overwhelming. You can then
+      download the finished week as a PDF.
+    </p>
+
+    <h2>Who is the weekly reset for?</h2>
+    <p>
+      The weekly reset is for anyone who finds traditional weekly planning
+      overwhelming — people with ADHD, busy students, and adults managing work
+      and home. It's designed to reduce the demand on executive function by
+      making the week's plan visible and startable in a few minutes.
+    </p>
+
+    <h2>Why do simpler planning systems work better?</h2>
+    <p>
+      Simpler planning systems lower the cost of starting and don't rely on
+      willpower. When the next step is obvious and the system is quick to use,
+      you're more likely to keep it up consistently — especially when you're
+      busy or overwhelmed. The weekly reset keeps this principle front and
+      center: three priorities, seven days, one page.
+    </p>
+
+    <h2>Weekly reset frequently asked questions</h2>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary>{f.question}</summary>
+          <p>{f.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="tool-related-links">
+    <h2>Keep going</h2>
+    <div class="related-grid">
+      {
+        weeklyResetPrintable && (
+          <a class="rel-card" href={`/printables/${weeklyResetPrintable.slug}`}>
+            <strong>{weeklyResetPrintable.title}</strong>
+            <span>{weeklyResetPrintable.description}</span>
+          </a>
+        )
+      }
+      {
+        relatedGuides.slice(0, 4).map((g) => (
+          <a class="rel-card" href={`/guides/${g.slug}`}>
+            <strong>{g.title}</strong>
+            <span>{g.description}</span>
+          </a>
+        ))
+      }
+      <a class="rel-card" href="/printables">
+        <strong>Free printables</strong>
+        <span>Reusable ADHD printables you can print at home.</span>
+      </a>
+      <a class="rel-card" href="/guides">
+        <strong>Practical guides</strong>
+        <span>ADHD planning, routines, and study guides.</span>
+      </a>
+    </div>
+  </section>
 </Base>
+
+<style>
+  .tool-seo { max-width: 900px; margin: 1rem auto 3rem; padding: 0 1.5rem; }
+  .tool-seo h2 { font-size: 1.4rem; margin: 2.25rem 0 0.75rem; }
+  .tool-seo > h2:first-child { margin-top: 2.5rem; }
+  .tool-seo p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 0 0 1.25rem; }
+  .tool-related-links { max-width: 1100px; margin: 0 auto 4rem; padding: 2rem 1.5rem 0; border-top: 1px solid var(--border); }
+  .tool-related-links h2 { font-size: 1.25rem; margin-bottom: 1.25rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .rel-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-decoration: none; color: var(--ink); transition: border-color 0.15s; }
+  .rel-card:hover { border-color: var(--primary); }
+  .rel-card strong { display: block; font-family: var(--display); font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .rel-card span { color: var(--ink-soft); font-size: 0.92rem; }
+  .faq-list { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+  .faq-item summary { font-weight: 700; color: var(--ink); cursor: pointer; font-family: var(--display); font-size: 1.05rem; }
+  .faq-item p { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; margin: 0.75rem 0 0; }
+  @media (max-width: 700px) { .related-grid { grid-template-columns: 1fr; } }
+</style>

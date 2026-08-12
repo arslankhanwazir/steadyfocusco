@@ -11,17 +11,29 @@ interface Props {
 	noindex?: boolean;
 	/** Optional page-level JSON-LD objects rendered after the global graph. */
 	schema?: unknown[];
+	/** Open Graph / Twitter page type. Defaults to "website". */
+	ogType?: "website" | "article";
+	/** Article metadata — only used when ogType is "article". */
+	article?: {
+		publishedTime?: string;
+		modifiedTime?: string;
+	};
 }
 const {
 	title,
 	description = "Planning and organization for overwhelmed minds.",
-	image = "/og-default.svg",
+	image = "/logo.png",
 	noindex = false,
 	schema = [],
+	ogType = "website",
+	article,
 } = Astro.props;
 
 const siteName = "SteadyFocusCo";
-const fullTitle = `${title} · ${siteName}`;
+// Avoid duplicating the brand name when a page already includes it.
+const fullTitle = title.includes(siteName)
+	? title
+	: `${title} · ${siteName}`;
 // Canonical + absolute OG URLs. Astro.site is set in astro.config.mjs.
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
@@ -72,12 +84,18 @@ function isActive(href: string): boolean {
 		))}
 
 		<!-- Open Graph -->
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:site_name" content={siteName} />
 		<meta property="og:title" content={fullTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:image" content={ogImage} />
+		{ogType === "article" && article?.publishedTime && (
+			<meta property="article:published_time" content={article.publishedTime} />
+		)}
+		{ogType === "article" && article?.modifiedTime && (
+			<meta property="article:modified_time" content={article.modifiedTime} />
+		)}
 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
