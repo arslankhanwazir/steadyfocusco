@@ -1,12 +1,8 @@
-# Astro Starter Kit: Minimal
+# SteadyFocusCo
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A digital planning resource providing ADHD-friendly printable planners, free productivity tools, executive-function resources, student planning resources, and practical guides designed to reduce overwhelm and make planning easier to follow.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -15,7 +11,38 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── public/
 ├── src/
 │   └── pages/
-│       └── index.astro
+│       ├── index.astro
+│       ├── adhd.astro
+│       ├── students.astro
+│       ├── productivity.astro
+│       ├── guides/
+│       │   └── [slug].astro
+│       ├── about.astro
+│       └── tools/
+│           ├── brain-dump.astro
+│           ├── weekly-reset.astro
+│           └── morning-routine.astro
+│       └── printables/
+│           └── [slug].astro
+├── src/
+│   ├── components/
+│   │   ├── Base.astro
+│       ├── ClusterHub.astro
+│       ├── BrainDump.tsx
+│       ├── WeeklyReset.tsx
+│       ├── MorningRoutine.tsx
+│       └── ToolShell.astro
+│   ├── data/
+│   │   ├── schema.ts
+│   │   ├── site.ts
+│   │   └── products.json
+│   └── layouts/
+│       └── Base.astro
+├── public/
+│   ├── favicon.ico
+│   ├── favicon.svg
+│   ├── logo.png
+│   └── llms.txt
 └── package.json
 ```
 
@@ -41,3 +68,5 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!

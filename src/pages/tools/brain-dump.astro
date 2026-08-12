@@ -1,10 +1,27 @@
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import BrainDump from "../../components/BrainDump.tsx";
+import { webApplicationSchema } from "../../data/schema";
+
+export function getStaticPaths() {
+  return [];
+}
+
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+
+const toolData = {
+  name: "Brain Dump",
+  description: "Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sure. Download as a PDF.",
+  path: "/tools/brain-dump",
+  applicationCategory: "ProductivityApplication",
+};
+
+const brainDumpSchema = webApplicationSchema(siteBase, toolData);
 
 <Base
   title="Brain Dump tool"
   description="Free brain dump tool: empty your head, then automatically sort every thought into Do Now, Deadline, Quick Task, Later, and Not Sure. Download as a PDF."
+  schema={[brainDumpSchema]}
 >
   <ToolShell slug="brain-dump">
     <BrainDump client:load />

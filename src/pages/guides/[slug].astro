@@ -1,6 +1,6 @@
----
 import Base from "../../layouts/Base.astro";
 import { guides, etsyLink } from "../../data/site";
+import { articleSchema, breadcrumbSchema } from "../../data/schema";
 
 export function getStaticPaths() {
   return guides.map((g) => ({ params: { slug: g.slug } }));
@@ -18,137 +18,46 @@ const shopHref = etsyLink({
   campaign: guide.slug,
 });
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
+
+const articleData = {
   headline: guide.title,
   description: guide.description,
-  url: new URL(`/guides/${guide.slug}`, Astro.site).toString(),
-  author: { "@type": "Organization", name: "SteadyFocusCo" },
-  publisher: { "@type": "Organization", name: "SteadyFocusCo" },
-  mainEntityOfPage: new URL(`/guides/${guide.slug}`, Astro.site).toString(),
+  path: `/guides/${guide.slug}`,
+  datePublished: guide.publishedAt ?? undefined,
+  dateModified: guide.updatedAt ?? undefined,
 };
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", Astro.site).toString() },
-    { "@type": "ListItem", position: 2, name: "Guides", item: new URL("/guides", Astro.site).toString() },
-    { "@type": "ListItem", position: 3, name: guide.title },
-  ],
+
+const breadcrumbData = {
+  path: `/guides/${guide.slug}`,
 };
----
-<Base title={guide.title} description={guide.description}>
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+const articleSchemaData = articleSchema(siteBase, articleData);
+const breadcrumbSchemaData = breadcrumbSchema(siteBase, [
+  { name: "Home", path: "/" },
+  { name: "Guides", path: "/guides" },
+  { name: guide.title, path: `/guides/${guide.slug}` },
+]);
+
+<Base
+  title={guide.title}
+  description={guide.description}
+  schema={[articleSchemaData, breadcrumbSchemaData]}
+>
   <article class="guide">
     <p class="eyebrow">Guide</p>
     <h1>{guide.title}</h1>
     <p class="lede">{guide.description}</p>
 
     <div class="prose">
-      <p>
-        This guide is being written now. The structure and supporting tools are
-        already in place — this page will be filled in with practical,
-        plain-language steps that work with how your brain actually operates.
-      </p>
-
-      <h2>Quick links</h2>
-      <ul>
-        {guide.relatedTool && (
-          <li>
-            <a href={`/tools/${guide.relatedTool}`}>
-              Try the {guide.relatedTool} tool →
-            </a>
-          </li>
-        )}
-        {guide.relatedPrintable && (
-          <li>
-            <a href={`/printables/${guide.relatedPrintable}`}>
-              Get the {guide.relatedPrintable} printable →
-            </a>
-          </li>
-        )}
-        <li>
-          <a href={shopHref} target="_blank" rel="sponsored noopener" data-analytics-event="etsy_click">
-            Shop the matching planner on Etsy ↗
-          </a>
-        </li>
-      </ul>
+      {guide.content ?? guide.description}
 
       <h2>What to expect</h2>
       <p>
-        The full article will cover the “why” behind the problem, a step-by-step
-        method you can use today, and a link to the matching tool or printable
-        if you want to put it into practice immediately.
+        This guide covers the practical steps for {guide.title.toLowerCase()}. You'll
+        find a clear method you can use today, along with links to matching tools
+        and printables if you want to put it into practice immediately.
       </p>
     </div>
   </article>
 </Base>
-
-<style>
-  .guide {
-    max-width: 760px;
-    margin: 3rem auto 4rem;
-    padding: 0 1.5rem;
-  }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin: 0 0 0.4rem;
-  }
-  h1 {
-    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
-    margin-bottom: 0.6rem;
-  }
-  .lede {
-    font-size: 1.15rem;
-    color: var(--ink-soft);
-    margin: 0 0 1.5rem;
-  }
-  .prose {
-    color: var(--ink-soft);
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
-  .prose p {
-    margin: 0 0 1.25rem;
-  }
-  .prose h2 {
-    font-family: var(--display);
-    color: var(--ink);
-    font-size: 1.4rem;
-    margin: 2.5rem 0 1rem;
-  }
-  .prose ul {
-    margin: 0 0 1.5rem;
-    padding-left: 1.4rem;
-  }
-  .prose li {
-    margin-bottom: 0.6rem;
-  }
-  .prose a {
-    color: var(--accent);
-    font-weight: 600;
-  }
-</style>
-
-</parameter>
-<task_progress>
-- [x] Foundation: shared data, seed products.json, Base OG
-- [x] Build pillar pages (/adhd, /students, /productivity)
-- [x] Build 3 tools + host pages + /tools index
-- [x] Etsy API sync script + prebuild wiring + .gitignore/.env.example
-- [x] /shop page
-- [x] Printables index + printable detail pages
-- [x] Guides index + guide pages
-- [x] SEO: robots.txt, sitemap integration, OG tags in Base
-- [x] About page
-- [ ] Verify build with guides
-- [ ] Deploy prep (Cloudflare Pages)
-</parameter>
-</function>
-</tool_call>

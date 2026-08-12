@@ -1,25 +1,28 @@
 import Base from "../../layouts/Base.astro";
 import ToolShell from "../../components/ToolShell.astro";
 import WeeklyReset from "../../components/WeeklyReset.tsx";
+import { webApplicationSchema } from "../../data/schema";
 
-import { webPageSchema, SITE_DESCRIPTION } from "../../data/schema";
+export function getStaticPaths() {
+  return [];
+}
 
 const siteBase = new URL("/", Astro.site).toString().replace(/\/$/, "");
 
-const pageSchema = webPageSchema(siteBase, {
-  type: "WebPage",
-  name: "Weekly Reset tool",
+const toolData = {
+  name: "Weekly Reset",
   description: "Free weekly reset tool: turn a scattered brain-dump of tasks into a calm week — top 3 priorities plus a day-by-day plan you can download as a PDF.",
   path: "/tools/weekly-reset",
-});
+  applicationCategory: "LifestyleApplication",
+};
+
+const weeklyResetSchema = webApplicationSchema(siteBase, toolData);
 
 <Base
   title="Weekly Reset tool"
   description="Free weekly reset tool: turn a scattered brain-dump of tasks into a calm week — top 3 priorities plus a day-by-day plan you can download as a PDF."
+  schema={[weeklyResetSchema]}
 >
-  {pageSchema.map((s) => (
-    <script type="application/ld+json" set:html={JSON.stringify(s)}></script>
-  ))}
   <ToolShell slug="weekly-reset">
     <WeeklyReset client:load />
   </ToolShell>
